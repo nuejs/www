@@ -35,11 +35,26 @@ h1
 
 
 .small-image
-  max-width 5em
-  m 4em 0 -4em
+  max-width 6em
+
+.float-right
+  float right
+  m 0 0 3em 3em
+
+  @medium
+    mb 10em
 
 del
   text-decoration none
+
+// content
+p del
+  font 600
+  font-style normal
+  bg $yellow
+  p 0 .3em .2em
+  radius 4px
+
 
 h1 del, h2 del
   box-shadow 0 0 0 .12em $gray-700
@@ -64,7 +79,7 @@ h1 del, h2 del
   bg /docs/img/stripes.jpg
   padding 3.5em 20%
   bg-size cover
-  height 26em
+  height 29em
   radius 8px
   mb 1em
 

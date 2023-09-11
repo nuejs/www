@@ -7,27 +7,32 @@ include: [longform, permlink]
 
 [image src="faq.svg"]
 
-# Frequently asked questions
+# Frequently Asked Questions
 
-## Who are you? [author]
-I'm [Tero Piirainen][linkedin], a frontend developer from *Helsinki*. I have 25+ years of experience building open-source projects, technology products, and startups. I'm known for [Riot.js](//riot.js.org/), *Flowplayer*, and *jQuery Tools*. Right now I'm the sole developer of  Nue.
+## Who are you?
+I'm [Tero Piirainen](//twitter.com/tipiirai), a frontend developer from *Helsinki*. I have 25+ years of experience building open-source projects, technology products, and startups. I'm known for [Riot.js](//riot.js.org/), *Flowplayer*, and *jQuery Tools*. Right now I'm the sole developer of  Nue.
+
+[media]
+  small: workplace.jpg
+  caption: My workplace in Kallio
+  class: superwide
 
 
 ## What is Nue? [nue]
-Nue is a frontend develoopment toolset. It's a new way to build websites and reactive user interfaces. It's an alternative to ecosystems like Vue, React, and Svelte. "Nue" comes from the German word `/neue/` (= "new").
+Nue is a frontend develoopment toolset. It's a new way to build websites and reactive user interfaces. It's an alternative to ecosystems like Vue, React, and Svelte. "Nue" comes from the German word `/neue/`, which translates to "new" in English.
 
 Nue is an open-source project hosted on [GitHub][gh], licensed with [MIT license][mit].
 
 
 ## Why do you do this? [why]
-I'm not happy with the way frontends are built. The tooling is complex, the code is hard to understand, and the websites are bloated. It takes too much time to finish projects and "ship it". Developers in *Hacker News, Reddit*, and *Lobster* are seemingly frustrated grave for change.
+I'm not happy with the way frontends are built these days. The tooling is complex, the code is hard to understand, and the websites are bloated. It takes too much time and nerves to finish projects. And I'm not alone. Developers in *Hacker News, Reddit*, and *Lobster* are seemingly frustrated grave for change.
 
 
 ## When is everything ready? [roadmap]
-The goal is to finish all projects on the [ecosystem](/ecosystem/) by March 2024. Might be sooner. It all depends on how much work goes into issues and open-source maintenance.
+The goal is to finish all projects on the [ecosystem](/ecosystem/) by March 2024. This is a super random estimate which you definitely should not count on. It might be sooner or might be later. It all depends on how much work goes into issues and open-source maintenance, and how good I am at estimating time. Usually not very good.
 
 ## This seems ambitious. Can you pull this off? [doubt]
-Yes. At least coding is not the problem. Currently, there is 20 times less code in all projects combined than what you see in Vue JS alone. That's about *5k lines* of JavaScript vs. [100k lines](https://github.com/vuejs/core) of TypeScript.
+Yes. At least coding is not the problem. Currently, there is 20 times less code in all projects combined than what you see in the Vue UI library alone. That's about *5k lines* of JavaScript vs. [100k lines](https://github.com/vuejs/core) of TypeScript.
 
 Most features are already implemented on a private GitHub repository, they just need to be polished, packaged, and documented. Writing docs is the most time-consuming part.
 
@@ -40,8 +45,8 @@ Absolutely! The long-term goal is to form a team of like-minded JavaScript devel
 ## What are the benefits of Nue? [difference]
 
 1. [Improved developer experience](/why/#ux)
+1. [Faster to finish projects](/why/#soc)
 1. [Faster page load times](/why/#fast)
-1. [Faster to ship](/why/#soc)
 
 
 ## What are the guiding principles? [guidelines]
@@ -78,7 +83,7 @@ Other people that inspired Nue are:
 
 
 ## How to keep thins small? [small]
-The secret to minimalism is in your ability to imagine the most straightforward way to reach your goal. Do the first silly version, then do it all again from scratch. Repeat until you are happy. Separate your concerns: Keep your logic and styling out of the structure. Avoid internal frameworks and other "safety nets". Create simple functions that call other simple functions. Remember *Steve Jobs* and "keep the good stuff and get rid of the crappy stuff."
+The secret to minimalism is in your ability to imagine the most straightforward way to reach your goal. Do the first silly version, then do it all again from scratch. Repeat until you are happy. Separate your concerns: Keep your logic and styling out of the structure. Avoid class hierarchies, internal frameworks, and other safety nets. Create simple functions that call other simple functions. Make the code seem stupid instead of clever. Remember *Steve Jobs* and "keep the good stuff and get rid of the crappy stuff."
 
 
 
@@ -108,22 +113,18 @@ Because
 
 2. [Dynamic typing][dynamic] is a good thing. It's the very reason JavaScript, Python, Ruby, and Lisp exist.
 
-3. [Minimalism](/why/#minimalism) omitting type definitions makes the code look cleaner.
+3. [Minimalism](/why/#minimalism): omitting type definitions makes cleaner code
 
-4. *Native language* JavaScript runs natively on the browser without an extra compilation step.
+4. *Browser standard*: JavaScript runs natively on the browser without an extra compilation step.
+
+## Why use "master" as the branch name? [master]
+Because it's [just another word](https://medium.datadriveninvestor.com/why-githubs-change-from-master-to-main-is-not-the-solution-a3ac38cc48dd) and has [nothing to do](https://mooseyanon.medium.com/github-f-ck-your-name-change-de599033bbbe) with racism.
 
 
-## Why not the `===` operator? [equality]
-Strict typing is rarely needed in dynamically typed languages. Loose typing (`==`) is usually enough.
-
-
-## Why not semicolons or double quotes?
-Semicolons are optional and double is literally 2x. Less is more.
 
 
 [antirez]: https://twitter.com/antirez/status/1378272801522597888
 [linkedin]: https://www.linkedin.com/in/tero-piirainen-370183248/
-[twitter]: https://twitter.com/tipiirai
 [gh]: https://github.com/nuejs
 [discuss]: https://github.com/nuejs/nuejs/discussions/1
 [mit]: https://opensource.org/license/mit/

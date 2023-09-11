@@ -8,17 +8,22 @@ main
 
 
 .sidebar
-  max-width 11.6em
-  flex .5
 
-  @medium
-    nav
-      mb 3em
-
-  // test selection
   .selected
     color white
     bg $main
+
+  @large
+    overflow-y auto
+    min-width 13em
+    sticky 1.5em
+    height 40em
+    ml -1em
+    pl 1em
+    flex .5
+    nav
+      mb 3em
+
 
 .todo
   h4

@@ -13,12 +13,9 @@
 h4
   border-bottom 1px solid $gray-300
   font .7em $gray-400 500 uppercase 1px
-  line-height 2
-  margin 2em 0
-
-  @medium
-    text-indent -4em
-    line-height .1
+  margin 2em 0 2em 9em
+  text-indent -9em
+  line-height .1
 
 h1
   m 0
@@ -40,15 +37,26 @@ li
   a[href]
     color $gray
 
-  h2 a[href]
-    color $main
+  a[href^="/docs"]
+    font 600
+    color black
+
   p
-    font 1.3em $gray-600
-    mb .4em
-
-  p:last-child
     font 1em 500 $gray-400
+    mb .7em
 
+h2 + p
+  font 1.3em $gray-600
+  mb .3em
+
+h2 em
+  font 60% 500 1px
+  p .2em .6em
+  font-style normal
+  color white
+  bg $gray-400
+  radius 6px
+  relative -.2em .3em
 
 main
   max-width 45em

@@ -157,12 +157,18 @@
   button
     m 1em 0
 
+  img
+    min-width 100px
+    min-height 100px
+
   .user-list
     div
       transition .6s
+      transform scale(.7)
       opacity 0
 
     .fade-in
+      transform scale(1)
       opacity 1
 
 

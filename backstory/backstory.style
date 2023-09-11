@@ -53,3 +53,8 @@ main
     bg $yellow
     p 0 .2em
     radius 2em
+
+
+.signature
+  m 1em 0 0 -1.7em
+  width 17em

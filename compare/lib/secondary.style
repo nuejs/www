@@ -46,6 +46,7 @@
 
   &.selected
     font-weight 600
+    color black
 
 
 
@@ -75,6 +76,7 @@
 
 
 .canvas
+  min-width 12em
   pre
     max-width 32em
     font-family Fira,Menlo,Monaco,Lucida Console

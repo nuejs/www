@@ -1,0 +1,50 @@
+
+// checkbox, radio, range, progress
+:root
+  accent-color $main-600
+
+::placeholder
+  color $gray-400
+
+// generic focus effect
+:focus-visible
+  outline 3px solid $main-100
+  outline-offset 1px
+
+  .dark &
+    outline-color $gray-200
+
+input, textarea, select, .select
+  font-size inherit
+  font-family inherit
+  color inherit
+  width 100%
+  p .8em 1.2em
+  border 1px solid $gray-200
+  transition outline-width .1s
+  background-color transparent
+  border-radius 4px
+
+  &:focus
+    border-color $main-400
+
+
+textarea
+  resize none
+
+// misc
+.hidden, [hidden]
+  display none !important
+
+
+// form input wrapper
+.field
+  block
+  mb 1em
+
+  input
+    mb .5em
+
+  h5
+    font 90% 500
+    mb .4em

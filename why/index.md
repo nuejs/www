@@ -12,7 +12,7 @@ include: [bunny/video]
 Nue is open-source software released under the MIT license. It's an engineering attempt to bring a long-term solution to the prevailing [frontend fatique](/backstory/).
 
 
-## Create both websites **and** webapps
+## Create both websites *and* webapps
 Nue is a web application builder with first-class support for both single-page applications (SPA) **and** multi-page applications (MPA):
 
 [.columns]
@@ -43,8 +43,10 @@ Nue is a web application builder with first-class support for both single-page a
 
 
 
-## For UX devs, JS devs, **and** content creators
-Nue embraces *the separation of concerns* to make your code easier to read, understand, and scale for all the members of your web team. This helps you move significantly faster because your team members can work in isolation without blocking others or breaking their code.
+## For UX engineers, JavaScript developers, *and* content creators [separate]
+Nue embraces [separation of concerns][soc] to make your code easier to read, understand, and scale for all the members of your web team. This helps you move significantly faster because your team members can work in isolation without blocking others or breaking their code.
+
+[soc]: https://en.wikipedia.org/wiki/Separation_of_concerns
 
 [.columns]
   ### UX developers
@@ -65,27 +67,33 @@ Nue embraces *the separation of concerns* to make your code easier to read, unde
 
 
 
-### 🖐 No more spaghetti, please! [spaghetti]
-Nue is strongly against "spaghetti code" with multiple programming languages and coding styles mixed together. Here's how Tailwind [front page](/compare/homepages.html) looks like under the hood:
+## 🖐 No more spaghetti, please! [spaghetti]
+With separated concerns, you completely avoid the issues with "spaghetti code" where different programming languages and coding styles are mixed. This kind of mixed code is hard to understand, maintain, and scale. Here's how Tailwind [front page](/compare/homepages.html) looks like under the hood:
 
 [media]
   large: img/spaghetti-big.png
   caption: The source code of the Tailwind CSS front page
   class: wider
 
-Spaghetti code is hard to maintain and scale. It's hard to see how it works and you'll have challenges explaining it to fellow developers. It also makes your code less reusable when everything is hardcoded together and made specific to a single context.
+It's hard to see how it works and you'll have challenges explaining it to fellow developers. It also makes your code less reusable when everything is hardcoded together and made specific to a single context.
 
 
 
 ## Universal hot reloading [hot-reload]
-When content, styling, layout, and logic are neatly separated Nue can provide a very powerful feature called "universal hot-reloading":
+With content, styling, layout, and logic neatly separated Nue provides a powerful feature called "universal hot-reloading":
 
 [media]
   large: img/hot-reload-big.png
   small: img/hot-reload.png
   caption: Hit save and your document mutates itself to the new state
 
-Everything you do: editing content, adding new assets, changing the layout, modifying server or client components, or making design changes, the change is instantly reflected on the browser.
+Everything you do: editing content, adding new assets, changing the layout, modifying server-side components, editing reactive components, or making design changes, the change is instantly reflected on the browser.
+
+[bunny-video]
+  videoId: e78eec4c-9e81-4274-87d5-080d0459d1be
+  poster: thumbnail_b04e314f.jpg
+  caption: Universal hot reloading in action
+
 
 [seo-video]
   src: /video/hot-reload-1600.mp4
@@ -95,28 +103,14 @@ With this feature, UX developers, JavaScript developers, and content creators ca
 
 
 ## Minimalism [minimalism]
-Current frameworks, UI widgets, single-page applications, websites, and build tools are 10-100x bigger and more complex than they could be. Here's what the world looks like today:
+Current frameworks, UI widgets, single-page applications, websites, and build tools are 10-100x bigger and more complex than they could be. Here is the source code of React compared to Nue:
 
 [image-link]
   src: img/react-vs-nue.jpg
   href: /compare/frameworks.html
+  caption: React vs. Nue. Click for details 👉
   class: wider higher
 
-The size of things has gotten slightly out of hand:
-
-* React.js is 109kb of minified JavaScript (35kb gzipped) and Vue.js is 97kb (34kb gzipped). Nue.js is 4.7kb (2.2kb gzipped). It's *16× smaller* than React.
-
-* The JavaScript bundle size or the "Hello, World" application in [create-react-app](//create-react-app.dev) is ~1.6Mb!~ (364kb gzipped). [create-nue-app](//github.com/nuejs/create-nue) requires only 5kb (2.5kb gzipped) of __optional__ JavaScript.
-
-* React- based [headless UI library][ui-react] is 103kb of minified JavaScript and [Vue version][ui-vue] 104kb. Nue's upcoming UI library will be 10-20 times smaller with the same set of components.
-
-* The size of the project directory created with create-react-app is ~321Mb!~ and [create-vite-app](//github.com/vuejs/create-vue) is 31MB. A blank project created by Nue is under 1 MB.
-
-
-[ui-react]: https://bundlephobia.com/package/@headlessui/react@1.7.17
-[ui-vue]: https://bundlephobia.com/package/@headlessui/vue@1.7.16
-
-- - -
 
 ### 👉 Less is More
 The benefits of minimalism go far beyond just serving smaller JavaScript files:
@@ -130,19 +124,36 @@ The benefits of minimalism go far beyond just serving smaller JavaScript files:
 1. *Faster*: Nue is faster due to simpler internal logic and there are fewer kilobytes to transfer.
 
 
+The amount of code developers want to write has gotten slightly out of hand. Here's what the world looks like today:
+
+[.box]
+  ### Frontend obesity crisis [obesity]
+
+  React.js is 109kb of minified JavaScript (35kb gzipped), Vue.js is 97kb (34kb gzipped) and Nue.js is 4.7kb (2.2kb gzipped). React and Vue have order or magnitude more bloat than Nue for doing roughly the same thing.
+
+  The JavaScript bundle size or the "Hello, World" application in [create-react-app](//create-react-app.dev) is 1.6Mb 😳  (364kb gzipped). [create-nue-app](//github.com/nuejs/create-nue) requires no JS to render and only 5kb (2.5kb gzipped) of optional JavaScript is loaded to progressively enhance the page with dynamic "islands".
+
+  React-based [headless UI library][ui-react] is 103kb of minified JavaScript and [Vue version][ui-vue] 104kb. Nue's upcoming UI library will be 10-20 times smaller with the same set of components.
+
+  The size of the project directory created with create-react-app is an unacceptable 321Mb 🤯 and [create-vite-app](//github.com/vuejs/create-vue) is 31MB. A blank project created with Nue is under 1 MB.
+
+  [ui-react]: https://bundlephobia.com/package/@headlessui/react@1.7.17
+  [ui-vue]: https://bundlephobia.com/package/@headlessui/vue@1.7.16
+
 
 
 
 ## Extreme performance [fast]
-Thanks to minimalism, Nue can shoot for the fastest possible page rendering performance you can technically achieve on the Internet. The secret is to respect the [14kb rule](https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work#tcp_slow_start_14kb_rule) in TCP slow start algorithm. When your HTML request is under 14kb and it has all the content and styling to render the initial viewport, you have significantly faster page loads:
+Thanks to minimalism, Nue can shoot for the fastest possible page rendering performance you can technically achieve on the Internet. The secret is to respect the [14kb rule](https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work#tcp_slow_start_14kb_rule) in TCP slow start algorithm. When your HTML request with all the content and styling to render the initial viewport is under 14kb, you have significantly faster page loads:
 
 [bunny-video]
   videoId: cbacf7cc-7e76-4f55-b59a-7758f2e14d8e
   poster: thumbnail_d12f8640.jpg
-  caption: Nue- powered websites feel instant
+  caption: Nue-powered websites feel instant
 
+Nue is fast because of an undervalued technique called *progressive enhancement*. The content and primary CSS are loaded first, then secondary CSS, and finally JavaScript. You cannot get faster with any other approach.
 
-When the first HTTP packet contains everything to render the first viewport all the rest can come later. This *progressive enhancement* is the key to Nue's performance. There's absolutely no way you can be any faster than with the above approach.
+While frameworks like *Astro* have taken steps towards progressive enhancement they have a hard time fitting the content and CSS to the first HTTP packet because of the [spaghetti code](/compare/homepages.html#Astro).
 
 
 ### Optimization
@@ -154,7 +165,7 @@ Nue offers a `nue stats` command to check that everything is good regarding TCP 
 
 In the above CSS1 stands for primary css and CSS2 is secondary css. The final row is the combined size of HTML and inlined primary CSS after being gzipped. Red rows require at least two TCP packets to render the first contentful paint.
 
-TCP's slow start puts performance optimization to where it matters and you can stop struggling with JavaScript module bundling and other areas where optimization doesn't give you much.
+TCP's slow start puts performance optimization to where it matters and you can stop struggling with JavaScript module bundling and other secondary areas where optimization doesn't give you much benefit.
 
 
 

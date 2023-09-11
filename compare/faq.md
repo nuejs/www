@@ -11,11 +11,20 @@ class: compare-faq
 
 # Compare FAQ
 
+## How is Nue 10 – 100× smaller? [small]
+Because of:
+
+1. *Focus*: Nue projects typically focus on one thing only
+1. *Simplicity*: Nue projects consists of simple functions
+1. *No TypeScript*: Nue embraces the dynamic typing in JavaScript
+
+
 ## Are we comparing apples-to-apples? [apples]
 We are comparing tools that attempt to solve the same problem but in a different way. You decide.
 
-## Why size is important? [size]
-Smaller projects are:
+
+## Why care so much about size? [size]
+It's not about size. It's more about the amount of code. Smaller projects are:
 
 1. Easier to use
 1. Easier to develop
@@ -25,20 +34,9 @@ Smaller projects are:
 [Learn the details](/why/#minimalism) on why minimalism is important in software development.
 
 
-## How is Nue 10 – 100× smaller? [small]
-Three reasons:
-
-1. *Focus*: Nue projects typically focus on one thing only
-1. *Simplicity*: Nue internals are meant to be as simple as possible
-1. *No TypeScript*: Nue embraces the dynamic typing in JavaScript
-
-
-
-
-
 
 ## Why compare to Headless UI? [headless]
-[Headless UI](https://headlessui.com/) is a popular, well-known project that gives a good idea of present-day component development and you'll find implementations for *React*, *Vue*, and [Svelte](https://github.com/rgossiaux/svelte-headlessui).
+[Headless UI](https://headlessui.com/) is a popular, well-known project that gives you a good idea how components are developed these days. And you'll find implementations for *React*, *Vue*, and [Svelte](https://github.com/rgossiaux/svelte-headlessui).
 
 ## Why the listbox component? [listbox]
 Because it is somewhere in the middle in terms of size and complexity. There are components like [radio group](https://headlessui.com/react/radio-group) that would favor Nue significantly more (closer to 100× ratio)

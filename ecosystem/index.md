@@ -9,13 +9,14 @@ title: Nue ecosystem
 # Ecosystem
 **1/6 done** • Check [FAQ](/faq/#roadmap) for completion details
 
-* ## [Nue JS](/docs/)
+* ## Nue JS *DONE*
   Build user interfaces with 10x less code
 
   Replaces [React][react], [Vue][vue], and [Svelte][svelte]
 
+  [View documentation](/docs/nuejs/)
 
-#### TBD
+#### To be done
 
 
 * ## Nue CSS

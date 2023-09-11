@@ -1,0 +1,51 @@
+
+button, [role=button]
+  transition outline-width .1s
+  font 90% 550 center
+  color white
+  radius 4px
+  bg $main-600
+  p .8em 1.8em
+  border 0
+  pointer
+
+  &:focus-visible
+    outline-color $main-200
+
+  &:hover
+    bg $main-800
+
+  &:active
+    outline 3px solid $main-200
+    outline-offset 1px
+
+[disabled]
+  background-color #ccc !important
+  cursor not-allowed
+
+  &:active
+    outline none
+
+
+/*
+.secondary
+  box-shadow 0 0 0 1px $gray-300 inset
+  color $gray-700
+  bg white
+
+  &:focus-visible
+    outline-color $gray-200
+
+  &:hover
+    bg $gray-50
+
+  &:active
+    outline 3px solid $gray-100
+    bg white
+
+button.small
+  p .4em 1.2em
+  color $gray-600
+*/
+
+

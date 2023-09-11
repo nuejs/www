@@ -5,6 +5,18 @@ main
 h1
   mt 1.5em
 
+h2 em
+  font bold underline
+  text-underline-offset 4px
+
+blockquote
+  border-color $pink
+
+#separate
+  max-width 11em
+  line-height 1.3
+
+
 .columns
   gap 3em
 
@@ -48,8 +60,28 @@ hr
   .wider
     mr -8em
     block
+  .video
+    m 3em -5em
+
+
+.box
+  padding 1.5em
+  bg $gray-50
+  radius 5px
+  box-shadow 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)
+
+  p
+    font 1.15em
+
+  @medium
+    m 2em -2.4em
+    p 2.4em
+
+  h3
+    ml 1em
 
 @medium
+
   .centered
     m 3em -4em
     block

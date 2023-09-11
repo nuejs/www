@@ -5,20 +5,26 @@
 
 body
   bg /home/img/grid.svg no-repeat
-  bg-pos 0 400px
-  bg-size contain
+  bg-pos -8vw 12vh
+  bg-size 1000px
+
+  @large
+    bg-size 100%
 
 
 // Hero title
 h1
   position relative
   max-width 8em
-  color $main
+  font 3.5em 1 $main
   inline-block
   m .15em 0
 
+  @small
+    font 4.5em
+
   @medium
-    font 6em 1
+    font 6em
 
   em
     transform rotate(-0.4deg) translateX(-.1em)
@@ -55,7 +61,7 @@ h1
 
 
 
-// wave underline
+// yellow text
 p em
   font 600
   font-style normal

@@ -1,6 +1,6 @@
 
 <!-- For Bunny CDN -->
-<div @name="bunny-video" class="video">
+<div @name="bunny-video" class="video { class }">
 
   <noscript>
     <video src="{base}/{videoId}/play_720p.mp4" type="video/mp4" controls>
@@ -11,7 +11,7 @@
   <figcaption :if="caption">{ caption }</figcaption>
 
   <script>
-    base = 'https://vz-aab79cb0-9bb.b-cdn.net'
+    base = 'https://video.nuejs.org'
   </script>
 
 </div>

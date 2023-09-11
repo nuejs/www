@@ -20,8 +20,8 @@ mastnav:
 
 footnav:
   - Ecosystem
-  - Why
   - Backstory
+  - Why
   - label: Docs
     url: /docs/nuejs/
   - FAQ

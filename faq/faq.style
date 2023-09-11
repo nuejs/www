@@ -3,16 +3,29 @@ main
   max-width 45em
 
   img:first-child
-    width 6em
+    width 4em
+    none
 
   h1
     max-width 8em
-    mt .2em
+
+  h2
+    mt 3em
+    font 1.8em
+
 
   blockquote
-    border-left 3px solid $gray-300
+    border-left 3px solid $main
     m -.7em 0 2em
+
     p
-      font 1.4em 1.4 $gray
-      font-family $serif
+      font 1.3em 1.5 400 italic $gray-600
       text-indent -.4em
+      max-width 31em
+
+@large
+  .superwide
+    m 3em -8em
+    img
+      max-width calc(100% + 16em)
+      radius 4px

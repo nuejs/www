@@ -20,8 +20,8 @@ Use `:else` to indicate an "else block" for `:if`
 
 ```
 <div>
-  <h1 :if="cool">I'm cool 😎!</h1>
-  <h1 :else>I'm not cool 🥸</h1>
+  <h1 :if="cool">I'm cool!</h1>
+  <h1 :else>I'm ordinary</h1>
 
   <button @click="cool = !cool">Toggle</button>
 </div>

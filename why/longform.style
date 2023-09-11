@@ -2,13 +2,17 @@
 
 h2
   font 2rem -.02em
-  mt 3em
+  mt 4em
 
   @medium-
     font 1.7em
 
 h3
   font 1.3em
+  mt 3em
+
+  &:first-child
+    mt 0
 
 p, li
   font 1.3rem

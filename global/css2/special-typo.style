@@ -5,7 +5,7 @@ ol
   pl 1.1em
 
 li
-  mb .3em
+  mb .8em
   pl .4em
 
   &::marker

@@ -43,7 +43,8 @@
     mounted(args) {
       this.suffix = args.suffix
       this.canvas = args.$refs.canvas
-      const { names } = args
+      const names = this.names = args.names
+
       if (args.other) {
         const name = location.hash.slice(1)
         this.index = name ? names.indexOf(name) : 0

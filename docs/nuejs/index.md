@@ -6,7 +6,9 @@ include: [listbox, menu-options]
 
 # Nue ~JS~ • Introduction
 
-Nue JS is an extremely small (2.3kb minzipped) JavaScript library for building web interfaces. It is the core of the [Nue ecosystem](/ecosystem/). It’s like **Vue.js, React.js**, or **Svelte** but there are no hooks, effects, props, portals, watchers, injects, suspensions, or other strange abstractions on your way. Learn the basics of HTML, CSS, and JavaScript and you are good to go. You simply need less code to do the same thing. It's not unusual to see 10x differences in the amount of code you need to write. For example, here's a custom list box component written with Nue:
+Nue JS is an extremely small (2.3kb minzipped) JavaScript library for building user interfaces. It is a core part of the [Nue ecosystem](/ecosystem/). It’s like **Vue.js, React.js**, or **Svelte** but there are no hooks, effects, props, portals, watchers, injects, suspensions, or other unusual abstractions on your way. ~Learn the basics of HTML, CSS, and JavaScript and you are good to go~.
+
+The best thing is that you need less code to do the same thing. It's not unusual to see 10x differences in the amount of code you need to write. For example, here's a custom list box component written with Nue:
 
 [.listbox-demo]
   [listbox]
@@ -45,14 +47,14 @@ Nue uses HTML-based template syntax:
 </div>
 ```
 
-HTML and Nue is good for [UX developers][divide]. They focus on interaction design, accessibility, and optimizing the user experience.  There is no need to master advanced JavaScript concepts or learn unstandard, framework-specific concepts like hooks. While React and JXS claim to be "Just JavaScript", Nue can be thought of as "Just HTML".
+While React claims to be "Just JavaScript", Nue can be thought of as "Just HTML", which is perfect for [UX developers][divide] who focus on interaction design, accessibility, and user experience.
 
 [Compare](/compare/component.html) Nue coding style with *React, Vue, Svelte, Tailwind*, and *Astro*.
 
 [divide]: https://css-tricks.com/the-great-divide/
 
 ## Built to scale
-Three reasons why Nue scales extremely well:
+Three reasons why Nue brings new levels of scalability to frontend development:
 
 1. [Separation of concerns](//nuejs.org//why/#soc), easy-to-read code is easier to scale than "spaghetti code".
 
@@ -71,7 +73,7 @@ Three reasons why Nue scales extremely well:
 
 
 ## Decoupled styling
-Nue does not promote the use of scoped CSS, Tailwind, or other CSS-in-JS frameworks because of tight coupling. It's better to separate your style from the layout and structure:
+Nue does not promote the use of scoped CSS, Tailwind, or other CSS-in-JS framework because of tight coupling. It's better to separate your style from the layout and structure, because:
 
 1. *More reusable code*: When styling is not hardcoded to the component, the same component can look different depending on the page or context.
 
@@ -79,14 +81,18 @@ Nue does not promote the use of scoped CSS, Tailwind, or other CSS-in-JS framewo
 
 1. *Faster page loads*: With decoupled styling it's easier to extract primary CSS from the secondary and keep your HTML page under the critical 14kb limit.
 
-Learn more about [styling](styling-components)
+Learn more about [styling components](styling-components)
 
 
-[image "/ecosystem/img/grid.svg" class="small-image"]
-## Reactive and isomorphic
+
+
+## Four kinds of components
 Nue has a rich component model and it allows you to create all kinds of applications using different kinds of components:
 
+[image "/ecosystem/img/grid.svg" class="small-image float-right"]
+
 1. [Server components](server-components) are rendered on the server. They help you build content-focused websites that load faster without JavaScript and are crawlable by search engines.
+
 
 2. [Reactive components](reactive-components) are rendered on the client. They help you build dynamic islands or single-page applications.
 
@@ -127,9 +133,9 @@ With library files, your filesystem hierarchy looks cleaner and you need less bo
 
 
 ## Simpler tooling
-Nue JS comes with a simple `render` function for server-side rendering and a `compile` function to generate components for the browser. You don't need massive bundlers like Webpack or Vite to take control of your development environment. Just import Nue to your project and you are good to go.
+Nue JS comes with a simple `render` function for server-side rendering and a `compile` function to generate components for the browser. You don't need massive bundlers like *Webpack* or *Vite* to take control of your development environment. Just import Nue to your project and you are good to go.
 
-Note: Bundler makes sense on the business model layer if you have hundreds or thousands of NPM- dependencies. [Bun](//bun.sh) and [esbuild](//esbuild.github.io/) are great and highly performant options.
+~NOTE~ Bundler makes sense on the business model layer if you have hundreds or thousands of NPM- dependencies. [Bun](//bun.sh) and [esbuild](//esbuild.github.io/) are great and highly performant options.
 
 
 ## Use cases
@@ -141,7 +147,7 @@ Nue JS is a versatile tool that supports both server- and client-side rendering 
 
 3. *Static website generators* Just import it into your project and you are ready to render. No bundlers are needed.
 
-4. *Single-page applications* Build simpler and more scalable apps together with the **Nue MVC**
+4. *Single-page applications* Build simpler and more scalable apps together with [upcoming](/ecosystem/) **Nue MVC**
 
 5. *Templating* Nue is a generic tool to generate your websites and HTML emails.
 

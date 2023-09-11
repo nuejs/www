@@ -1,0 +1,49 @@
+
+dialog
+  box-shadow -.5em 1em 1.5em #0004
+  absolute 1rem right 1rem
+  padding 1.6em
+  left initial
+  radius 8px
+  border 0
+
+  &::backdrop
+    backdrop-filter blur(3px)
+
+.dialog-close
+  absolute 1.2rem right 1.2rem
+  transition .1s
+  width 1.5em
+  opacity .2
+  pointer
+
+  &:hover
+    transform scale(1.15)
+    opacity .4
+
+  &:active
+    transform scale(.99)
+    opacity 1
+
+
+// mobile-nav specific
+.mobile-nav
+  width 14em
+
+  .logo
+    max-height 2.6em
+    &:hover
+      filter grayscale(1)
+
+  header
+    mb .7em
+
+  nav a
+    font 1.1em 1.9
+    p .2em 0
+    block
+
+  .octocat
+    border-top
+    mt .5em
+    pt 1em
