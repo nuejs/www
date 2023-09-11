@@ -1,0 +1,14 @@
+
+main
+  max-width 1300px
+
+h1
+  mb .1em
+
+h1 + p
+  font 130%
+
+
+.compare-faq main
+  max-width 45em
+

@@ -1,0 +1,18 @@
+
+main
+  max-width 45em
+
+  img:first-child
+    width 6em
+
+  h1
+    max-width 8em
+    mt .2em
+
+  blockquote
+    border-left 3px solid $gray-300
+    m -.7em 0 2em
+    p
+      font 1.4em 1.4 $gray
+      font-family $serif
+      text-indent -.4em

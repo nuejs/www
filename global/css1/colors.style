@@ -1,0 +1,26 @@
+:root
+
+  --main-100 #f0f9ff
+  --main-200 #e0f2fe
+  --main-400 #7dd3fc
+  --main #00c2ff
+  --main-600 #0284c7
+  --main-800 #075985
+
+  // Neutral (slate)
+  --gray-50 #f8fafc
+  --gray-100 #f1f5f9
+  --gray-200 #e2e8f0
+  --gray-300 #cbd5e1
+  --gray-400 #94a3b8
+  --gray #64748b
+  --gray-600 #475569
+  --gray-700 #334155
+  --gray-800 #1e293b
+  --gray-900 #0f172a
+
+  --red #f43f5e
+  --yellow #f4ff9a
+  --pink #fb00e2
+  --orange #fb923c
+  --green #4ade80

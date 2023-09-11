@@ -1,0 +1,74 @@
+
+main
+  max-width 45em
+
+h1
+  mt 1.5em
+
+.columns
+  gap 3em
+
+  figure
+    margin 2em 0
+    max-width 500px
+
+  .block
+    flex 1
+
+  .block-1
+    flex 1.1
+
+    h3
+      font 1.2rem
+
+    h3:not(:first-child)
+      mt 2em
+
+    p, li
+      font 1.1rem
+
+  @large
+    m 3em -8em 2em 0
+    flex
+
+    figure
+      margin 0
+
+
+hr
+  border 0
+  border-bottom 1px solid $gray-300
+  mb 2em
+  block
+
+.higher
+  mb 2em
+
+@large
+  .wider
+    mr -8em
+    block
+
+@medium
+  .centered
+    m 3em -4em
+    block
+
+del
+  text-decoration none
+  radius 3px
+  font 500
+  bg yellow
+  p 0 .3em
+
+/*
+.grid
+  margin 1em -3em 1em 0
+  gap 4em
+  font 88%
+  h3
+    font 1.3rem
+  h3 + p
+    font 1rem
+    mb 1.2em
+*/

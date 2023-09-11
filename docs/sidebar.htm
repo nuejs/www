@@ -1,0 +1,21 @@
+
+<aside @name="area-header" class="sidebar">
+
+  <navi base="/docs/nuejs" :items="nuejs" title="Nue JS" :url="url"/>
+
+  <div class="todo">
+    <h4>Coming later</h4>
+    <p :for="el in todo">{ el }</p>
+  </div>
+
+</aside>
+
+
+<aside @name="area-footer" class="aside">
+
+  <nav>
+    <h4>On this page</h4>
+    <a :for="el in toc" :href="#{el.hash}">{{ el.html }}</a>
+  </nav>
+
+</aside>

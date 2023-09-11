@@ -1,0 +1,43 @@
+
+<div @name="grid" class="grid {attr.class}" :id="attr.id"
+  :style="{ --cell-width: cellwidth, --gap: gap && gap + 'em' }">
+
+  <div :for="el in items" :class="className(el.class)" :style="bgImage(el.bg)">
+    <figure>
+      <a :href="el.link">
+        <img :if="el.img" loading="lazy" :src="el.img">
+        <icon :if="el.icon" :key="el.icon"/>
+      </a>
+
+      <figcaption>
+        <h3><a :href="el.link">{ el.title }</a></h3>
+        <div :if="el.desc" class="desc">{ el.desc }</div>
+      </figcaption>
+    </figure>
+
+    <div :if="el.body" class="body">{ el.body }</div>
+
+    <footer :if="el.actions">
+      <navi :items="el.actions" class="tabbed"/>
+    </footer>
+
+  </div>
+
+  <script>
+    constructor(data) {
+      this.items = data.items || data[data.from]
+      this.itemClass = data.item
+    }
+
+    className(name) {
+      return ['item', name, this.item].join(' ').trim()
+    }
+
+    bgImage(bg) {
+      return bg && `background-image: url("${bg}")`
+    }
+
+  </script>
+</div>
+
+

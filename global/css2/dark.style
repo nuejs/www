@@ -1,0 +1,20 @@
+
+// dark sections
+.dark
+  bg $gray-800
+  color $gray-200
+
+  // invert the darkest
+  --gray-900 $gray-50
+  --gray-50 $gray-900
+
+  h1, h2, h3
+    color white
+
+  // black & white icon
+  .bw
+    filter invert(1)
+
+  button:focus
+    outline-color $gray-200
+

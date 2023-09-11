@@ -1,0 +1,23 @@
+
+<div @name="bar-chart" class="bar-chart">
+
+  <figure :for="el in items">
+    <header>
+      <h4>{ el.key }</h4>
+      <b>{ el.value }K</b>
+    </header>
+    <div :style="width: { el.ratio }%"/>
+  </figure>
+
+
+  <script>
+    constructor({ data }) {
+      const max = Math.max(...Object.values(data))
+      this.items = Object.keys(data).map(key => {
+        const value = data[key]
+        const ratio = Math.round(value / max * 100)
+        return { key, value, ratio }
+      })
+    }
+  </script>
+</div>

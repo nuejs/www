@@ -1,0 +1,60 @@
+
+/*
+@keyframes blink
+  50%
+    opacity .1
+    transform scale(.7)
+*/
+
+.small-hero
+  width 5em
+  mb 1em
+
+h4
+  border-bottom 1px solid $gray-300
+  font .7em $gray-400 500 uppercase 1px
+  line-height 2
+  margin 2em 0
+
+  @medium
+    text-indent -4em
+    line-height .1
+
+h1
+  m 0
+
+h1 + h1
+  color $main
+
+h1 + p
+  font 1.4em 600
+  mt 1em
+
+ul
+  list-style none
+  m 5em auto
+
+li
+  bg white
+
+  a[href]
+    color $gray
+
+  h2 a[href]
+    color $main
+  p
+    font 1.3em $gray-600
+    mb .4em
+
+  p:last-child
+    font 1em 500 $gray-400
+
+
+main
+  max-width 45em
+  ul
+    p 0
+
+  li
+    mb 3.5em
+    p 0

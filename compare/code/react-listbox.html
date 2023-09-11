@@ -1,0 +1,2539 @@
+<p class="line-count">2537 lines</p><div class="columns">
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/components/listbox/listbox.tsx"><pre class="pre-1"><h3>listbox.tsx</h3>import React, {
+  Fragment,
+  createContext,
+  createRef,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useReducer,
+  useRef,
+
+<span class="comment">  // Types</span>
+  ElementType,
+  KeyboardEvent as ReactKeyboardEvent,
+  MouseEvent as ReactMouseEvent,
+  MutableRefObject,
+  Ref,
+} from 'react'
+
+import { useDisposables } from '../../hooks/use-disposables'
+import { useId } from '../../hooks/use-id'
+import { useIsoMorphicEffect } from '../../hooks/use-iso-morphic-effect'
+import { useComputed } from '../../hooks/use-computed'
+import { useSyncRefs } from '../../hooks/use-sync-refs'
+import { EnsureArray, Props } from '../../types'
+import {
+  Features,
+  forwardRefWithAs,
+  PropsForFeatures,
+  render,
+  compact,
+  HasDisplayName,
+  RefProp,
+} from '../../utils/render'
+import { match } from '../../utils/match'
+import { disposables } from '../../utils/disposables'
+import { Keys } from '../keyboard'
+import { Focus, calculateActiveIndex } from '../../utils/calculate-active-index'
+import { isDisabledReactIssue7711 } from '../../utils/bugs'
+import { isFocusableElement, FocusableMode, sortByDomNode } from '../../utils/focus-management'
+import { useOpenClosed, State, OpenClosedProvider } from '../../internal/open-closed'
+import { useResolveButtonType } from '../../hooks/use-resolve-button-type'
+import { useOutsideClick } from '../../hooks/use-outside-click'
+import { Hidden, Features as HiddenFeatures } from '../../internal/hidden'
+import { objectToFormEntries } from '../../utils/form'
+import { getOwnerDocument } from '../../utils/owner'
+import { useEvent } from '../../hooks/use-event'
+import { useControllable } from '../../hooks/use-controllable'
+import { useLatestValue } from '../../hooks/use-latest-value'
+import { useTrackedPointer } from '../../hooks/use-tracked-pointer'
+
+enum ListboxStates {
+  Open,
+  Closed,
+}
+
+enum ValueMode {
+  Single,
+  Multi,
+}
+
+enum ActivationTrigger {
+  Pointer,
+  Other,
+}
+
+type ListboxOptionDataRef&ltT&gt = MutableRefObject&lt{
+  textValue?: string
+  disabled: boolean
+  value: T
+  domRef: MutableRefObject&ltHTMLElement | null&gt
+}&gt
+
+interface StateDefinition&ltT&gt {
+  dataRef: MutableRefObject&lt_Data&gt
+  labelId: string | null
+
+  listboxState: ListboxStates
+
+  options: { id: string; dataRef: ListboxOptionDataRef&ltT&gt }[]
+  searchQuery: string
+  activeOptionIndex: number | null
+  activationTrigger: ActivationTrigger
+}
+
+enum ActionTypes {
+  OpenListbox,
+  CloseListbox,
+
+  GoToOption,
+  Search,
+  ClearSearch,
+
+  RegisterOption,
+  UnregisterOption,
+
+  RegisterLabel,
+}
+
+function adjustOrderedState&ltT&gt(
+  state: StateDefinition&ltT&gt,
+  adjustment: (options: StateDefinition&ltT&gt['options']) =&gt StateDefinition&ltT&gt['options'] = (i) =&gt i
+) {
+  let currentActiveOption =
+    state.activeOptionIndex !== null ? state.options[state.activeOptionIndex] : null
+
+  let sortedOptions = sortByDomNode(
+    adjustment(state.options.slice()),
+    (option) =&gt option.dataRef.current.domRef.current
+  )
+
+<span class="comment">  // If we inserted an option before the current active option then the active option index</span>
+<span class="comment">  // would be wrong. To fix this, we will re-lookup the correct index.</span>
+  let adjustedActiveOptionIndex = currentActiveOption
+    ? sortedOptions.indexOf(currentActiveOption)
+    : null
+
+<span class="comment">  // Reset to `null` in case the currentActiveOption was removed.</span>
+  if (adjustedActiveOptionIndex === -1) {
+    adjustedActiveOptionIndex = null
+  }
+
+  return {
+    options: sortedOptions,
+    activeOptionIndex: adjustedActiveOptionIndex,
+  }
+}
+
+type Actions&ltT&gt =
+  | { type: ActionTypes.CloseListbox }
+  | { type: ActionTypes.OpenListbox }
+  | { type: ActionTypes.GoToOption; focus: Focus.Specific; id: string; trigger?: ActivationTrigger }
+  | {
+      type: ActionTypes.GoToOption
+      focus: Exclude&ltFocus, Focus.Specific&gt
+      trigger?: ActivationTrigger
+    }
+  | { type: ActionTypes.Search; value: string }
+  | { type: ActionTypes.ClearSearch }
+  | { type: ActionTypes.RegisterOption; id: string; dataRef: ListboxOptionDataRef&ltT&gt }
+  | { type: ActionTypes.RegisterLabel; id: string | null }
+  | { type: ActionTypes.UnregisterOption; id: string }
+
+let reducers: {
+  [P in ActionTypes]: &ltT&gt(
+    state: StateDefinition&ltT&gt,
+    action: Extract&ltActions&ltT&gt, { type: P }&gt
+  ) =&gt StateDefinition&ltT&gt
+} = {
+  [ActionTypes.CloseListbox](state) {
+    if (state.dataRef.current.disabled) return state
+    if (state.listboxState === ListboxStates.Closed) return state
+    return { ...state, activeOptionIndex: null, listboxState: ListboxStates.Closed }
+  },
+  [ActionTypes.OpenListbox](state) {
+    if (state.dataRef.current.disabled) return state
+    if (state.listboxState === ListboxStates.Open) return state
+
+<span class="comment">    // Check if we have a selected value that we can make active</span>
+    let activeOptionIndex = state.activeOptionIndex
+    let { isSelected } = state.dataRef.current
+    let optionIdx = state.options.findIndex((option) =&gt isSelected(option.dataRef.current.value))
+
+    if (optionIdx !== -1) {
+      activeOptionIndex = optionIdx
+    }
+
+    return { ...state, listboxState: ListboxStates.Open, activeOptionIndex }
+  },
+  [ActionTypes.GoToOption](state, action) {
+    if (state.dataRef.current.disabled) return state
+    if (state.listboxState === ListboxStates.Closed) return state
+
+    let adjustedState = adjustOrderedState(state)
+    let activeOptionIndex = calculateActiveIndex(action, {
+      resolveItems: () =&gt adjustedState.options,
+      resolveActiveIndex: () =&gt adjustedState.activeOptionIndex,
+      resolveId: (option) =&gt option.id,
+      resolveDisabled: (option) =&gt option.dataRef.current.disabled,
+    })
+
+    return {
+      ...state,
+      ...adjustedState,
+      searchQuery: '',
+      activeOptionIndex,
+      activationTrigger: action.trigger ?? ActivationTrigger.Other,
+    }
+  },
+  [ActionTypes.Search]: (state, action) =&gt {
+    if (state.dataRef.current.disabled) return state
+    if (state.listboxState === ListboxStates.Closed) return state
+
+    let wasAlreadySearching = state.searchQuery !== ''
+    let offset = wasAlreadySearching ? 0 : 1
+
+    let searchQuery = state.searchQuery + action.value.toLowerCase()
+
+    let reOrderedOptions =
+      state.activeOptionIndex !== null
+        ? state.options
+            .slice(state.activeOptionIndex + offset)
+            .concat(state.options.slice(0, state.activeOptionIndex + offset))
+        : state.options
+
+    let matchingOption = reOrderedOptions.find(
+      (option) =&gt
+        !option.dataRef.current.disabled &&
+        option.dataRef.current.textValue?.startsWith(searchQuery)
+    )
+
+    let matchIdx = matchingOption ? state.options.indexOf(matchingOption) : -1
+
+    if (matchIdx === -1 || matchIdx === state.activeOptionIndex) return { ...state, searchQuery }
+    return {
+      ...state,
+      searchQuery,
+      activeOptionIndex: matchIdx,
+      activationTrigger: ActivationTrigger.Other,
+    }
+  },
+  [ActionTypes.ClearSearch](state) {
+    if (state.dataRef.current.disabled) return state
+    if (state.listboxState === ListboxStates.Closed) return state
+    if (state.searchQuery === '') return state
+    return { ...state, searchQuery: '' }
+  },
+  [ActionTypes.RegisterOption]: (state, action) =&gt {
+    let option = { id: action.id, dataRef: action.dataRef }
+    let adjustedState = adjustOrderedState(state, (options) =&gt [...options, option])
+
+<span class="comment">    // Check if we need to make the newly registered option active.</span>
+    if (state.activeOptionIndex === null) {
+      if (state.dataRef.current.isSelected(action.dataRef.current.value)) {
+        adjustedState.activeOptionIndex = adjustedState.options.indexOf(option)
+      }
+    }
+
+    return { ...state, ...adjustedState }
+  },
+  [ActionTypes.UnregisterOption]: (state, action) =&gt {
+    let adjustedState = adjustOrderedState(state, (options) =&gt {
+      let idx = options.findIndex((a) =&gt a.id === action.id)
+      if (idx !== -1) options.splice(idx, 1)
+      return options
+    })
+
+    return {
+      ...state,
+      ...adjustedState,
+      activationTrigger: ActivationTrigger.Other,
+    }
+  },
+  [ActionTypes.RegisterLabel]: (state, action) =&gt {
+    return {
+      ...state,
+      labelId: action.id,
+    }
+  },
+}
+
+let ListboxActionsContext = createContext&lt{
+  openListbox(): void
+  closeListbox(): void
+  registerOption(id: string, dataRef: ListboxOptionDataRef&ltunknown&gt): () =&gt void
+  registerLabel(id: string): () =&gt void
+  goToOption(focus: Focus.Specific, id: string, trigger?: ActivationTrigger): void
+  goToOption(focus: Focus, id?: string, trigger?: ActivationTrigger): void
+  selectOption(id: string): void
+  selectActiveOption(): void
+  onChange(value: unknown): void
+  search(query: string): void
+  clearSearch(): void
+} | null&gt(null)
+ListboxActionsContext.displayName = 'ListboxActionsContext'
+
+function useActions(component: string) {
+  let context = useContext(ListboxActionsContext)
+  if (context === null) {
+    let err = new Error(`&lt${component} /&gt is missing a parent &ltListbox /&gt component.`)
+    if (Error.captureStackTrace) Error.captureStackTrace(err, useActions)
+    throw err
+  }
+  return context
+}
+type _Actions = ReturnType&lttypeof useActions&gt
+
+let ListboxDataContext = createContext&lt
+  | ({
+      value: unknown
+      disabled: boolean
+      mode: ValueMode
+      orientation: 'horizontal' | 'vertical'
+      activeOptionIndex: number | null
+      compare(a: unknown, z: unknown): boolean
+      isSelected(value: unknown): boolean
+
+      optionsPropsRef: MutableRefObject&lt{
+        static: boolean
+        hold: boolean
+      }&gt
+
+      labelRef: MutableRefObject&ltHTMLLabelElement | null&gt
+      buttonRef: MutableRefObject&ltHTMLButtonElement | null&gt
+      optionsRef: MutableRefObject&ltHTMLUListElement | null&gt
+    } & Omit&ltStateDefinition&ltunknown&gt, 'dataRef'&gt)
+  | null
+&gt(null)
+ListboxDataContext.displayName = 'ListboxDataContext'
+
+function useData(component: string) {
+  let context = useContext(ListboxDataContext)
+  if (context === null) {
+    let err = new Error(`&lt${component} /&gt is missing a parent &ltListbox /&gt component.`)
+    if (Error.captureStackTrace) Error.captureStackTrace(err, useData)
+    throw err
+  }
+  return context
+}
+type _Data = ReturnType&lttypeof useData&gt
+
+function stateReducer&ltT&gt(state: StateDefinition&ltT&gt, action: Actions&ltT&gt) {
+  return match(action.type, reducers, state, action)
+}
+
+<span class="comment">// ---</span>
+
+let DEFAULT_LISTBOX_TAG = Fragment
+interface ListboxRenderPropArg&ltT&gt {
+  open: boolean
+  disabled: boolean
+  value: T
+}
+
+export type ListboxProps&ltTTag extends ElementType, TType, TActualType&gt = Props&lt
+  TTag,
+  ListboxRenderPropArg&ltTType&gt,
+  'value' | 'defaultValue' | 'onChange' | 'by' | 'disabled' | 'horizontal' | 'name' | 'multiple'
+&gt & {
+  value?: TType
+  defaultValue?: TType
+  onChange?(value: TType): void
+  by?: (keyof TActualType & string) | ((a: TActualType, z: TActualType) =&gt boolean)
+  disabled?: boolean
+  horizontal?: boolean
+  form?: string
+  name?: string
+  multiple?: boolean
+}
+
+function ListboxFn&lt
+  TTag extends ElementType = typeof DEFAULT_LISTBOX_TAG,
+  TType = string,
+  TActualType = TType extends (infer U)[] ? U : TType
+&gt(props: ListboxProps&ltTTag, TType, TActualType&gt, ref: Ref&ltHTMLElement&gt) {
+  let {
+    value: controlledValue,
+    defaultValue,
+    form: formName,
+    name,
+    onChange: controlledOnChange,
+    by = (a: TActualType, z: TActualType) =&gt a === z,
+    disabled = false,
+    horizontal = false,
+    multiple = false,
+    ...theirProps
+  } = props
+  const orientation = horizontal ? 'horizontal' : 'vertical'
+  let listboxRef = useSyncRefs(ref)
+
+  let [value = multiple ? [] : undefined, theirOnChange] = useControllable&ltany&gt(
+    controlledValue,
+    controlledOnChange,
+    defaultValue
+  )
+
+  let [state, dispatch] = useReducer(stateReducer, {
+    dataRef: createRef(),
+    listboxState: ListboxStates.Closed,
+    options: [],
+    searchQuery: '',
+    labelId: null,
+    activeOptionIndex: null,
+    activationTrigger: ActivationTrigger.Other,
+  } as StateDefinition&ltTType&gt)
+
+  let optionsPropsRef = useRef&lt_Data['optionsPropsRef']['current']&gt({ static: false, hold: false })
+
+  let labelRef = useRef&lt_Data['labelRef']['current']&gt(null)
+  let buttonRef = useRef&lt_Data['buttonRef']['current']&gt(null)
+  let optionsRef = useRef&lt_Data['optionsRef']['current']&gt(null)
+
+  let compare = useEvent(
+    typeof by === 'string'
+      ? (a, z) =&gt {
+          let property = by as unknown as keyof TActualType
+          return a?.[property] === z?.[property]
+        }
+      : by
+  )
+
+  let isSelected: (value: TActualType) =&gt boolean = useCallback(
+    (compareValue) =&gt
+      match(data.mode, {
+        [ValueMode.Multi]: () =&gt
+          (value as unknown as EnsureArray&ltTType&gt).some((option) =&gt compare(option, compareValue)),
+        [ValueMode.Single]: () =&gt compare(value as TActualType, compareValue),
+      }),
+    [value]
+  )
+
+  let data = useMemo&lt_Data&gt(
+    () =&gt ({
+      ...state,
+      value,
+      disabled,
+      mode: multiple ? ValueMode.Multi : ValueMode.Single,
+      orientation,
+      compare,
+      isSelected,
+      optionsPropsRef,
+      labelRef,
+      buttonRef,
+      optionsRef,
+    }),
+    [value, disabled, multiple, state]
+  )
+
+  useIsoMorphicEffect(() =&gt {
+    state.dataRef.current = data
+  }, [data])
+
+<span class="comment">  // Handle outside click</span>
+  useOutsideClick(
+    [data.buttonRef, data.optionsRef],
+    (event, target) =&gt {
+      dispatch({ type: ActionTypes.CloseListbox })
+
+      if (!isFocusableElement(target, FocusableMode.Loose)) {
+        event.preventDefault()
+        data.buttonRef.current?.focus()
+      }
+    },
+    data.listboxState === ListboxStates.Open
+  )
+
+  let slot = useMemo&ltListboxRenderPropArg&ltTType&gt&gt(
+    () =&gt ({ open: data.listboxState === ListboxStates.Open, disabled, value }),
+    [data, disabled, value]
+  )
+
+  let selectOption = useEvent((id: string) =&gt {
+    let option = data.options.find((item) =&gt item.id === id)
+    if (!option) return
+
+    onChange(option.dataRef.current.value)
+  })
+
+  let selectActiveOption = useEvent(() =&gt {
+    if (data.activeOptionIndex !== null) {
+      let { dataRef, id } = data.options[data.activeOptionIndex]
+      onChange(dataRef.current.value)
+
+<span class="comment">      // It could happen that the `activeOptionIndex` stored in state is actually null,</span>
+<span class="comment">      // but we are getting the fallback active option back instead.</span>
+      dispatch({ type: ActionTypes.GoToOption, focus: Focus.Specific, id })
+    }
+  })
+
+  let openListbox = useEvent(() =&gt dispatch({ type: ActionTypes.OpenListbox }))
+  let closeListbox = useEvent(() =&gt dispatch({ type: ActionTypes.CloseListbox }))
+
+  let goToOption = useEvent((focus, id, trigger) =&gt {
+    if (focus === Focus.Specific) {
+      return dispatch({ type: ActionTypes.GoToOption, focus: Focus.Specific, id: id!, trigger })
+    }
+
+    return dispatch({ type: ActionTypes.GoToOption, focus, trigger })
+  })
+
+  let registerOption = useEvent((id, dataRef) =&gt {
+    dispatch({ type: ActionTypes.RegisterOption, id, dataRef })
+    return () =&gt dispatch({ type: ActionTypes.UnregisterOption, id })
+  })
+
+  let registerLabel = useEvent((id) =&gt {
+    dispatch({ type: ActionTypes.RegisterLabel, id })
+    return () =&gt dispatch({ type: ActionTypes.RegisterLabel, id: null })
+  })
+
+  let onChange = useEvent((value: unknown) =&gt {
+    return match(data.mode, {
+      [ValueMode.Single]() {
+        return theirOnChange?.(value as TType)
+      },
+      [ValueMode.Multi]() {
+        let copy = (data.value as TActualType[]).slice()
+
+        let idx = copy.findIndex((item) =&gt compare(item, value as TActualType))
+        if (idx === -1) {
+          copy.push(value as TActualType)
+        } else {
+          copy.splice(idx, 1)
+        }
+
+        return theirOnChange?.(copy as unknown as TType[])
+      },
+    })
+  })
+
+  let search = useEvent((value: string) =&gt dispatch({ type: ActionTypes.Search, value }))
+  let clearSearch = useEvent(() =&gt dispatch({ type: ActionTypes.ClearSearch }))
+
+  let actions = useMemo&lt_Actions&gt(
+    () =&gt ({
+      onChange,
+      registerOption,
+      registerLabel,
+      goToOption,
+      closeListbox,
+      openListbox,
+      selectActiveOption,
+      selectOption,
+      search,
+      clearSearch,
+    }),
+    []
+  )
+
+  let ourProps = { ref: listboxRef }
+
+  let form = useRef&ltHTMLFormElement | null&gt(null)
+  let d = useDisposables()
+  useEffect(() =&gt {
+    if (!form.current) return
+    if (defaultValue === undefined) return
+
+    d.addEventListener(form.current, 'reset', () =&gt {
+      onChange(defaultValue)
+    })
+  }, [form, onChange /* Explicitly ignoring `defaultValue` */])
+
+  return (
+    &ltListboxActionsContext.Provider value={actions}&gt
+      &ltListboxDataContext.Provider value={data}&gt
+        &ltOpenClosedProvider
+          value={match(data.listboxState, {
+            [ListboxStates.Open]: State.Open,
+            [ListboxStates.Closed]: State.Closed,
+          })}
+        &gt
+          {name != null &&
+            value != null &&
+            objectToFormEntries({ [name]: value }).map(([name, value], idx) =&gt (
+              &ltHidden
+                features={HiddenFeatures.Hidden}
+                ref={
+                  idx === 0
+                    ? (element: HTMLInputElement | null) =&gt {
+                        form.current = element?.closest('form') ?? null
+                      }
+                    : undefined
+                }
+                {...compact({
+                  key: name,
+                  as: 'input',
+                  type: 'hidden',
+                  hidden: true,
+                  readOnly: true,
+                  form: formName,
+                  name,
+                  value,
+                })}
+              /&gt
+            ))}
+          {render({ ourProps, theirProps, slot, defaultTag: DEFAULT_LISTBOX_TAG, name: 'Listbox' })}
+        &lt/OpenClosedProvider&gt
+      &lt/ListboxDataContext.Provider&gt
+    &lt/ListboxActionsContext.Provider&gt
+  )
+}
+
+<span class="comment">// ---</span>
+
+let DEFAULT_BUTTON_TAG = 'button' as const
+interface ButtonRenderPropArg {
+  open: boolean
+  disabled: boolean
+  value: any
+}
+type ButtonPropsWeControl =
+  | 'aria-controls'
+  | 'aria-expanded'
+  | 'aria-haspopup'
+  | 'aria-labelledby'
+  | 'disabled'
+
+export type ListboxButtonProps&ltTTag extends ElementType&gt = Props&lt
+  TTag,
+  ButtonRenderPropArg,
+  ButtonPropsWeControl
+&gt
+
+function ButtonFn&ltTTag extends ElementType = typeof DEFAULT_BUTTON_TAG&gt(
+  props: ListboxButtonProps&ltTTag&gt,
+  ref: Ref&ltHTMLButtonElement&gt
+) {
+  let internalId = useId()
+  let { id = `headlessui-listbox-button-${internalId}`, ...theirProps } = props
+  let data = useData('Listbox.Button')
+  let actions = useActions('Listbox.Button')
+  let buttonRef = useSyncRefs(data.buttonRef, ref)
+
+  let d = useDisposables()
+
+  let handleKeyDown = useEvent((event: ReactKeyboardEvent&ltHTMLButtonElement&gt) =&gt {
+    switch (event.key) {
+<span class="comment">      // Ref: https://www.w3.org/WAI/ARIA/apg/patterns/menubutton/#keyboard-interaction-13</span>
+
+      case Keys.Space:
+      case Keys.Enter:
+      case Keys.ArrowDown:
+        event.preventDefault()
+        actions.openListbox()
+        d.nextFrame(() =&gt {
+          if (!data.value) actions.goToOption(Focus.First)
+        })
+        break
+
+      case Keys.ArrowUp:
+        event.preventDefault()
+        actions.openListbox()
+        d.nextFrame(() =&gt {
+          if (!data.value) actions.goToOption(Focus.Last)
+        })
+        break
+    }
+  })
+
+  let handleKeyUp = useEvent((event: ReactKeyboardEvent&ltHTMLButtonElement&gt) =&gt {
+    switch (event.key) {
+      case Keys.Space:
+<span class="comment">        // Required for firefox, event.preventDefault() in handleKeyDown for</span>
+<span class="comment">        // the Space key doesn't cancel the handleKeyUp, which in turn</span>
+<span class="comment">        // triggers a *click*.</span>
+        event.preventDefault()
+        break
+    }
+  })
+
+  let handleClick = useEvent((event: ReactMouseEvent) =&gt {
+    if (isDisabledReactIssue7711(event.currentTarget)) return event.preventDefault()
+    if (data.listboxState === ListboxStates.Open) {
+      actions.closeListbox()
+      d.nextFrame(() =&gt data.buttonRef.current?.focus({ preventScroll: true }))
+    } else {
+      event.preventDefault()
+      actions.openListbox()
+    }
+  })
+
+  let labelledby = useComputed(() =&gt {
+    if (!data.labelId) return undefined
+    return [data.labelId, id].join(' ')
+  }, [data.labelId, id])
+
+  let slot = useMemo&ltButtonRenderPropArg&gt(
+    () =&gt ({
+      open: data.listboxState === ListboxStates.Open,
+      disabled: data.disabled,
+      value: data.value,
+    }),
+    [data]
+  )
+
+  let ourProps = {
+    ref: buttonRef,
+    id,
+    type: useResolveButtonType(props, data.buttonRef),
+    'aria-haspopup': 'listbox',
+    'aria-controls': data.optionsRef.current?.id,
+    'aria-expanded': data.disabled ? undefined : data.listboxState === ListboxStates.Open,
+    'aria-labelledby': labelledby,
+    disabled: data.disabled,
+    onKeyDown: handleKeyDown,
+    onKeyUp: handleKeyUp,
+    onClick: handleClick,
+  }
+
+  return render({
+    ourProps,
+    theirProps,
+    slot,
+    defaultTag: DEFAULT_BUTTON_TAG,
+    name: 'Listbox.Button',
+  })
+}
+
+<span class="comment">// ---</span>
+
+let DEFAULT_LABEL_TAG = 'label' as const
+interface LabelRenderPropArg {
+  open: boolean
+  disabled: boolean
+}
+
+export type ListboxLabelProps&ltTTag extends ElementType&gt = Props&ltTTag, LabelRenderPropArg&gt
+
+function LabelFn&ltTTag extends ElementType = typeof DEFAULT_LABEL_TAG&gt(
+  props: ListboxLabelProps&ltTTag&gt,
+  ref: Ref&ltHTMLElement&gt
+) {
+  let internalId = useId()
+  let { id = `headlessui-listbox-label-${internalId}`, ...theirProps } = props
+  let data = useData('Listbox.Label')
+  let actions = useActions('Listbox.Label')
+  let labelRef = useSyncRefs(data.labelRef, ref)
+
+  useIsoMorphicEffect(() =&gt actions.registerLabel(id), [id])
+
+  let handleClick = useEvent(() =&gt data.buttonRef.current?.focus({ preventScroll: true }))
+
+  let slot = useMemo&ltLabelRenderPropArg&gt(
+    () =&gt ({ open: data.listboxState === ListboxStates.Open, disabled: data.disabled }),
+    [data]
+  )
+  let ourProps = { ref: labelRef, id, onClick: handleClick }
+
+  return render({
+    ourProps,
+    theirProps,
+    slot,
+    defaultTag: DEFAULT_LABEL_TAG,
+    name: 'Listbox.Label',
+  })
+}
+
+<span class="comment">// ---</span>
+
+let DEFAULT_OPTIONS_TAG = 'ul' as const
+interface OptionsRenderPropArg {
+  open: boolean
+}
+type OptionsPropsWeControl =
+  | 'aria-activedescendant'
+  | 'aria-labelledby'
+  | 'aria-multiselectable'
+  | 'aria-orientation'
+  | 'role'
+  | 'tabIndex'
+
+let OptionsRenderFeatures = Features.RenderStrategy | Features.Static
+
+export type ListboxOptionsProps&ltTTag extends ElementType&gt = Props&lt
+  TTag,
+  OptionsRenderPropArg,
+  OptionsPropsWeControl
+&gt &
+  PropsForFeatures&lttypeof OptionsRenderFeatures&gt
+
+function OptionsFn&ltTTag extends ElementType = typeof DEFAULT_OPTIONS_TAG&gt(
+  props: ListboxOptionsProps&ltTTag&gt,
+  ref: Ref&ltHTMLElement&gt
+) {
+  let internalId = useId()
+  let { id = `headlessui-listbox-options-${internalId}`, ...theirProps } = props
+  let data = useData('Listbox.Options')
+  let actions = useActions('Listbox.Options')
+  let optionsRef = useSyncRefs(data.optionsRef, ref)
+
+  let d = useDisposables()
+  let searchDisposables = useDisposables()
+
+  let usesOpenClosedState = useOpenClosed()
+  let visible = (() =&gt {
+    if (usesOpenClosedState !== null) {
+      return (usesOpenClosedState & State.Open) === State.Open
+    }
+
+    return data.listboxState === ListboxStates.Open
+  })()
+
+  useEffect(() =&gt {
+    let container = data.optionsRef.current
+    if (!container) return
+    if (data.listboxState !== ListboxStates.Open) return
+    if (container === getOwnerDocument(container)?.activeElement) return
+
+    container.focus({ preventScroll: true })
+  }, [data.listboxState, data.optionsRef])
+
+  let handleKeyDown = useEvent((event: ReactKeyboardEvent&ltHTMLUListElement&gt) =&gt {
+    searchDisposables.dispose()
+
+    switch (event.key) {
+<span class="comment">      // Ref: https://www.w3.org/WAI/ARIA/apg/patterns/menu/#keyboard-interaction-12</span>
+
+<span class="comment">      // @ts-expect-error Fallthrough is expected here</span>
+      case Keys.Space:
+        if (data.searchQuery !== '') {
+          event.preventDefault()
+          event.stopPropagation()
+          return actions.search(event.key)
+        }
+<span class="comment">      // When in type ahead mode, fallthrough</span>
+      case Keys.Enter:
+        event.preventDefault()
+        event.stopPropagation()
+
+        if (data.activeOptionIndex !== null) {
+          let { dataRef } = data.options[data.activeOptionIndex]
+          actions.onChange(dataRef.current.value)
+        }
+        if (data.mode === ValueMode.Single) {
+          actions.closeListbox()
+          disposables().nextFrame(() =&gt data.buttonRef.current?.focus({ preventScroll: true }))
+        }
+        break
+
+      case match(data.orientation, { vertical: Keys.ArrowDown, horizontal: Keys.ArrowRight }):
+        event.preventDefault()
+        event.stopPropagation()
+        return actions.goToOption(Focus.Next)
+
+      case match(data.orientation, { vertical: Keys.ArrowUp, horizontal: Keys.ArrowLeft }):
+        event.preventDefault()
+        event.stopPropagation()
+        return actions.goToOption(Focus.Previous)
+
+      case Keys.Home:
+      case Keys.PageUp:
+        event.preventDefault()
+        event.stopPropagation()
+        return actions.goToOption(Focus.First)
+
+      case Keys.End:
+      case Keys.PageDown:
+        event.preventDefault()
+        event.stopPropagation()
+        return actions.goToOption(Focus.Last)
+
+      case Keys.Escape:
+        event.preventDefault()
+        event.stopPropagation()
+        actions.closeListbox()
+        return d.nextFrame(() =&gt data.buttonRef.current?.focus({ preventScroll: true }))
+
+      case Keys.Tab:
+        event.preventDefault()
+        event.stopPropagation()
+        break
+
+      default:
+        if (event.key.length === 1) {
+          actions.search(event.key)
+          searchDisposables.setTimeout(() =&gt actions.clearSearch(), 350)
+        }
+        break
+    }
+  })
+
+  let labelledby = useComputed(
+    () =&gt data.labelRef.current?.id ?? data.buttonRef.current?.id,
+    [data.labelRef.current, data.buttonRef.current]
+  )
+
+  let slot = useMemo&ltOptionsRenderPropArg&gt(
+    () =&gt ({ open: data.listboxState === ListboxStates.Open }),
+    [data]
+  )
+
+  let ourProps = {
+    'aria-activedescendant':
+      data.activeOptionIndex === null ? undefined : data.options[data.activeOptionIndex]?.id,
+    'aria-multiselectable': data.mode === ValueMode.Multi ? true : undefined,
+    'aria-labelledby': labelledby,
+    'aria-orientation': data.orientation,
+    id,
+    onKeyDown: handleKeyDown,
+    role: 'listbox',
+    tabIndex: 0,
+    ref: optionsRef,
+  }
+
+  return render({
+    ourProps,
+    theirProps,
+    slot,
+    defaultTag: DEFAULT_OPTIONS_TAG,
+    features: OptionsRenderFeatures,
+    visible,
+    name: 'Listbox.Options',
+  })
+}
+
+<span class="comment">// ---</span>
+
+let DEFAULT_OPTION_TAG = 'li' as const
+interface OptionRenderPropArg {
+  active: boolean
+  selected: boolean
+  disabled: boolean
+}
+type OptionPropsWeControl = 'aria-disabled' | 'aria-selected' | 'role' | 'tabIndex'
+
+export type ListboxOptionProps&ltTTag extends ElementType, TType&gt = Props&lt
+  TTag,
+  OptionRenderPropArg,
+  OptionPropsWeControl,
+  {
+    disabled?: boolean
+    value: TType
+  }
+&gt
+
+function OptionFn&lt
+  TTag extends ElementType = typeof DEFAULT_OPTION_TAG,
+<span class="comment">  // TODO: One day we will be able to infer this type from the generic in Listbox itself.</span>
+<span class="comment">  // But today is not that day..</span>
+  TType = Parameters&lttypeof ListboxRoot&gt[0]['value']
+&gt(props: ListboxOptionProps&ltTTag, TType&gt, ref: Ref&ltHTMLElement&gt) {
+  let internalId = useId()
+  let {
+    id = `headlessui-listbox-option-${internalId}`,
+    disabled = false,
+    value,
+    ...theirProps
+  } = props
+  let data = useData('Listbox.Option')
+  let actions = useActions('Listbox.Option')
+
+  let active =
+    data.activeOptionIndex !== null ? data.options[data.activeOptionIndex].id === id : false
+
+  let selected = data.isSelected(value)
+  let internalOptionRef = useRef&ltHTMLLIElement | null&gt(null)
+  let bag = useLatestValue&ltListboxOptionDataRef&ltTType&gt['current']&gt({
+    disabled,
+    value,
+    domRef: internalOptionRef,
+    get textValue() {
+      return internalOptionRef.current?.textContent?.toLowerCase()
+    },
+  })
+  let optionRef = useSyncRefs(ref, internalOptionRef)
+
+  useIsoMorphicEffect(() =&gt {
+    if (data.listboxState !== ListboxStates.Open) return
+    if (!active) return
+    if (data.activationTrigger === ActivationTrigger.Pointer) return
+    let d = disposables()
+    d.requestAnimationFrame(() =&gt {
+      internalOptionRef.current?.scrollIntoView?.({ block: 'nearest' })
+    })
+    return d.dispose
+  }, [
+    internalOptionRef,
+    active,
+    data.listboxState,
+    data.activationTrigger,
+    /* We also want to trigger this when the position of the active item changes so that we can re-trigger the scrollIntoView */ data.activeOptionIndex,
+  ])
+
+  useIsoMorphicEffect(() =&gt actions.registerOption(id, bag), [bag, id])
+
+  let handleClick = useEvent((event: { preventDefault: Function }) =&gt {
+    if (disabled) return event.preventDefault()
+    actions.onChange(value)
+    if (data.mode === ValueMode.Single) {
+      actions.closeListbox()
+      disposables().nextFrame(() =&gt data.buttonRef.current?.focus({ preventScroll: true }))
+    }
+  })
+
+  let handleFocus = useEvent(() =&gt {
+    if (disabled) return actions.goToOption(Focus.Nothing)
+    actions.goToOption(Focus.Specific, id)
+  })
+
+  let pointer = useTrackedPointer()
+
+  let handleEnter = useEvent((evt) =&gt pointer.update(evt))
+
+  let handleMove = useEvent((evt) =&gt {
+    if (!pointer.wasMoved(evt)) return
+    if (disabled) return
+    if (active) return
+    actions.goToOption(Focus.Specific, id, ActivationTrigger.Pointer)
+  })
+
+  let handleLeave = useEvent((evt) =&gt {
+    if (!pointer.wasMoved(evt)) return
+    if (disabled) return
+    if (!active) return
+    actions.goToOption(Focus.Nothing)
+  })
+
+  let slot = useMemo&ltOptionRenderPropArg&gt(
+    () =&gt ({ active, selected, disabled }),
+    [active, selected, disabled]
+  )
+  let ourProps = {
+    id,
+    ref: optionRef,
+    role: 'option',
+    tabIndex: disabled === true ? undefined : -1,
+    'aria-disabled': disabled === true ? true : undefined,
+<span class="comment">    // According to the WAI-ARIA best practices, we should use aria-checked for</span>
+<span class="comment">    // multi-select,but Voice-Over disagrees. So we use aria-checked instead for</span>
+<span class="comment">    // both single and multi-select.</span>
+    'aria-selected': selected,
+    disabled: undefined, // Never forward the `disabled` prop
+    onClick: handleClick,
+    onFocus: handleFocus,
+    onPointerEnter: handleEnter,
+    onMouseEnter: handleEnter,
+    onPointerMove: handleMove,
+    onMouseMove: handleMove,
+    onPointerLeave: handleLeave,
+    onMouseLeave: handleLeave,
+  }
+
+  return render({
+    ourProps,
+    theirProps,
+    slot,
+    defaultTag: DEFAULT_OPTION_TAG,
+    name: 'Listbox.Option',
+  })
+}
+
+<span class="comment">// ---</span>
+
+interface ComponentListbox extends HasDisplayName {
+  &lt
+    TTag extends ElementType = typeof DEFAULT_LISTBOX_TAG,
+    TType = string,
+    TActualType = TType extends (infer U)[] ? U : TType
+  &gt(
+    props: ListboxProps&ltTTag, TType, TActualType&gt & RefProp&lttypeof ListboxFn&gt
+  ): JSX.Element
+}
+
+interface ComponentListboxButton extends HasDisplayName {
+  &ltTTag extends ElementType = typeof DEFAULT_BUTTON_TAG&gt(
+    props: ListboxButtonProps&ltTTag&gt & RefProp&lttypeof ButtonFn&gt
+  ): JSX.Element
+}
+
+interface ComponentListboxLabel extends HasDisplayName {
+  &ltTTag extends ElementType = typeof DEFAULT_LABEL_TAG&gt(
+    props: ListboxLabelProps&ltTTag&gt & RefProp&lttypeof LabelFn&gt
+  ): JSX.Element
+}
+
+interface ComponentListboxOptions extends HasDisplayName {
+  &ltTTag extends ElementType = typeof DEFAULT_OPTIONS_TAG&gt(
+    props: ListboxOptionsProps&ltTTag&gt & RefProp&lttypeof OptionsFn&gt
+  ): JSX.Element
+}
+
+interface ComponentListboxOption extends HasDisplayName {
+  &lt
+    TTag extends ElementType = typeof DEFAULT_OPTION_TAG,
+    TType = Parameters&lttypeof ListboxRoot&gt[0]['value']
+  &gt(
+    props: ListboxOptionProps&ltTTag, TType&gt & RefProp&lttypeof OptionFn&gt
+  ): JSX.Element
+}
+
+let ListboxRoot = forwardRefWithAs(ListboxFn) as unknown as ComponentListbox
+let Button = forwardRefWithAs(ButtonFn) as unknown as ComponentListboxButton
+let Label = forwardRefWithAs(LabelFn) as unknown as ComponentListboxLabel
+let Options = forwardRefWithAs(OptionsFn) as unknown as ComponentListboxOptions
+let Option = forwardRefWithAs(OptionFn) as unknown as ComponentListboxOption
+
+export let Listbox = Object.assign(ListboxRoot, { Button, Label, Options, Option })
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/hooks/use-disposables.ts"><pre class="pre-2"><h3>use-disposables.ts</h3>import { useState, useEffect } from 'react'
+
+import { disposables } from '../utils/disposables'
+
+export function useDisposables() {
+<span class="comment">  // Using useState instead of useRef so that we can use the initializer function.</span>
+  let [d] = useState(disposables)
+  useEffect(() =&gt () =&gt d.dispose(), [d])
+  return d
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/hooks/use-id.ts"><pre class="pre-3"><h3>use-id.ts</h3>import React from 'react'
+import { useIsoMorphicEffect } from './use-iso-morphic-effect'
+import { useServerHandoffComplete } from './use-server-handoff-complete'
+import { env } from '../utils/env'
+
+<span class="comment">// We used a "simple" approach first which worked for SSR and rehydration on the client. However we</span>
+<span class="comment">// didn't take care of the Suspense case. To fix this we used the approach the @reach-ui/auto-id</span>
+<span class="comment">// uses.</span>
+<span class="comment">//</span>
+<span class="comment">// Credits: https://github.com/reach/reach-ui/blob/develop/packages/auto-id/src/index.tsx</span>
+
+export let useId =
+<span class="comment">  // Prefer React's `useId` if it's available.</span>
+<span class="comment">  // @ts-expect-error - `useId` doesn't exist in React &lt 18.</span>
+  React.useId ??
+  function useId() {
+    let ready = useServerHandoffComplete()
+    let [id, setId] = React.useState(ready ? () =&gt env.nextId() : null)
+
+    useIsoMorphicEffect(() =&gt {
+      if (id === null) setId(env.nextId())
+    }, [id])
+
+    return id != null ? '' + id : undefined
+  }
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/hooks/use-iso-morphic-effect.ts"><pre class="pre-4"><h3>use-iso-morphic-effect.ts</h3>import { useLayoutEffect, useEffect, EffectCallback, DependencyList } from 'react'
+import { env } from '../utils/env'
+
+export let useIsoMorphicEffect = (effect: EffectCallback, deps?: DependencyList | undefined) =&gt {
+  if (env.isServer) {
+    useEffect(effect, deps)
+  } else {
+    useLayoutEffect(effect, deps)
+  }
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/hooks/use-computed.ts"><pre class="pre-5"><h3>use-computed.ts</h3>import { useState } from 'react'
+import { useIsoMorphicEffect } from './use-iso-morphic-effect'
+import { useLatestValue } from './use-latest-value'
+
+export function useComputed&ltT&gt(cb: () =&gt T, dependencies: React.DependencyList) {
+  let [value, setValue] = useState(cb)
+  let cbRef = useLatestValue(cb)
+  useIsoMorphicEffect(() =&gt setValue(cbRef.current), [cbRef, setValue, ...dependencies])
+  return value
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/hooks/use-sync-refs.ts"><pre class="pre-6"><h3>use-sync-refs.ts</h3>import { useRef, useEffect } from 'react'
+import { useEvent } from './use-event'
+
+let Optional = Symbol()
+
+export function optionalRef&ltT&gt(cb: (ref: T) =&gt void, isOptional = true) {
+  return Object.assign(cb, { [Optional]: isOptional })
+}
+
+export function useSyncRefs&ltTType&gt(
+  ...refs: (React.MutableRefObject&ltTType | null&gt | ((instance: TType) =&gt void) | null)[]
+) {
+  let cache = useRef(refs)
+
+  useEffect(() =&gt {
+    cache.current = refs
+  }, [refs])
+
+  let syncRefs = useEvent((value: TType) =&gt {
+    for (let ref of cache.current) {
+      if (ref == null) continue
+      if (typeof ref === 'function') ref(value)
+      else ref.current = value
+    }
+  })
+
+  return refs.every(
+    (ref) =&gt
+      ref == null ||
+<span class="comment">      // @ts-expect-error</span>
+      ref?.[Optional]
+  )
+    ? undefined
+    : syncRefs
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/hooks/use-resolve-button-type.ts"><pre class="pre-7"><h3>use-resolve-button-type.ts</h3>import { useState, MutableRefObject } from 'react'
+
+import { useIsoMorphicEffect } from './use-iso-morphic-effect'
+
+function resolveType&ltTTag&gt(props: { type?: string; as?: TTag }) {
+  if (props.type) return props.type
+
+  let tag = props.as ?? 'button'
+  if (typeof tag === 'string' && tag.toLowerCase() === 'button') return 'button'
+
+  return undefined
+}
+
+export function useResolveButtonType&ltTTag&gt(
+  props: { type?: string; as?: TTag },
+  ref: MutableRefObject&ltHTMLElement | null&gt
+) {
+  let [type, setType] = useState(() =&gt resolveType(props))
+
+  useIsoMorphicEffect(() =&gt {
+    setType(resolveType(props))
+  }, [props.type, props.as])
+
+  useIsoMorphicEffect(() =&gt {
+    if (type) return
+    if (!ref.current) return
+
+    if (ref.current instanceof HTMLButtonElement && !ref.current.hasAttribute('type')) {
+      setType('button')
+    }
+  }, [type, ref])
+
+  return type
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/hooks/use-outside-click.ts"><pre class="pre-8"><h3>use-outside-click.ts</h3>import { MutableRefObject, useEffect, useRef } from 'react'
+import { FocusableMode, isFocusableElement } from '../utils/focus-management'
+import { useDocumentEvent } from './use-document-event'
+
+type Container = MutableRefObject&ltHTMLElement | null&gt | HTMLElement | null
+type ContainerCollection = Container[] | Set&ltContainer&gt
+type ContainerInput = Container | ContainerCollection
+
+export function useOutsideClick(
+  containers: ContainerInput | (() =&gt ContainerInput),
+  cb: (event: MouseEvent | PointerEvent | FocusEvent, target: HTMLElement) =&gt void,
+  enabled: boolean = true
+) {
+<span class="comment">  // TODO: remove this once the React bug has been fixed: https://github.com/facebook/react/issues/24657</span>
+  let enabledRef = useRef(false)
+  useEffect(
+    process.env.NODE_ENV === 'test'
+      ? () =&gt {
+          enabledRef.current = enabled
+        }
+      : () =&gt {
+          requestAnimationFrame(() =&gt {
+            enabledRef.current = enabled
+          })
+        },
+    [enabled]
+  )
+
+  function handleOutsideClick&ltE extends MouseEvent | PointerEvent | FocusEvent&gt(
+    event: E,
+    resolveTarget: (event: E) =&gt HTMLElement | null
+  ) {
+    if (!enabledRef.current) return
+
+<span class="comment">    // Check whether the event got prevented already. This can happen if you use the</span>
+<span class="comment">    // useOutsideClick hook in both a Dialog and a Menu and the inner Menu "cancels" the default</span>
+<span class="comment">    // behaviour so that only the Menu closes and not the Dialog (yet)</span>
+    if (event.defaultPrevented) return
+
+    let _containers = (function resolve(containers): ContainerCollection {
+      if (typeof containers === 'function') {
+        return resolve(containers())
+      }
+
+      if (Array.isArray(containers)) {
+        return containers
+      }
+
+      if (containers instanceof Set) {
+        return containers
+      }
+
+      return [containers]
+    })(containers)
+
+    let target = resolveTarget(event)
+
+    if (target === null) {
+      return
+    }
+
+<span class="comment">    // Ignore if the target doesn't exist in the DOM anymore</span>
+    if (!target.getRootNode().contains(target)) return
+
+<span class="comment">    // Ignore if the target exists in one of the containers</span>
+    for (let container of _containers) {
+      if (container === null) continue
+      let domNode = container instanceof HTMLElement ? container : container.current
+      if (domNode?.contains(target)) {
+        return
+      }
+
+<span class="comment">      // If the click crossed a shadow boundary, we need to check if the container</span>
+<span class="comment">      // is inside the tree by using `composedPath` to "pierce" the shadow boundary</span>
+      if (event.composed && event.composedPath().includes(domNode as EventTarget)) {
+        return
+      }
+    }
+
+<span class="comment">    // This allows us to check whether the event was defaultPrevented when you are nesting this</span>
+<span class="comment">    // inside a `&ltDialog /&gt` for example.</span>
+    if (
+<span class="comment">      // This check alllows us to know whether or not we clicked on a "focusable" element like a</span>
+<span class="comment">      // button or an input. This is a backwards compatibility check so that you can open a &ltMenu</span>
+<span class="comment">      // /&gt and click on another &ltMenu /&gt which should close Menu A and open Menu B. We might</span>
+<span class="comment">      // revisit that so that you will require 2 clicks instead.</span>
+      !isFocusableElement(target, FocusableMode.Loose) &&
+<span class="comment">      // This could be improved, but the `Combobox.Button` adds tabIndex={-1} to make it</span>
+<span class="comment">      // unfocusable via the keyboard so that tabbing to the next item from the input doesn't</span>
+<span class="comment">      // first go to the button.</span>
+      target.tabIndex !== -1
+    ) {
+      event.preventDefault()
+    }
+
+    return cb(event, target)
+  }
+
+  let initialClickTarget = useRef&ltEventTarget | null&gt(null)
+
+  useDocumentEvent(
+    'mousedown',
+    (event) =&gt {
+      if (enabledRef.current) {
+        initialClickTarget.current = event.composedPath?.()?.[0] || event.target
+      }
+    },
+    true
+  )
+
+  useDocumentEvent(
+    'click',
+    (event) =&gt {
+      if (!initialClickTarget.current) {
+        return
+      }
+
+      handleOutsideClick(event, () =&gt {
+        return initialClickTarget.current as HTMLElement
+      })
+
+      initialClickTarget.current = null
+    },
+
+<span class="comment">    // We will use the `capture` phase so that layers in between with `event.stopPropagation()`</span>
+<span class="comment">    // don't "cancel" this outside click check. E.g.: A `Menu` inside a `DialogPanel` if the `Menu`</span>
+<span class="comment">    // is open, and you click outside of it in the `DialogPanel` the `Menu` should close. However,</span>
+<span class="comment">    // the `DialogPanel` has a `onClick(e) { e.stopPropagation() }` which would cancel this.</span>
+    true
+  )
+
+<span class="comment">  // When content inside an iframe is clicked `window` will receive a blur event</span>
+<span class="comment">  // This can happen when an iframe _inside_ a window is clicked</span>
+<span class="comment">  // Or, if headless UI is *in* the iframe, when a content in a window containing that iframe is clicked</span>
+
+<span class="comment">  // In this case we care only about the first case so we check to see if the active element is the iframe</span>
+<span class="comment">  // If so this was because of a click, focus, or other interaction with the child iframe</span>
+<span class="comment">  // and we can consider it an "outside click"</span>
+  useDocumentEvent(
+    'blur',
+    (event) =&gt
+      handleOutsideClick(event, () =&gt
+        window.document.activeElement instanceof HTMLIFrameElement
+          ? window.document.activeElement
+          : null
+      ),
+    true
+  )
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/hooks/use-event.ts"><pre class="pre-9"><h3>use-event.ts</h3>import React from 'react'
+import { useLatestValue } from './use-latest-value'
+
+export let useEvent =
+<span class="comment">  // TODO: Add React.useEvent ?? once the useEvent hook is available</span>
+  function useEvent&lt
+    F extends (...args: any[]) =&gt any,
+    P extends any[] = Parameters&ltF&gt,
+    R = ReturnType&ltF&gt
+  &gt(cb: (...args: P) =&gt R) {
+    let cache = useLatestValue(cb)
+    return React.useCallback((...args: P) =&gt cache.current(...args), [cache])
+  }
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/hooks/use-controllable.ts"><pre class="pre-10"><h3>use-controllable.ts</h3>import { useRef, useState } from 'react'
+import { useEvent } from './use-event'
+
+export function useControllable&ltT&gt(
+  controlledValue: T | undefined,
+  onChange?: (value: T) =&gt void,
+  defaultValue?: T
+) {
+  let [internalValue, setInternalValue] = useState(defaultValue)
+
+  let isControlled = controlledValue !== undefined
+  let wasControlled = useRef(isControlled)
+  let didWarnOnUncontrolledToControlled = useRef(false)
+  let didWarnOnControlledToUncontrolled = useRef(false)
+
+  if (isControlled && !wasControlled.current && !didWarnOnUncontrolledToControlled.current) {
+    didWarnOnUncontrolledToControlled.current = true
+    wasControlled.current = isControlled
+    console.error(
+      'A component is changing from uncontrolled to controlled. This may be caused by the value changing from undefined to a defined value, which should not happen.'
+    )
+  } else if (!isControlled && wasControlled.current && !didWarnOnControlledToUncontrolled.current) {
+    didWarnOnControlledToUncontrolled.current = true
+    wasControlled.current = isControlled
+    console.error(
+      'A component is changing from controlled to uncontrolled. This may be caused by the value changing from a defined value to undefined, which should not happen.'
+    )
+  }
+
+  return [
+    (isControlled ? controlledValue : internalValue)!,
+    useEvent((value) =&gt {
+      if (isControlled) {
+        return onChange?.(value)
+      } else {
+        setInternalValue(value)
+        return onChange?.(value)
+      }
+    }),
+  ] as const
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/hooks/use-latest-value.ts"><pre class="pre-11"><h3>use-latest-value.ts</h3>import { useRef } from 'react'
+import { useIsoMorphicEffect } from './use-iso-morphic-effect'
+
+export function useLatestValue&ltT&gt(value: T) {
+  let cache = useRef(value)
+
+  useIsoMorphicEffect(() =&gt {
+    cache.current = value
+  }, [value])
+
+  return cache
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/hooks/use-tracked-pointer.ts"><pre class="pre-12"><h3>use-tracked-pointer.ts</h3>import { useRef } from 'react'
+
+type PointerPosition = [x: number, y: number]
+
+function eventToPosition(evt: PointerEvent): PointerPosition {
+  return [evt.screenX, evt.screenY]
+}
+
+export function useTrackedPointer() {
+  let lastPos = useRef&ltPointerPosition&gt([-1, -1])
+
+  return {
+    wasMoved(evt: PointerEvent) {
+<span class="comment">      // FIXME: Remove this once we use browser testing in all the relevant places.</span>
+<span class="comment">      // NOTE: This is replaced with a compile-time define during the build process</span>
+<span class="comment">      // This hack exists to work around a few failing tests caused by our inability to "move" the virtual pointer in JSDOM pointer events.</span>
+      if (process.env.TEST_BYPASS_TRACKED_POINTER) {
+        return true
+      }
+
+      let newPos = eventToPosition(evt)
+
+      if (lastPos.current[0] === newPos[0] && lastPos.current[1] === newPos[1]) {
+        return false
+      }
+
+      lastPos.current = newPos
+      return true
+    },
+
+    update(evt: PointerEvent) {
+      lastPos.current = eventToPosition(evt)
+    },
+  }
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/utils/render.ts"><pre class="pre-13"><h3>render.ts</h3>import {
+  Fragment,
+  cloneElement,
+  createElement,
+  forwardRef,
+  isValidElement,
+
+<span class="comment">  // Types</span>
+  ElementType,
+  ReactElement,
+  Ref,
+} from 'react'
+import { Props, XOR, __, Expand } from '../types'
+import { classNames } from './class-names'
+import { match } from './match'
+
+export enum Features {
+  /** No features at all */
+  None = 0,
+
+  /**
+   * When used, this will allow us to use one of the render strategies.
+   *
+   * **The render strategies are:**
+   *    - **Unmount**   _(Will unmount the component.)_
+   *    - **Hidden**    _(Will hide the component using the [hidden] attribute.)_
+   */
+  RenderStrategy = 1,
+
+  /**
+   * When used, this will allow the user of our component to be in control. This can be used when
+   * you want to transition based on some state.
+   */
+  Static = 2,
+}
+
+export enum RenderStrategy {
+  Unmount,
+  Hidden,
+}
+
+type PropsForFeature&ltTPassedInFeatures extends Features, TForFeature extends Features, TProps&gt = {
+  [P in TPassedInFeatures]: P extends TForFeature ? TProps : __
+}[TPassedInFeatures]
+
+export type PropsForFeatures&ltT extends Features&gt = XOR&lt
+  PropsForFeature&ltT, Features.Static, { static?: boolean }&gt,
+  PropsForFeature&ltT, Features.RenderStrategy, { unmount?: boolean }&gt
+&gt
+
+export function render&ltTFeature extends Features, TTag extends ElementType, TSlot&gt({
+  ourProps,
+  theirProps,
+  slot,
+  defaultTag,
+  features,
+  visible = true,
+  name,
+}: {
+  ourProps: Expand&ltProps&ltTTag, TSlot, any&gt & PropsForFeatures&ltTFeature&gt&gt & {
+    ref?: Ref&ltHTMLElement | ElementType&gt
+  }
+  theirProps: Expand&ltProps&ltTTag, TSlot, any&gt&gt
+  slot?: TSlot
+  defaultTag: ElementType
+  features?: TFeature
+  visible?: boolean
+  name: string
+}) {
+  let props = mergeProps(theirProps, ourProps)
+
+<span class="comment">  // Visible always render</span>
+  if (visible) return _render(props, slot, defaultTag, name)
+
+  let featureFlags = features ?? Features.None
+
+  if (featureFlags & Features.Static) {
+    let { static: isStatic = false, ...rest } = props as PropsForFeatures&ltFeatures.Static&gt
+
+<span class="comment">    // When the `static` prop is passed as `true`, then the user is in control, thus we don't care about anything else</span>
+    if (isStatic) return _render(rest, slot, defaultTag, name)
+  }
+
+  if (featureFlags & Features.RenderStrategy) {
+    let { unmount = true, ...rest } = props as PropsForFeatures&ltFeatures.RenderStrategy&gt
+    let strategy = unmount ? RenderStrategy.Unmount : RenderStrategy.Hidden
+
+    return match(strategy, {
+      [RenderStrategy.Unmount]() {
+        return null
+      },
+      [RenderStrategy.Hidden]() {
+        return _render(
+          { ...rest, ...{ hidden: true, style: { display: 'none' } } },
+          slot,
+          defaultTag,
+          name
+        )
+      },
+    })
+  }
+
+<span class="comment">  // No features enabled, just render</span>
+  return _render(props, slot, defaultTag, name)
+}
+
+function _render&ltTTag extends ElementType, TSlot&gt(
+  props: Props&ltTTag, TSlot&gt & { ref?: unknown },
+  slot: TSlot = {} as TSlot,
+  tag: ElementType,
+  name: string
+) {
+  let {
+    as: Component = tag,
+    children,
+    refName = 'ref',
+    ...rest
+  } = omit(props, ['unmount', 'static'])
+
+<span class="comment">  // This allows us to use `&ltHeadlessUIComponent as={MyComponent} refName="innerRef" /&gt`</span>
+  let refRelatedProps = props.ref !== undefined ? { [refName]: props.ref } : {}
+
+  let resolvedChildren = (typeof children === 'function' ? children(slot) : children) as
+    | ReactElement
+    | ReactElement[]
+
+<span class="comment">  // Allow for className to be a function with the slot as the contents</span>
+  if ('className' in rest && rest.className && typeof rest.className === 'function') {
+    rest.className = rest.className(slot)
+  }
+
+  let dataAttributes: Record&ltstring, string&gt = {}
+  if (slot) {
+    let exposeState = false
+    let states = []
+    for (let [k, v] of Object.entries(slot)) {
+      if (typeof v === 'boolean') {
+        exposeState = true
+      }
+      if (v === true) {
+        states.push(k)
+      }
+    }
+
+    if (exposeState) dataAttributes[`data-headlessui-state`] = states.join(' ')
+  }
+
+  if (Component === Fragment) {
+    if (Object.keys(compact(rest)).length &gt 0) {
+      if (
+        !isValidElement(resolvedChildren) ||
+        (Array.isArray(resolvedChildren) && resolvedChildren.length &gt 1)
+      ) {
+        throw new Error(
+          [
+            'Passing props on "Fragment"!',
+            '',
+            `The current component &lt${name} /&gt is rendering a "Fragment".`,
+            `However we need to passthrough the following props:`,
+            Object.keys(rest)
+              .map((line) =&gt `  - ${line}`)
+              .join('\n'),
+            '',
+            'You can apply a few solutions:',
+            [
+              'Add an `as="..."` prop, to ensure that we render an actual element instead of a "Fragment".',
+              'Render a single element as the child so that we can forward the props onto that element.',
+            ]
+              .map((line) =&gt `  - ${line}`)
+              .join('\n'),
+          ].join('\n')
+        )
+      }
+
+<span class="comment">      // Merge class name prop in SSR</span>
+<span class="comment">      // @ts-ignore We know that the props may not have className. It'll be undefined then which is fine.</span>
+      let newClassName = classNames(resolvedChildren.props?.className, rest.className)
+      let classNameProps = newClassName ? { className: newClassName } : {}
+
+      return cloneElement(
+        resolvedChildren,
+        Object.assign(
+          {},
+<span class="comment">          // Filter out undefined values so that they don't override the existing values</span>
+          mergeProps(resolvedChildren.props as any, compact(omit(rest, ['ref']))),
+          dataAttributes,
+          refRelatedProps,
+          mergeRefs((resolvedChildren as any).ref, refRelatedProps.ref),
+          classNameProps
+        )
+      )
+    }
+  }
+
+  return createElement(
+    Component,
+    Object.assign(
+      {},
+      omit(rest, ['ref']),
+      Component !== Fragment && refRelatedProps,
+      Component !== Fragment && dataAttributes
+    ),
+    resolvedChildren
+  )
+}
+
+function mergeRefs(...refs: any[]) {
+  return {
+    ref: refs.every((ref) =&gt ref == null)
+      ? undefined
+      : (value: any) =&gt {
+          for (let ref of refs) {
+            if (ref == null) continue
+            if (typeof ref === 'function') ref(value)
+            else ref.current = value
+          }
+        },
+  }
+}
+
+function mergeProps(...listOfProps: Props&ltany, any&gt[]) {
+  if (listOfProps.length === 0) return {}
+  if (listOfProps.length === 1) return listOfProps[0]
+
+  let target: Props&ltany, any&gt = {}
+
+  let eventHandlers: Record&lt
+    string,
+    ((event: { defaultPrevented: boolean }, ...args: any[]) =&gt void | undefined)[]
+  &gt = {}
+
+  for (let props of listOfProps) {
+    for (let prop in props) {
+<span class="comment">      // Collect event handlers</span>
+      if (prop.startsWith('on') && typeof props[prop] === 'function') {
+        eventHandlers[prop] ??= []
+        eventHandlers[prop].push(props[prop])
+      } else {
+<span class="comment">        // Override incoming prop</span>
+        target[prop] = props[prop]
+      }
+    }
+  }
+
+<span class="comment">  // Do not attach any event handlers when there is a `disabled` or `aria-disabled` prop set.</span>
+  if (target.disabled || target['aria-disabled']) {
+    return Object.assign(
+      target,
+<span class="comment">      // Set all event listeners that we collected to `undefined`. This is</span>
+<span class="comment">      // important because of the `cloneElement` from above, which merges the</span>
+<span class="comment">      // existing and new props, they don't just override therefore we have to</span>
+<span class="comment">      // explicitly nullify them.</span>
+      Object.fromEntries(Object.keys(eventHandlers).map((eventName) =&gt [eventName, undefined]))
+    )
+  }
+
+<span class="comment">  // Merge event handlers</span>
+  for (let eventName in eventHandlers) {
+    Object.assign(target, {
+      [eventName](event: { nativeEvent?: Event; defaultPrevented: boolean }, ...args: any[]) {
+        let handlers = eventHandlers[eventName]
+
+        for (let handler of handlers) {
+          if (
+            (event instanceof Event || event?.nativeEvent instanceof Event) &&
+            event.defaultPrevented
+          ) {
+            return
+          }
+
+          handler(event, ...args)
+        }
+      },
+    })
+  }
+
+  return target
+}
+
+export type HasDisplayName = {
+  displayName: string
+}
+
+export type RefProp&ltT extends Function&gt = T extends (props: any, ref: Ref&ltinfer RefType&gt) =&gt any
+  ? { ref?: Ref&ltRefType&gt }
+  : never
+
+/**
+ * This is a hack, but basically we want to keep the full 'API' of the component, but we do want to
+ * wrap it in a forwardRef so that we _can_ passthrough the ref
+ */
+export function forwardRefWithAs&ltT extends { name: string; displayName?: string }&gt(
+  component: T
+): T & { displayName: string } {
+  return Object.assign(forwardRef(component as unknown as any) as any, {
+    displayName: component.displayName ?? component.name,
+  })
+}
+
+export function compact&ltT extends Record&ltany, any&gt&gt(object: T) {
+  let clone = Object.assign({}, object)
+  for (let key in clone) {
+    if (clone[key] === undefined) delete clone[key]
+  }
+  return clone
+}
+
+function omit&ltT extends Record&ltany, any&gt&gt(object: T, keysToOmit: string[] = []) {
+  let clone = Object.assign({}, object) as T
+  for (let key of keysToOmit) {
+    if (key in clone) delete clone[key]
+  }
+  return clone
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/utils/match.ts"><pre class="pre-14"><h3>match.ts</h3>export function match&ltTValue extends string | number = string, TReturnValue = unknown&gt(
+  value: TValue,
+  lookup: Record&ltTValue, TReturnValue | ((...args: any[]) =&gt TReturnValue)&gt,
+  ...args: any[]
+): TReturnValue {
+  if (value in lookup) {
+    let returnValue = lookup[value]
+    return typeof returnValue === 'function' ? returnValue(...args) : returnValue
+  }
+
+  let error = new Error(
+    `Tried to handle "${value}" but there is no handler defined. Only defined handlers are: ${Object.keys(
+      lookup
+    )
+      .map((key) =&gt `"${key}"`)
+      .join(', ')}.`
+  )
+  if (Error.captureStackTrace) Error.captureStackTrace(error, match)
+  throw error
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/utils/disposables.ts"><pre class="pre-15"><h3>disposables.ts</h3>import { microTask } from './micro-task'
+
+export type Disposables = ReturnType&lttypeof disposables&gt
+
+export function disposables() {
+  let _disposables: Function[] = []
+
+  let api = {
+    addEventListener&ltTEventName extends keyof WindowEventMap&gt(
+      element: HTMLElement | Window | Document,
+      name: TEventName,
+      listener: (event: WindowEventMap[TEventName]) =&gt any,
+      options?: boolean | AddEventListenerOptions
+    ) {
+      element.addEventListener(name, listener as any, options)
+      return api.add(() =&gt element.removeEventListener(name, listener as any, options))
+    },
+
+    requestAnimationFrame(...args: Parameters&lttypeof requestAnimationFrame&gt) {
+      let raf = requestAnimationFrame(...args)
+      return api.add(() =&gt cancelAnimationFrame(raf))
+    },
+
+    nextFrame(...args: Parameters&lttypeof requestAnimationFrame&gt) {
+      return api.requestAnimationFrame(() =&gt {
+        return api.requestAnimationFrame(...args)
+      })
+    },
+
+    setTimeout(...args: Parameters&lttypeof setTimeout&gt) {
+      let timer = setTimeout(...args)
+      return api.add(() =&gt clearTimeout(timer))
+    },
+
+    microTask(...args: Parameters&lttypeof microTask&gt) {
+      let task = { current: true }
+      microTask(() =&gt {
+        if (task.current) {
+          args[0]()
+        }
+      })
+      return api.add(() =&gt {
+        task.current = false
+      })
+    },
+
+    style(node: HTMLElement, property: string, value: string) {
+      let previous = node.style.getPropertyValue(property)
+      Object.assign(node.style, { [property]: value })
+      return this.add(() =&gt {
+        Object.assign(node.style, { [property]: previous })
+      })
+    },
+
+    group(cb: (d: typeof this) =&gt void) {
+      let d = disposables()
+      cb(d)
+      return this.add(() =&gt d.dispose())
+    },
+
+    add(cb: () =&gt void) {
+      _disposables.push(cb)
+      return () =&gt {
+        let idx = _disposables.indexOf(cb)
+        if (idx &gt= 0) {
+          for (let dispose of _disposables.splice(idx, 1)) {
+            dispose()
+          }
+        }
+      }
+    },
+
+    dispose() {
+      for (let dispose of _disposables.splice(0)) {
+        dispose()
+      }
+    },
+  }
+
+  return api
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/utils/calculate-active-index.ts"><pre class="pre-16"><h3>calculate-active-index.ts</h3>function assertNever(x: never): never {
+  throw new Error('Unexpected object: ' + x)
+}
+
+export enum Focus {
+  /** Focus the first non-disabled item. */
+  First,
+
+  /** Focus the previous non-disabled item. */
+  Previous,
+
+  /** Focus the next non-disabled item. */
+  Next,
+
+  /** Focus the last non-disabled item. */
+  Last,
+
+  /** Focus a specific item based on the `id` of the item. */
+  Specific,
+
+  /** Focus no items at all. */
+  Nothing,
+}
+
+export function calculateActiveIndex&ltTItem&gt(
+  action: { focus: Focus.Specific; id: string } | { focus: Exclude&ltFocus, Focus.Specific&gt },
+  resolvers: {
+    resolveItems(): TItem[]
+    resolveActiveIndex(): number | null
+    resolveId(item: TItem): string
+    resolveDisabled(item: TItem): boolean
+  }
+) {
+  let items = resolvers.resolveItems()
+  if (items.length &lt= 0) return null
+
+  let currentActiveIndex = resolvers.resolveActiveIndex()
+  let activeIndex = currentActiveIndex ?? -1
+
+  let nextActiveIndex = (() =&gt {
+    switch (action.focus) {
+      case Focus.First:
+        return items.findIndex((item) =&gt !resolvers.resolveDisabled(item))
+
+      case Focus.Previous: {
+        let idx = items
+          .slice()
+          .reverse()
+          .findIndex((item, idx, all) =&gt {
+            if (activeIndex !== -1 && all.length - idx - 1 &gt= activeIndex) return false
+            return !resolvers.resolveDisabled(item)
+          })
+        if (idx === -1) return idx
+        return items.length - 1 - idx
+      }
+
+      case Focus.Next:
+        return items.findIndex((item, idx) =&gt {
+          if (idx &lt= activeIndex) return false
+          return !resolvers.resolveDisabled(item)
+        })
+
+      case Focus.Last: {
+        let idx = items
+          .slice()
+          .reverse()
+          .findIndex((item) =&gt !resolvers.resolveDisabled(item))
+        if (idx === -1) return idx
+        return items.length - 1 - idx
+      }
+
+      case Focus.Specific:
+        return items.findIndex((item) =&gt resolvers.resolveId(item) === action.id)
+
+      case Focus.Nothing:
+        return null
+
+      default:
+        assertNever(action)
+    }
+  })()
+
+  return nextActiveIndex === -1 ? currentActiveIndex : nextActiveIndex
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/utils/bugs.ts"><pre class="pre-17"><h3>bugs.ts</h3><span class="comment">// See: https://github.com/facebook/react/issues/7711</span>
+<span class="comment">// See: https://github.com/facebook/react/pull/20612</span>
+<span class="comment">// See: https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#concept-fe-disabled (2.)</span>
+export function isDisabledReactIssue7711(element: Element): boolean {
+  let parent = element.parentElement
+  let legend = null
+
+  while (parent && !(parent instanceof HTMLFieldSetElement)) {
+    if (parent instanceof HTMLLegendElement) legend = parent
+    parent = parent.parentElement
+  }
+
+  let isParentDisabled = parent?.getAttribute('disabled') === '' ?? false
+  if (isParentDisabled && isFirstLegend(legend)) return false
+
+  return isParentDisabled
+}
+
+function isFirstLegend(element: HTMLLegendElement | null): boolean {
+  if (!element) return false
+
+  let previous = element.previousElementSibling
+
+  while (previous !== null) {
+    if (previous instanceof HTMLLegendElement) return false
+    previous = previous.previousElementSibling
+  }
+
+  return true
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/utils/focus-management.ts"><pre class="pre-18"><h3>focus-management.ts</h3>import { disposables } from './disposables'
+import { match } from './match'
+import { getOwnerDocument } from './owner'
+
+<span class="comment">// Credit:</span>
+<span class="comment">//  - https://stackoverflow.com/a/30753870</span>
+let focusableSelector = [
+  '[contentEditable=true]',
+  '[tabindex]',
+  'a[href]',
+  'area[href]',
+  'button:not([disabled])',
+  'iframe',
+  'input:not([disabled])',
+  'select:not([disabled])',
+  'textarea:not([disabled])',
+]
+  .map(
+    process.env.NODE_ENV === 'test'
+      ? // TODO: Remove this once JSDOM fixes the issue where an element that is
+<span class="comment">        // "hidden" can be the document.activeElement, because this is not possible</span>
+<span class="comment">        // in real browsers.</span>
+        (selector) =&gt `${selector}:not([tabindex='-1']):not([style*='display: none'])`
+      : (selector) =&gt `${selector}:not([tabindex='-1'])`
+  )
+  .join(',')
+
+export enum Focus {
+  /** Focus the first non-disabled element */
+  First = 1 &lt&lt 0,
+
+  /** Focus the previous non-disabled element */
+  Previous = 1 &lt&lt 1,
+
+  /** Focus the next non-disabled element */
+  Next = 1 &lt&lt 2,
+
+  /** Focus the last non-disabled element */
+  Last = 1 &lt&lt 3,
+
+  /** Wrap tab around */
+  WrapAround = 1 &lt&lt 4,
+
+  /** Prevent scrolling the focusable elements into view */
+  NoScroll = 1 &lt&lt 5,
+}
+
+export enum FocusResult {
+  /** Something went wrong while trying to focus. */
+  Error,
+
+  /** When `Focus.WrapAround` is enabled, going from position `N` to `N+1` where `N` is the last index in the array, then we overflow. */
+  Overflow,
+
+  /** Focus was successful. */
+  Success,
+
+  /** When `Focus.WrapAround` is enabled, going from position `N` to `N-1` where `N` is the first index in the array, then we underflow. */
+  Underflow,
+}
+
+enum Direction {
+  Previous = -1,
+  Next = 1,
+}
+
+export function getFocusableElements(container: HTMLElement | null = document.body) {
+  if (container == null) return []
+  return Array.from(container.querySelectorAll&ltHTMLElement&gt(focusableSelector)).sort(
+<span class="comment">    // We want to move `tabIndex={0}` to the end of the list, this is what the browser does as well.</span>
+    (a, z) =&gt
+      Math.sign((a.tabIndex || Number.MAX_SAFE_INTEGER) - (z.tabIndex || Number.MAX_SAFE_INTEGER))
+  )
+}
+
+export enum FocusableMode {
+  /** The element itself must be focusable. */
+  Strict,
+
+  /** The element should be inside of a focusable element. */
+  Loose,
+}
+
+export function isFocusableElement(
+  element: HTMLElement,
+  mode: FocusableMode = FocusableMode.Strict
+) {
+  if (element === getOwnerDocument(element)?.body) return false
+
+  return match(mode, {
+    [FocusableMode.Strict]() {
+      return element.matches(focusableSelector)
+    },
+    [FocusableMode.Loose]() {
+      let next: HTMLElement | null = element
+
+      while (next !== null) {
+        if (next.matches(focusableSelector)) return true
+        next = next.parentElement
+      }
+
+      return false
+    },
+  })
+}
+
+export function restoreFocusIfNecessary(element: HTMLElement | null) {
+  let ownerDocument = getOwnerDocument(element)
+  disposables().nextFrame(() =&gt {
+    if (
+      ownerDocument &&
+      !isFocusableElement(ownerDocument.activeElement as HTMLElement, FocusableMode.Strict)
+    ) {
+      focusElement(element)
+    }
+  })
+}
+
+<span class="comment">// The method of triggering an action, this is used to determine how we should</span>
+<span class="comment">// restore focus after an action has been performed.</span>
+enum ActivationMethod {
+  /* If the action was triggered by a keyboard event. */
+  Keyboard = 0,
+
+  /* If the action was triggered by a mouse / pointer / ... event.*/
+  Mouse = 1,
+}
+
+<span class="comment">// We want to be able to set and remove the `data-headlessui-mouse` attribute on the `html` element.</span>
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+  document.addEventListener(
+    'keydown',
+    (event) =&gt {
+      if (event.metaKey || event.altKey || event.ctrlKey) {
+        return
+      }
+
+      document.documentElement.dataset.headlessuiFocusVisible = ''
+    },
+    true
+  )
+
+  document.addEventListener(
+    'click',
+    (event) =&gt {
+<span class="comment">      // Event originated from an actual mouse click</span>
+      if (event.detail === ActivationMethod.Mouse) {
+        delete document.documentElement.dataset.headlessuiFocusVisible
+      }
+
+<span class="comment">      // Event originated from a keyboard event that triggered the `click` event</span>
+      else if (event.detail === ActivationMethod.Keyboard) {
+        document.documentElement.dataset.headlessuiFocusVisible = ''
+      }
+    },
+    true
+  )
+}
+
+export function focusElement(element: HTMLElement | null) {
+  element?.focus({ preventScroll: true })
+}
+
+<span class="comment">// https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/select</span>
+let selectableSelector = ['textarea', 'input'].join(',')
+function isSelectableElement(
+  element: Element | null
+): element is HTMLInputElement | HTMLTextAreaElement {
+  return element?.matches?.(selectableSelector) ?? false
+}
+
+export function sortByDomNode&ltT&gt(
+  nodes: T[],
+  resolveKey: (item: T) =&gt HTMLElement | null = (i) =&gt i as unknown as HTMLElement | null
+): T[] {
+  return nodes.slice().sort((aItem, zItem) =&gt {
+    let a = resolveKey(aItem)
+    let z = resolveKey(zItem)
+
+    if (a === null || z === null) return 0
+
+    let position = a.compareDocumentPosition(z)
+
+    if (position & Node.DOCUMENT_POSITION_FOLLOWING) return -1
+    if (position & Node.DOCUMENT_POSITION_PRECEDING) return 1
+    return 0
+  })
+}
+
+export function focusFrom(current: HTMLElement | null, focus: Focus) {
+  return focusIn(getFocusableElements(), focus, { relativeTo: current })
+}
+
+export function focusIn(
+  container: HTMLElement | HTMLElement[],
+  focus: Focus,
+  {
+    sorted = true,
+    relativeTo = null,
+    skipElements = [],
+  }: Partial&lt{ sorted: boolean; relativeTo: HTMLElement | null; skipElements: HTMLElement[] }&gt = {}
+) {
+  let ownerDocument = Array.isArray(container)
+    ? container.length &gt 0
+      ? container[0].ownerDocument
+      : document
+    : container.ownerDocument
+
+  let elements = Array.isArray(container)
+    ? sorted
+      ? sortByDomNode(container)
+      : container
+    : getFocusableElements(container)
+
+  if (skipElements.length &gt 0 && elements.length &gt 1) {
+    elements = elements.filter((x) =&gt !skipElements.includes(x))
+  }
+
+  relativeTo = relativeTo ?? (ownerDocument.activeElement as HTMLElement)
+
+  let direction = (() =&gt {
+    if (focus & (Focus.First | Focus.Next)) return Direction.Next
+    if (focus & (Focus.Previous | Focus.Last)) return Direction.Previous
+
+    throw new Error('Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last')
+  })()
+
+  let startIndex = (() =&gt {
+    if (focus & Focus.First) return 0
+    if (focus & Focus.Previous) return Math.max(0, elements.indexOf(relativeTo)) - 1
+    if (focus & Focus.Next) return Math.max(0, elements.indexOf(relativeTo)) + 1
+    if (focus & Focus.Last) return elements.length - 1
+
+    throw new Error('Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last')
+  })()
+
+  let focusOptions = focus & Focus.NoScroll ? { preventScroll: true } : {}
+
+  let offset = 0
+  let total = elements.length
+  let next = undefined
+  do {
+<span class="comment">    // Guard against infinite loops</span>
+    if (offset &gt= total || offset + total &lt= 0) return FocusResult.Error
+
+    let nextIdx = startIndex + offset
+
+    if (focus & Focus.WrapAround) {
+      nextIdx = (nextIdx + total) % total
+    } else {
+      if (nextIdx &lt 0) return FocusResult.Underflow
+      if (nextIdx &gt= total) return FocusResult.Overflow
+    }
+
+    next = elements[nextIdx]
+
+<span class="comment">    // Try the focus the next element, might not work if it is "hidden" to the user.</span>
+    next?.focus(focusOptions)
+
+<span class="comment">    // Try the next one in line</span>
+    offset += direction
+  } while (next !== ownerDocument.activeElement)
+
+<span class="comment">  // By default if you &ltTab&gt to a text input or a textarea, the browser will</span>
+<span class="comment">  // select all the text once the focus is inside these DOM Nodes. However,</span>
+<span class="comment">  // since we are manually moving focus this behaviour is not happening. This</span>
+<span class="comment">  // code will make sure that the text gets selected as-if you did it manually.</span>
+<span class="comment">  // Note: We only do this when going forward / backward. Not for the</span>
+<span class="comment">  // Focus.First or Focus.Last actions. This is similar to the `autoFocus`</span>
+<span class="comment">  // behaviour on an input where the input will get focus but won't be</span>
+<span class="comment">  // selected.</span>
+  if (focus & (Focus.Next | Focus.Previous) && isSelectableElement(next)) {
+    next.select()
+  }
+
+  return FocusResult.Success
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/utils/form.ts"><pre class="pre-19"><h3>form.ts</h3>type Entries = [string, string][]
+
+export function objectToFormEntries(
+  source: Record&ltstring, any&gt = {},
+  parentKey: string | null = null,
+  entries: Entries = []
+): Entries {
+  for (let [key, value] of Object.entries(source)) {
+    append(entries, composeKey(parentKey, key), value)
+  }
+
+  return entries
+}
+
+function composeKey(parent: string | null, key: string): string {
+  return parent ? parent + '[' + key + ']' : key
+}
+
+function append(entries: Entries, key: string, value: any): void {
+  if (Array.isArray(value)) {
+    for (let [subkey, subvalue] of value.entries()) {
+      append(entries, composeKey(key, subkey.toString()), subvalue)
+    }
+  } else if (value instanceof Date) {
+    entries.push([key, value.toISOString()])
+  } else if (typeof value === 'boolean') {
+    entries.push([key, value ? '1' : '0'])
+  } else if (typeof value === 'string') {
+    entries.push([key, value])
+  } else if (typeof value === 'number') {
+    entries.push([key, `${value}`])
+  } else if (value === null || value === undefined) {
+    entries.push([key, ''])
+  } else {
+    objectToFormEntries(value, key, entries)
+  }
+}
+
+export function attemptSubmit(element: HTMLElement) {
+  let form = (element as any)?.form ?? element.closest('form')
+  if (!form) return
+
+  for (let element of form.elements) {
+    if (
+      (element.tagName === 'INPUT' && element.type === 'submit') ||
+      (element.tagName === 'BUTTON' && element.type === 'submit') ||
+      (element.nodeName === 'INPUT' && element.type === 'image')
+    ) {
+<span class="comment">      // If you press `enter` in a normal input[type='text'] field, then the form will submit by</span>
+<span class="comment">      // searching for the a submit element and "click" it. We could also use the</span>
+<span class="comment">      // `form.requestSubmit()` function, but this has a downside where an `event.preventDefault()`</span>
+<span class="comment">      // inside a `click` listener on the submit button won't stop the form from submitting.</span>
+      element.click()
+      return
+    }
+  }
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/utils/owner.ts"><pre class="pre-20"><h3>owner.ts</h3>import { MutableRefObject } from 'react'
+import { env } from './env'
+
+export function getOwnerDocument&ltT extends Element | MutableRefObject&ltElement | null&gt&gt(
+  element: T | null | undefined
+) {
+  if (env.isServer) return null
+  if (element instanceof Node) return element.ownerDocument
+  if (element?.hasOwnProperty('current')) {
+    if (element.current instanceof Node) return element.current.ownerDocument
+  }
+
+  return document
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/components/keyboard.ts"><pre class="pre-21"><h3>keyboard.ts</h3><span class="comment">// TODO: This must already exist somewhere, right? 🤔</span>
+<span class="comment">// Ref: https://www.w3.org/TR/uievents-key/#named-key-attribute-values</span>
+export enum Keys {
+  Space = ' ',
+  Enter = 'Enter',
+  Escape = 'Escape',
+  Backspace = 'Backspace',
+  Delete = 'Delete',
+
+  ArrowLeft = 'ArrowLeft',
+  ArrowUp = 'ArrowUp',
+  ArrowRight = 'ArrowRight',
+  ArrowDown = 'ArrowDown',
+
+  Home = 'Home',
+  End = 'End',
+
+  PageUp = 'PageUp',
+  PageDown = 'PageDown',
+
+  Tab = 'Tab',
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/types.ts"><pre class="pre-22"><h3>types.ts</h3>import { ReactNode, ReactElement, JSXElementConstructor } from 'react'
+
+export type ReactTag = keyof JSX.IntrinsicElements | JSXElementConstructor&ltany&gt
+
+<span class="comment">// A unique placeholder we can use as a default. This is nice because we can use this instead of</span>
+<span class="comment">// defaulting to null / never / ... and possibly collide with actual data.</span>
+<span class="comment">// Ideally we use a unique symbol here.</span>
+let __ = '1D45E01E-AF44-47C4-988A-19A94EBAF55C' as const
+export type __ = typeof __
+
+export type Expand&ltT&gt = T extends infer O ? { [K in keyof O]: O[K] } : never
+
+export type PropsOf&ltTTag extends ReactTag&gt = TTag extends React.ElementType
+  ? Omit&ltReact.ComponentProps&ltTTag&gt, 'ref'&gt
+  : never
+
+type PropsWeControl = 'as' | 'children' | 'refName' | 'className'
+
+<span class="comment">// Resolve the props of the component, but ensure to omit certain props that we control</span>
+type CleanProps&ltTTag extends ReactTag, TOmitableProps extends PropertyKey = never&gt = Omit&lt
+  PropsOf&ltTTag&gt,
+  TOmitableProps | PropsWeControl
+&gt
+
+<span class="comment">// Add certain props that we control</span>
+type OurProps&ltTTag extends ReactTag, TSlot&gt = {
+  as?: TTag
+  children?: ReactNode | ((bag: TSlot) =&gt ReactElement)
+  refName?: string
+}
+
+type HasProperty&ltT extends object, K extends PropertyKey&gt = T extends never
+  ? never
+  : K extends keyof T
+  ? true
+  : never
+
+<span class="comment">// Conditionally override the `className`, to also allow for a function</span>
+<span class="comment">// if and only if the PropsOf&ltTTag&gt already defines `className`.</span>
+<span class="comment">// This will allow us to have a TS error on as={Fragment}</span>
+type ClassNameOverride&ltTTag extends ReactTag, TSlot = {}&gt =
+<span class="comment">  // Order is important here, because `never extends true` is `true`...</span>
+  true extends HasProperty&ltPropsOf&ltTTag&gt, 'className'&gt
+    ? { className?: PropsOf&ltTTag&gt['className'] | ((bag: TSlot) =&gt string) }
+    : {}
+
+<span class="comment">// Provide clean TypeScript props, which exposes some of our custom API's.</span>
+export type Props&lt
+  TTag extends ReactTag,
+  TSlot = {},
+  TOmitableProps extends PropertyKey = never,
+  Overrides = {}
+&gt = CleanProps&ltTTag, TOmitableProps | keyof Overrides&gt &
+  OurProps&ltTTag, TSlot&gt &
+  ClassNameOverride&ltTTag, TSlot&gt &
+  Overrides
+
+type Without&ltT, U&gt = { [P in Exclude&ltkeyof T, keyof U&gt]?: never }
+export type XOR&ltT, U&gt = T | U extends __
+  ? never
+  : T extends __
+  ? U
+  : U extends __
+  ? T
+  : T | U extends object
+  ? (Without&ltT, U&gt & U) | (Without&ltU, T&gt & T)
+  : T | U
+
+export type ByComparator&ltT&gt =
+  | (T extends null ? string : keyof T & string)
+  | ((a: T, b: T) =&gt boolean)
+export type EnsureArray&ltT&gt = T extends any[] ? T : Expand&ltT&gt[]
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/internal/open-closed.tsx"><pre class="pre-23"><h3>open-closed.tsx</h3>import React, {
+  createContext,
+  useContext,
+
+<span class="comment">  // Types</span>
+  ReactNode,
+  ReactElement,
+} from 'react'
+
+let Context = createContext&ltState | null&gt(null)
+Context.displayName = 'OpenClosedContext'
+
+export enum State {
+  Open = 1 &lt&lt 0,
+  Closed = 1 &lt&lt 1,
+  Closing = 1 &lt&lt 2,
+  Opening = 1 &lt&lt 3,
+}
+
+export function useOpenClosed() {
+  return useContext(Context)
+}
+
+interface Props {
+  value: State
+  children: ReactNode
+}
+
+export function OpenClosedProvider({ value, children }: Props): ReactElement {
+  return &ltContext.Provider value={value}&gt{children}&lt/Context.Provider&gt
+}
+</pre></a>
+<a href="https://github.com/tailwindlabs/headlessui/tree/%40headlessui/vue%40v1.7.12/packages/%40headlessui-react/src/internal/hidden.tsx"><pre class="pre-24"><h3>hidden.tsx</h3>import { ElementType, Ref } from 'react'
+import { Props } from '../types'
+import { forwardRefWithAs, render, HasDisplayName, RefProp } from '../utils/render'
+
+let DEFAULT_VISUALLY_HIDDEN_TAG = 'div' as const
+
+export enum Features {
+<span class="comment">  // The default, no features.</span>
+  None = 1 &lt&lt 0,
+
+<span class="comment">  // Whether the element should be focusable or not.</span>
+  Focusable = 1 &lt&lt 1,
+
+<span class="comment">  // Whether it should be completely hidden, even to assistive technologies.</span>
+  Hidden = 1 &lt&lt 2,
+}
+
+export type HiddenProps&ltTTag extends ElementType&gt = Props&ltTTag, {}, never, { features?: Features }&gt
+
+function VisuallyHidden&ltTTag extends ElementType = typeof DEFAULT_VISUALLY_HIDDEN_TAG&gt(
+  props: HiddenProps&ltTTag&gt,
+  ref: Ref&ltHTMLElement&gt
+) {
+  let { features = Features.None, ...theirProps } = props
+  let ourProps = {
+    ref,
+    'aria-hidden': (features & Features.Focusable) === Features.Focusable ? true : undefined,
+    style: {
+      position: 'fixed',
+      top: 1,
+      left: 1,
+      width: 1,
+      height: 0,
+      padding: 0,
+      margin: -1,
+      overflow: 'hidden',
+      clip: 'rect(0, 0, 0, 0)',
+      whiteSpace: 'nowrap',
+      borderWidth: '0',
+      ...((features & Features.Hidden) === Features.Hidden &&
+        !((features & Features.Focusable) === Features.Focusable) && { display: 'none' }),
+    },
+  }
+
+  return render({
+    ourProps,
+    theirProps,
+    slot: {},
+    defaultTag: DEFAULT_VISUALLY_HIDDEN_TAG,
+    name: 'Hidden',
+  })
+}
+
+interface ComponentHidden extends HasDisplayName {
+  &ltTTag extends ElementType = typeof DEFAULT_VISUALLY_HIDDEN_TAG&gt(
+    props: HiddenProps&ltTTag&gt & RefProp&lttypeof VisuallyHidden&gt
+  ): JSX.Element
+}
+
+export let Hidden = forwardRefWithAs(VisuallyHidden) as unknown as ComponentHidden
+</pre></a>
+</div>

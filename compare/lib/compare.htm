@@ -1,0 +1,34 @@
+
+<div @name="page-header">
+
+  <section class="flexy">
+    <div class="tabs main-tabs">
+      <a :for="el in items" :href="{ el.url }" :class="{ selected: el.url == url }">
+        { el.label }</a>
+    </div>
+    <a href="faq" class="continue action">Compare FAQ</a>
+  </section>
+
+  <section class="flexy">
+    <header>
+      <h1><span id="vs">{ vs[0] }</span> <b> vs </b> Nue</h1>
+      <p>{ desc }</p>
+    </header>
+    <zoom/>
+  </section>
+
+  <article class="flexy content-flex">
+    <view-src class="tool tool-vs" :suffix="suffix" :names="vs" :other="true"/>
+    <view-src class="tool tool-nue" :suffix="suffix" :names="['Nue']"/>
+  </article>
+
+  <script>
+    constructor(args) {
+      this.items = args.pages.filter(el => el.label)
+      this.items.sort((a, b) => a.sort - b.sort)
+    }
+  </script>
+
+</div>
+
+

@@ -1,0 +1,21 @@
+
+<!--
+  https://www.apple.com/shop/product/MPNY3AM/A/airpods-3rd-generation-with-lightning-charging-case
+-->
+<section @name="image-gallery" class="image-gallery">
+
+  <div>
+    <a class="seek prev" @click="index--" :if="index"></a>
+    <img src="{ basedir }/{ images[index] }">
+    <a class="seek next" @click="index++" :if="index + 1 < images.length"></a>
+  </div>
+
+  <nav>
+    <a :for="src, i in images" class="{ current: i == index }" @click="index = i"></a>
+  </nav>
+
+  <script>
+    index = 0
+  </script>
+
+</section>

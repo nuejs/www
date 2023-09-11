@@ -1,0 +1,22 @@
+
+
+table
+  border-collapse collapse
+  width 100%
+  mb 3em
+
+  img
+    width 1.2em
+    margin-bottom 0 !important
+
+
+th, td
+  text-align left
+  padding 1.8em 1.2em
+  font 90%
+
+tbody tr:nth-child(odd)
+  bg $gray-50
+
+td:first-child
+  font-weight bold

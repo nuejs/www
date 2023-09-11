@@ -1,0 +1,62 @@
+
+.site-header
+  justify-content space-between
+  max-width 1300px
+  align-items center
+  py 2.4em
+  mb 4em
+  flex
+
+  .logo
+    max-height 2em
+    mr 2em
+
+
+// generic nav
+nav > a
+  font 1.8 $gray-600 600
+
+  &:hover
+    color $gray-900
+
+.octocat img
+  width 1.8em
+
+
+.mastnav
+  gap 1.5vw
+  display flex
+  a
+    p 0 .8em
+    font nowrap
+
+
+.subnav
+  justify-content right
+  align-items center
+  width 120px
+  display flex
+
+// burger / mobile nav
+.burger
+  line-height .7
+  none
+
+  img
+    max-width 1.4em
+
+  &:hover
+    transform scale(1.1)
+
+    nav
+      display flex
+
+    .nav-open
+      display none
+
+@medium-
+  .mastnav, .octocat
+    none
+
+  .burger
+    inline-block

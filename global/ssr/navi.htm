@@ -1,0 +1,28 @@
+
+<nav @name="navi">
+  <h4 :if="title">{ title } </h4>
+
+  <a :for="el in els" class="{ el.class } { selected: el.url == url }"
+    :role="el.role" :data-name="el.mount"
+    :href="el.hash ? '#' + el.hash : el.url">
+    <icon :if="el.icon" :key="el.icon"/>
+    <img :if="el.img"  loading="lazy" :src="el.img">
+    <span :if="el.label">{ el.label }</span>
+  </a>
+
+  <script>
+    constructor(opts) {
+      this.els = opts.items.map(item => transform(item, opts))
+    }
+  </script>
+</nav>
+
+<script>
+  function transform(item, opts) {
+    const { base='', suffix='.html' } = opts
+    return typeof item == 'object' ? item : {
+      url: base + '/' + item.toLowerCase().replaceAll(' ', '-') + suffix,
+      label: item,
+    }
+  }
+</script>

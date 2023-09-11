@@ -1,0 +1,47 @@
+
+<div @name="media-object" :class="type">
+  <img :src="img" loading="lazy">
+  <aside>
+    <h3>{ title }</h3>
+    <p>{ desc }</h3>
+    <slot/>
+  </aside>
+</div>
+
+
+<div @name="client-grid" :class="class">
+  <media-object :for="item in items" :bind="item"/>
+</div>
+
+
+<article @name="animation-demo" class="animation-demo">
+
+  <button @click="addUser" :disabled="users[5]">
+    + Add someone
+  </button>
+
+  <section class="user-list">
+    <media-object :for="user in users" :bind="user"/>
+  </section>
+
+  <script>
+
+    // fill list with the first three available items
+    constructor({ items }) {
+      this.users = items.slice(0, 3)
+    }
+
+    // insert a new user from the available items
+    addUser() {
+      const { items, users } = this
+      const user = items[users.length]
+      if (user) users.push(user)
+    }
+
+
+    oninsert(node, item, loop) {
+      setTimeout(() => node.classList.add('fade-in'), 1)
+    }
+  </script>
+
+</article>

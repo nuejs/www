@@ -1,0 +1,48 @@
+
+
+h2
+  font 2rem -.02em
+  mt 3em
+
+  @medium-
+    font 1.7em
+
+h3
+  font 1.3em
+
+p, li
+  font 1.3rem
+
+ul, ol
+  m .7em 0 2em
+
+li
+  mb .5em
+
+em
+  font-style normal
+  font 550
+
+strong
+  font-style italic
+  font-weight 400
+
+
+blockquote
+  border-left 8px solid black
+  font 500 1.35
+  p
+    font 160%
+  > *
+    pl 1em
+  strong
+    font-style normal
+    font-weight bold
+
+
+
+
+
+
+
+

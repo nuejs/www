@@ -1,0 +1,22 @@
+
+<div @name="media-object" :class="class">
+  <img :src="img" loading="lazy">
+  <aside>
+    <h3>{ title }</h3>
+    <p>{ desc }</h3>
+    <slot/>
+  </aside>
+</div>
+
+
+<div @name="media-grid" :class="class">
+  <media-object :for="el in els" :bind="el"/>
+
+  <script>
+    constructor(data) {
+      const key = data[':items'] || 'items'
+      this.els = data[key]
+    }
+  </script>
+</div>
+

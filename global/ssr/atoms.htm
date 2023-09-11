@@ -1,0 +1,19 @@
+
+<!-- image -->
+<img @name="image" src="{ _|| src }" :width="width" :class="class">
+
+<!-- link -->
+<a @name="link" :href="to" :class="class">{{_ || label }}</a>
+
+<!-- image-link -->
+<a @name="image-link" :href="href" :class="class">
+  <img src="{ src }" width="{ width }">
+  <figcaption :if="caption">{ caption }</figcaption>
+</a>
+
+<!-- icon -->
+<img @name="icon" class="icon {key}-icon" loading="lazy" src="/global/icons/{_ || key }.svg">
+
+<!-- info box -->
+<div @name="info" class="info-box {class}" :html="_ || body"/>
+

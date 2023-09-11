@@ -1,0 +1,35 @@
+
+:root
+  --sans-serif -apple-system, BlinkMacSystemFont, san-francisco, Avenir Next, Segoe UI, Roboto, Noto Sans, Helvetica Neue
+  --serif Iowan Old Style, Apple Garamond, Baskerville, Times New Roman
+  --monospaced Menlo
+
+
+// every-layout.dev/rudiments/units/
+body
+  -webkit-font-smoothing antialiased
+  font-family $sans-serif
+  font 1.5 $gray-700
+
+  // ↓ Upscale by 20% at 1024px
+  // @large font-size 120%
+
+h1, h2, h3, h4
+  overflow-wrap break-word
+  line-height 1.15
+  mb .3em
+
+
+h1
+  font 4.5em 1.05 900 -.1rem
+
+  @medium-
+    font 3.5em
+
+
+blockquote, figure, p, ul, ol
+  mb 1.2em
+
+:last-child
+  mb 0
+

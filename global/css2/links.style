@@ -1,0 +1,61 @@
+
+// focus
+a:focus-visible
+  outline none
+  bg $gray-50
+
+// content links
+p a, li > a
+  text-decoration underline
+  text-underline-offset 0.15em
+  text-decoration-color $main
+  font-weight 500
+  color black
+
+  &:hover
+    text-decoration-thickness 2px
+    text-decoration-color $main-400
+
+.continue
+  font $main 600
+
+  &:after
+    content ""
+    bg /global/icons/arrow-right.svg no-repeat
+    relative .3em
+    bg-size contain
+    size 2em 1.2em
+    bg-pos 50%
+    inline-block
+
+
+a.selected, .docs-area .mastnav a:nth-child(4)
+  text-decoration-line underline
+  text-decoration-thickness 3px
+  text-decoration-color $main
+  text-underline-offset 4px
+  color $gray-900
+
+
+
+/*
+.action
+  font 98% $main 600
+
+a.subtle
+  text-decoration underline
+  text-underline-offset .2em
+  text-decoration-thickness 1px
+  text-decoration-color $gray-300
+
+  &:hover
+    text-decoration-color $gray-600
+
+.is-routing main
+  visibility hidden
+*/
+
+
+
+
+

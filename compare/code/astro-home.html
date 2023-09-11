@@ -1,0 +1,554 @@
+<p class="line-count">552 lines</p><div class="columns">
+<a href="https://github.com/withastro/astro.build/tree/two-one-fix-again/src/pages/index.astro"><pre class="pre-1"><h3>index.astro</h3>---<span class="script-block">
+import { Sprite } from "astro-icon"
+import MainLayout from "~/layouts/MainLayout.astro"
+import ContentFirstFast from "./_components/ContentFirstFast.astro"
+import FullSpeedAhead from "./_components/FullSpeedAhead.astro"
+import GetStarted from "./_components/GetStarted.astro"
+import Hero from "./_components/Hero.astro"
+import Sponsors from "./_components/Sponsors.astro"
+import ToolingAndEcosystem from "./_components/ToolingAndEcosystem.astro"
+
+export const prerender = true
+</span>---
+
+&ltSprite.Provider&gt
+	&ltMainLayout image={{ src: "/og/astro.jpg", alt: "Astro - Build the web you want." }}&gt
+		&ltHero /&gt
+		&ltdiv class="relative"&gt
+			&ltdiv class="noise-underlay bg-grid absolute inset-0"&gt&lt/div&gt
+			&ltdiv class="relative grid gap-32 sm:gap-40 md:gap-48 lg:gap-64"&gt
+				&ltFullSpeedAhead /&gt
+				&ltContentFirstFast /&gt
+				&ltToolingAndEcosystem /&gt
+				&ltGetStarted /&gt
+			&lt/div&gt
+		&lt/div&gt
+		&ltSponsors /&gt
+	&lt/MainLayout&gt
+&lt/Sprite.Provider&gt
+</pre></a>
+<a href="https://github.com/withastro/astro.build/tree/two-one-fix-again/src/pages/_components/ContentFirstFast.astro"><pre class="pre-2"><h3>ContentFirstFast.astro</h3>---<span class="script-block">
+import ExampleShowcase from "./ExampleShowcase.jsx"
+import LandingSectionText from "./LandingSectionText.astro"
+</span>---
+
+&ltsection class="landing-section relative overflow-hidden"&gt
+	&ltLandingSectionText&gt
+		&ltFragment slot="title"&gtContent-focused&lt/Fragment&gt
+		&ltFragment slot="body"&gt
+			Astro was designed for your content. Fetch data from any &lta
+				class="link-underline"
+				href="https://docs.astro.build/en/guides/cms/"&gtCMS&lt/a
+			&gt or work locally with
+			&lta class="link-underline" href="https://docs.astro.build/en/guides/content-collections/"
+				&gttype-safe Markdown and MDX&lt/a
+			&gt APIs.
+		&lt/Fragment&gt
+	&lt/LandingSectionText&gt
+	&ltdiv class="relative mt-12 flex w-full items-center"&gt
+		&ltdiv class="w-full overflow-hidden"&gt
+			&ltExampleShowcase client:idle /&gt
+		&lt/div&gt
+	&lt/div&gt
+&lt/section&gt
+
+&ltstyle&gt<span class="style-block">
+	section::before {
+		position: absolute;
+		content: "";
+		z-index: -1;
+		top: 15%;
+		height: 60%;
+		width: 150%;
+		left: -25%;
+		background: url(/assets/noise.webp) repeat, linear-gradient(247.23deg, #4af2c8 0%, #2f4cb3 100%);
+		background-blend-mode: overlay;
+		mask-image: radial-gradient(rgba(0, 0, 0, 0.8), transparent 70%);
+	}
+
+	@media screen(md) {
+		section::before {
+			left: 25%;
+			top: 20%;
+			height: 80%;
+			mask-image: radial-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6) 30%, transparent 65%);
+		}
+	}
+
+	@media screen(lg) {
+		section::before {
+			top: 15%;
+		}
+	}
+
+	@media screen(2xl) {
+		section::before {
+			width: 100%;
+			left: 25%;
+			height: 80%;
+		}
+	}
+
+	@media (min-width: 1920px) {
+		section::before {
+			width: 67%;
+			left: 35%;
+			height: 90%;
+		}
+	}
+</span>&lt/style&gt
+</pre></a>
+<a href="https://github.com/withastro/astro.build/tree/two-one-fix-again/src/pages/_components/FullSpeedAhead.astro"><pre class="pre-3"><h3>FullSpeedAhead.astro</h3>---<span class="script-block">
+import Card from "~/components/Card.astro"
+import CardBody from "~/components/CardBody.astro"
+import CardFooter from "~/components/CardFooter.astro"
+import CardLabel from "~/components/CardLabel.astro"
+import CoreWebVitalsGraph from "./CoreWebVitalsGraph.astro"
+import LandingSectionText from "./LandingSectionText.astro"
+</span>---
+
+&ltsection class="landing-section"&gt
+	&ltLandingSectionText&gt
+		&ltFragment slot="title"&gtFull speed&lt/Fragment&gt
+		&ltFragment slot="body"&gt
+			Astro optimizes your website like no other framework can. Leverage Astro's unique
+			&lta href="https://docs.astro.build/en/concepts/islands/" class="link-underline"
+				&gtzero-JS frontend architecture&lt/a
+			&gt to unlock higher conversion rates with better SEO.
+		&lt/Fragment&gt
+	&lt/LandingSectionText&gt
+
+	&ltdiv class="mt-12 w-full max-w-5xl px-4"&gt
+		&ltCard&gt
+			&ltCardBody&gt
+				&ltCardLabel&gtReal-World Performance Comparison&lt/CardLabel&gt
+				&ltCoreWebVitalsGraph /&gt
+				&ltCardFooter&gt
+					&ltp class="text-center"&gt
+						Based on &lta href="https://httparchive.org/" class="link-underline"&gtHTTP Archive&lt/a&gt real-world
+						performance data (Lighthouse, P90) • &lta
+							href="/blog/2023-web-framework-performance-report/"
+							class="link-underline"&gtRead the full report&lt/a
+						&gt
+					&lt/p&gt
+				&lt/CardFooter&gt
+			&lt/CardBody&gt
+		&lt/Card&gt
+	&lt/div&gt
+&lt/section&gt
+</pre></a>
+<a href="https://github.com/withastro/astro.build/tree/two-one-fix-again/src/pages/_components/GetStarted.astro"><pre class="pre-4"><h3>GetStarted.astro</h3>---<span class="script-block">
+import AstroLogomark from "~/icons/AstroLogomark.jsx"
+import houstonHappy from "../_assets/houston-happy.webp"
+import houston from "../_assets/houston.webp"
+</span>---
+
+&ltsection
+	class="relative mx-auto flex w-full max-w-screen-xl flex-col items-center justify-end overflow-hidden px-4 pb-0"
+&gt
+	&ltAstroLogomark class="block h-20" /&gt
+	&ltdiv class="my-6 md:my-8"&gt
+		&lth2 class="heading-3 max-w-2xl text-center lg:heading-2"&gtStart building with Astro today&lt/h2&gt
+	&lt/div&gt
+	&lta data-get-started href="https://docs.astro.build/" class="button-white"&gtGet Started&lt/a&gt
+	&ltdiv data-houston-signal class="relative top-32 h-px w-full"&gt&lt/div&gt
+	&ltdiv class="overflow-hidden"&gt
+		&ltimg
+			data-houston
+			data-enter
+			data-src={houston.src}
+			data-src-hover={houstonHappy.src}
+			src={houston.src}
+			width={houston.width}
+			height={houston.height}
+			loading="lazy"
+			decoding="async"
+			alt=""
+			class="max-w-[50vw] translate-y-full drop-shadow-lg transition-transform duration-500 data-[enter]:translate-y-1/4"
+		/&gt
+	&lt/div&gt
+&lt/section&gt
+
+&ltstyle&gt<span class="style-block">
+	section::before {
+		position: absolute;
+		content: "";
+		z-index: -10;
+		top: 25%;
+		height: 150%;
+		width: 150%;
+		left: -25%;
+		background: url(/assets/noise.webp) repeat, linear-gradient(247.23deg, #4af2c8 0%, #2f4cb3 100%);
+		background-blend-mode: overlay;
+		mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 70%);
+	}
+	@media screen(lg) {
+		section::before {
+			left: 0%;
+			width: 100%;
+			mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 60%);
+		}
+	}
+</span>&lt/style&gt
+
+&ltscript&gt<span class="script-block">
+	import { getElement } from "~/helpers/dom.js"
+	import { raise } from "~/helpers/errors.js"
+
+	const houston = getElement("[data-houston]", HTMLImageElement)
+	const getStartedButton = getElement("[data-get-started]", HTMLAnchorElement)
+	const scrollSignal = getElement("[data-houston-signal]", HTMLDivElement)
+
+	getStartedButton.addEventListener("mouseenter", () =&gt {
+		houston.src = houston.dataset.srcHover ?? raise("hover image missing")
+	})
+	getStartedButton.addEventListener("mouseleave", () =&gt {
+		houston.src = houston.dataset.src ?? raise("default image missing")
+	})
+
+<span class="comment">	// start out hidden</span>
+	delete houston.dataset.enter
+
+	const observer = new IntersectionObserver(([entry]) =&gt {
+		if (entry.isIntersecting) {
+			houston.dataset.enter = ""
+		} else {
+			delete houston.dataset.enter
+		}
+	})
+	observer.observe(scrollSignal)
+</span>&lt/script&gt
+</pre></a>
+<a href="https://github.com/withastro/astro.build/tree/two-one-fix-again/src/pages/_components/Hero.astro"><pre class="pre-5"><h3>Hero.astro</h3>---<span class="script-block">
+import { Icon } from "astro-icon"
+import CodeBlock from "~/components/CodeBlock.astro"
+import ExternalLink from "~/components/ExternalLink.astro"
+import PageTitleBlock from "~/components/PageTitleBlock.astro"
+
+const logos = [
+	{ src: "logos/google", alt: "Google Logo" },
+	{ src: "logos/netlify", alt: "Netlify Logo" },
+	{ src: "logos/nordvpn", alt: "NordVPN Logo" },
+	{ src: "logos/rokt", alt: "Rokt Logo" },
+	{ src: "logos/theguardian", alt: "The Guardian Logo" },
+	{ src: "logos/trivago", alt: "Trivago Logo" },
+]
+</span>---
+
+&ltsection class="landing-section relative overflow-x-hidden pt-14 pb-40 sm:pt-20 lg:pt-32"&gt
+	&ltdiv class="noise-underlay absolute inset-0"&gt&lt/div&gt
+	&ltPageTitleBlock
+		lg
+		body="Astro is the all-in-one web framework designed for speed. Pull your content from anywhere and deploy everywhere, all powered by your favorite UI components and libraries."
+	&gt
+		&lth1
+			slot="title"
+			class="heading-2 mb-10 max-w-[10ch] px-4 text-center lg:heading-1 sm:max-w-[15ch]"
+		&gt
+			Build the web
+			&ltbr class="hidden sm:block" /&gt
+			you want
+		&lt/h1&gt
+	&lt/PageTitleBlock&gt
+
+	&ltdiv
+		class="isolate mb-14 mt-8 flex w-full justify-center gap-6 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-28"
+	&gt
+		&ltExternalLink href="https://docs.astro.build/" class="button-white"&gtGet Started&lt/ExternalLink&gt
+		&ltdiv class="hidden sm:block"&gt
+			&ltCodeBlock&gtnpm create astro@latest&lt/CodeBlock&gt
+		&lt/div&gt
+	&lt/div&gt
+
+	&ltdiv class="flex flex-col gap-y-8 px-4 md:px-6 lg:flex-row lg:items-center"&gt
+		&ltp class="body px-8 text-astro-gray-200 lg:max-w-[12rem] lg:px-0 lg:text-left"&gt
+			Used by over 100,000 developers and teams around the world:
+		&lt/p&gt
+		&ltdiv class="flex flex-wrap justify-center gap-x-8 gap-y-6 px-4"&gt
+			{
+				logos.map((logo) =&gt (
+					&ltIcon
+						name={logo.src}
+						aria-label={logo.alt}
+						height={48}
+						class="h-6 object-contain text-white sm:h-8 md:h-10 lg:h-11"
+					/&gt
+				))
+			}
+		&lt/div&gt
+	&lt/div&gt
+&lt/section&gt
+
+&ltstyle&gt<span class="style-block">
+	section::before {
+		position: absolute;
+		content: "";
+		z-index: -1;
+		top: 0%;
+		bottom: 10%;
+		width: 150%;
+		left: -25%;
+		background: url(/assets/noise.webp) repeat, linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+		background-blend-mode: overlay;
+		mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 70%);
+	}
+</span>&lt/style&gt
+</pre></a>
+<a href="https://github.com/withastro/astro.build/tree/two-one-fix-again/src/pages/_components/Sponsors.astro"><pre class="pre-6"><h3>Sponsors.astro</h3>---<span class="script-block">
+import { Icon } from "astro-icon"
+import MainSponsorItem from "./MainSponsorItem.astro"
+
+const sponsors = [
+	{ src: "sponsors/vercel", alt: "Vercel Logo", href: "https://vercel.com/" },
+	{
+		src: "sponsors/chrome",
+		alt: "Google Chrome Logo",
+		href: "https://developer.chrome.com/blog/framework-fund-2022/",
+	},
+	{ src: "sponsors/shipshape", alt: "Ship Shape Logo", href: "https://shipshape.io/?ref=astro" },
+	{
+		src: "sponsors/buttercms",
+		alt: "ButterCMS Logo",
+		href: "https://buttercms.com/?utm_source=astro.build& utm_medium=banner& utm_campaign=sponsorship",
+	},
+	{ src: "sponsors/deepgram", alt: "Deepgram Logo", href: "https://deepgram.com/" },
+	{ src: "sponsors/divriots", alt: "Div Riots Logo", href: "https://divriots.com/" },
+]
+
+const mainSponsorLogoHeight = 40
+</span>---
+
+&ltsection class="landing-section gap-12 py-16 sm:gap-24 sm:py-20 md:py-24 lg:py-28 xl:py-32"&gt
+	&lth2 class="heading-4 max-w-4xl px-8 lg:heading-3"&gt
+		Astro is free, open source software made possible by these wonderful sponsors
+	&lt/h2&gt
+
+	&ltdiv class="flex flex-wrap items-center justify-center gap-12 px-8 sm:gap-16"&gt
+		&ltMainSponsorItem href="https://netlify.com/" caption="Official Hosting Partner"&gt
+			&ltIcon
+				name="sponsors/netlify"
+				alt="Netlify Logo"
+				aria-label="Netlify"
+				height={mainSponsorLogoHeight}
+			/&gt
+		&lt/MainSponsorItem&gt
+		&ltMainSponsorItem
+			href="https://www.storyblok.com/?utm_source=astro& utm_medium=display& utm_campaign=AWA_SPON_ASTR_TRA& utm_content=astro_collab"
+			caption="Official CMS Partner"
+		&gt
+			&ltIcon
+				name="sponsors/storyblok"
+				alt="Storyblok Logo"
+				aria-label="Storyblok"
+				height={mainSponsorLogoHeight}
+			/&gt
+		&lt/MainSponsorItem&gt
+	&lt/div&gt
+
+	&ltul
+		class="flex max-w-screen-lg flex-wrap items-center justify-center gap-12 px-8 sm:gap-x-24 md:gap-x-48"
+	&gt
+		{
+			sponsors.map((sponsor) =&gt (
+				&ltli class="outline-offset-8 outline-astro-pink-light focus-within:outline hover:cursor-pointer"&gt
+					&lta href={sponsor.href} rel="sponsored"&gt
+						&ltIcon name={sponsor.src} aria-label={sponsor.alt} class="w-32" /&gt
+					&lt/a&gt
+				&lt/li&gt
+			))
+		}
+	&lt/ul&gt
+&lt/section&gt
+</pre></a>
+<a href="https://github.com/withastro/astro.build/tree/two-one-fix-again/src/pages/_components/MainSponsorItem.astro"><pre class="pre-7"><h3>MainSponsorItem.astro</h3>---<span class="script-block">
+export type Props = {
+	href: string
+	caption: string
+}
+</span>---
+
+&lta
+	href={Astro.props.href}
+	rel="sponsored"
+	class="outline-offset-8 outline-astro-pink-light focus-within:outline hover:cursor-pointer"
+&gt
+	&ltfigure class="flex h-full flex-col items-center justify-end gap-2"&gt
+		&ltslot /&gt
+		&ltfigcaption class="body text-astro-gray-200"&gt{Astro.props.caption}&lt/figcaption&gt
+	&lt/figure&gt
+&lt/a&gt
+</pre></a>
+<a href="https://github.com/withastro/astro.build/tree/two-one-fix-again/src/pages/_components/ToolingAndEcosystem.astro"><pre class="pre-8"><h3>ToolingAndEcosystem.astro</h3>---<span class="script-block">
+import clsx from "clsx"
+import Card from "~/components/Card.astro"
+import CardBleed from "~/components/CardBleed.astro"
+import CardBody from "~/components/CardBody.astro"
+import CardFooter from "~/components/CardFooter.astro"
+import CardHeading from "~/components/CardHeading.astro"
+import CardLabel from "~/components/CardLabel.astro"
+import CardParagraph from "~/components/CardParagraph.astro"
+import communityCloud from "../_assets/community-cloud.webp"
+import DocsGraphic from "./DocsGraphic.astro"
+import LandingSectionText from "./LandingSectionText.astro"
+import LogoCarousel from "./LogoCarousel.astro"
+import SandboxGraphic from "./SandboxGraphic.astro"
+import ThemesGraphic from "./ThemesGraphic.astro"
+
+const toolingLogos = [
+	{ icon: "logos/react-logomark", alt: "React Logo" },
+	{ icon: "logos/preact-logomark", alt: "Preact Logo" },
+	{ icon: "logos/svelte-logomark", alt: "Svelte Logo" },
+	{ icon: "logos/vue-logomark", alt: "Vue Logo" },
+	{ icon: "logos/lit-logomark", alt: "Lit Logo" },
+	{ icon: "logos/solid-logomark", alt: "Solid Logo" },
+	{ icon: "logos/tailwind-logomark", alt: "Tailwind Logo" },
+	{ icon: "logos/alpinejs-logomark", alt: "Alpine Logo" },
+]
+
+<span class="comment">// repeat the logos so they fill the width</span>
+toolingLogos.push(...toolingLogos)
+
+const deployLogos = [
+	{ icon: "logos/cloudflare-logomark", alt: "Cloudflare Logo" },
+	{ icon: "logos/netlify-logomark", alt: "Netlify Logo" },
+	{ icon: "logos/vercel-logomark", alt: "Vercel Logo" },
+	{ icon: "logos/node-logomark", alt: "Node.js Logo" },
+	{ icon: "logos/deno-logomark", alt: "Deno Logo" },
+]
+
+<span class="comment">// repeat the logos so they fill the width</span>
+deployLogos.push(...deployLogos)
+
+<span class="comment">// adds a fake box to limit the width of the first line,</span>
+<span class="comment">// so it doesn't overlap the graphic</span>
+const graphicCardHeadingClass = clsx("before:float-right before:h-1 before:w-32")
+</span>---
+
+&ltsection class="landing-section"&gt
+	&ltLandingSectionText&gt
+		&ltFragment slot="title"&gt
+			Zero to website in &ltstrong class="font-obviously-wide"&gtwhoa&lt/strong&gt
+		&lt/Fragment&gt
+	&lt/LandingSectionText&gt
+
+	&ltdiv
+		class="mx-auto grid min-w-0 max-w-screen-xl grid-cols-1 gap-4 px-4 sm:grid-cols-2 lg:grid-cols-3"
+	&gt
+		&ltdiv class="grid lg:col-span-2"&gt
+			&ltCard&gt
+				&ltCardBody&gt
+					&ltCardLabel&gtEasy to use&lt/CardLabel&gt
+					&ltCardBleed&gt
+						&ltLogoCarousel logos={toolingLogos} /&gt
+					&lt/CardBleed&gt
+					&ltdiv class="flex grid-cols-2 flex-col justify-center gap-5 lg:grid"&gt
+						&ltCardHeading&gtBring your&ltbr /&gtfavorite tools&lt/CardHeading&gt
+						&ltp class="body mt-2 text-gray-100"&gt
+							Your existing UI components already run in Astro, no changes required. Add new
+							integrations to your project with &ltcode class="rounded-sm bg-white/20 py-0.5 px-1.5"
+								&gtastro add&lt/code
+							&gt.
+						&lt/p&gt
+					&lt/div&gt
+				&lt/CardBody&gt
+			&lt/Card&gt
+		&lt/div&gt
+
+		&ltCard&gt
+			&ltCardBody&gt
+				&ltCardLabel&gtEasy to scale&lt/CardLabel&gt
+				&ltCardBleed&gt
+					&ltLogoCarousel logos={deployLogos} /&gt
+				&lt/CardBleed&gt
+				&ltCardHeading&gtDeploy anywhere, even to the edge&lt/CardHeading&gt
+			&lt/CardBody&gt
+		&lt/Card&gt
+
+		&ltCard background="blue-purple"&gt
+			&ltSandboxGraphic class="absolute top-8 right-2" /&gt
+			&ltCardBody&gt
+				&ltCardLabel&gtSandbox&lt/CardLabel&gt
+				&ltdiv class={graphicCardHeadingClass}&gt
+					&ltCardHeading&gtTry Astro in your browser&lt/CardHeading&gt
+				&lt/div&gt
+				&ltCardParagraph&gt
+					Start your first Astro project right in the browser—no local development environment or
+					signup required!
+				&lt/CardParagraph&gt
+				&ltCardFooter&gt
+					&lta href="https://astro.new/" class="button-white"&gtStart a Project&lt/a&gt
+				&lt/CardFooter&gt
+			&lt/CardBody&gt
+		&lt/Card&gt
+
+		&ltCard background="blue-green"&gt
+			&ltThemesGraphic class="absolute top-6 right-0" /&gt
+			&ltCardBody&gt
+				&ltCardLabel&gtGet started&lt/CardLabel&gt
+				&ltdiv class={graphicCardHeadingClass}&gt
+					&ltCardHeading&gtExplore our ecosystem&lt/CardHeading&gt
+				&lt/div&gt
+				&ltCardParagraph&gt
+					Discover 100+ themes & integrations to take your project to the next level: SEO,
+					analytics, CMS integrations and more.
+				&lt/CardParagraph&gt
+				&ltCardFooter&gt
+					&lta href="/themes/" rel="prefetch" class="button-white"&gtExplore Themes&lt/a&gt
+				&lt/CardFooter&gt
+			&lt/CardBody&gt
+		&lt/Card&gt
+
+		&ltCard background="red-pink"&gt
+			&ltDocsGraphic class="absolute top-6 right-2" /&gt
+			&ltCardBody&gt
+				&ltCardLabel&gtDocumentation&lt/CardLabel&gt
+				&ltdiv class={graphicCardHeadingClass}&gt
+					&ltCardHeading&gtLearn more in our docs&lt/CardHeading&gt
+				&lt/div&gt
+				&ltCardParagraph&gt
+					Thanks to our wonderful contributors, our docs are the best place to learn, troubleshoot,
+					and explore Astro.
+				&lt/CardParagraph&gt
+				&ltCardFooter&gt
+					&lta href="https://docs.astro.build/" class="button-white"&gtStart Learning&lt/a&gt
+				&lt/CardFooter&gt
+			&lt/CardBody&gt
+		&lt/Card&gt
+
+		&ltdiv class="grid lg:col-span-3"&gt
+			&ltCard background="blue-purple"&gt
+				&ltdiv class="flex flex-1 flex-col lg:flex-row"&gt
+					&ltCardBody&gt
+						&ltCardLabel&gtCommunity&lt/CardLabel&gt
+						&ltdiv class="flex flex-1 flex-col justify-center gap-6 lg:px-8 lg:pb-12"&gt
+							&ltCardHeading&gt
+								&ltspan class="lg:heading-2 lg:leading-[1.1]"&gtJoin our community&lt/span&gt
+							&lt/CardHeading&gt
+							&ltCardParagraph&gt
+								Get support, get involved, and join our community of 10,000+ Astro developers—it all
+								happens on Discord.
+							&lt/CardParagraph&gt
+							&ltdiv class="mt-auto lg:mt-0"&gt
+								&lta href="/chat" class="button-white"&gtJoin our Discord&lt/a&gt
+							&lt/div&gt
+						&lt/div&gt
+					&lt/CardBody&gt
+					&ltdiv class="relative h-[420px] overflow-hidden sm:hidden lg:block lg:h-[480px] lg:flex-1"&gt
+						&ltimg
+							src={communityCloud.src}
+							width={communityCloud.width}
+							height={communityCloud.height}
+							alt=""
+							class="absolute left-16 top-8 h-[150%] w-[150%] max-w-none object-contain object-left-top"
+							loading="lazy"
+							decoding="async"
+						/&gt
+					&lt/div&gt
+				&lt/div&gt
+			&lt/Card&gt
+		&lt/div&gt
+	&lt/div&gt
+&lt/section&gt
+</pre></a>
+</div>

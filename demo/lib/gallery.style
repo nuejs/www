@@ -1,0 +1,51 @@
+
+.image-gallery
+  font center
+  relative
+  size 550px
+  m -1em auto 8em
+
+  .seek
+    bg no-repeat
+    bg-size cover
+    opacity .3
+    size 2.5em
+    absolute
+    top 40%
+
+    &:hover
+      opacity 1
+
+  .next
+    bg /nueui/img/angle-right.svg
+    right -3em
+
+  .prev
+    bg /nueui/img/angle-left.svg
+    left -3em
+
+
+  nav
+    inline-flex
+    gap 1em
+    m 1em
+
+  nav a
+    bg $gray-300
+    radius 1em
+    size .6em
+    block
+
+    &:hover
+      transform scale(1.1)
+
+    &.current
+      bg black
+
+
+.dialog-close
+  font 2.5em .7 $gray-400
+  font-family avenir, courier
+
+  &:hover
+    color black

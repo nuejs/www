@@ -1,0 +1,28 @@
+
+.site-footer
+  border-top
+  font center
+  m 10em auto 5em
+
+  // logo wrapper
+  > a
+    m -1.5em 0 1em
+    inline-block
+    bg white
+    p 0 5em
+
+  .logo
+    width 8rem
+
+  .footnav
+    mt 1em
+    a
+      p .8em
+
+  .octocat
+    mt 2.5em
+    block
+
+  @medium-
+    nav a
+      block

@@ -1,0 +1,84 @@
+
+/* syntax highlight */
+pre {
+  background: var(--gray-900);
+  font-family: Fira,Menlo,Monaco,Lucida Console;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  padding: 1.5rem;
+  overflow: auto;
+  color: #96cbfe;
+  margin-bottom: 1em;
+}
+
+pre b { font-weight: normal; }
+
+/* gray */
+.hl-char { color: #666 }
+
+/* gray */
+.hl-comment { color: #777 }
+
+/* white */
+.hl-prop { color: #ddd }
+
+/* purple */
+.hl-value { color: #bd73ff }
+
+/* green */
+.hl-str { color: #97d168 }
+
+/* yellow */
+.hl-special { color: #fff400 }
+
+/* blue */
+.lang-styl .hl-prop, .lang-css .hl-prop, .hl-tag { color: #4599c2 }
+
+
+/* markdown */
+.lang-md { color: #bbb; white-space: pre-wrap; }
+.hl-heading { color: #fff; font-weight: bold }
+.lang-md .hl-prop { color: #96cbfe }
+.lang-md .hl-tag { color: #4599c2 }
+
+
+
+/* background span */
+.hl-span {
+  background-color: #84d7ff29;
+  padding: 3px 5px;
+  margin: -3px -5px;
+}
+
+
+/* line numbers */
+pre {
+  counter-reset: line-counter 0;
+}
+
+.hl-wrap {
+  counter-increment: line-counter 1
+}
+
+.hl-wrap:before {
+  border-right: 1px dotted rgba(255, 255, 255, .3);
+  color: rgba(255, 255, 255, .3);
+  content: counter(line-counter);
+  display: inline-block;
+  font-family: courier;
+  text-align: right;
+  line-height: 1.6;
+  padding-right: .9em;
+  margin-right: .9em;
+}
+
+/* background line */
+.hl-line {
+  background-color: #84d7ff29;
+  display: inline-block;
+  margin: 0 -1.5em;
+  padding-left: 1.2em;
+  border-left: .3em solid #96cbfe;
+  width: 110%;
+}

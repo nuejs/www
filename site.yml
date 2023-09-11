@@ -1,0 +1,59 @@
+
+title: Nue / Frontend troublesolver
+desc: Nue is a set of tools to make frontend development more enjoyable. It's an alternative to frameworks like to React, Vue, Next.js, and Astro.
+logo: /global/logo/logo.png
+favicon: /global/logo/stack.svg
+og: /global/logo/og-big.png
+baseurl: https://nuejs.org
+theme-color: #00C2FF
+
+# Design assets
+icons: /global/icons
+
+mastnav:
+  - Ecosystem
+  - Why
+  - Backstory
+  - label: Docs
+    url: /docs/nuejs/
+  - FAQ
+
+footnav:
+  - Ecosystem
+  - Why
+  - Backstory
+  - label: Docs
+    url: /docs/nuejs/
+  - FAQ
+  - label: Compare
+    url: /compare/component.html
+
+  - img: /global/icons/github.svg
+    url: https://github.com/nuejs
+    class: octocat
+
+subnav:
+  - img: /global/icons/github.svg
+    url: https://github.com/nuejs
+    class: octocat
+  - img: /global/icons/menu.svg
+    hash: mobile-nav
+    class: burger
+
+  # - label: Poll
+  #   class: small secondary poll
+  #   role: button
+
+
+# port: 5000
+hotreload: true
+# use_router: true
+
+# generation
+globals: [global, style, lib]
+secondary_css: [css2, secondary]
+inline_css: true
+
+preview:
+  ssl_key: .ssl/localhost+1-key.pem
+  ssl_cert: .ssl/localhost+1.pem

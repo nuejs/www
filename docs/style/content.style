@@ -1,0 +1,84 @@
+article
+  font 1.1em
+
+  > img, figure
+    mb 1em
+
+  em
+    font-style normal
+    font 550
+
+  > p strong, > li strong
+    font-style italic
+    font-weight 400
+
+  > h2
+    font 1.3em
+    mt 3em
+
+  > h3
+    mt 3em
+
+  > h4
+    m 2em 0 .7em
+    font 105%
+
+  h3 code
+    relative -.1em
+    font 115% $main-600
+
+h1
+  font 3.5em
+  + p em:first-child
+    font-style normal
+    font 700
+
+
+.small-image
+  max-width 5em
+  m 4em 0 -4em
+
+del
+  text-decoration none
+
+h1 del, h2 del
+  box-shadow 0 0 0 .12em $gray-700
+  transform scale(.95)
+  padding 0 .15em
+  inline-block
+  radius .1em
+  ml .1em
+
+@xlarge
+  .wider
+    m 2em -12em 2em -3.5rem
+    img
+      max-width calc(100% + 12em)
+
+    figcaption
+      ml 3.5rem
+
+
+
+.listbox-demo
+  bg /docs/img/stripes.jpg
+  padding 3.5em 20%
+  bg-size cover
+  height 26em
+  radius 8px
+  mb 1em
+
+  .listbox
+    width 100%
+    input
+      bg white
+
+
+.compare-shot
+  transition transform .1s
+  m 3em 0
+  block
+
+  &:hover
+    filter brightness(110%)
+    transform scale(1.005)

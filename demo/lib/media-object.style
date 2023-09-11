@@ -1,0 +1,168 @@
+
+.banner
+  relative
+  mb 3em
+
+  img
+    min-height 250px
+    object-fit cover
+
+  aside
+    absolute 1.2em 1.2em
+    inline-block
+    color #fffc
+    font .85em
+    radius 5px
+    bg #0009
+    p 1.5em
+    pr 4em
+
+  h3
+    color white
+
+
+
+.art-gallery
+  display grid
+  linear-gradient #000, #222
+  radius .6em
+  font 75%
+  gap 3em
+  p 3em
+  m 2em -3em
+
+  @medium
+    grid-template-columns 1fr 1fr 1fr
+
+  @xlarge
+    margin 3em -15em
+
+  h3
+    font #fffe 500
+    m .3em 0 .2em
+
+  p
+    color #fff7
+
+  > :first-child
+    grid-column 1 / span 2
+
+  > :nth-child(2)
+    flex-direction column
+    align-self stretch
+    display flex
+    gap .4em
+
+    img
+      object-fit cover
+      height 100%
+
+
+
+
+.tweet-list
+  font-size .95rem
+  display grid
+  gap 1.5em
+  mb 4em
+
+  @small
+    grid-template-columns 50% 50%
+
+  @large
+    m 2.5em -3em 4em
+
+  > div
+    bg /nueui/img/twitter.svg no-repeat
+    border 1px solid $gray-200
+    bg-pos right 1em top 1em
+    align-items flex-start
+    bg-size 1.2em
+    display flex
+    radius 6px
+    gap .5em
+    p 1em
+
+    img
+      max-width 3.3em
+      radius 4em
+      mr .5em
+
+    p
+      color $gray
+
+
+.user-list
+  grid-template-columns 1fr 1fr 1fr
+  display grid
+  gap 1.5em
+
+  > div
+    radius 3px
+    padding 1em
+    font 1rem
+    border
+
+  aside
+    mt .5em
+
+
+
+// Apple-style feature card
+.feature-list
+  display grid
+  bg $gray-100
+  font-size 120%
+  gap 2em
+  m 2em 0
+  p 2em
+
+  aside
+    mb 2em
+
+  > div
+    padding 15%
+    radius .6em
+    bg white
+
+  img
+    m -2em auto -1em
+
+  h3
+    font 190%
+    mb .1em
+
+  p
+    color $gray-600
+
+
+  @medium
+    grid-template-columns 1fr 1fr
+    font-size 110%
+
+  @xlarge
+    font-size 140%
+
+  @xlarge
+    margin 2em -6em
+    h3
+      font 220%
+
+
+
+
+.animation-demo
+  mb 3em
+
+  button
+    m 1em 0
+
+  .user-list
+    div
+      transition .6s
+      opacity 0
+
+    .fade-in
+      opacity 1
+
+

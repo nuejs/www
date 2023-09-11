@@ -1,0 +1,149 @@
+
+@font-face
+  font-family handwriting
+  src url("/global/font/gochi-hand.woff2") format("woff2")
+
+body
+  bg /home/img/grid.svg no-repeat
+  bg-pos 0 400px
+  bg-size contain
+
+
+// Hero title
+h1
+  position relative
+  max-width 8em
+  color $main
+  inline-block
+  m .15em 0
+
+  @medium
+    font 6em 1
+
+  em
+    transform rotate(-0.4deg) translateX(-.1em)
+    font-style normal
+    inline-block
+    color black
+
+  + p
+    max-width 29em
+    font 1.9em 500 1.4
+    mb 2em
+
+  // "maker"
+  em:after
+    absolute right -.1em bottom -.3em
+    bg /home/img/overline.png no-repeat
+    font-family handwriting
+    text-shadow 0 0 5px white
+    bg-size 100%
+    content "solver"
+    bg-pos .1em 85%
+    height 1.6em
+    font 1.18em
+    color red
+    p 0 .2em
+    transform scale(.5)
+    transform-origin 0 100%
+    transition .5s
+    opacity 0
+
+    .loaded &
+      transform scale(1) rotate(-7deg)
+      opacity 1
+
+
+
+// wave underline
+p em
+  font 600
+  font-style normal
+  bg $yellow
+  p 0 .3em .2em
+  radius 4px
+
+  .dark &
+    bg $gray-700
+
+
+
+// h2
+h2
+  font 3.8em .8 900 -1px
+  mb .3em
+  + p
+    font 1.8em
+    max-width 28em
+
+  em
+    font-family handwriting
+    font 1.4em $main .7
+    mr .1em
+
+  @medium
+    font 4.5em
+
+
+.compare-shot
+  transition transform .1s
+  block
+  &:hover
+    filter brightness(110%)
+    transform scale(1.005)
+
+
+.fast
+  bg /home/img/pattern.jpg cover
+  radius 1em
+  m 7em -2.5em
+  p 6em
+
+  h2
+    max-width 6em
+
+  h2 + p
+    max-width 15em
+    mb 2em
+
+  img
+    width 480px
+
+  h2 em
+    ml -.1em
+
+  @medium-
+    px 2.4em
+    mx -2em
+    radius 0
+
+  @large
+    flex-direction row-reverse
+    align-items center
+    gap 5em
+    flex
+
+
+.fun
+  mb 5em
+
+  h2
+    mb .05em
+
+  h2 em
+    color $pink
+    pr .1em
+    mr -.05em
+
+  h2 + p
+    max-width 24em
+
+  figcaption
+    max-width 28em
+
+.video
+  max-width 950px
+
+.splash video
+  filter brightness(50%)
+  box-shadow 0 0 50px black inset

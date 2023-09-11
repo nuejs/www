@@ -1,0 +1,45 @@
+ul
+  pl 1em
+
+ol
+  pl 1.1em
+
+li
+  mb .3em
+  pl .4em
+
+  &::marker
+    font bold $main
+
+figcaption
+  font 90% $gray
+  max-width 48em
+  mt .5em
+
+
+// inline code
+p, li
+  code
+    border 1px solid $gray-300
+    font-family courier
+    color $gray-500
+    font 95% 400
+    bg $gray-50
+    radius 2px
+    p 0 .3em .05em
+
+
+mark, .mark
+  bg $yellow
+  px .2em
+
+
+// selection color
+::selection
+  bg $pink
+  color white
+
+.text-hilite
+  bg #ffff0099
+  transition .6s
+  transform scale (1.05)

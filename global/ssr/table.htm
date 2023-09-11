@@ -1,0 +1,21 @@
+
+<!-- Easier Markdown table alternative -->
+<table @name="table">
+  <thead>
+    <tr><th :for="val in head.split(separ)" :html="format(val)"/> </tr>
+  </thead>
+
+  <tr :for="row in rows">
+    <td :for="val in row.split(separ)">{{ format(val) }}</td>
+  </tr>
+
+  <script>
+    constructor(data) {
+      data.separ = /\s*\|\s*/
+    }
+
+    format = function(val) {
+      return val == '+' ? '<img src=/nueui/img/success.svg>' : val == '.' ? '' : val
+    }
+  </script>
+</table>

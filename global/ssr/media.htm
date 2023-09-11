@@ -1,0 +1,34 @@
+
+<figure @name="media" :id="id" :class="class">
+
+  <picture :style="bg">
+    <source :for="el in sources" :srcset="el.src" :media="el.media" :type="el.type">
+    <img loading="lazy" :alt="caption" fetchpriority="low" :src="small || large" :width="width">
+  </picture>
+
+  <figcaption :if="caption">{{ caption }}</figcaption>
+
+  <script>
+    constructor(data) {
+      const { small, large, offset=768 } = data
+      const sources = [small, large].filter(el => !!el)
+
+      this.caption = data._ || data.caption || ''
+
+      this.sources = sources.map(src => {
+        const prefix = src == small ? 'max' : 'min'
+        const media = sources[1] ? `(${prefix}-width: ${offset}px)` : ''
+        return { src, type: getMime(src), media }
+      })
+    }
+  </script>
+
+</figure>
+
+<script>
+  function getMime(path) {
+    const type = path.slice(path.lastIndexOf('.') + 1)
+    const mime = { jpg: 'jpeg', svg: 'svg+xml' }
+    return 'image/' + (mime[type] || type)
+  }
+</script>

@@ -1,0 +1,30 @@
+
+@font-face
+  font-family san-francisco
+  font-style normal
+  font-weight 400
+  src url(/global/font/sf-regular.woff2) format('woff2')
+
+@font-face
+  font-family san-francisco
+  font-style normal
+  font-weight 500
+  src url(/global/font/sf-medium.woff2) format('woff2')
+
+@font-face
+  font-family san-francisco
+  font-style normal
+  font-weight 600
+  src url(/global/font/sf-bold.woff2) format('woff2')
+
+@font-face
+  font-family san-francisco
+  font-style normal
+  font-weight 700
+  src url(/global/font/sf-semibold.woff2) format('woff2')
+
+@font-face
+  font-family san-francisco
+  font-style normal
+  font-weight 800
+  src url(/global/font/sf-heavy.woff2) format('woff2')

@@ -1,0 +1,50 @@
+
+websites:
+  astro:
+    html: 58
+    css: 10
+    js: 16
+    total: 84
+
+  tailwindcss:
+    html: 49
+    css: 88
+    js: 667
+    total: 804
+
+  nextjs:
+    html: 78
+    css: 19
+    js: 590
+    total: 687
+
+  nuxtjs:
+    html: 28
+    css: 2
+    js: 509
+    total: 539
+
+  gatsbyjs:
+    html: 122
+    css: 14
+    js: 556
+    total: 692
+
+  wordpress:
+    html: 23
+    css: 125
+    js: 88
+    total: 236
+
+
+ignored:
+  wordpress-com:
+    css: 27
+    js: 85.1
+    html: 33.2
+
+  bootstrap:
+    js: 60
+    css: 41.3
+    html: 16.3
+

@@ -1,0 +1,27 @@
+
+<!-- master header -->
+<header @name="site-header" role="banner" class="site-header">
+  <a href="/"><img :src="logo" class="logo"></a>
+  <navi :items="mastnav" class="mastnav" suffix="/" :url="url"/>
+  <navi :items="subnav" class="subnav"/>
+</header>
+
+
+<!-- master footer -->
+<footer @name="site-footer" role="contentinfo" class="site-footer">
+  <a href="/"><img :src="logo" class="logo"></a>
+  <navi :items="footnav" class="footnav" suffix="/" :url="url"/>
+</footer>
+
+
+<!-- mobile navi dialog -->
+<div @name="site-bottom">
+  <dialog id="mobile-nav" scroll="no" class="mobile-nav">
+    <header>
+      <a href="/"><img :src="logo" class="logo"></a>
+      <a href="#"><img src="/nueui/img/cancel.svg" class="dialog-close"></a>
+    </header>
+    <navi :items="footnav" class="menu" suffix="/" :url="url"/>
+  </dialog>
+</div>
+
