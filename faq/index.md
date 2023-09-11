@@ -118,7 +118,7 @@ Because
 4. *Browser standard*: JavaScript runs natively on the browser without an extra compilation step.
 
 ## Why use "master" as the branch name? [master]
-Because it's [just another word](https://medium.datadriveninvestor.com/why-githubs-change-from-master-to-main-is-not-the-solution-a3ac38cc48dd) and has [nothing to do](https://mooseyanon.medium.com/github-f-ck-your-name-change-de599033bbbe) with racism.
+Because it's [just another word](https://medium.datadriveninvestor.com/why-githubs-change-from-master-to-main-is-not-the-solution-a3ac38cc48dd) I have used my whole career and has [nothing to do](https://mooseyanon.medium.com/github-f-ck-your-name-change-de599033bbbe) with racism.
 
 
 

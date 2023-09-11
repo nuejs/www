@@ -6,7 +6,7 @@ include: [listbox, menu-options]
 
 # Nue ~JS~ • Introduction
 
-Nue JS is an extremely small (2.3kb minzipped) JavaScript library for building user interfaces. It is a core part of the [Nue ecosystem](/ecosystem/). It’s like **Vue.js, React.js**, or **Svelte** but there are no hooks, effects, props, portals, watchers, injects, suspensions, or other unusual abstractions on your way. ~Learn the basics of HTML, CSS, and JavaScript and you are good to go~.
+Nue JS is an extremely small (2.3kb minzipped) JavaScript library for building user interfaces. It is a core part of the [Nue ecosystem](/ecosystem/). It’s like *Vue.js, React.js*, or *Svelte* but there are no hooks, effects, props, portals, watchers, injects, suspensions, or other unusual abstractions on your way. ~Learn the basics of HTML, CSS, and JavaScript and you are good to go~.
 
 The best thing is that you need less code to do the same thing. It's not unusual to see 10x differences in the amount of code you need to write. For example, here's a custom list box component written with Nue:
 

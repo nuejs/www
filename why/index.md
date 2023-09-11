@@ -5,7 +5,7 @@ include: [bunny/video]
 ---
 
 # Why Nue?
-*Nue* is a [toolset](/ecosystem/) for making frontend development easier and more enjoyable. It's a complete overhaul to ecosystems like *Vue, React*, and *Svelte* as well as web development frameworks like *Vite, Next.js*, and *Astro*.
+*Nue* is a [toolset](/ecosystem/) for making frontend development more enjoyable. It's a complete overhaul to ecosystems like *Vue, React*, and *Svelte* as well as web development frameworks like *Vite, Next.js*, and *Astro*.
 
 > Nue uses **progressive enhancement, separation of concerns**, and **semantic web design** to deliver new levels of performance, better scalability, and massively improved development experience.
 
