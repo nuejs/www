@@ -6,6 +6,11 @@ main
   gap 5em
   flex
 
+.aside, .todo
+  transition opacity .1s
+  .header-hidden &
+    opacity 0
+
 
 .sidebar
 
