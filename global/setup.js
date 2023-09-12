@@ -12,7 +12,7 @@ listen()
 
 // favicon circle
 function getNextIcon() {
-  const icons = 'stack nb ub eb'.split(' ')
+  const icons = 'stack n u e'.split(' ')
   try {
     let prev = 1 * sessionStorage.favicon || 0
     const i = prev == 3 ? 0 : ++prev

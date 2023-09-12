@@ -149,6 +149,10 @@
       font 220%
 
 
+// keep on top of the sidebar
+.art-gallery, .feature-list
+  z-index 1
+  relative
 
 
 .animation-demo

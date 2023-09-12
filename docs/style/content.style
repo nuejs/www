@@ -73,7 +73,9 @@ h1 del, h2 del
     figcaption
       ml 3.5rem
 
-
+@small-
+  pre
+    font 1.1em
 
 .listbox-demo
   bg /docs/img/stripes.jpg

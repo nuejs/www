@@ -32,12 +32,11 @@ main
       filter none
 
   > p, > h3
-    // font-family handwriting
     font 1.3em
-    mb .5em
 
   > h3
     margin 1.5em 0 1em
+    line-height 1.4
 
   a[href]
     font underline

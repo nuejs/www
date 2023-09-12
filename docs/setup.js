@@ -3,13 +3,24 @@
 
 import { $ } from 'island'
 
-const observer = new IntersectionObserver(function([entry]) {
-  $('body').classList.toggle('header-hidden', !entry.isIntersecting)
-
-}, {
-  rootMargin: '40px',
-  // threshold: 1.0,
-})
+function toggle(name, flag) {
+  $('body').classList.toggle(name, flag)
+}
 
 
-observer.observe($('.site-header'))
+// .header-hidden
+const o1 = new IntersectionObserver(function([entry]) {
+  toggle('header-hidden', !entry.isIntersecting)
+
+}, { rootMargin: '40px' })
+
+o1.observe($('.site-header'))
+
+
+// .footer-visible
+const o2 = new IntersectionObserver(function([entry]) {
+  toggle('footer-visible', entry.isIntersecting)
+
+}, { rootMargin: '40px' })
+
+o2.observe($('.site-footer'))

@@ -7,9 +7,29 @@ main
   flex
 
 .aside, .todo
-  transition opacity .1s
+  transition opacity .4s
   .header-hidden &
     opacity 0
+
+// back to top
+.to-top
+  opacity 0
+  fixed bottom 2em
+  font 90% 600
+  color $gray-600
+  pr 1em
+
+  &:hover
+    color black
+
+  .header-hidden &
+    transition opacity .5s .5s
+    opacity 1
+
+  .footer-visible &
+    transition opacity .2s
+    opacity 0
+
 
 
 .sidebar
@@ -27,7 +47,7 @@ main
     pl 1em
     flex .5
     nav
-      mb 3em
+      mb 2em
 
 
 .todo

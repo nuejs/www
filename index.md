@@ -9,7 +9,7 @@ include: [home, bunny/video]
 [image-link]
   href: /compare/component.html
   src: /home/img/compare.jpg
-  caption: Listbox component written in React and Nue
+  caption: Listbox component • Click for details 👉
   class: compare-shot
 
 
@@ -29,4 +29,4 @@ include: [home, bunny/video]
   [bunny-video]
     videoId: e78eec4c-9e81-4274-87d5-080d0459d1be
     poster: thumbnail_b04e314f.jpg
-    caption: Nue provides a better developer experience for UX developers, JavaScript developers, and content creators.
+    caption: Nue provides a better developer experience for UX engineers, JavaScript developers, and content creators.

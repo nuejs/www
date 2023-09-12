@@ -3,7 +3,7 @@ title: Nue / Frontend troublesolver
 desc: Nue is a set of tools to make frontend development more enjoyable. It's an alternative to frameworks like to React, Vue, Next.js, and Astro.
 logo: /global/logo/logo.png
 favicon: /global/logo/stack.svg
-og: /global/logo/og-big.png
+og: /global/img/og-big.png
 baseurl: https://nuejs.org
 theme-color: #00C2FF
 

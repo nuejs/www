@@ -14,15 +14,15 @@
   .logo
     width 8rem
 
-  .footnav
-    mt 1em
-    a
-      p .8em
-
   .octocat
     mt 2.5em
     block
 
-  @medium-
-    nav a
+.footnav
+  mt 1em
+  a
+    p .8em
+
+    @medium-
       block
+      p .3em

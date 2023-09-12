@@ -35,7 +35,7 @@ Here the media object is rendered on the page on the server side and it is given
 [media-object]
   title: Media object
   desc: One object to rule them all
-  img: /demo/img/art-2.jpg
+  img: /demo/img/art-wide.jpg
   class: banner
 
 
