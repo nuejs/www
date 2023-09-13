@@ -1,0 +1,31 @@
+
+// background colors
+.black
+  bg black
+
+.white
+  bg white
+
+.gray-100
+  bg $gray-100
+
+.pink
+  bg pink
+
+
+
+.bigger
+  font-size 105%
+
+.big
+  font-size 110%
+
+.smaller
+  font-size 95%
+
+.small
+  font-size 90%
+
+.subtle
+  color $gray
+

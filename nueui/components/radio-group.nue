@@ -1,0 +1,9 @@
+
+
+<div @name="radio-group" class="radio-group">
+  <label :for="el, i in options" class="radio-item">
+    <input name="koo" type="radio" :checked="!i">
+    <h4>{ el.label }</h4>
+    <p>{ el.desc }</p>
+  </label>
+</div>

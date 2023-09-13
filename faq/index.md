@@ -62,9 +62,9 @@ Absolutely! The long-term goal is to form a team of like-minded JavaScript devel
 
 
 ## Who is Nue inspired by? [inspiration]
-Mostly *Jarred Sumner* for developing [Bun](//bun.sh) — a super awesome project to replace the whole Node ecosystem with a faster one. It's a new JavaScript runtime, bundler, test runner, and NPM-compatible package manager.
+Mostly *Jarred Sumner* for developing [Bun](//bun.sh) — a super awesome project to replace the whole Node ecosystem with a faster one. It's a new JavaScript runtime, bundler, test runner, and NPM-compatible package manager. Thanks Jared for showing how a single developer can pull big dreams!
 
-While Bun makes JavaScript faster, Nue makes frontend development faster. Nue together with Bun is really the perfect combination for a frontend developer. Thanks, Jared!
+While Bun makes JavaScript faster, Nue makes frontend development faster. Nue + Bun is really the perfect combination for a frontend developer.
 
 Other people that inspired Nue are:
 
@@ -107,23 +107,22 @@ Because
 
 
 ## Why not TypeScript? [ts]
-Just like React, Nue uses plain JavaScript internally. That's because:
+Just like React, Svelte, or SvelteKit, Nue is written with JavaScript. That's because:
 
 1. ES6 is awesome: think [modules][modules], [destructuring][destroy], and the [proxy][proxy]
 
-2. [Dynamic typing][dynamic] is a good thing. It's the very reason JavaScript, Python, Ruby, and Lisp exist.
+1. *Dynamic typing* is a good thing and you can [use it to your advantage][dynamic].
 
-3. [Minimalism](/why/#minimalism): omitting type definitions makes cleaner code
+1. *Browser standard*: JavaScript runs natively on the browser without an extra compilation step.
 
-4. *Browser standard*: JavaScript runs natively on the browser without an extra compilation step.
+1. *JSDoc*: type definitions can be written with JSDoc's [@type](//jsdoc.app/tags-type.html) tag.
 
 Nue is of course usable in both JavaScript and TypeScript projects.
 
 
 
 ## Why use "master" as the branch name? [master]
-Because it's [just another word](https://medium.datadriveninvestor.com/why-githubs-change-from-master-to-main-is-not-the-solution-a3ac38cc48dd) I have used my whole career and has [nothing to do](https://mooseyanon.medium.com/github-f-ck-your-name-change-de599033bbbe) with racism.
-
+Because it's [just another word](https://medium.datadriveninvestor.com/why-githubs-change-from-master-to-main-is-not-the-solution-a3ac38cc48dd) which I have gotten familiar with. It has [nothing to do](https://mooseyanon.medium.com/github-f-ck-your-name-change-de599033bbbe) with racism. Should universities rename Master's Thesis? Was there ever a Slave's thesis or Slave branch?
 
 
 

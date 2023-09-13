@@ -1,0 +1,61 @@
+
+.listbox
+  relative
+  input
+    pointer
+
+select, .select
+  bg /global/nueui/img/angle-down.svg no-repeat
+  bg-pos right 1.2em center
+  bg-size 1em 1em
+  appearance none
+  font-weight 500
+  pr 3em
+
+  .opened &
+    bg /global/nueui/img/angle-up.svg
+
+menu
+  border 1px solid $gray-200
+  box-shadow $menu-shadow
+  radius $small-radius
+  top calc(100% + 6px)
+  max-height 26em
+  overflow auto
+  bg white
+  p .4em 0
+  width 100%
+  none
+
+  .icon
+    mr .6em
+
+  .opened &
+    block
+
+
+// menu items
+menu > li
+  border-radius $small-radius
+  list-style-type none
+  padding .4em 1.2em
+  font-weight 500
+  pointer
+  block
+
+  &.focused
+    bg $gray-100
+
+  &.selected
+    color white
+    bg $main
+    default
+
+
+.divider
+  background-color inherit !important
+  border-bottom
+  cursor default
+  mb .3em
+  block
+  p 0

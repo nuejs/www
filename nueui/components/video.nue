@@ -1,0 +1,48 @@
+
+<div @name="video-player" @click="toggle" class="splash">
+
+  <video ref="video" :attr="opts"/>
+  <a class="btn-play"></a>
+
+  <!--
+  <a class="btn-fs" @click="$refs.video.requestFullscreen()"></a>
+-->
+
+  <script>
+
+    mounted(args) {
+      const opts = this.opts = args.opts
+      if (opts.autoplay) opts.muted = ''
+      const { video } = this.$refs
+
+      video.addEventListener('ended', () => {
+        this.root.classList.remove('playing')
+      })
+    }
+
+    toggle() {
+      const { video } = this.$refs
+      const { paused } = video
+      paused ? video.play() : video.pause()
+      this.root.classList.toggle('playing', paused)
+
+      if (!this.started) {
+        this.root.classList.remove('splash')
+        this.started = true
+      }
+    }
+  </script>
+
+</div>
+
+
+<!--
+  if (opts.clickplay) video.onclick = () => {
+    video.paused ? video.play() : video.pause()
+  }
+
+  if (opts.hoverplay) {
+    video.onmouseenter = video.play
+    video.onmouseleave = video.pause
+  }
+-->

@@ -1,0 +1,20 @@
+
+<nav @name="tabs" class="tabs">
+
+  <a :for="[key, label] in entries"
+    class="{ selected: current == key }"
+    @click="select(key)">
+    { label }
+  </a>
+
+  <script>
+    constructor(data) {
+      this.entries = Object.entries(data.options)
+      this.current = this.entries[0][0]
+    }
+
+    select(key) {
+      this.current = key
+    }
+  </script>
+</nav>

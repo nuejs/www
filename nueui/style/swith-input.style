@@ -1,0 +1,46 @@
+
+/*
+<label class="switch">
+  <input type="checkbox">
+</label>
+*/
+.switch
+  transition background-color .2s
+  size 3.2em 1.6em
+  inline-block
+  bg $gray-200
+  radius 9em
+  pointer
+
+  // no absolutely positioned pseudo-elements
+  input
+    transition width .3s
+    outline none
+    radius 9em
+    size 1.2em
+    margin .2em
+    border 0
+    bg white
+
+    &:not(:checked):focus
+      outline-color $gray
+
+  :checked
+    bg white
+    float right
+
+  &:active input
+    width 2em
+
+  &:hover
+    bg $gray-300
+
+  &:has(:checked)
+    bg $main
+
+  &.bigger
+    font 120%
+
+  @supports not selector(:has(*))
+    :checked
+      background-color $main

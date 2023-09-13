@@ -1,0 +1,92 @@
+
+
+.popup
+  transition top .2s, opacity .2s
+  absolute 90% -9999rem
+  mt $offset
+  opacity 0
+  bg white
+
+  // hover handle
+  &:before
+    content ""
+    absolute 0 0
+    width 100%
+    height calc($offset * 1.1)
+    top calc($offset * -1.1)
+    bg transparent
+
+.has-popup
+  --offset 1em
+  inline-block
+  relative
+
+.hoverable:hover, .opened
+  .popup
+    opacity 1
+    top 100%
+    left 0
+
+
+/*
+  // default tip (on top)
+  <a aria-label="Cancel">×</a>
+
+  // on bottom
+  <a aria-label="Cancel" class="tip-bottom">×</a>
+
+  // custom tip
+  <a class="has-tip">
+    ×
+    <b class="tip">Cancel? <b>Esc</b></b>
+  </a>
+*/
+
+.tip, [aria-label]:after
+  transition bottom .2s, top .2s, opacity .2s, transform .2s
+  font 85% white nowrap 600 center
+  content attr(aria-label)
+  transform translatex(-50%)
+  transition-delay .1s
+  box-shadow $menu-shadow
+  radius $small-radius
+  padding .3em 1em
+  left -9999rem
+  bottom 130%
+  opacity 0
+  absolute
+  bg black
+  z-index 2
+
+[aria-label], .has-tip
+  relative
+
+[aria-label]:hover:after, .has-tip:hover .tip
+  bottom 150%
+  opacity 1
+  left 50%
+
+.tip-bottom
+  &:after, .tip
+    top 120%
+
+  &:hover:after, &:hover .tip
+    bottom auto
+    top 135%
+
+.tip-right
+  &:after, .tip
+    transform translate(5%, 25%)
+    bottom 0
+
+  &:hover:after, &:hover .tip
+    transform translate(10%, 25%)
+    bottom 0
+    left 100%
+
+
+
+// custom tip contents
+.tip b
+  block
+  font 80%

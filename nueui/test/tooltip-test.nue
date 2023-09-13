@@ -1,0 +1,34 @@
+
+<section @name="tooltip-test">
+  <p>
+    On this paragraph
+    <a class="subtle" aria-label="Thank you!">we have tip on top</a>
+  </p>
+
+  <p>
+    Here we have
+    <a class="subtle has-tip tip-bottom">
+      Here's tip on bottom
+      <b class="tip">This is a tip <i class="tag">⌘ + K</i></b>
+    </a>
+  </p>
+
+  <p>
+    Tip on right?
+    <a class="subtle tip-right" aria-label="Thank you!">right tip</a>
+  </p>
+
+
+  <div class="has-popup { extra } hoverable" ref="trigger">
+    <button class="secondary smaller" _ref="btn">Show it to me</button>
+    <div class="popup card" style="width: 30em">
+      <h3>Adjust here</h3>
+      <p>
+        <input type="range" min="1" max="100" value="50" class="slider">
+      </p>
+      <p class="subtle">
+        Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Officiis praesentium tenetur vel voluptas similique veritatis laudantium commodi ut debitis culpa maxime
+      </p>
+    </div>
+  </div>
+</section>

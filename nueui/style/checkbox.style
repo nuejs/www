@@ -1,0 +1,49 @@
+
+// checkbox/radio label
+.label
+  align-items center
+  font-weight 500
+  inline-flex
+  gap .45em
+  pointer
+  mr 1em
+
+.has-error
+  border-color red
+  &:focus
+    outline-color red
+
+.error-msg
+  font 95% red
+  mt .4em
+
+[type=checkbox], [type=radio]
+  outline-offset 1.5px
+  appearance none
+  bg-pos center
+  size 1.2rem
+  pointer
+  p 0
+
+  &:focus
+    outline 2px solid $main-400
+
+[type=checkbox]:checked
+  bg $main
+  bg-size 1.1rem
+  background-image url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB2aWV3Qm94PScwIDAgMTYgMTYnIGZpbGw9JyNmZmYnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHBhdGggZD0nTTEyLjIwNyA0Ljc5M2ExIDEgMCAwMTAgMS40MTRsLTUgNWExIDEgMCAwMS0xLjQxNCAwbC0yLTJhMSAxIDAgMDExLjQxNC0xLjQxNEw2LjUgOS4wODZsNC4yOTMtNC4yOTNhMSAxIDAgMDExLjQxNCAweicvPjwvc3ZnPg==)
+
+[type=radio]
+  radius 3em
+
+  &:checked
+    bg $main
+    bg-size 1.3rem
+    background-image url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB2aWV3Qm94PScwIDAgMTYgMTYnIGZpbGw9JyNmZmYnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PGNpcmNsZSBjeD0nOCcgY3k9JzgnIHI9JzMnLz48L3N2Zz4=)
+
+
+
+
+
+
+

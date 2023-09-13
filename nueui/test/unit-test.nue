@@ -1,0 +1,21 @@
+
+<section @name="unit-test">
+
+  <!--
+  <combobox name="role" label="Select type" :options="options"
+    :onselect="select" empty="No countries found."/>
+  -->
+
+  <listbox name="role" label="Select type" :options="people" :onselect="select"/>
+
+  <script>
+    people = [
+      { id: 1, label: 'Durward Reynolds' },
+      { id: 2, label: 'Kenton Towne' },
+      { id: 3, label: 'Therese Wunsch' },
+      { id: 4, label: 'Benedict Kessler' },
+      { id: 5, label: 'Katelyn Rohan' },
+    ]
+  </script>
+
+</section>

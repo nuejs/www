@@ -1,0 +1,36 @@
+
+<!-- for listbox and combobox -->
+<script>
+  import { createOptions } from './menu-functions.js'
+</script>
+
+<menu @name="menu-options">
+
+  <li :for="el of items" :class="{ divider: !el.label }" :hidden="isHidden(el.label)">
+    <img :if="el.img" :src="el.img" class="icon">
+    <strong>{ el.label }</strong>
+  </li>
+
+  <li :if="allHidden()" class="subtle smaller" data-skip="true">
+    { empty || 'Nothing found'}
+  </li>
+
+  <script>
+    constructor(data) {
+      this.items = createOptions(data.options)
+    }
+
+    isHidden(label) {
+      return this.match && !label.toLowerCase().startsWith(this.match)
+    }
+
+    allHidden() {
+      return !this.items.find(el => !this.isHidden(el.label))
+    }
+
+    setFilter(str) {
+      this.update({ match: str && str.toLowerCase() })
+    }
+  </script>
+
+</menu>

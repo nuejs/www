@@ -1,0 +1,27 @@
+
+<div @name="seo-video" class="video">
+
+  <noscript>
+    <video :src="opts.src" :type="opts.type" controls>
+  </noscript>
+
+  <video-player :opts="opts"/>
+
+  <figcaption :if="caption" :html="">{{ caption }}</figcaption>
+
+  <script>
+    constructor(data) {
+      const { src, autoplay } = data
+
+      this.opts = {
+        type: 'video/' + src.slice(src.lastIndexOf('.') + 1),
+        autoplay,
+        src,
+      }
+    }
+  </script>
+
+</div>
+
+
+

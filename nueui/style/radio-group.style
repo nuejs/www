@@ -1,0 +1,29 @@
+.radio-group
+  mb 1.5em
+
+.radio-item
+  radius $medium-radius
+  padding $small-padding
+  block
+  border
+  pointer
+
+  input
+    float right
+
+  &:hover
+    // box-shadow 0 0 0 2px $main
+    bg $gray-100
+
+  &:has(:checked)
+    border-color white
+    bg $main-600
+    color white
+    box-shadow none
+    pointer default
+
+  &:active
+    box-shadow 0 0 .5em $gray-300 inset
+
+  &:not(:last-child)
+    mb .9em

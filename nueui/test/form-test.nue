@@ -1,0 +1,48 @@
+
+<section @name="form-test">
+  <label class="label mb-2">
+    <h5>Email</h5>
+    <input class="input has-error" value="jonatha@supercool.co^">
+    <p class="error-msg">Please provide a valid email- address</p>
+  </label>
+
+
+  <div class="mb-3">
+    <div class="select">Type of work</div>
+    <menu>
+      <li>Full time</li>
+      <li class="selected">Part time</li>
+      <li>Contractor</li>
+      <li class="divider"></li>
+      <li><label class="label"><input type="checkbox"> Temporary</label></li>
+      <li><label class="label"><input type="checkbox"> Intern</label></li>
+      <li><label class="label"><input type="checkbox"> Volunteer</label></li>
+    </menu>
+  </div>
+
+  <p class="mb-2">
+    <label class="label"><input name="koo" type="radio" checked> Jotain</label>
+    <label class="label"><input name="koo" type="radio"> Toista</label>
+    <label class="label"><input type="checkbox" checked> Dribbble</label>
+    <label class="label"><input type="checkbox"> Reddit</label>
+  </p>
+
+  <p class="mb-2">
+    <label class="switch mr"><input type="checkbox"></label>
+    <label class="switch"><input type="checkbox" checked></label>
+  </p>
+
+  <div class="mb-2">
+    <label class="radio-item">
+      <input name="koo" type="radio" checked>
+      <h4>I'm a remote worker</h4>
+      <p>I’m an employee looking for a remote job.</p>
+    </label>
+
+    <label class="radio-item">
+      <input name="koo" type="radio" checked>
+      <h4>I want to hire employees</h4>
+      <p>I’m an employer hiring remote talent.</p>
+    </label>
+  </div>
+</section>

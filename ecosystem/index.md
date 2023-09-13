@@ -44,9 +44,6 @@ title: Nue ecosystem
 
   Replaces [Vite][vite], [Next.js][next], [Nuxt.js][nuxt], and [Astro][astro]
 
-// * ## Nue PRO
-//   Gorgeous templates for your next project
-// [image src="darrow.png"]
 
 [react]: //react.dev
 [vue]: //vuejs.org
@@ -60,7 +57,6 @@ title: Nue ecosystem
 [vue-router]: //router.vuejs.org
 [pinia]: //pinia.vuejs.org
 [redux]: //redux.js.org
-
 
 [mdx]: //mdxjs.com
 [mdc]: //content.nuxtjs.org/guide/writing/mdc

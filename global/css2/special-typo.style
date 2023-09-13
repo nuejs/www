@@ -22,11 +22,11 @@ p, li
   code
     border 1px solid $gray-300
     font-family courier
-    color $gray-500
+    color $main-800
     font 95% 400
-    bg $gray-50
-    radius 2px
+    bg $main-200
     p 0 .3em .05em
+    radius 2px
 
 
 mark, .mark

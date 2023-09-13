@@ -1,0 +1,22 @@
+
+<section @name="tabs-test">
+
+  <tabs :options="ranges"/>
+
+  <script>
+    ranges = {
+      m12: '12 months',
+      d30: '30 days',
+      d7: '7 days',
+      h24: '24 hours'
+    }
+
+    constructor(data) {
+      this.items = data.users
+      this.el = data.users[0]
+    }
+  </script>
+
+</section>
+
+

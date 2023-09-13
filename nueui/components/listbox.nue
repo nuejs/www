@@ -1,0 +1,26 @@
+
+<script>
+  import { setupMenu } from './menu-functions.js'
+</script>
+
+<div @name="listbox" class="listbox">
+  <input ref="input" class="select" :placeholder="label" readonly>
+  <menu-options :options="options"/>
+
+  <script>
+    el = ''
+
+    mounted(args) {
+      const { input } = args.$refs
+      setupMenu(input, (i) => {
+        const el = args.options[i]
+        if (el) {
+          input.value = el.label || el
+          args.onselect?.(el, i)
+        }
+      })
+
+      if (args.opened) input.dispatchEvent(new Event('focus'))
+    }
+  </script>
+</div>

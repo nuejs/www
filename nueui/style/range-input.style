@@ -1,0 +1,9 @@
+[type=range]
+  background $gray-200
+  appearance none
+  cursor pointer
+  height 2px
+  padding 0
+
+  &:active, &:focus
+    outline none

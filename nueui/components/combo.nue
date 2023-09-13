@@ -1,0 +1,25 @@
+
+<div @name="combobox">
+  <input ref="input" class="search input" :placeholder="label" @input="filter">
+  <menu-options ref="menu" :options="options" :empty="empty"/>
+
+  <script>
+    mounted(args) {
+      const { input, menu } = args.$refs
+      this.menu = menu
+
+      args.setupMenu(input, (i) => {
+        const el = args.options[i]
+        if (el) {
+          input.value = el.label || el
+          args.onselect?.(el, i)
+          menu.setFilter()
+        }
+      })
+    }
+
+    filter(e) {
+      this.menu.setFilter(e.target.value)
+    }
+  </script>
+</div>

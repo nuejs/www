@@ -1,0 +1,28 @@
+
+:root
+  // boxes
+  --small-padding 1em 1.6em
+  --medium-padding 1.6em
+  --large-padding 2.2em
+
+  // border radius
+  --small-radius .2em
+  --medium-radius .4em
+  --large-radius 1.5em
+
+  // shadows
+  --card-shadow 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)
+  --dialog-shadow 0 0 3em rgb(0 0 0 / 0.25)
+  --menu-shadow 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)
+
+  // spacing
+  --r 1.5
+  --s-3 calc($s-2 / $r)
+  --s-2 calc($s-1 / $r)
+  --s-1 calc($s / $r)
+  --s 1.2rem
+  --s1 calc($s * $r)
+  --s2 calc($s1 * $r)
+  --s3 calc($s2 * $r)
+  --s4 calc($s3 * $r)
+  --s5 calc($s4 * $r)

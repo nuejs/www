@@ -1,4 +1,10 @@
 
+body > .site-top
+  min-width 100%
+  font center
+  margin 0
+  p .2em 1em
+
 .site-header
   justify-content space-between
   max-width 1300px

@@ -1,0 +1,31 @@
+
+
+.grid
+  --cell-width 250px
+  --gap 3em
+  grid-template-columns repeat(auto-fit, minmax($cell-width, 1fr))
+  display grid
+  gap $gap
+  py 3em
+
+
+.flex
+  align-items center
+  gap 1em
+  flex
+  > *
+    flex 1
+
+/*
+.align-top
+  align-items flex-start
+
+.w-full
+  width 100%
+
+.auto
+  mx auto
+
+.narrow
+  max-width calc($content-width / 2)
+*/

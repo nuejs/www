@@ -1,0 +1,46 @@
+
+  <div class="dialog" open>
+    <header>
+      <h3>Revoke access</h3>
+      <img src="/nueui/img/cancel.svg" class="dialog-close">
+    </header>
+    <p>Something here</p>
+    <footer>
+      <button class="primary mr small">Accept</button>
+      <button class="secondary small">Decline</button>
+    </footer>
+  </div>
+
+  <div class="dialog" open>
+    <h4>Payment successful</h4>
+    <p>
+      Your payment has been successfully submitted.
+      We’ve sent you an email with all of the details of your order.
+    </p>
+    <button class="primary small">Got it, thanks!</button>
+  </div>
+
+
+  <section class="card user-info">
+    <header>
+      <avatar :user="el"/>
+      <h3>{ el.name }</h3>
+      <a class="subtle" href="mailto:{ el.email }">{ el.email }</a>
+    </header>
+
+    <ul class="clear infolist">
+      <li>
+        <label>From</label>
+        <span>
+          <img :src="countryFlag(el.country_code)" class="icon mr">
+          { el.city }, { el.country }
+        </span>
+      </li>
+      <li>
+        <label>Heard from</label>
+        <span>{ el.source }</span>
+      </li>
+    </ul>
+
+  </section>
+
