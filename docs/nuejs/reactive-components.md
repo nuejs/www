@@ -43,7 +43,7 @@ Here's the code for our gallery component:
 </section>
 ```
 
-You can see some basic concepts in reactivity in action: [event handlers](event-handlers) to respond to user clicks and [loops and conditionals](control-flow) for the control flow.
+You can see some basic concepts in reactivity in action: [event handlers](event-handlers.html) to respond to user clicks and [loops and conditionals](control-flow.html) for the control flow.
 
 
 Worth noticing that you need less than 20 lines of code to implement a basic gallery. The first Google result to "React image gallery" takes me to [this JSX file](https://github.com/xiaolin/react-image-gallery/blob/master/src/components/ImageGallery.jsx), which has more than 1700 lines. Nue version would likely be 10-20 times smaller, even with the same feature set and the code would be easier to understand and scale with new features.
@@ -217,7 +217,7 @@ Sometimes you want to get handle to some DOM element or nested component inside 
 
 
 ## Instance API [api]
-The application instance is accessible as a return value to `createApp` and via`this` variable inside the component (between script tags).
+The application instance is accessible as a return value to `createApp` and via `this` variable inside the component (between script tags).
 
 
 `$el` the root DOM node of the component instance
@@ -232,7 +232,7 @@ The application instance is accessible as a return value to `createApp` and via`
 
 `update(data?: Object)` forces the component instance to re-render with optional data. You typically call this event after fetching data from the server or some other asynchronous event.
 
-The component re-renders itself automatically after calling an [event handler](event-handlers), but you need to call this manually if there is no clear interaction to be detected.
+The component re-renders itself automatically after calling an [event handler](event-handlers.html), but you need to call this manually if there is no clear interaction to be detected.
 
 
 

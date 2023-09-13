@@ -178,7 +178,7 @@ You can pass the iterated data to the component with attributes:
 />
 ```
 
-Or you can use [:bind attribute](template-syntax#bind) to pass all the data at once:
+Or you can use [:bind attribute](template-syntax.html#bind) to pass all the data at once:
 
 ```
 <my-component :for="item in items" :bind="item"/>

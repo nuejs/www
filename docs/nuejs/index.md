@@ -8,7 +8,9 @@ include: [listbox, menu-options]
 
 Nue JS is an extremely small (2.3kb minzipped) JavaScript library for building user interfaces. It is a core part of the [Nue ecosystem](/ecosystem/). It’s like *Vue.js, React.js*, or *Svelte* but there are no hooks, effects, props, portals, watchers, injects, suspensions, or other unusual abstractions on your way. ~Learn the basics of HTML, CSS, and JavaScript and you are good to go~.
 
-The best thing is that you need less code to do the same thing. It's not unusual to see 10x differences in the amount of code you need to write. For example, here's a custom list box component written with Nue:
+
+## Build user interfaces with 10x less code [less-is-more]
+The biggest benefit with Nue is that you need less code to do the same thing. It's not unusual to see 10x differences in the amount of code you need to write. For example, here's a custom list box component written with Nue:
 
 [.listbox-demo]
   [listbox]
@@ -33,7 +35,7 @@ The [React version](https://headlessui.com/react/listbox) is 2500 lines of JavaS
 
 
 
-## "It's just HTML"
+## "It's just HTML" [html]
 Nue uses HTML-based template syntax:
 
 ``` html
@@ -81,29 +83,28 @@ Nue does not promote the use of scoped CSS, Tailwind, or other CSS-in-JS framewo
 
 1. *Faster page loads*: With decoupled styling it's easier to extract primary CSS from the secondary and keep your HTML page under the critical 14kb limit.
 
-Learn more about [styling components](styling-components)
+Learn more about [styling components](styling-components.html)
 
 
 
-
-## Four kinds of components
+## Four kinds of components [isomorphic]
 Nue has a rich component model and it allows you to create all kinds of applications using different kinds of components:
 
 [image "/ecosystem/img/grid.svg" class="small-image float-right"]
 
-1. [Server components](server-components) are rendered on the server. They help you build content-focused websites that load faster without JavaScript and are crawlable by search engines.
+1. [Server components](server-components.html) are rendered on the server. They help you build content-focused websites that load faster without JavaScript and are crawlable by search engines.
 
 
-2. [Reactive components](reactive-components) are rendered on the client. They help you build dynamic islands or single-page applications.
+2. [Reactive components](reactive-components.html) are rendered on the client. They help you build dynamic islands or single-page applications.
 
-3. [Hybrid components](isomorphic-components#hybrid) are partly rendered on the server side, and partly on the client side. These components help you build reactive, SEO-friendly components like video tags or image galleries.
+3. [Hybrid components](isomorphic-components.html#hybrid) are partly rendered on the server side, and partly on the client side. These components help you build reactive, SEO-friendly components like video tags or image galleries.
 
-3. [Universal components](isomorphic-components#universal-components) are used identically on both server- and client side.
-
-
+3. [Universal components](isomorphic-components.html#universal-components) are used identically on both server- and client side.
 
 
-## UI library files
+
+
+## UI library files [libs]
 Nue allows you to define multiple components on a single file. This is a great way to group related components together and simplify dependency management.
 
 

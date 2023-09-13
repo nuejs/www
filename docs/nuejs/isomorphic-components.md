@@ -43,7 +43,7 @@ Here, the media object is used on the server side to render a list of tweets (pa
 
 
 ### Client-side
-Here, the _same_ component is mounted on the client DOM tree and [styled](styling-components) differently:
+Here, the _same_ component is mounted on the client DOM tree and [styled](styling-components.html) differently:
 
 [client-grid]
   class: user-list
@@ -177,7 +177,7 @@ Here is the client-side Nue- code for our isomorphic component:
 
 The above makes a custom, minimalistic video player interface with just a play button in the center that is only visible when the video is playing.
 
-The HTML5 `<video>` tag will have all the attributes from the opts with [:attr](template-syntax#attr) attribute and the play button visibility is toggled using a `.playing` CSS class name.
+The HTML5 `<video>` tag will have all the attributes from the opts with [:attr](template-syntax.html#attr) attribute and the play button visibility is toggled using a `.playing` CSS class name.
 
 
 The server-side part is progressively enhanced with the dynamic parts by selecting all the `<nue-island/>` nodes and replacing them with a `video-player` client instance.

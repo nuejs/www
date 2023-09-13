@@ -64,6 +64,16 @@ h1 del, h2 del
   radius .1em
   ml .1em
 
+
+.taller
+  m 2em 0
+
+@large
+  .wide-right
+    mr -4em
+    img
+      max-width calc(100% + 4em)
+
 @xlarge
   .wider
     m 2em -12em 2em -3.5rem

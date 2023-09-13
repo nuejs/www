@@ -6,7 +6,7 @@ title: Nue JS • Server components
 # Server components
 Server components are the basis for content-focused websites or multi-page applications (MPAs). They are foundational to reducing time to first contentful paint, ensuring accessibility, and improving SEO. They reduce the need for client-side JavaScript, sometimes to the point that it is not needed at all.
 
-[Reactivity](reactive-components) is unnecessary on the server side. There is no user interaction, nor DOM updates. No dynamic updates or lifecycle methods. Each rendering just renders the given data. Only the `constructor` method is called upon component creation if the method is defined.
+[Reactivity](reactive-components.html) is unnecessary on the server side. There is no user interaction, nor DOM updates. No dynamic updates or lifecycle methods. Each rendering just renders the given data. Only the `constructor` method is called upon component creation if the method is defined.
 
 
 ## Rendering components

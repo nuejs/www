@@ -8,7 +8,7 @@ include: [media-object]
 # Component basics
 Nue component is a reusable piece of UI. They are the building blocks of your application. Nue components can do anything that you'd expect from a modern UI framework. They can be nested within other components forming a tree-like structure and you can build control flows by looping components or rendering them conditionally.
 
-[Reactive components](reactive-components) can also react to user input and re-render themselves to a new state. This article explains the important basics of components that you can apply on both server- and client side.
+[Reactive components](reactive-components.html) can also react to user input and re-render themselves to a new state. This article explains the important basics of components that you can apply on both server- and client side.
 
 
 ## Defining components
@@ -31,7 +31,7 @@ Components are defined in a file with a `.nue` extension (recommended). They are
 
 
 ## Rendering components
-[Server components](server-components) are rendered with a `render` or `renderFile` method and [reactive components](reactive-components) are inserted on the page with a `mount` method. In both scenarios, you render the component with some optional data passed as an argument. Here's server-side rendering (SSR):
+[Server components](server-components.html) are rendered with a `render` or `renderFile` method and [reactive components](reactive-components.html) are inserted on the page with a `mount` method. In both scenarios, you render the component with some optional data passed as an argument. Here's server-side rendering (SSR):
 
 ```
 // import rendering method
@@ -49,7 +49,7 @@ const html = renderFile('media-object.nue', {
 console.info(html)
 ```
 
-When inserted on the page and [styled](styling-components) the object could look like this:
+When inserted on the page and [styled](styling-components.html) the object could look like this:
 
 [media-object]
   title: Media object
@@ -78,7 +78,7 @@ You can pass data to your components with attributes. These can be static or dyn
 </main>
 ```
 
-Nue [template syntax](template-syntax) is heavily borrowed from Vue, so Vue users should feel right at home with Nue.
+Nue [template syntax](template-syntax.html) is heavily borrowed from Vue, so Vue users should feel right at home with Nue.
 
 
 ### One-way data flow
