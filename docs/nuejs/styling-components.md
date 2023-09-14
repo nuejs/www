@@ -24,7 +24,7 @@ Media object is a very generic and re-usable module that Facebook used to [strip
   <img src="{ img }">
   <aside>
 |   <h3>{ title }</h3>
-    <p>{ desc }</h3>
+    <p>{ desc }</p>
     <slot/>
   </aside>
 </div>

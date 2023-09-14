@@ -21,7 +21,7 @@ Universal components run the same source code on both ends. Use can use the same
   <img src="{ img }">
   <aside>
     <h3>{ title }</h3>
-    <p>{ desc }</h3>
+    <p>{ desc }</p>
     <slot/>
   </aside>
 </div>
