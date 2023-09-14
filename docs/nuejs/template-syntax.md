@@ -85,7 +85,7 @@ All the attribute values are available inside the component:
 
 ```
 <div @name="media">
-  <h3>{ title }</h2>
+  <h3>{ title }</h3>
 </div>
 ```
 
@@ -192,7 +192,7 @@ Attr directive renders a DOM attribute for each property in an object. So follow
 This would be rendered as:
 
 ```
-<p title="My title" alt="My alt"></pa>
+<p title="My title" alt="My alt"></p>
 ```
 
 

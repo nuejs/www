@@ -19,7 +19,7 @@ Here is an example component called "media object":
   <img src="{ img }">
   <aside>
     <h3>{ title }</h3>
-    <p>{ desc }</h3>
+    <p>{ desc }</p>
   </aside>
 </div>
 ```
@@ -95,7 +95,7 @@ Internally Nue components are [ES6 classes][es6] where all the properties and me
   <img src="{ img }">
   <aside>
     <h3>{ title }</h3>
-    <p>{ format(desc) }</h3>
+    <p>{ format(desc) }</p>
   </aside>
 
   <!-- instance variables and methods -->
@@ -130,7 +130,7 @@ First, we add a `<slot/>` element to the HTML layout:
   <img src="{ img }">
   <aside>
     <h3>{ title }</h3>
-    <p>{ desc }</h3>
+    <p>{ desc }</p>
 |   <slot/>
   </aside>
 </div>
