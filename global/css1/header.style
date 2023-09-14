@@ -3,7 +3,11 @@ body > .site-top
   min-width 100%
   font center
   margin 0
-  p .2em 1em
+  p .3em 1em
+
+  em
+    font 90% 500 $gray-400 uppercase
+    font-style normal
 
 .site-header
   justify-content space-between
