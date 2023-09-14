@@ -6,14 +6,18 @@ dialog
   left initial
   radius 8px
   border 0
+  none
 
   &::backdrop
     backdrop-filter blur(3px)
 
+  &[open]
+    block
+
 .dialog-close
   absolute 1.2rem right 1.2rem
   transition .1s
-  width 1.5em
+  width 1.5rem
   opacity .2
   pointer
 
@@ -47,3 +51,6 @@ dialog
     border-top
     mt .5em
     pt 1em
+
+    &:hover
+      transform scale(1)

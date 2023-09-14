@@ -80,6 +80,23 @@ hr
   h3
     ml 1em
 
+.info
+  padding 1.2em
+  m 3em 0
+  bg $main-100
+
+  @medium
+    mx -1.2em
+  p
+    font 1.15em
+
+  code
+    font 600
+    float left
+    mr 1em
+
+
+
 @medium
 
   .centered
@@ -92,6 +109,8 @@ del
   font 500
   bg yellow
   p 0 .3em
+
+
 
 /*
 .grid

@@ -1,7 +1,7 @@
 
 // Docs area only
 
-import { $ } from 'island'
+import { $ } from '/@nue/kit/island.js'
 
 function toggle(name, flag) {
   $('body').classList.toggle(name, flag)

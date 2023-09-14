@@ -1,6 +1,6 @@
 
 <script>
-  import { $, $$ } from 'island'
+  import { $, $$ } from '/@nue/kit/island.js'
 </script>
 
 <label @name="zoom" class="zoom">

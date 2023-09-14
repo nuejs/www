@@ -1,7 +1,7 @@
 
 import { listen } from '/nueui/dialog.js'
 import { ping } from '/ext/ping.js'
-import { $ } from 'island'
+import { $ } from '/@nue/kit/island.js'
 
 // geo ping
 if (!location.port) ping()

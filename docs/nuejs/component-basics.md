@@ -24,10 +24,11 @@ Here is an example component called "media object":
 </div>
 ```
 
-Components are defined in a file with a `.nue` extension (recommended). They are HTML fragments with the component name given in the `@name` attribute. In the above, we defined a [highly reusable][media-object] media component that can be used on both server- and client-side.
+Components are HTML fragments with the component name given in the `@name` attribute. In the above, we defined a [highly reusable][media-object] media component that can be used on both server- and client-side.
 
 [media-object]: http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
 
+You can use whatever extension you wish on the component file, but `.nue` extension is recommended. You can also use `.htm` to have your editor (and GitHub) automatically color highlight the code and to distinguish them from static .html files.
 
 
 ## Rendering components

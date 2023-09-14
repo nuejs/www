@@ -107,7 +107,7 @@ Because
 
 
 ## Why not TypeScript? [ts]
-Just like React, Svelte, or SvelteKit, Nue is written with JavaScript. That's because:
+Picking a language is always a tradeoff, because there are good and bad parts in all languages. But just like React, Svelte, or SvelteKit, Nue is written with plain JavaScript. That's because:
 
 1. ES6 is awesome: think [modules][modules], [destructuring][destroy], and the [proxy][proxy]
 
@@ -117,7 +117,7 @@ Just like React, Svelte, or SvelteKit, Nue is written with JavaScript. That's be
 
 1. *JSDoc*: type definitions can be written with JSDoc's [@type](//jsdoc.app/tags-type.html) tag.
 
-Nue is of course usable in both JavaScript and TypeScript projects.
+Nue is obviously usable in both JavaScript and TypeScript projects.
 
 
 

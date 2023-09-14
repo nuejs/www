@@ -1,5 +1,5 @@
 
-import { $, mount } from 'island'
+import { $, mount } from '/@nue/kit/island.js'
 
 function setHash(hash) {
   history.replaceState(0, 0, hash)
@@ -63,7 +63,8 @@ export function listen() {
 
   document.addEventListener('click', function(e) {
     const el = e.target.closest('[href]')
-    const dialog = findDialog(el?.getAttribute('href'))
+    const href = el?.getAttribute('href')
+    const dialog = findDialog(href)
 
     if (dialog) {
       openDialog(dialog)

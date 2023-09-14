@@ -12,7 +12,7 @@ title: Nue JS • Getting started
 
 
 ## Option 1: npm create
-Setup a new Nue project with `npm create nue <destination>`. For example:
+Setup a new Nue project with `npm create nue <destination>`. This is the recommended way to get started. For example:
 
 ``` sh
 npm create nue my-nue-app
