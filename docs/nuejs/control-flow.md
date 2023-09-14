@@ -57,7 +57,7 @@ Arrays are looped with syntax like `item in items`, where `items` is the data ar
 
 ```
 <ul>
-  <li ı:for="item in items"ı>
+  <li :for="item in items">
     { item.lang } = { item.text }
   </li>
 
@@ -273,7 +273,7 @@ Here's the full source code for the above demo:
 
     // add a CSS transition class to a newly added dom nodes
     oninsert(node) {
-|     setTimeout(() => node.classList.add('fade-in'), 1)
+      setTimeout(() => node.classList.add('fade-in'), 1)
     }
   </script>
 

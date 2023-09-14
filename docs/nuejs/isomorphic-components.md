@@ -90,7 +90,7 @@ Here is the server-side code for our video component
 <div @name="video-object" class="video">
 
   <!-- the client part -->
-| <video-player :opts="opts"/>
+  <video-player :opts="opts"/>
 
   <!-- the server/SEO parts -->
   <noscript>
@@ -122,7 +122,7 @@ The HTML output will look like this:
 <div class="video">
 
   <!-- the client part -->
-  <ınue-island island="video-player"ı>
+  <nue-island island="video-player">
     <script type="application/json">
       { "opts": {
         "type": "video/mp4",

@@ -20,10 +20,10 @@ There are other reasons too like universal hot-reloading, more matching/performa
 Media object is a very generic and re-usable module that Facebook used to [strip thousands of lines of code](//www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/) from their codebase. It looks like this:
 
 ```
-<div ı@name="media-object"ı class="{ class }">
+<div @name="media-object" class="{ class }">
   <img src="{ img }">
   <aside>
-|   <h3>{ title }</h3>
+    <h3>{ title }</h3>
     <p>{ desc }</h3>
     <slot/>
   </aside>
@@ -48,7 +48,7 @@ Maybe the best thing with external stylesheets is that the styling is fully deco
 Another big advantage is that the HTML code remains clean and absent from local or inline styling. The art gallery is constructed just by giving the parent component a class name:
 
 ```
-<div ıclass="art-gallery"ı>
+<div class="art-gallery">
   <media-object :for="item in items" :bind="item"/>
 </div>
 ```
@@ -64,7 +64,7 @@ Modern CSS is extremely powerful. It's trivial to give a whole different look an
 [media-grid class="feature-list" :items="products"]
 
 ```
-<div class="ımodifier-classnameı">
+<div class="modifier-classname">
   <media-object :for="item in items" :bind="item"/>
 </div>
 ```

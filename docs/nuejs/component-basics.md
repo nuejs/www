@@ -15,7 +15,7 @@ Nue component is a reusable piece of UI. They are the building blocks of your ap
 Here is an example component called "media object":
 
 ```
-<div ı@name="media-object"ı class="{ class }">
+<div @name="media-object" class="{ class }">
   <img src="{ img }">
   <aside>
     <h3>{ title }</h3>
@@ -102,14 +102,14 @@ Internally Nue components are [ES6 classes][es6] where all the properties and me
   <script>
 
     // instance variable
-    ıtitleı = 'Default title'
+    title = 'Default title'
 
     // called when the component is created
-    ıconstructor(data)ı {
+    constructor(data) {
     }
 
     // custom function called by the template
-    ıformat(value)ı {
+    format(value) {
     }
   </script>
 
@@ -131,7 +131,7 @@ First, we add a `<slot/>` element to the HTML layout:
   <aside>
     <h3>{ title }</h3>
     <p>{ desc }</h3>
-|   <slot/>
+    <slot/>
   </aside>
 </div>
 ```
