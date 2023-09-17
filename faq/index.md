@@ -107,7 +107,7 @@ Because
 
 
 ## Why not TypeScript? [ts]
-Picking a language is always a tradeoff, because there are good and bad parts in all languages. But just like React, Svelte, or SvelteKit, Nue is written with plain JavaScript. That's because:
+Picking a language is always a tradeoff, because there are good and bad parts in all languages. But just like Svelte or SvelteKit, Nue is written with plain JavaScript. That's because:
 
 1. ES6 is awesome: think [modules][modules], [destructuring][destroy], and the [proxy][proxy]
 
