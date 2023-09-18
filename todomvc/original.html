@@ -1,0 +1,15 @@
+
+<meta charset="utf-8">
+
+<link rel="stylesheet" href="todomvc.css">
+
+<todo-app></todo-app>
+
+<script type="module" src="/@nue/kit/hotreload.js"></script>
+
+<script type="module">
+  import createApp from '/@nue/js/nue.js'
+  // import Todo from './todo-compact.js'
+  import Todo from './todo-official.js'
+  createApp(Todo).mount(document.querySelector('todo-app'))
+</script>

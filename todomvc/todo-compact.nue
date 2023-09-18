@@ -1,0 +1,98 @@
+
+<main class="todo">
+  <h1>todos</h1>
+
+  <form @submit.prevent="add">
+    <input type="checkbox" title="Mark all as completed" class="toggle-all"
+      @change="toggleAll" :checked="items[0] && !numActive()">
+    <input type="text" name="desc" placeholder="What needs to be done?" autofocus>
+  </form>
+
+  <ul :if="items[0]">
+    <li :for="item in items" class="{ done: item.done, editing: item.edit }"
+      :hidden="!isShown(item)">
+
+      <input type="checkbox" class="toggle" :checked="item.done" :disabled="item.edit"
+        @change="item.done = !item.done; save()">
+
+      <label @dblclick="item.edit = !item.edit" :if="!item.edit">{ item.desc }</label>
+
+      <input type="text" :if="item.edit" :value="item.desc"
+        @keydown="handleEdit(item, $event)"
+        @blur="updateItem(item, $event)">
+
+      <a class="destroy" @click="items.remove(item); save()">&times;</a>
+    </li>
+  </ul>
+
+  <footer :if="items[0]">
+    <p>{ numActive() } item{ numActive() != 1 && 's' } left</p>
+
+    <nav>
+      <a :for="name in filters" class="{ selected: filter == name }"
+        @click="setFilter(name)">{ name }</a>
+    </nav>
+
+    <p><a @click="clearCompleted" :if="hasCompleted()">Clear completed</a></p>
+  </footer>
+
+  <script>
+    items = JSON.parse(localStorage.nuedo || '[]')
+    filters = ['All', 'Active', 'Completed']
+    filter = location.hash.slice(1) || 'All'
+
+    save() {
+      localStorage.nuedo = JSON.stringify(this.items)
+    }
+
+    numActive() {
+      return this.items.filter(item => !item.done).length
+    }
+
+    hasCompleted() {
+      return this.items.find(item => item.done)
+    }
+
+    setFilter(name) {
+      history.replaceState('', '', '#' + name)
+      this.filter = name
+    }
+
+    isShown(item) {
+      const i = this.filters.indexOf(this.filter)
+      return !i || (i == 1 ? !item.done : item.done)
+    }
+
+    toggleAll(event) {
+      this.items.forEach(item => item.done = event.target.checked)
+      this.save()
+    }
+
+    clearCompleted() {
+      this.items.forEach(item => item.done = false)
+      this.save()
+    }
+
+    handleEdit(item, { key, target }) {
+      if (key == 'Escape') item.edit = null
+      if (key == 'Enter') target.blur()
+    }
+
+    updateItem(item, { target }) {
+      item.desc = target.value
+      delete item.edit
+      this.save()
+    }
+
+    add({ target }) {
+      const desc = target.desc.value.trim()
+      if (desc) {
+        target.reset()
+        this.items.push({ desc });
+        this.save()
+      }
+    }
+  </script>
+
+</main>
+

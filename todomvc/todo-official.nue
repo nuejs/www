@@ -1,0 +1,111 @@
+
+<main class="todoapp">
+  <header class="header">
+    <h1>todos</h1>
+    <input class="new-todo" name="desc" @keydown="add"
+      placeholder="What needs to be done?" autofocus>
+  </header>
+
+   <section class="main" :if="items[0]">
+
+    <input id="toggle-all" class="toggle-all" type="checkbox"
+      @change="toggleAll" :checked="items[0] && !numActive()">
+    <label for="toggle-all">Mark all as complete</label>
+
+
+    <ul class="todo-list">
+      <li :for="item in items" class="{ completed: item.done, editing: item.edit }"
+        :hidden="!isShown(item)">
+
+        <div class="view">
+          <input class="toggle" type="checkbox" :checked="item.done"
+            @change="item.done = !item.done; save()">
+          <label @dblclick="item.edit = !item.edit">{ item.desc }</label>
+          <button class="destroy" @click="items.remove(item); save()"/>
+        </div>
+
+        <input class="edit" type="text" :if="item.edit" :value="item.desc"
+          @keydown="handleEdit(item, $event)"
+          @blur="updateItem(item, $event)">
+      </li>
+    </ul>
+
+    <footer class="footer" :if="items[0]">
+      <span class="todo-count">
+        <strong>{ numActive() }</strong> item{ numActive() != 1 && 's' } left
+      </span>
+
+      <ul class="filters">
+        <li><a :for="name in filters" class="{ selected: filter == name }"
+          @click="setFilter(name)">{ name }</a></li>
+      </ul>
+
+      <button class="clear-completed" @click="clearCompleted" :if="hasCompleted()">
+        Clear completed
+      </button>
+    </footer>
+
+  </section>
+
+  <script>
+    items = JSON.parse(localStorage.nuedo || '[]')
+    filters = ['All', 'Active', 'Completed']
+    filter = location.hash.slice(1) || 'All'
+
+    save() {
+      localStorage.nuedo = JSON.stringify(this.items)
+    }
+
+    numActive() {
+      return this.items.filter(item => !item.done).length
+    }
+
+    hasCompleted() {
+      return this.items.find(item => item.done)
+    }
+
+    setFilter(name) {
+      history.replaceState('', '', '#' + name)
+      this.filter = name
+    }
+
+    isShown(item) {
+      const i = this.filters.indexOf(this.filter)
+      return !i || (i == 1 ? !item.done : item.done)
+    }
+
+    toggleAll(event) {
+      this.items.forEach(item => item.done = event.target.checked)
+      this.save()
+    }
+
+    clearCompleted() {
+      this.items.forEach(item => item.done = false)
+      this.save()
+    }
+
+    handleEdit(item, { key, target }) {
+      if (key == 'Escape') item.edit = null
+      if (key == 'Enter') target.blur()
+    }
+
+    updateItem(item, { target }) {
+      item.desc = target.value
+      delete item.edit
+      this.save()
+    }
+
+    add({ key, target }) {
+      if (key == 'Enter') {
+        const desc = target.value.trim()
+        if (desc) {
+          this.items.push({ desc });
+          this.save()
+          target.value = ''
+        }
+      }
+    }
+  </script>
+
+</main>
+
