@@ -99,11 +99,11 @@ Because
 
 1. *Spaghetti code* is hard to understand, maintain, and scale
 
-1. *Page weight*: It's hard to keep your pages under the 14kb limit
+1. *Page weight*: It's hard to keep your initial TCP packet (with HTML and primary CSS) under the 14kb limit
 
-1. *Hardcoded design*: Tailwind components look the same regardless of the context
+1. *Hardcoded design*: when styling is fixed to the component it's hard to make the component look different on other places
 
-1. *Proprietary syntax*: It's better to stick with the standards
+1. *Proprietary syntax*: It's better to work closer to standards
 
 
 ## Why not TypeScript? [ts]
@@ -120,9 +120,6 @@ Picking a language is always a tradeoff, because there are good and bad parts in
 Nue is obviously usable in both JavaScript and TypeScript projects.
 
 
-
-## Why use "master" as the branch name? [master]
-Because it's [just another word](https://medium.datadriveninvestor.com/why-githubs-change-from-master-to-main-is-not-the-solution-a3ac38cc48dd) which I have gotten familiar with. It has [nothing to do](https://mooseyanon.medium.com/github-f-ck-your-name-change-de599033bbbe) with racism. Should universities rename Master's Thesis? Was there ever a Slave's thesis or Slave branch?
 
 
 
