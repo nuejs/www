@@ -12,7 +12,7 @@ include: [bunny/video]
 Nue is open-source software released under the MIT license. It's an engineering attempt to bring a long-term solution to the prevailing [frontend fatique](/backstory/).
 
 [.info]
-  `!important` This document describes the benefits of the whole [Nue ecosystem](/ecosystem/), which is not ready yet. Currently only [Nue JS](/docs/nuejs) is publicly available.
+  `!important` This document describes the benefits of [Nue toolset](/tools/), which is not ready yet. Currently only [Nue JS](/docs/nuejs) is publicly available.
 
 
 ## Create both websites *and* webapps

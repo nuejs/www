@@ -74,7 +74,7 @@ Modern CSS is extremely powerful. It's trivial to give a whole different look an
 
 
 ## Nue ~CSS~
-The [upcoming](/ecosystem/) Nue CSS pre-processor aims to bring clean, cascaded CSS back to the forefront. It's an alternative to Tailwind and other CSS-in-JS frameworks to unwrap the good parts in cascaded stylesheets and separation of concerns as opposed to local/inline styling.
+The [upcoming](/tools/) Nue CSS pre-processor aims to bring clean, cascaded CSS back to the forefront. It's an alternative to Tailwind and other CSS-in-JS frameworks to unwrap the good parts in cascaded stylesheets and separation of concerns as opposed to local/inline styling.
 
 Think [SASS](//sass-lang.com/) or [Stylus](//stylus-lang.com/), but developed for the new world where CSS variables, math, cascade layers, etc. are part of the standard.
 

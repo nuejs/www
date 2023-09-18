@@ -169,3 +169,10 @@ hr
     color black
   img
     filter grayscale(100)
+
+.signature
+  font 85%
+  mt .5em
+  ml 2em
+  p
+    m 0

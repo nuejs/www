@@ -1,12 +1,14 @@
 
 ---
-title: Nue ecosystem
+title: Nue tools
 ---
 
 // [image src="img/grid.svg" class="small-hero"]
 
 # Nue
-# Ecosystem
+# Tools
+Eventually Nue is a complete frontend development toolset. An alternative to ecosystems like Vite, Next.js, and Astro.
+
 **1/6 done** • Check [FAQ](/faq/#roadmap) for completion details
 
 * ## Nue JS *DONE*

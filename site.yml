@@ -12,7 +12,7 @@ icons: /global/icons
 site-top: false
 
 mastnav:
-  - Ecosystem
+  - Tools
   - Why
   - Backstory
   - label: Docs
@@ -20,7 +20,7 @@ mastnav:
   - FAQ
 
 footnav:
-  - Ecosystem
+  - Tools
   - Backstory
   - Why
   - label: Docs

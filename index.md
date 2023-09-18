@@ -34,12 +34,12 @@ include: [home, bunny/video]
 - - -
 
 [.hello]
-  ### 👋 Hello, World!
-  Author here. I've been working on this for the past ~12 months, lately full-time. Today (Fri 15 Sep) I'm releasing two things:
+  ### Hello, World!
+  Author here. I've been working on this for the past ~12 months, lately full-time. There are two things here:
 
   1. [Nue JS](/docs/nuejs/) — A tiny (2.3kb minzipped) JavaScript library for building user interfaces. It's like React/Vue, but there are no hooks, effects, props, or other unusual abstractions on your way. Know the basics of HTML, CSS, and JavaScript and you are good to go. It supports both server-side rendering and client-side reactive components. It takes inspiration from Vue 2.0 and Riot.js. (I'm actually the original author of Riot).
 
-  2. [Nue ecosystem](//nuejs.org/ecosystem/) — This is the ultimate goal and vision. Once all the projects are finished, Nue is a serious alternative to systems like Vite, Next.js, and Astro.
+  2. [Nue tools](//nuejs.org/tools/) — A complete frontend development toolset. Once finished, Nue is an alternative to systems like Vite, Next.js, and Astro. This is the ultimate goal.
 
   The thing is that I'm not happy with the current state of web development, so I'm building everything from scratch in super minimalistic way. I'm taking advantage of the "old" innovations like progressive enhancement, separation of concerns, and semantic web design. Benefits highlighted [here](/why/).
 
@@ -47,12 +47,12 @@ include: [home, bunny/video]
 
   Ongoing discussion: [Hacker News](//news.ycombinator.com/item?id=37507419) and  [Reddit](//www.reddit.com/r/vuejs/comments/16ifij7/nue_powerful_reactvueviteastro_alternative/)
 
-  #### See you!
 
+  [.signature]
+    [image src="/backstory/tero.png" width="70"]
 
-  [image src="/backstory/tero.png" width="70"]
+    [Tero Piirainen](//twitter.com/tipiirai)
 
-  ##### — Tero Piirainen
-
+     Monday, 18 Sep
 
 

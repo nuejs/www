@@ -6,7 +6,7 @@ include: [listbox, menu-options]
 
 # Nue ~JS~ • Introduction
 
-Nue JS is an extremely small (2.3kb minzipped) JavaScript library for building user interfaces. It is a core part of the [Nue ecosystem](/ecosystem/). It’s like *Vue.js, React.js*, or *Svelte* but there are no hooks, effects, props, portals, watchers, injects, suspensions, or other unusual abstractions on your way. ~Learn the basics of HTML, CSS, and JavaScript and you are good to go~.
+Nue JS is an extremely small (2.3kb minzipped) JavaScript library for building user interfaces. It is a core part of [Nue tools](/tools/). It’s like *Vue.js, React.js*, or *Svelte* but there are no hooks, effects, props, portals, watchers, injects, suspensions, or other unusual abstractions on your way. ~Learn the basics of HTML, CSS, and JavaScript and you are good to go~.
 
 
 ## Build user interfaces with 10x less code [less-is-more]
@@ -90,7 +90,7 @@ Learn more about [styling components](styling-components.html)
 ## Four kinds of components [isomorphic]
 Nue has a rich component model and it allows you to create all kinds of applications using different kinds of components:
 
-[image "/ecosystem/img/grid.svg" class="small-image float-right"]
+[image "/tools/img/grid.svg" class="small-image float-right"]
 
 1. [Server components](server-components.html) are rendered on the server. They help you build content-focused websites that load faster without JavaScript and are crawlable by search engines.
 
@@ -148,7 +148,7 @@ Nue JS is a versatile tool that supports both server- and client-side rendering 
 
 3. *Static website generators* Just import it into your project and you are ready to render. No bundlers are needed.
 
-4. *Single-page applications* Build simpler and more scalable apps together with [upcoming](/ecosystem/) **Nue MVC**
+4. *Single-page applications* Build simpler and more scalable apps together with [upcoming](/tools/) **Nue MVC**
 
 5. *Templating* Nue is a generic tool to generate your websites and HTML emails.
 
