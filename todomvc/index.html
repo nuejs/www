@@ -1,20 +1,25 @@
 
-<!-- "modern version" -->
+<title>Nue • Todo MVC (compact)</title>
+
 <meta charset="utf-8">
 
-<!--
-<link rel="stylesheet" href="modern.css">
--->
-<link rel="stylesheet" href="original.css">
+<!-- compact version -->
+<link rel="stylesheet" href="todomvc-compact.css">
 
 <todo-app></todo-app>
 
-<!--
-<script type="module" src="/@nue/kit/hotreload.js"></script>
--->
+<footer class="info">
+  <p>Double-click to edit a todo</p>
+  <p>
+    <a href="//github.com/nuejs/www/blob/master/todomvc/todo-compact.nue">Source code</a>
+  </p>
+  <p><a href="official.html">Official layout</a></p>
+</footer>
 
 <script type="module">
   import createApp from '/@nue/js/nue.js'
-  import Todo from './todo-compact.js'
+  import Todo from './todomvc-compact.js'
   createApp(Todo).mount(document.querySelector('todo-app'))
 </script>
+
+

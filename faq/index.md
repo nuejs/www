@@ -82,7 +82,7 @@ Other people that inspired Nue are:
 
 
 
-## How to keep thins small? [small]
+## How to keep things small? [small]
 The secret to minimalism is in your ability to imagine the most straightforward way to reach your goal. Do the first silly version, then do it all again from scratch. Repeat until you are happy. Separate your concerns: Keep your logic and styling out of the structure. Avoid class hierarchies, internal frameworks, and other safety nets. Create simple functions that call other simple functions. Make the code seem stupid instead of clever. Remember *Steve Jobs* and "keep the good stuff and get rid of the crappy stuff."
 
 

@@ -25,7 +25,7 @@
     </li>
   </ul>
 
-  <footer :if="items[0]">
+  <footer class="footer" :if="items[0]">
     <p>{ numActive() } item{ numActive() != 1 && 's' } left</p>
 
     <nav>

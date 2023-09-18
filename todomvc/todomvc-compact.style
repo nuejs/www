@@ -102,8 +102,8 @@ li
   li:hover &
     opacity 1
 
-footer
-  color #
+.footer
+   box-shadow 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2)
   p 10px 15px
   display flex
   > *
@@ -127,7 +127,15 @@ nav
     box-shadow 0 0 0 1px #ccc
 
 
-// the crazy footer decoration
-.todo footer
-  box-shadow 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2)
+
+.info
+  font 12px center #bfbfbf
+  margin 65px auto 0
+  p
+    m .3em 0
+  a
+    text-decoration none
+    color #777
+  a:hover
+    text-decoration underline
 
