@@ -5,7 +5,7 @@ title: Nue backstory
 
 [image src="tero.png" width="120"]
 
-#### Tero Piirainen, September 2024
+#### Tero Piirainen, September 2023
 
 # Backstory
 

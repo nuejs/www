@@ -153,3 +153,19 @@ h2
 .splash video
   filter brightness(50%)
   box-shadow 0 0 50px black inset
+
+hr
+  mb 4em
+  border
+
+.hello
+  max-width 33em
+  font 1.4em $gray-600
+  m 0 auto
+
+  h3
+    font 1.7em
+  h3, h4
+    color black
+  img
+    filter grayscale(100)

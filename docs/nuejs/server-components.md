@@ -21,7 +21,7 @@ const component = `
   <img src="{ img }">
   <aside>
     <h3>{ title }</h3>
-    <p>{ desc }</h3>
+    <p>{ desc }</p>
   </aside>
 </div>
 `

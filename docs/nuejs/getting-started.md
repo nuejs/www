@@ -16,7 +16,7 @@ title: Nue JS • Getting started
 
 ``` sh
 # clone the repository
-git clone git@github.com:nuejs/create-nue.git
+git clone https://github.com/nuejs/create-nue.git
 
 # cd to your newly created app
 cd create-nue

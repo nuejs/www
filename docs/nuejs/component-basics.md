@@ -19,7 +19,7 @@ Here is an example component called "media object":
   <img src="{ img }">
   <aside>
     <h3>{ title }</h3>
-    <p>{ desc }</h3>
+    <p>{ desc }</p>
   </aside>
 </div>
 ```
@@ -130,7 +130,7 @@ First, we add a `<slot/>` element to the HTML layout:
   <img src="{ img }">
   <aside>
     <h3>{ title }</h3>
-    <p>{ desc }</h3>
+    <p>{ desc }</p>
 |   <slot/>
   </aside>
 </div>

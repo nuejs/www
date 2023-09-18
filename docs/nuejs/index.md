@@ -43,13 +43,13 @@ Nue uses HTML-based template syntax:
   <img src="{ img }">
   <aside>
     <h3>{ title }</h3>
-    <p :if="desc">{ desc }</h3>
+    <p :if="desc">{ desc }</p>
     <slot/>
   </aside>
 </div>
 ```
 
-While React claims to be "Just JavaScript", Nue can be thought of as "Just HTML", which is perfect for [UX developers][divide] who focus on interaction design, accessibility, and user experience.
+While React claims to be "Just JavaScript", then Nue can be thought of as "Just HTML", which is perfect for [UX developers][divide] who focus on interaction design, accessibility, and user experience.
 
 [Compare](/compare/component.html) Nue coding style with *React, Vue, Svelte, Tailwind*, and *Astro*.
 
