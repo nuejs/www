@@ -29,7 +29,7 @@ I'm not happy with the way frontends are built these days. The tooling is comple
 
 
 ## When is everything ready? [roadmap]
-The goal is to all [tools](/tools/) by March 2024. This is a super random estimate which you definitely should not count on. It might be sooner or might be later. It all depends on how much work goes into issues and open-source maintenance, and how good I am at estimating time. Usually not very good.
+The goal is to publish all [tools](/tools/) by March 2024. This is a super random estimate which you definitely should not count on. It might be sooner or might be later. It all depends on how much work goes into issues and open-source maintenance, and how good I am at estimating time. Usually not very good.
 
 ## This seems ambitious. Can you pull this off? [doubt]
 Yes. At least coding is not the problem. Currently, there is 20 times less code in all projects combined than what you see in the Vue UI library alone. That's about *5k lines* of JavaScript vs. [100k lines](https://github.com/vuejs/core) of TypeScript.
