@@ -15,7 +15,7 @@ Eventually Nue is a complete frontend development toolset. An alternative to eco
   * ## Nue JS
     Build user interfaces with cleaner code
 
-    Replaces [React][react], [Vue][vue], and [Svelte][svelte]
+    Alternative to [React][react], [Vue][vue], and [Svelte][svelte]
 
     [View documentation](/docs/nuejs/)
 
@@ -30,27 +30,27 @@ Eventually Nue is a complete frontend development toolset. An alternative to eco
   * ## Nue CSS
     Bring back the power of cascaded styling
 
-    Replaces [CSS-in-JS][cssjs], [Tailwind][tailwind], and [SASS][sass]
+    Alternative to [CSS-in-JS][cssjs], [Tailwind][tailwind], and [SASS][sass]
 
   * ## Nue MVC
     Build intuitive single-page apps that scale
 
-    Replaces [react-router][react-router], [vue-router][vue-router], [Redux][redux], and [Pinia][pinia]
+    Alternative to [react-router][react-router], [vue-router][vue-router], [Redux][redux], and [Pinia][pinia]
 
   * ## Nue UI [ui]
     Reusable components for rapid UI development
 
-    Replaces [Headless UI][headless], [Radix UI][radix], and [Chakra UI][chakra]
+    Alternative to [Headless UI][headless], [Radix UI][radix], and [Chakra UI][chakra]
 
   * ## Nuemark
     Markdown flavor for rich and interactive content
 
-    Replaces [MDX][mdx], [MDC][mdc], and [Markdoc][markdoc]
+    Alternative to [MDX][mdx], [MDC][mdc], and [Markdoc][markdoc]
 
   * ## Nuekit
     Build websites and webapps with cleaner code
 
-    Replaces [Vite][vite], [Next.js][next], [Nuxt.js][nuxt], and [Astro][astro]
+    Alternative to [Vite][vite], [Next.js][next], [Nuxt.js][nuxt], and [Astro][astro]
 
   [cssjs]: //en.wikipedia.org/wiki/CSS-in-JS
   [tailwind]: //tailwindcss.com
