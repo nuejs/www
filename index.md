@@ -14,12 +14,12 @@ include: [home, bunny/video]
 
 
 [.fast.dark]
-  ## *Nue* levels of speeeed
-  Nue takes the HELL🔥 out of the TCP slow start algorithm and *progressive enhancement*
-  ---
+  ## *Nue* levels of speed
+  Nue takes the HELL🔥 out of minimalism and the TCP slow start algorithm
+
   [media]
-    small: /home/img/page-size.svg
-    caption: Amount of HTML/CSS/JS on the project home page
+    large: /why/img/stats-big.png
+    caption: Nue helps you keep the initial page load (HTML + primary CSS) under the critical 14kb limit
 
 
 [.fun]

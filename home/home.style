@@ -101,34 +101,21 @@ h2
 
 .fast
   bg /home/img/pattern.jpg cover
-  radius 1em
   m 7em -2.5em
-  p 6em
+  p 8% 10%
+
+  h2 + p
+    max-width inherit
 
   h2
     max-width 6em
-
-  h2 + p
-    max-width 15em
-    mb 2em
-
-  img
-    width 480px
-
-  h2 em
-    ml -.1em
-
-  @medium-
-    px 2.4em
-    mx -2em
-    radius 0
+    text-indent -.2em
 
   @large
-    flex-direction row-reverse
-    align-items center
-    gap 5em
-    flex
-
+    radius 1em
+    h2
+      max-width inherit
+      mb 0
 
 .fun
   mb 5em

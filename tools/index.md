@@ -13,7 +13,7 @@ Eventually Nue is a complete frontend development toolset. An alternative to eco
   ### Done
 
   * ## Nue JS
-    Build user interfaces with less code
+    Build user interfaces with cleaner code
 
     Replaces [React][react], [Vue][vue], and [Svelte][svelte]
 
@@ -48,7 +48,7 @@ Eventually Nue is a complete frontend development toolset. An alternative to eco
     Replaces [MDX][mdx], [MDC][mdc], and [Markdoc][markdoc]
 
   * ## Nuekit
-    Build websites and webapps with less code
+    Build websites and webapps with cleaner code
 
     Replaces [Vite][vite], [Next.js][next], [Nuxt.js][nuxt], and [Astro][astro]
 
