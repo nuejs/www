@@ -162,13 +162,15 @@ hr
   max-width 33em
   font 1.4em $gray-600
   m 0 auto
-
   h3
-    font 1.7em
-  h3, h4
+    font-family handwriting
+    transform rotate(-0.8deg)
+    m 0 0 -.1em -.1em
+    font 3.5em
+    color $pink
+
+  h4
     color black
-  img
-    filter grayscale(100)
 
 .signature
   font 85%

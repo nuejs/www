@@ -8,8 +8,8 @@ include: [home, bunny/video]
 
 [image-link]
   href: /compare/component.html
-  src: /home/img/compare.jpg
-  caption: Listbox component • Click for details 👉
+  src: /home/img/compare-react.jpg
+  caption: The difference in coding style • Click for details 👉
   class: compare-shot
 
 
