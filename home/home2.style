@@ -93,6 +93,8 @@ h2
       mb 0
   figure
     max-width 800px
+
+
 .fun
   mb 5em
 
@@ -167,3 +169,23 @@ hr
   transform rotate(.3deg)
   bg /nueui/img/twitter.svg
 
+
+
+// animations
+h2, h2 + p, figure, .video
+  transform translateY(1em)
+  transition transform .5s, opacity .5s
+  opacity 0
+
+  .in-viewport &
+    transform translateY(0)
+    opacity 1
+
+h2
+  transition-delay .4s
+
+h2 + p
+  transition-delay .8s
+
+figure, .video
+  transition-delay 1.2s
