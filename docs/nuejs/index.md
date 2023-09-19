@@ -6,11 +6,11 @@ include: [listbox, menu-options]
 
 # Nue ~JS~ • Introduction
 
-Nue JS is an extremely small (2.3kb minzipped) JavaScript library for building user interfaces. It is a core part of [Nue tools](/tools/). It’s like *Vue.js, React.js*, or *Svelte* but there are no hooks, effects, props, portals, watchers, injects, suspensions, or other unusual abstractions on your way. ~Learn the basics of HTML, CSS, and JavaScript and you are good to go~.
+Nue JS is an extremely small (2.3kb minzipped) JavaScript library for building user interfaces. It is the core of [Nue toolset](/tools/). It’s like *Vue.js, React.js*, or *Svelte* but there are no hooks, effects, props, portals, watchers, injects, suspensions, or other unusual abstractions on your way. ~Learn the basics of HTML, CSS, and JavaScript and you are good to go~.
 
 
-## Build user interfaces with 10x less code [less-is-more]
-The biggest benefit with Nue is that you need less code to do the same thing. It's not unusual to see 10x differences in the amount of code you need to write. For example, here's a custom list box component written with Nue:
+## Build user interfaces with less code [less-is-more]
+The biggest benefit with Nue is that you need less code to do the same thing. It's not unusual to see 2-10x differences in the amount of code you need to write. For example, here's a custom list box component written with Nue:
 
 [.listbox-demo]
   [listbox]
@@ -24,8 +24,7 @@ The biggest benefit with Nue is that you need less code to do the same thing. It
       - Tanya Fox
       - Hellen Schmidt
 
-The [React version](https://headlessui.com/react/listbox) is 2500 lines of JavaScript. Nue version is about ten times smaller and the listbox has roughly the same set of features:
-
+The [React version](https://headlessui.com/react/listbox) is 2500 lines of JavaScript. Nue version is about ten times smaller and has about 70% of the features:
 
 [image-link]
   src: /docs/img/react-listbox.jpg

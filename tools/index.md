@@ -37,7 +37,7 @@ Eventually Nue is a complete frontend development toolset. An alternative to eco
 
     Replaces [react-router][react-router], [vue-router][vue-router], [Redux][redux], and [Pinia][pinia]
 
-  * ## Nue UI
+  * ## Nue UI [ui]
     Reusable components for rapid UI development
 
     Replaces [Headless UI][headless], [Radix UI][radix], and [Chakra UI][chakra]

@@ -2,7 +2,7 @@
 
 h2
   font 2rem -.02em
-  mt 4em
+  mt 3em
 
   @medium-
     font 1.7em

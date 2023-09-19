@@ -139,3 +139,8 @@
 .small-zoom .tool-vs
   flex 10
 
+
+#faq
+  max-width 35em
+  ml 2em
+
