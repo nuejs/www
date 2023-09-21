@@ -1,0 +1,310 @@
+<p class="line-count">308 lines</p><div class="columns">
+<a href="https://github.com/tastejs/todomvc/tree/master/examples/react-hooks/src/App/App.js"><pre class="pre-1"><h3>App.js</h3>import React from "react";
+import { HashRouter, Route } from "react-router-dom";
+import "todomvc-app-css/index.css";
+
+import Footer from "../components/Footer";
+import TodoList from "../containers/TodoList";
+
+export default function App() {
+  return (
+    &ltHashRouter&gt
+      &ltReact.Fragment&gt
+        &ltdiv className="todoapp"&gt
+          &ltRoute path="/:filter?" component={TodoList} /&gt
+        &lt/div&gt
+        &ltFooter /&gt
+      &lt/React.Fragment&gt
+    &lt/HashRouter&gt
+  );
+}
+</pre></a>
+<a href="https://github.com/tastejs/todomvc/tree/master/examples/react-hooks/src/containers/TodoItem.js"><pre class="pre-2"><h3>TodoItem.js</h3>import React, { useCallback, useRef, useState } from "react";
+import useOnClickOutside from "use-onclickoutside";
+
+import useDoubleClick from "../hooks/useDoubleClick";
+import useOnEnter from "../hooks/useOnEnter";
+import useTodos from "../reducers/useTodos";
+
+export default function TodoItem({ todo }) {
+  const [, { deleteTodo, setLabel, toggleDone }] = useTodos(() =&gt null);
+
+  const [editing, setEditing] = useState(false);
+
+  const onDelete = useCallback(() =&gt deleteTodo(todo.id), [todo.id]);
+  const onDone = useCallback(() =&gt toggleDone(todo.id), [todo.id]);
+  const onChange = useCallback(event =&gt setLabel(todo.id, event.target.value), [
+    todo.id
+  ]);
+
+  const handleViewClick = useDoubleClick(null, () =&gt setEditing(true));
+  const finishedCallback = useCallback(
+    () =&gt {
+      setEditing(false);
+      setLabel(todo.id, todo.label.trim());
+    },
+    [todo]
+  );
+
+  const onEnter = useOnEnter(finishedCallback, [todo]);
+  const ref = useRef();
+  useOnClickOutside(ref, finishedCallback);
+
+  return (
+    &ltli
+      onClick={handleViewClick}
+      className={`${editing ? "editing" : ""} ${todo.done ? "completed" : ""}`}
+    &gt
+      &ltdiv className="view"&gt
+        &ltinput
+          type="checkbox"
+          className="toggle"
+          checked={todo.done}
+          onChange={onDone}
+          autoFocus={true}
+        /&gt
+        &ltlabel&gt{todo.label}&lt/label&gt
+        &ltbutton className="destroy" onClick={onDelete} /&gt
+      &lt/div&gt
+      {editing && (
+        &ltinput
+          ref={ref}
+          className="edit"
+          value={todo.label}
+          onChange={onChange}
+          onKeyPress={onEnter}
+        /&gt
+      )}
+    &lt/li&gt
+  );
+}
+</pre></a>
+<a href="https://github.com/tastejs/todomvc/tree/master/examples/react-hooks/src/containers/TodoList.js"><pre class="pre-3"><h3>TodoList.js</h3>import React, { useCallback, useMemo } from "react";
+import { NavLink } from "react-router-dom";
+import useRouter from "use-react-router";
+
+import useInput from "../hooks/useInput";
+import useOnEnter from "../hooks/useOnEnter";
+import useTodos from "../reducers/useTodos";
+import TodoItem from "./TodoItem";
+
+export default function TodoList() {
+  const router = useRouter();
+
+  const [todos, { addTodo, deleteTodo, setDone }] = useTodos();
+
+  const left = useMemo(() =&gt todos.reduce((p, c) =&gt p + (c.done ? 0 : 1), 0), [
+    todos
+  ]);
+
+  const visibleTodos = useMemo(
+    () =&gt
+      router.match.params.filter
+        ? todos.filter(i =&gt
+            router.match.params.filter === "active" ? !i.done : i.done
+          )
+        : todos,
+    [todos, router.match.params.filter]
+  );
+
+  const anyDone = useMemo(() =&gt todos.some(i =&gt i.done), [todos]);
+  const allSelected = useMemo(() =&gt visibleTodos.every(i =&gt i.done), [
+    visibleTodos
+  ]);
+
+  const onToggleAll = useCallback(
+    () =&gt {
+      visibleTodos.forEach(i =&gt setDone(i.id, !allSelected));
+    },
+    [visibleTodos, allSelected]
+  );
+
+  const onClearCompleted = useCallback(
+    () =&gt {
+      todos.forEach(i =&gt {
+        if (i.done) {
+          deleteTodo(i.id);
+        }
+      });
+    },
+    [todos]
+  );
+
+  const [newValue, onNewValueChange, setNewValue] = useInput();
+  const onAddTodo = useOnEnter(
+    () =&gt {
+      if (newValue) {
+        addTodo(newValue);
+        setNewValue("");
+      }
+    },
+    [newValue]
+  );
+
+  return (
+    &ltReact.Fragment&gt
+      &ltheader className="header"&gt
+        &lth1&gttodos&lt/h1&gt
+        &ltinput
+          className="new-todo"
+          placeholder="What needs to be done?"
+          onKeyPress={onAddTodo}
+          value={newValue}
+          onChange={onNewValueChange}
+        /&gt
+      &lt/header&gt
+
+      &ltsection className="main"&gt
+        &ltinput
+          id="toggle-all"
+          type="checkbox"
+          className="toggle-all"
+          checked={allSelected}
+          onChange={onToggleAll}
+        /&gt
+        &ltlabel htmlFor="toggle-all" /&gt
+        &ltul className="todo-list"&gt
+          {visibleTodos.map(todo =&gt (
+            &ltTodoItem key={todo.id} todo={todo} /&gt
+          ))}
+        &lt/ul&gt
+      &lt/section&gt
+
+      &ltfooter className="footer"&gt
+        &ltspan className="todo-count"&gt
+          &ltstrong&gt{left}&lt/strong&gt items left
+        &lt/span&gt
+        &ltul className="filters"&gt
+          &ltli&gt
+            &ltNavLink exact={true} to="/" activeClassName="selected"&gt
+              All
+            &lt/NavLink&gt
+          &lt/li&gt
+          &ltli&gt
+            &ltNavLink to="/active" activeClassName="selected"&gt
+              Active
+            &lt/NavLink&gt
+          &lt/li&gt
+          &ltli&gt
+            &ltNavLink to="/completed" activeClassName="selected"&gt
+              Completed
+            &lt/NavLink&gt
+          &lt/li&gt
+        &lt/ul&gt
+        {anyDone && (
+          &ltbutton className="clear-completed" onClick={onClearCompleted}&gt
+            Clear completed
+          &lt/button&gt
+        )}
+      &lt/footer&gt
+    &lt/React.Fragment&gt
+  );
+}
+</pre></a>
+<a href="https://github.com/tastejs/todomvc/tree/master/examples/react-hooks/src/hooks/useDoubleClick.js"><pre class="pre-4"><h3>useDoubleClick.js</h3>export default function useDoubleClick(onClick, onDoubleClick) {
+  let clicks = [];
+  let timeout;
+
+  return (event, ...rest) =&gt {
+    clicks.push(new Date().getTime());
+
+    clearTimeout(timeout);
+    timeout = setTimeout(() =&gt {
+      if (
+        clicks.length &gt 1 &&
+        clicks[clicks.length - 1] - clicks[clicks.length - 2] &lt 250
+      ) {
+        if (onDoubleClick) {
+          onDoubleClick(event, ...rest);
+        }
+      } else if (onClick) {
+        onClick(event, ...rest);
+      }
+      clicks = [];
+    }, 250);
+  };
+}
+</pre></a>
+<a href="https://github.com/tastejs/todomvc/tree/master/examples/react-hooks/src/hooks/useInput.js"><pre class="pre-5"><h3>useInput.js</h3>import { useCallback, useState } from "react";
+
+export default function useInput(defaultValue) {
+  const [value, setValue] = useState(defaultValue || "");
+
+  const onChange = useCallback(event =&gt {
+    setValue(event.target.value);
+  });
+
+  return [value, onChange, setValue];
+}
+</pre></a>
+<a href="https://github.com/tastejs/todomvc/tree/master/examples/react-hooks/src/hooks/useOnEnter.js"><pre class="pre-6"><h3>useOnEnter.js</h3>import { useCallback } from "react";
+
+export default function useOnEnter(callback, inputs) {
+  return useCallback(event =&gt {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      callback(event);
+    }
+  }, inputs);
+}
+</pre></a>
+<a href="https://github.com/tastejs/todomvc/tree/master/examples/react-hooks/src/reducers/useTodos.js"><pre class="pre-7"><h3>useTodos.js</h3>import { globalReducer } from "react-hook-utils";
+
+import { guid } from "../utils";
+
+export const newTodo = label =&gt ({
+  done: false,
+  id: guid(),
+  label: (label || "").trim()
+});
+
+export const reducer = {
+<span class="comment">  // Delete a todo by id</span>
+  deleteTodo: (state, id) =&gt state.filter(i =&gt i.id !== id),
+
+<span class="comment">  // Create a new item</span>
+  addTodo: (state, label) =&gt [newTodo(label), ...state],
+
+<span class="comment">  // Set the done state of an item</span>
+  setDone: (state, id, done) =&gt
+    state.map(i =&gt
+      i.id === id
+        ? {
+            ...i,
+            done
+          }
+        : i
+    ),
+
+<span class="comment">  // Set the label of an item</span>
+  setLabel: (state, id, label) =&gt
+    state.map(i =&gt
+      i.id === id
+        ? {
+            ...i,
+            label
+          }
+        : i
+    ),
+
+<span class="comment">  // Toggle an item done</span>
+  toggleDone: (state, id) =&gt
+    state.map(i =&gt
+      i.id === id
+        ? {
+            ...i,
+            done: !i.done
+          }
+        : i
+    )
+};
+
+export default globalReducer(
+<span class="comment">  // Load todos from local storage</span>
+  JSON.parse(localStorage.getItem("todos") || "[]"),
+  reducer,
+<span class="comment">  // On state change, persist to local storage</span>
+  todos =&gt localStorage.setItem("todos", JSON.stringify(todos))
+);
+</pre></a>
+</div>

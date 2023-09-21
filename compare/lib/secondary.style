@@ -129,6 +129,8 @@
   .canvas
     column-count auto
 
+  .todomvc &
+    flex 2.5
 
 .big-zoom
   .tool

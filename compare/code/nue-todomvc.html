@@ -1,0 +1,114 @@
+<p class="line-count">112 lines</p><div class="columns">
+<a href="https://github.com/nuejs/www/tree/master/todomvc/todomvc-official.nue"><pre class="pre-1"><h3>todomvc-official.nue</h3>
+&ltmain class="todoapp"&gt
+  &ltheader class="header"&gt
+    &lth1&gttodos&lt/h1&gt
+    &ltinput class="new-todo" name="desc" @keydown="add"
+      placeholder="What needs to be done?" autofocus&gt
+  &lt/header&gt
+
+   &ltsection class="main" :if="items[0]"&gt
+
+    &ltinput id="toggle-all" class="toggle-all" type="checkbox"
+      @change="toggleAll" :checked="items[0] && !numActive()"&gt
+    &ltlabel for="toggle-all"&gtMark all as complete&lt/label&gt
+
+
+    &ltul class="todo-list"&gt
+      &ltli :for="item in items" class="{ completed: item.done, editing: item.edit }"
+        :hidden="!isShown(item)"&gt
+
+        &ltdiv class="view"&gt
+          &ltinput class="toggle" type="checkbox" :checked="item.done"
+            @change="item.done = !item.done; save()"&gt
+          &ltlabel @dblclick="item.edit = !item.edit"&gt{ item.desc }&lt/label&gt
+          &ltbutton class="destroy" @click="items.remove(item); save()"/&gt
+        &lt/div&gt
+
+        &ltinput class="edit" type="text" :if="item.edit" :value="item.desc"
+          @keydown="handleEdit(item, $event)"
+          @blur="updateItem(item, $event)"&gt
+      &lt/li&gt
+    &lt/ul&gt
+
+    &ltfooter class="footer" :if="items[0]"&gt
+      &ltspan class="todo-count"&gt
+        &ltstrong&gt{ numActive() }&lt/strong&gt item{ numActive() != 1 && 's' } left
+      &lt/span&gt
+
+      &ltul class="filters"&gt
+        &ltli&gt&lta :for="name in filters" class="{ selected: filter == name }"
+          @click="setFilter(name)"&gt{ name }&lt/a&gt&lt/li&gt
+      &lt/ul&gt
+
+      &ltbutton class="clear-completed" @click="clearCompleted" :if="hasCompleted()"&gt
+        Clear completed
+      &lt/button&gt
+    &lt/footer&gt
+
+  &lt/section&gt
+
+  &ltscript&gt
+    items = JSON.parse(localStorage.nuedo || '[]')
+    filters = ['All', 'Active', 'Completed']
+    filter = location.hash.slice(1) || 'All'
+
+    save() {
+      localStorage.nuedo = JSON.stringify(this.items)
+    }
+
+    numActive() {
+      return this.items.filter(item =&gt !item.done).length
+    }
+
+    hasCompleted() {
+      return this.items.find(item =&gt item.done)
+    }
+
+    setFilter(name) {
+      history.replaceState('', '', '#' + name)
+      this.filter = name
+    }
+
+    isShown(item) {
+      const i = this.filters.indexOf(this.filter)
+      return !i || (i == 1 ? !item.done : item.done)
+    }
+
+    toggleAll(event) {
+      this.items.forEach(item =&gt item.done = event.target.checked)
+      this.save()
+    }
+
+    clearCompleted() {
+      this.items.forEach(item =&gt item.done = false)
+      this.save()
+    }
+
+    handleEdit(item, { key, target }) {
+      if (key == 'Escape') item.edit = null
+      if (key == 'Enter') target.blur()
+    }
+
+    updateItem(item, { target }) {
+      item.desc = target.value
+      delete item.edit
+      this.save()
+    }
+
+    add({ key, target }) {
+      if (key == 'Enter') {
+        const desc = target.value.trim()
+        if (desc) {
+          this.items.push({ desc });
+          this.save()
+          target.value = ''
+        }
+      }
+    }
+  &lt/script&gt
+
+&lt/main&gt
+
+</pre></a>
+</div>

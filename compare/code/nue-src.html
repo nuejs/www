@@ -1,4 +1,4 @@
-<p class="line-count">506 lines</p><div class="columns">
+<p class="line-count">526 lines</p><div class="columns">
 <a href="https://github.com/nuejs/nuejs/tree/master/src/nue.js"><pre class="pre-1"><h3>nue.js</h3>
 import For from './for.js'
 import If from './if.js'
@@ -7,12 +7,18 @@ const CONTROL_FLOW = { ':if': If, ':for': For } // :if must be first
 const CORE_ATTR = ['class', 'style', 'id']
 
 
-<span class="comment">// Tha last argument ($parent) is for internal use only</span>
+/**
+ * Creates a new application instance (aka. reactive component)
+ *
+ * https://nuejs.org/docs/nuejs/reactive-components.html
+ *
+ * @typedef {{ name: string, tagName: string, tmpl: string, ... }} Component
+ * @param { Component } component - a (compiled) component instance to be mounted
+ * @param { Object } data? - optional data or data model for the component
+ * @param { Array&ltComponent&gt } deps - optional array of nested/dependant components
+ * @param { Object } $parent - (for internal use only)
+*/
 export default function createApp(component, data={}, deps=[], $parent={}) {
-
-<span class="comment">  // library provided as the first argument</span>
-  if (Array.isArray(component)) { deps = component.slice(1); component = component[0] }
-
   const { Impl, tmpl, fns=[], dom, inner } = component
   const expr = []
 
@@ -23,7 +29,7 @@ export default function createApp(component, data={}, deps=[], $parent={}) {
     if (type == 3) {
       const [_, i] = /:(\d+):/.exec(node.textContent.trim()) || []
       const fn = fns[i]
-      if (fn) expr.push(() =&gt node.textContent = renderVal(fn(ctx)))
+      if (fn) expr.push(_ =&gt node.textContent = renderVal(fn(ctx)))
     }
 
 <span class="comment">    // element</span>
@@ -46,7 +52,7 @@ export default function createApp(component, data={}, deps=[], $parent={}) {
         if (fn) {
           node.removeAttribute(key)
           const ext = CONTROL_FLOW[key]({ root: node, fn, fns, deps, ctx, processAttrs })
-          expr.push(ext.update || ext)
+          expr.push(ext.update)
           return ext
         }
       }
@@ -78,9 +84,9 @@ export default function createApp(component, data={}, deps=[], $parent={}) {
 <span class="comment">        // Root node changes -&gt re-point to the new DOM element</span>
         if (dom?.tagName.toLowerCase() == child.name) self.$el = comp.$el
 
-        expr.push(() =&gt setAttrs(comp.$el, parent))
+        expr.push(_ =&gt setAttrs(comp.$el, parent))
 
-<span class="comment">        // component refs (TODO: into mount?)</span>
+<span class="comment">        // component refs</span>
         self.$refs[node.getAttribute('ref') || tagName] = comp.impl
 
         return { next }
@@ -118,7 +124,7 @@ export default function createApp(component, data={}, deps=[], $parent={}) {
 
 <span class="comment">    // set all attributes from object</span>
     if (real == 'attr') {
-      return expr.push(() =&gt {
+      return expr.push(_=&gt {
         for (const [name, val] of Object.entries(fn(ctx))) {
           setAttr(node, name, val === true ? '' : val)
         }
@@ -127,7 +133,7 @@ export default function createApp(component, data={}, deps=[], $parent={}) {
 
 <span class="comment">    // dynamic attributes</span>
     if (char == ':' && real != 'bind') {
-      expr.push(() =&gt {
+      expr.push(_=&gt {
         let val = fn(ctx)
         setAttr(node, real, renderVal(val))
       })
@@ -137,17 +143,21 @@ export default function createApp(component, data={}, deps=[], $parent={}) {
     if (char == '@') {
       node[`on${real}`] = evt =&gt {
         fn.call(ctx, ctx, evt)
-        update()
+        const up = $parent?.update || update
+        up()
       }
     }
 
 <span class="comment">    // boolean attribute</span>
     if (char == '$') {
-      expr.push(() =&gt fn(ctx) ? node[real] = real : node.removeAttribute(real))
+      expr.push(_=&gt {
+        const flag = node[real] = !!fn(ctx)
+        if (!flag) node.removeAttribute(real)
+      })
     }
 
 <span class="comment">    // html</span>
-    if (real == 'html') expr.push(() =&gt node.innerHTML = fn(ctx))
+    if (real == 'html') expr.push(_=&gt node.innerHTML = fn(ctx))
 
   }
 
@@ -266,14 +276,18 @@ export default function createApp(component, data={}, deps=[], $parent={}) {
     before(anchor) {
       if (dom) {
         self.$el = dom
-        anchor.before(dom)
+
+<span class="comment">        // TODO: more performant check?</span>
+        if (!document.body.contains(dom)) anchor.before(dom)
         if (!dom.walked) { walk(dom); dom.walked = 1 }
         return update()
       }
     },
 
     unmount() {
-      self.root.remove()
+      try {
+        self.root.remove()
+      } catch (e) {}
       impl.unmounted?.call(ctx, ctx)
       update()
     }
@@ -322,7 +336,7 @@ function mkdom(tmpl) {
 
 <span class="comment">// render expression return value</span>
 function renderVal(val, separ='') {
-  return val?.join ? val.filter(el =&gt el != null).join(separ).trim().replace(/\s+/g, ' ') : val || ''
+  return val?.join ? val.filter(el =&gt el || el === 0).join(separ).trim().replace(/\s+/g, ' ') : val || ''
 }
 
 <span class="comment">// to merge the class attribute from original mount point</span>
@@ -335,6 +349,8 @@ function mergeVals(a, b) {
 
 </pre></a>
 <a href="https://github.com/nuejs/nuejs/tree/master/src/if.js"><pre class="pre-2"><h3>if.js</h3>
+<span class="comment">// Internal use only</span>
+
 import createApp from './nue.js'
 
 export default function(opts) {
@@ -346,7 +362,7 @@ export default function(opts) {
 
   function addBlock(node, fn) {
     opts.processAttrs(node) // run event handlers on the parent context
-    const impl = createApp({ fns, dom: node }, ctx, deps)
+    const impl = createApp({ fns, dom: node }, ctx, deps, ctx)
     blocks.push(impl)
     impl.fn = fn
   }
@@ -369,6 +385,8 @@ export default function(opts) {
     }
   }
 
+  var _prev
+
   function update() {
     if (!anchor) {
       const wrap = root.parentElement
@@ -385,6 +403,8 @@ export default function(opts) {
 }
 </pre></a>
 <a href="https://github.com/nuejs/nuejs/tree/master/src/for.js"><pre class="pre-3"><h3>for.js</h3>
+<span class="comment">// Internal use only</span>
+
 import createApp from './nue.js'
 
 export default function(opts) {
@@ -413,7 +433,7 @@ export default function(opts) {
     blocks[first ? 'unshift' : 'push'](block)
     block.before(first || anchor)
 
-<span class="comment">    // on insert (anomation)</span>
+<span class="comment">    // oninsert callback for transition/animation purposes</span>
     ctx.oninsert?.call(ctx, block.$el, item, {
       index: i,
       is_repaint: !!arr,
