@@ -149,7 +149,6 @@ hr
   column-width 17em
   column-gap 1.5em
   list-style none
-  font 110%
   p 0
 
 .quote
@@ -158,17 +157,30 @@ hr
   break-inside avoid-column
   bg-pos right 1em top 1em
   transform rotate(-.3deg)
+  font 110%
   bg-size 1.4em
   max-width 25em
   radius 8px
   mb 1.5em
   p 1.5em
   border
+  a
+    font 85% $gray
+    mb .3em
+    block
+
 
 .from-twitter
   transform rotate(.3deg)
   bg /nueui/img/twitter.svg
 
+.from-gh
+  transform rotate(.7deg)
+  bg /nueui/img/github.svg
+
+.from-reddit
+  transform rotate(-.7deg)
+  bg /nueui/img/reddit.svg
 
 
 // animations
