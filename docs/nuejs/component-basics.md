@@ -95,7 +95,7 @@ Internally Nue components are [ES6 classes][es6] where all the properties and me
   <img src="{ img }">
   <aside>
     <h3>{ title }</h3>
-    <p>{ format(desc) }</h3>
+    <p>{ format(desc) }</p>
   </aside>
 
   <!-- instance variables and methods -->
