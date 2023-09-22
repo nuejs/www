@@ -29,7 +29,8 @@ I'm not happy with the way frontends are built these days. The tooling is comple
 
 
 ## When is everything ready? [roadmap]
-The goal is to finish all [tools](/tools/) by March 2024. This is a super random estimate which you definitely should not count on. It might be sooner or might be later. It all depends on how much work goes into issues and open-source maintenance, and how good I am at estimating time. Usually not very good.
+The goal is to publish all [tools](/tools/) by March 2024. This is a super random estimate which you definitely should not count on. It might be sooner or might be later. It all depends on how much work goes into issues and open-source maintenance, and how good I am at estimating time. Usually not very good.
+
 
 ## This seems ambitious. Can you pull this off? [doubt]
 Absolutely. The code is already there for most tools. They just needs to be polished, packaged, and documented. Writing docs and keeping up with the open-source community takes most of the time.
@@ -124,5 +125,3 @@ Nue is obviously usable in both JavaScript and TypeScript projects.
 [destroy]: //developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 [modules]: //developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 
-// [vue]: //github.com/vuejs/core/tree/main/packages/runtime-core/src
-// [react]: //github.com/facebook/react/tree/main/packages/react
