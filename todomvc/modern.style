@@ -1,0 +1,112 @@
+
+:root
+  --main-100 #e0f2fe
+  --main #1097dc
+  --gray-100 #f1f5f9
+  --gray-300 #cbd5e1
+  --gray-400 #94a3b8
+  --gray-500 #475569
+  accent-color $main
+
+*
+  box-sizing border-box
+
+::placeholder
+  color $gray-300
+
+body
+  font-family -apple-system, BlinkMacSystemFont, Avenir Next, Segoe UI, Roboto, Helvetica Neue
+  color $gray-500
+  bg $gray-100
+  p 5%
+
+
+a, label, [type=checkbox]
+  cursor pointer
+
+.todo
+  max-width 500px
+  margin 0 auto
+
+h1
+  font 1.8em .05em uppercase 500 #001
+
+// regions
+.todo > :not(h1)
+  box-shadow 1px 1px 1px #0002
+  radius 4px
+  bg white
+  p 1.2em
+
+form
+  display flex
+  width 100%
+  gap 1em
+  m 0
+
+[type=text]
+  font-size inherit
+  width 100%
+  p .8em 1.2em
+  border 1px solid $gray-300
+  transition outline-width .3s
+  radius 4px
+
+  &:focus
+    outline 3px solid $main-100
+    outline-offset 2px
+    border-color $main
+
+[type=checkbox]
+  transform scale(1.5)
+
+[hidden]
+  none
+
+.todo ul
+  m .8em 0
+  py .3em
+
+li
+  list-style none
+  border-bottom
+  display flex
+  gap 1em
+  p 1em 0
+
+  &:last-child
+    border-width 0
+
+.destroy
+  font-family helvetica
+  font 1.5em .8 100 $gray-300
+  ml auto
+
+  li:hover &
+    color $gray-500
+
+.done span
+  text-decoration line-through
+  opacity .3
+
+.editing
+  [type=checkbox], .destroy
+    none
+
+footer
+  font 85% $gray-400
+  display flex
+  > *
+    flex 1
+  p
+    m 0
+  :last-child
+    font right
+
+nav
+  display flex
+  gap 1em
+
+.selected
+  font bold $gray-500
+

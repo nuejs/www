@@ -1,0 +1,22 @@
+
+<title>Nue • Todo MVC</title>
+
+<meta charset="utf-8">
+
+<link rel="stylesheet" href="todomvc-official.css">
+
+<todo-app></todo-app>
+
+<footer class="info">
+  <p>Double-click to edit a todo</p>
+  <p>
+    <a href="//github.com/nuejs/www/blob/master/todomvc/todomvc-official.nue">Source code</a>
+  </p>
+  <p><a href=".">Compact layout</a></p>
+</footer>
+
+<script type="module">
+  import createApp from '/@nue/js/nue.js'
+  import Todo from './todomvc-official.js'
+  createApp(Todo).mount(document.querySelector('todo-app'))
+</script>

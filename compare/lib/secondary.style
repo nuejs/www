@@ -129,6 +129,8 @@
   .canvas
     column-count auto
 
+  .todomvc &
+    flex 2.5
 
 .big-zoom
   .tool
@@ -138,4 +140,9 @@
 
 .small-zoom .tool-vs
   flex 10
+
+
+#faq
+  max-width 35em
+  ml 2em
 

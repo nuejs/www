@@ -21,7 +21,7 @@ const component = `
   <img src="{ img }">
   <aside>
     <h3>{ title }</h3>
-    <p>{ desc }</h3>
+    <p>{ desc }</p>
   </aside>
 </div>
 `
@@ -64,7 +64,7 @@ render(template: string, data?: Object, deps?: Array<Component>)
 
 
 ### `renderFile()` method
-Reders a template on a given file
+Renders a template on a given file
 
 ```
 async function renderFile(

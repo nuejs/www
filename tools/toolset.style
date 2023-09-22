@@ -1,0 +1,67 @@
+
+main
+  max-width 45em
+
+h1
+  mb .1em
+  em
+    color $main
+    font-style normal
+
+h1 + p
+  font 1.4em 600
+  max-width 28em
+
+
+@large
+  .board
+    m 1em -7em
+    flex-direction row-reverse
+    gap 1.5em
+    flex
+
+.block
+  bg $gray-50
+  box-shadow 0 1px 2px #0002
+  max-width 36em
+  flex 1
+  radius 4px
+  mb 3em
+  p 2em
+
+  ul
+    list-style none
+    p 0
+  li
+    p 1em 1.5em
+    radius 6px
+    mb 2.4em
+
+
+li
+  border 1px solid $gray-200
+  bg white
+
+  a[href]
+    color $gray
+
+  a[href^="/docs"]
+    font 600
+    color black
+
+  p
+    font 1em 500 $gray-400
+    mb .7em
+
+h3
+  font 90% $gray-400 uppercase 1px
+  text-shadow 1px 1px 2px white
+  m 0 0 1.5em 1.5rem
+
+h2
+  font 1.3em
+
+h2 + p
+  font 1.1em $gray-600
+  mb .3em
+

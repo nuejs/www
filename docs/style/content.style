@@ -109,3 +109,23 @@ h1 del, h2 del
   &:hover
     filter brightness(110%)
     transform scale(1.005)
+
+
+.demo
+  border 3px dashed
+  radius 4px
+  p 2em
+  form
+    align-items center
+    flex
+
+  figcaption
+    mt 1em
+
+  img
+    width 8em
+    box-shadow 0 0 4px $gray-200
+
+  [type=number]
+    width 5em
+    mr 1em

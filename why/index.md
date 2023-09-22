@@ -9,10 +9,10 @@ include: [bunny/video]
 
 > Nue uses **progressive enhancement, separation of concerns**, and **semantic web design** to deliver new levels of performance, better scalability, and massively improved development experience.
 
-Nue is open-source software released under the MIT license. It's an engineering attempt to bring a long-term solution to the prevailing [frontend fatique](/backstory/).
+Nue is open-source software released under the MIT license. It's an engineering attempt to bring a long-term solution to the prevailing [frontend fatigue](/backstory/).
 
 [.info]
-  `!important` This document describes the benefits of the whole [Nue ecosystem](/ecosystem/), which is not ready yet. Currently only [Nue JS](/docs/nuejs) is publicly available.
+  `!important` This document describes the benefits of [Nue toolset](/tools/), which is not ready yet. Currently only [Nue JS](/docs/nuejs) is publicly available.
 
 
 ## Create both websites *and* webapps
@@ -71,7 +71,7 @@ Nue embraces [separation of concerns][soc] to make your code easier to read, und
 
 
 ## 🖐 No more spaghetti, please! [spaghetti]
-With separated concerns, you completely avoid the issues with "spaghetti code" where different programming languages and coding styles are mixed. This kind of mixed code is hard to understand, maintain, and scale. Here's how Tailwind [front page](/compare/homepages.html) looks like under the hood:
+With separated concerns, you avoid the issues with "spaghetti code" where different programming languages and coding styles are mixed. This kind of mixed code is hard to understand, maintain, and scale. Here's how Tailwind [front page](/compare/homepages.html) looks like under the hood:
 
 [media]
   large: img/spaghetti-big.png
@@ -160,7 +160,7 @@ While frameworks like *Astro* have taken steps towards progressive enhancement t
 
 
 ### Optimization
-Nue offers a `nue stats` command to check that everything is good regarding TCP slow start and the page load performance.
+Nue will offer a `nue stats` command (not yet available) to check that everything is good regarding TCP slow start and the page load performance.
 
 [media]
   large: img/stats-big.png
@@ -169,6 +169,3 @@ Nue offers a `nue stats` command to check that everything is good regarding TCP 
 In the above CSS1 stands for primary css and CSS2 is secondary css. The final row is the combined size of HTML and inlined primary CSS after being gzipped. Red rows require at least two TCP packets to render the first contentful paint.
 
 TCP's slow start puts performance optimization to where it matters and you can stop struggling with JavaScript module bundling and other secondary areas where optimization doesn't give you much benefit.
-
-
-

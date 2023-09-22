@@ -1,0 +1,166 @@
+<script>
+  import { lib as samples } from './examples.js'
+  import createApp from '/@nue/js/nue.js'
+</script>
+
+<!-- demo wrapper & mounter -->
+<section @name="demo" class="demo">
+  <div ref="root"/>
+
+  <script>
+    mounted(args) {
+      const name = args._
+      const comp = samples.find(el => el.name == name)
+      if (comp) createApp(comp, args, lib).mount(this.$refs.root)
+      else console.info('Component not found', name)
+    }
+  </script>
+</section>
+
+
+<!-- hello world -->
+<h3 @name="hello-world">
+  Hello {name}!
+  <script>name = 'world'</script>
+</h3>
+
+<!-- counter -->
+<button @name="counter" @click="count++">
+  Clicked { count } { count == 1 ? 'time' : 'times' }
+  <script>count = 0</script>
+</button>
+
+
+<!-- direct HTML render -->
+<button @name="html-button">
+  {{ label }}
+  <script>
+    label = 'Hello, <u>Underlined</u>'
+  </script>
+</button>
+
+
+<!-- props demo -->
+<h3 @name="props-demo">
+  { a } + { b } = <sum :a="a" :b="b"/>
+  <script>
+    // instance variables
+    a = 10
+    b = 100
+  </script>
+</h3>
+
+<!-- nested sum component -->
+<span @name="sum">
+  { a + b }
+</span>
+
+
+<!-- conditionals -->
+<button @name="if-counter" @click="count++">
+  <p :if="!count">No clicks yet</p>
+  <p :else-if="count == 1">First click!</p>
+  <p :else-if="count == 2">Nice. Another one.</p>
+  <p :else>Clicks: { count }</p>
+  <script>count = 0</script>
+</button>
+
+
+<!-- mouse tracking -->
+<div @name="mouse-tracking" @mousemove="track" style="height: { h }em">
+  Position: { x } x { y }
+
+  <script>
+    h = 10
+    x = 0
+    y = 0
+
+    track(event) {
+      this.x = event.clientX
+      this.y = event.clientY
+    }
+  </script>
+</div>
+
+
+<!-- simple loop -->
+<figure @name="simple-loop">
+  <img :for="img in images" :src="/demo/img/{img}.jpg">
+  <script>
+    images = ['popcorn', 'peas', 'tomatoes']
+  </script>
+</figure>
+
+
+<!-- reactive loop -->
+<figure @name="reactive-loop">
+  <img :for="img in images" :src="/demo/img/{img}.jpg">
+
+  <figcaption>
+    <button @click="images.push('tomatoes')">Add tomatoes</button>
+    <button @click="images.pop()">Remove last</button>
+  </figcaption>
+
+  <script>
+    images = ['popcorn', 'peas', 'lemons']
+  </script>
+</figure>
+
+
+<!-- fetch fruits -->
+<figure @name="fetch-fruits">
+  <img :for="img in images" :src="/demo/img/{img}.jpg">
+
+  <figcaption>
+    <button @click="fetchFruits">Fetch more fruits</button>
+  </figcaption>
+
+  <script>
+    images = ['lemons', 'peas']
+
+    async fetchFruits() {
+      const req = await fetch('fruits.json')
+      const fruits = await req.json()
+      fruits.forEach(this.images.push)
+      this.update()
+    }
+  </script>
+</figure>
+
+
+<!-- "Write less code": https://svelte.dev/blog/write-less-code -->
+<form @name="input-demo">
+  <input type="number" :value="a" @change="a = $event.target.value">
+  <input type="number" :value="b" @change="b = $event.target.value">
+
+  <h3>{a} + {b} = {1*a + 1*b}</h3>
+
+  <script>
+    a = 1
+    b = 2
+  </script>
+</form>
+
+
+<!-- parent -->
+<div @name="callback-demo">
+
+  <!-- callback method given as argument -->
+  <child-button :onpress="tellMe" foo="10"/>
+
+  <script>
+    // this callback method is called when child button is pressed
+    tellMe(msg) {
+      console.info('They said', msg)
+    }
+  </script>
+</div>
+
+<!-- child -->
+<button @name="child-button" @click="onpress('Hello!!')">
+  Tell them
+</button>
+
+
+
+

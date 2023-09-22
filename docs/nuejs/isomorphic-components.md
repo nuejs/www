@@ -10,7 +10,7 @@ Isomorphic components can run both on the client side and the server side. By ru
 Nue supports two types of isomorphic components:
 
 1. *Universal components* run identically on both server- and client-side
-2. *Hybrid components*where some parts are rendered on the server, and some parts on the client
+2. *Hybrid components* where some parts are rendered on the server, and some parts on the client
 
 
 ## Universal components
@@ -21,7 +21,7 @@ Universal components run the same source code on both ends. Use can use the same
   <img src="{ img }">
   <aside>
     <h3>{ title }</h3>
-    <p>{ desc }</h3>
+    <p>{ desc }</p>
     <slot/>
   </aside>
 </div>
