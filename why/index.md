@@ -160,7 +160,7 @@ While frameworks like *Astro* have taken steps towards progressive enhancement t
 
 
 ### Optimization
-Nue offers a `nue stats` command to check that everything is good regarding TCP slow start and the page load performance.
+Nue will offer a `nue stats` command (not yet available) to check that everything is good regarding TCP slow start and the page load performance.
 
 [media]
   large: img/stats-big.png
@@ -169,6 +169,3 @@ Nue offers a `nue stats` command to check that everything is good regarding TCP 
 In the above CSS1 stands for primary css and CSS2 is secondary css. The final row is the combined size of HTML and inlined primary CSS after being gzipped. Red rows require at least two TCP packets to render the first contentful paint.
 
 TCP's slow start puts performance optimization to where it matters and you can stop struggling with JavaScript module bundling and other secondary areas where optimization doesn't give you much benefit.
-
-
-
