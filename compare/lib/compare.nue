@@ -45,13 +45,17 @@
       this.canvas = args.$refs.canvas
       const names = this.names = args.names
 
-      if (args.other) {
-        const name = location.hash.slice(1)
-        this.index = name ? names.indexOf(name) : 0
-        this.load(name || names[0])
-        if (name) vs.textContent = name
-      } else {
+      if (names[0] == 'Nue') {
         this.load('Nue')
+
+      } else {
+        const hash = location.hash.slice(1)
+        let i = names.indexOf(hash)
+        if (i < 0) i = 0
+        this.index = i
+        const [name] = names
+        this.load(name)
+        vs.textContent = name
       }
     }
 

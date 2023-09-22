@@ -25,21 +25,19 @@ Nue is an open-source project hosted on [GitHub][gh], licensed with [MIT license
 
 
 ## Why do you do this? [why]
-I'm not happy with the way frontends are built these days. The tooling is complex, the code is hard to understand, and the websites are bloated. It takes too much time and nerves to finish projects. And I'm not alone. Developers in *Hacker News, Reddit*, and *Lobster* are seemingly frustrated grave for change.
+I'm not happy with the way frontends are built these days. The tooling is complex, the code is hard to understand, the compile times are long, and the websites are too bloated. It takes too much time and nerves to finish projects. And I'm not alone. Developers in *Hacker News, Reddit*, and *Lobster* are seemingly frustrated grave for change.
 
 
 ## When is everything ready? [roadmap]
 The goal is to publish all [tools](/tools/) by March 2024. This is a super random estimate which you definitely should not count on. It might be sooner or might be later. It all depends on how much work goes into issues and open-source maintenance, and how good I am at estimating time. Usually not very good.
 
-## This seems ambitious. Can you pull this off? [doubt]
-Yes. At least coding is not the problem. Currently, there is 20 times less code in all projects combined than what you see in the Vue UI library alone. That's about *5k lines* of JavaScript vs. [100k lines](https://github.com/vuejs/core) of TypeScript.
 
-Most features are already implemented on a private GitHub repository, they just need to be polished, packaged, and documented. Writing docs is the most time-consuming part.
+## This seems ambitious. Can you pull this off? [doubt]
+Absolutely. The code is already there for most tools. They just needs to be polished, packaged, and documented. Writing docs and keeping up with the open-source community takes most of the time.
 
 
 ## Can I help? [contribute]
 Absolutely! The long-term goal is to form a team of like-minded JavaScript developers who value minimalism. Please [join the discussion][discuss].
-
 
 
 ## What are the benefits of Nue? [difference]
@@ -51,7 +49,7 @@ Absolutely! The long-term goal is to form a team of like-minded JavaScript devel
 
 ## What are the guiding principles? [guidelines]
 
-1. *Separation of concerns*: It's faster to ship when people focus on their own areas of expertise: content creators focus on content, UX developers do interaction design, and JS developers work on the [back of the frontend][back].
+1. *Separation of concerns*: It's faster to ship when people focus on their areas of expertise: content creators focus on content, UX developers do interaction design, and JS developers work on the [back of the frontend][back].
 
 2. ["Just normal web things"][normal]: Nue attempts to bring back the power of standards-based HTML, CSS, and JavaScript.
 
@@ -62,7 +60,7 @@ Absolutely! The long-term goal is to form a team of like-minded JavaScript devel
 
 
 ## Who is Nue inspired by? [inspiration]
-Mostly *Jarred Sumner* for developing [Bun](//bun.sh) — a super awesome project to replace the whole Node ecosystem with a faster one. It's a new JavaScript runtime, bundler, test runner, and NPM-compatible package manager. Thanks Jared for showing how a single developer can pull big dreams!
+Mostly *Jarred Sumner* for developing [Bun](//bun.sh) — a super awesome project to replace the whole Node ecosystem with a faster one. It's a new JavaScript runtime, bundler, test runner, and NPM-compatible package manager. Thanks, Jared for showing how a single developer can pull big dreams!
 
 While Bun makes JavaScript faster, Nue makes frontend development faster. Nue + Bun is really the perfect combination for a frontend developer.
 
@@ -81,10 +79,8 @@ Other people that inspired Nue are:
 > "Less, but better"
 
 
-
 ## How to keep things small? [small]
-The secret to minimalism is in your ability to imagine the most straightforward way to reach your goal. Do the first silly version, then do it all again from scratch. Repeat until you are happy. Separate your concerns: Keep your logic and styling out of the structure. Avoid class hierarchies, internal frameworks, and other safety nets. Create simple functions that call other simple functions. Make the code seem stupid instead of clever. Remember *Steve Jobs* and "keep the good stuff and get rid of the crappy stuff."
-
+At least for me, the secret to minimalism is to start from scratch several times. Start with the first silly version, then do it all again. Repeat until you are happy. Avoid class hierarchies, internal frameworks, and other safety nets. Create simple functions that call other simple functions. Make the code seem stupid instead of clever. Remember *Steve Jobs* and "keep the good stuff and get rid of the crappy stuff."
 
 
 ## Do we need another framework? [yet-another]
@@ -95,43 +91,37 @@ This is more like fixing a broken tire or replacing a massive pickup truck with 
 
 
 ## Why not Tailwind? [tailwind]
-Because
+Nue uses semantic CSS and external stylesheets because:
 
-1. *Spaghetti code* is hard to understand, maintain, and scale
+1. *Decoupled design*: when styling is decoupled from the component it's easy make the component look different in various places by taking advantage of the cascade or using a different stylesheet
 
-1. *Page weight*: It's hard to keep your initial TCP packet (with HTML and primary CSS) under the 14kb limit
+1. *Page weight*: It's easier to keep your initial TCP packet under the 14kb limit when the HTML code is leaner and the style is easy to split into primary and secondary CSS.
 
-1. *Hardcoded design*: when styling is fixed to the component it's hard to make the component look different on other places
+1. *Standards-based*: writing CSS directly makes you master the standard and you can play around with things like [container queries](//developer.mozilla.org/en-US/docs/Web/CSS/CSS_container_queries), [:has() selector](//developer.mozilla.org/en-US/docs/Web/CSS/:has), or [@layer](//developer.mozilla.org/en-US/docs/Web/CSS/@layer).
 
-1. *Proprietary syntax*: It's better to work closer to standards
+Look for [details and examples](/docs/nuejs/styling-components.html)
 
 
 ## Why not TypeScript? [ts]
-Picking a language is always a tradeoff, because there are good and bad parts in all languages. But just like React, Svelte, or SvelteKit, Nue is written with plain JavaScript. That's because:
+Nue is written with plain JavaScript because:
 
-1. ES6 is awesome: think [modules][modules], [destructuring][destroy], and the [proxy][proxy]
+1. *ES6 is awesome*: think [modules][modules], [destructuring][destroy], and the [proxy][proxy]
 
 1. *Dynamic typing* is a good thing and you can [use it to your advantage][dynamic].
 
 1. *Browser standard*: JavaScript runs natively on the browser without an extra compilation step.
 
-1. *JSDoc*: type definitions can be written with JSDoc's [@type](//jsdoc.app/tags-type.html) tag.
-
 Nue is obviously usable in both JavaScript and TypeScript projects.
 
 
 
+[antirez]: //twitter.com/antirez/status/1378272801522597888
+[linkedin]: //www.linkedin.com/in/tero-piirainen-370183248/
+[gh]: //github.com/nuejs
+[discuss]: //github.com/nuejs/nuejs/discussions
+[mit]: //opensource.org/license/mit/
+[dynamic]: //wiki.c2.com/?BenefitsOfDynamicTyping
+[proxy]: //developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
+[destroy]: //developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+[modules]: //developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 
-
-[antirez]: https://twitter.com/antirez/status/1378272801522597888
-[linkedin]: https://www.linkedin.com/in/tero-piirainen-370183248/
-[gh]: https://github.com/nuejs
-[discuss]: https://github.com/nuejs/nuejs/discussions/1
-[mit]: https://opensource.org/license/mit/
-[dynamic]: https://wiki.c2.com/?BenefitsOfDynamicTyping
-[proxy]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
-[destroy]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
-[modules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
-
-// [vue]: https://github.com/vuejs/core/tree/main/packages/runtime-core/src
-// [react]: https://github.com/facebook/react/tree/main/packages/react

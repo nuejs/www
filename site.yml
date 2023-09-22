@@ -12,30 +12,29 @@ icons: /global/icons
 site-top: false
 
 mastnav:
-  - Tools
   - Why
   - Backstory
+  - Tools
   - label: Docs
     url: /docs/nuejs/
   - FAQ
 
 footnav:
-  - Tools
-  - Backstory
   - Why
+  - Backstory
+  - Tools
   - label: Docs
     url: /docs/nuejs/
   - FAQ
   - label: Compare
     url: /compare/component.html
-
   - img: /global/icons/github.svg
-    url: https://github.com/nuejs
+    url: https://github.com/nuejs/nuejs
     class: octocat
 
 subnav:
   - img: /global/icons/github.svg
-    url: https://github.com/nuejs
+    url: https://github.com/nuejs/nuejs
     class: octocat
   - img: /global/icons/menu.svg
     hash: mobile-nav
@@ -52,7 +51,7 @@ hotreload: true
 
 # generation
 globals: [global, style, lib]
-secondary_css: [css2, secondary]
+secondary_css: [css2, secondary, 2.]
 inline_css: true
 
 preview:

@@ -71,7 +71,7 @@ Nue embraces [separation of concerns][soc] to make your code easier to read, und
 
 
 ## 🖐 No more spaghetti, please! [spaghetti]
-With separated concerns, you completely avoid the issues with "spaghetti code" where different programming languages and coding styles are mixed. This kind of mixed code is hard to understand, maintain, and scale. Here's how Tailwind [front page](/compare/homepages.html) looks like under the hood:
+With separated concerns, you avoid the issues with "spaghetti code" where different programming languages and coding styles are mixed. This kind of mixed code is hard to understand, maintain, and scale. Here's how Tailwind [front page](/compare/homepages.html) looks like under the hood:
 
 [media]
   large: img/spaghetti-big.png

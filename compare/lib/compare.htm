@@ -1,30 +1,30 @@
 
 <div @name="page-header">
+  <div class="tabs main-tabs">
+    <a :for="el in items" :href="{ el.url }" :class="{ selected: el.url == url }">
+      { el.tab_name }</a>
+  </div>
 
   <section class="flexy">
-    <div class="tabs main-tabs">
-      <a :for="el in items" :href="{ el.url }" :class="{ selected: el.url == url }">
-        { el.label }</a>
-    </div>
-    <a href="faq.html" class="continue action">Compare FAQ</a>
-  </section>
-
-  <section class="flexy">
-    <header>
-      <h1><span id="vs">{ vs[0] }</span> <b> vs </b> Nue</h1>
-      <p>{ desc }</p>
+    <header class="header">
+      <h3><b id="vs">{ vs[0] }</b> vs <b>Nue</b></h3>
+      <h1>{ page_title || tab_name}</h1>
+      <p>
+        { desc }
+        <a href="#faq" class="down">Details below</a>
+      </p>
     </header>
     <zoom/>
   </section>
 
-  <article class="flexy content-flex">
-    <view-src class="tool tool-vs" :suffix="suffix" :names="vs" :other="true"/>
+  <article class="flexy content-flex { suffix }">
+    <view-src class="tool tool-vs" :suffix="suffix" :names="vs"/>
     <view-src class="tool tool-nue" :suffix="suffix" :names="['Nue']"/>
   </article>
 
   <script>
     constructor(args) {
-      this.items = args.pages.filter(el => el.label)
+      this.items = args.pages.filter(el => el.tab_name)
       this.items.sort((a, b) => a.sort - b.sort)
     }
   </script>

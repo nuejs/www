@@ -2,11 +2,29 @@
 main
   max-width 1300px
 
-h1
-  mb .1em
+.header
+  max-width 34em
+  mt 3em
 
-h1 + p
-  font 130%
+  h3
+    font 130% 400 $gray-400
+    b
+      color $gray-600
+
+  h1
+    mb .1em
+
+  h1 + p
+    font 140%
+
+
+.down
+  bg /nueui/img/arrow-down.svg no-repeat
+  bg-size 1.3rem
+  bg-pos 0 70%
+  pl 1.2em
+  font 90%
+  ml .3em
 
 
 .compare-faq main
