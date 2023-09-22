@@ -44,7 +44,7 @@ Save the above to a file called "render.js" and execute it with  `node render.js
   <img src="img/art.jpg">
   <aside>
     <h3>Media object</h3>
-    <p>One object to rule them all</h3>
+    <p>One object to rule them all</p>
   </aside>
 </div>
 ```
