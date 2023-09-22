@@ -24,7 +24,7 @@ Eventually Nue is a complete frontend development toolset. An alternative to eco
   [svelte]: //svelte.dev
 
   ---
-  ### To be done
+  ### Todo
 
 
   * ## Nue CSS

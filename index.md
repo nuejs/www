@@ -61,6 +61,11 @@ include: [home, bunny/video]
 
 
 [quotes]
+  - user: aziis98
+    text: Awesome project, feels very refreshing even for me being a great fan of Vite and Astro.
+    id: "37519741"
+    from: hn
+
   - user: eh8
     text: It's really awesome to see this recent counter-revolution of developer tools emphasizing simplicity. Nue gives me the same optimistic, feel-good vibe that htmx and Alpine.js gave me when I first read about them.
     id: "37519371"
@@ -75,24 +80,25 @@ include: [home, bunny/video]
     text: Seems like it could finally bring back something we lost all the way
     id: "1702763687860162703"
 
-  - user: aziis98
-    text: Awesome project, feels very refreshing even for me being a great fan of Vite and Astro.
-    id: "37519741"
-    from: hn
-
-  - user: en_ka8
-    url: https://www.reddit.com/r/vuejs/comments/16ifij7/comment/k0v49y7/?utm_source=reddit&utm_medium=web2x&context=3
-    text: I'm really rooting for your project to grow. I'm very excited about its concept. Because I think no framework has it figured out yet, so I really welcome every new solution to make web dev easier.
-    from: reddit
-
-  - user: CoooolXyh
-    text: If you haven’t tried Nuejs yet, you better hurry up and give it a go!
-    id: "1703687501599347079"
-
   - user: ctrlzkids
     text: Insanely impressive. Well done 👏
     url: https://www.reddit.com/r/vuejs/comments/16ifij7/comment/k0jhbyl/?utm_source=reddit&utm_medium=web2x&context=3
     from: reddit
+
+
+  - user: en_ka8
+    url: //www.reddit.com/r/vuejs/comments/16ifij7/comment/k0v49y7/?utm_source=reddit&utm_medium=web2x&context=3
+    text: I'm really rooting for your project to grow. I'm very excited about its concept. Because I think no framework has it figured out yet, so I really welcome every new solution to make web dev easier.
+    from: reddit
+
+  - user: edimoldovan
+    text: Great job with Nue JS, you are hitting many of the pain points I had with the frontend tooling.
+    url: //github.com/nuejs/nuejs/discussions/43#discussion-5657161
+    from: gh
+
+  - user: CoooolXyh
+    text: If you haven’t tried Nuejs yet, you better hurry up and give it a go!
+    id: "1703687501599347079"
 
   - user: ilrwbwrkhv
     text: More frontend devs needs to stop following the herd and think for themselves and look back at how hackers used to work back in the day to use as little memory as possible.

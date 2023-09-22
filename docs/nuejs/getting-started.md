@@ -59,5 +59,5 @@ After installing, you can import the main functions into your  JavaScript or Typ
 import { render, parse, compile } from 'nuejs-core'
 ```
 
-Then learn [component basics](component-basics.html) how to do [server-side rendering](server-side-components.html) and how to use [reactive components](reactive-components.html).
+Then learn [component basics](component-basics.html) how to do [server-side rendering](server-components.html) and how to use [reactive components](reactive-components.html).
 

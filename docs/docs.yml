@@ -5,6 +5,8 @@ include: [permlink]
 nuejs:
   - label: Introduction
     url: /docs/nuejs/
+  - label: Examples
+    url: /docs/nuejs/examples/
   - Getting started
   - Component basics
   - Server components

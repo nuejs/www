@@ -114,15 +114,15 @@ Nue is obviously usable in both JavaScript and TypeScript projects.
 
 
 
-[antirez]: https://twitter.com/antirez/status/1378272801522597888
-[linkedin]: https://www.linkedin.com/in/tero-piirainen-370183248/
-[gh]: https://github.com/nuejs
-[discuss]: https://github.com/nuejs/nuejs/discussions/1
-[mit]: https://opensource.org/license/mit/
-[dynamic]: https://wiki.c2.com/?BenefitsOfDynamicTyping
-[proxy]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
-[destroy]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
-[modules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+[antirez]: //twitter.com/antirez/status/1378272801522597888
+[linkedin]: //www.linkedin.com/in/tero-piirainen-370183248/
+[gh]: //github.com/nuejs
+[discuss]: //github.com/nuejs/nuejs/discussions
+[mit]: //opensource.org/license/mit/
+[dynamic]: //wiki.c2.com/?BenefitsOfDynamicTyping
+[proxy]: //developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
+[destroy]: //developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+[modules]: //developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 
-// [vue]: https://github.com/vuejs/core/tree/main/packages/runtime-core/src
-// [react]: https://github.com/facebook/react/tree/main/packages/react
+// [vue]: //github.com/vuejs/core/tree/main/packages/runtime-core/src
+// [react]: //github.com/facebook/react/tree/main/packages/react
