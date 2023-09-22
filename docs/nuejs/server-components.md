@@ -64,7 +64,7 @@ render(template: string, data?: Object, deps?: Array<Component>)
 
 
 ### `renderFile()` method
-Reders a template on a given file
+Renders a template on a given file
 
 ```
 async function renderFile(
