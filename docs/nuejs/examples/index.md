@@ -132,7 +132,7 @@ Draw on the canvas below the source code
 [demo "form-fields"]
 
 ### Server communication
-Fetch data form server and update the view with the new items
+Fetch data from server and update the view with the new items
 
 ```
 <figure @name="fetch-fruits">
