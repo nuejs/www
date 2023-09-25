@@ -89,7 +89,7 @@ All the attribute values are available inside the component:
 </div>
 ```
 
-Standard HTML attributes like `id`, `class`, `style`, `data-*` remain on the element. Unstandard attributes like `:title` are removed after the value is passed to the component.
+Standard HTML attributes like `id`, `class`, `style`, `data-*` remain on the element. Nonstandard attributes like `:title` are removed after the value is passed to the component.
 
 
 ### Interpolation
