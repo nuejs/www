@@ -30,7 +30,7 @@ main
     transition opacity .2s
     opacity 0
 
-  @medium-
+  @large-
     none
 
 
@@ -86,7 +86,7 @@ article
 
 .aside
   a
-    font 95%
+    font 95% 1.5
     max-width 14em
     overflow hidden
     text-overflow ellipsis
@@ -99,6 +99,18 @@ article
 
   @xxlarge-
     none
+
+
+.level-1
+  none
+
+.level-2
+  font 500 $gray-600
+  mt 1em
+
+.level-3, .level-4
+  ml .2em
+
 
 
 // mobile layout
@@ -119,3 +131,6 @@ article
 
   article
     max-width inherit
+
+
+

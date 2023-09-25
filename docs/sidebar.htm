@@ -17,7 +17,7 @@
 
   <nav>
     <h4>On this page</h4>
-    <a :for="el in toc" :href="#{el.hash}">{{ el.html }}</a>
+    <a :for="el in toc" :href="#{el.hash}" class="level-{ el.level}">{{ el.html }}</a>
   </nav>
 
 </aside>

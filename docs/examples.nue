@@ -129,7 +129,7 @@
 
 
 <!-- "Write less code": https://svelte.dev/blog/write-less-code -->
-<form @name="input-demo">
+<form @name="input-demo" class="input-demo">
   <input type="number" :value="a" @change="a = $event.target.value">
   <input type="number" :value="b" @change="b = $event.target.value">
 
@@ -142,7 +142,7 @@
 </form>
 
 
-<!-- parent -->
+<!-- callbacks: github.com/nuejs/nuejs/issues/2#issuecomment-1728968468  -->
 <div @name="callback-demo">
 
   <!-- callback method given as argument -->
@@ -162,5 +162,103 @@
 </button>
 
 
+<!-- https://codesandbox.io/s/pedantic-mclaren-nqpjl5?file=/src/App.js -->
+<ul @name="fractal" class="fractal { class }">
+  <li :for="am in rows"><b :for="el in Array(am).fill(0)"/></li>
+  <script>rows = Array(22).fill(0).map((_, i) => i ? 3 * i : 1)</script>
+</ul>
 
 
+<!-- multiple fractals -->
+<div @name="fractals" class="fractals">
+  <fractal class="first"/>
+  <fractal class="second"/>
+  <fractal class="third"/>
+</div>
+
+
+<!-- canvas paint -->
+<canvas @name="canvas-paint" @mousemove="mousemove">
+  <script>
+    last = [0, 0]
+
+    mounted() {
+      const { root } = this
+      const ctx = this.ctx = root.getContext('2d')
+      root.width = 655; root.height = 500
+      ctx.fillStyle = 'white'
+      ctx.lineCap = 'round'
+      ctx.lineWidth = 20
+      this.recolor()
+      this.clear()
+    }
+
+    // reset canvas in every five seconds
+    clear() {
+      this.ctx.fillRect(0, 0, this.root.width, this.root.height)
+      setTimeout(_ => this.clear(), 5000)
+    }
+
+    // reset Nue brand color every second
+    recolor() {
+      const colors = ['00c2ff', 'e2e8f0', 'fb00e2', '000']
+      this.ctx.strokeStyle = `#${colors[Math.floor(Math.random() * 4)]}`
+      setTimeout(_ => this.recolor(), 1000)
+    }
+
+    // draw the line
+    mousemove(e) {
+      const { ctx, last } = this
+      const to = [e.pageX - e.target.offsetLeft, e.pageY - e.target.offsetTop]
+      ctx.beginPath(); ctx.moveTo(...last); ctx.lineTo(...to); ctx.stroke()
+      this.last = to
+    }
+  </script>
+
+</canvas>
+
+
+<!-- form example -->
+<form @name="form-fields" class="flexy">
+
+  <label>
+    <h4>Name</h4>
+    <input name="name">
+  </label>
+
+  <label>
+    <h4>Birthday</h4>
+    <input type="date">
+  </label>
+
+  <label>
+    <h4>Special skill</h4>
+    <select name="skill">
+      <option>Front of the frontend</option>
+      <option>Back of the frontend</option>
+      <option>All of frontend</option>
+      <option>Backend development</option>
+      <option>Full stack</option>
+    </select>
+  </label>
+
+  <label>
+    <h4>Fatique level</h4>
+    <input type="range">
+  </label>
+
+</form>
+
+
+
+<div @name="line-graph">
+  <h3>It's here</h3>
+  <svg viewBox="0 0 100 100">
+    <line stroke-width="10" x1="0" y1="80" x2="100" y2="20" stroke="black" />
+  </svg>
+  <script>
+    constructor() {
+      console.info('masssive')
+    }
+  </script>
+</div>

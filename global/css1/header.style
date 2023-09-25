@@ -6,8 +6,7 @@ body > .site-top
   p .3em 1em
 
   em
-    font 90% 500 $gray-400 uppercase
-    font-style normal
+    font 90% 500 $gray-400 uppercase normal
 
 .site-header
   justify-content space-between

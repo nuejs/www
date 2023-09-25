@@ -37,6 +37,16 @@ textarea
   display none !important
 
 
+[type=range]
+  pointer
+  p 0
+
+select
+  appearance none
+  bg /global/icons/angle-down.svg no-repeat
+  bg-size 1em
+  bg-pos right 1.35em center
+
 // form input wrapper
 .field
   block

@@ -1,0 +1,80 @@
+.demo
+  border 3px dashed
+  radius 4px
+  p 2em
+
+  figcaption
+    mt 1em
+
+  img
+    width 8em
+    box-shadow 0 0 4px $gray-200
+
+  [type=number]
+    width 5em
+    mr 1em
+
+.input-demo
+  align-items center
+  flex
+
+.fractal
+  align-items center
+  flex-flow column
+  flex
+  li
+    flex
+  b
+    size 0
+    border-left 5px transparent
+    border-right 5px transparent
+    border-bottom 5px black
+
+
+.fractals
+  position relative
+  height 500px
+  top -10px
+  .fractal
+    absolute
+
+.first
+  b
+    border-bottom-color $gray-300
+
+.second
+  top 50px
+  b
+    border-bottom-color $main
+
+.third
+  top 110px
+  b
+    border-bottom-color $gray-500
+
+#vulgar
+  font 5em uppercase -5px
+  text-shadow 0 0 5px white
+  max-width 6em
+  rotate -6deg
+
+  absolute
+  z-index 1
+
+
+canvas
+  border
+
+
+.flexy
+  label
+    display flex
+    align-items center
+    mb 1.5em
+  h4
+    font 1.2rem
+    min-width 10em
+
+  @small-
+    label
+      block
