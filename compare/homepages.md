@@ -15,7 +15,7 @@ sort: 2
   The focus of this comparison is to take a look at how to implement content-heavy web pages with interactive elements and multiple sections with a custom layout. Only *files with content* are included in the comparison.
 
   ## Why Tailwind and Astro? [why]
-  Tailwind users Next.js under the hood, which is the most popular React- framework currently. It is a good example to show how rich pages are implemented these days.
+  Tailwind uses Next.js under the hood, which is the most popular React- framework currently. It is a good example to show how rich pages are implemented these days.
 
   Astro is an emerging framework with a focus on content-heavy web pages. It is the closest alternative to the upcoming [Nuekit](/tools/#nuekit) project.
 
