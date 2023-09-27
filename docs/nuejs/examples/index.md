@@ -279,7 +279,7 @@ Update the view when input values change
 [demo "input-demo"]
 
 
-### Clild properties
+### Child properties
 Rendering child components with properties
 
 ```
