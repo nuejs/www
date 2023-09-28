@@ -35,17 +35,19 @@ include: [home, bunny/video]
 
 [.hello]
   ### Hello, World!
-  Author here. I've been working on this for the past ~12 months, lately full-time. There are two things here:
+  Author here. I've been working on this for the past year or so, lately full-time. There are two things here:
 
   1. [Nue JS](/docs/nuejs/) — A tiny (2.3kb minzipped) JavaScript library for building user interfaces. It's like React/Vue, but there are no hooks, effects, props, or other unusual abstractions on your way. Know the basics of HTML, CSS, and JavaScript and you are good to go. It supports both server-side rendering and client-side reactive components. It takes inspiration from Vue 2.0 and Riot.js. (I'm actually the original author of Riot).
 
   2. [Nue tools](//nuejs.org/tools/) — A complete frontend development toolset. Once finished, Nue is an alternative to systems like Vite, Next.js, and Astro. This is the ultimate goal.
 
-  The thing is that I'm not happy with the current state of web development, so I'm building everything from scratch in super minimalistic way. I'm taking advantage of the "old" innovations like progressive enhancement, separation of concerns, and semantic web design. Benefits highlighted [here](/why/).
+  The thing is that I'm not happy with the current state of web development, so I'm building everything from scratch in a super minimalistic way *to make things easier for web developers*. I'm taking advantage of the "old school" innovations like progressive enhancement, separation of concerns, and semantic web design. All the benefits are highlighted [here](/why/).
 
-  All projects will be released under the MIT license.
+  Some first reactions in [Hacker News][hn], [GitHub][gh], and [Reddit][reddit].
 
-  Discussions: [Hacker News][hn] / [GitHub][gh] / [Reddit][reddit]
+  It looks like developers are loving Nue, so I'm super motivated and committed to completing all items on the [roadmap](/tools/). All projects are released under the MIT license.
+
+  **Thank You!** ❤️
 
   [hn]: //news.ycombinator.com/item?id=37507419
   [gh]: //github.com/nuejs/nuejs/discussions
@@ -55,9 +57,9 @@ include: [home, bunny/video]
   [.signature]
     [image src="/backstory/tero.png" width="70"]
 
-    [Tero Piirainen](//twitter.com/tipiirai)
+    [@tipiirai](//twitter.com/tipiirai)
 
-     Monday, 18 Sep
+    Tero Piirainen
 
 
 [quotes]
@@ -71,43 +73,44 @@ include: [home, bunny/video]
     id: "37519371"
     from: hn
 
+  - user: retiagod
+    text: What a great contribution to the world!
+    id: 1706347206285082799
+
   - user: darkhorse007
     url: //github.com/nuejs/nuejs/discussions/1#discussioncomment-7042460
     text: This is surprisingly good news for the frontend. I'm looking forward to the release of Nue's entire ecosystem.
     from: gh
 
   - user: ulrischa
-    text: Seems like it could finally bring back something we lost all the way
+    text: Seems like Nue could finally bring back something we lost all the way
     id: "1702763687860162703"
+
 
   - user: ctrlzkids
     text: Insanely impressive. Well done 👏
     url: https://www.reddit.com/r/vuejs/comments/16ifij7/comment/k0jhbyl/?utm_source=reddit&utm_medium=web2x&context=3
     from: reddit
 
-
   - user: en_ka8
     url: //www.reddit.com/r/vuejs/comments/16ifij7/comment/k0v49y7/?utm_source=reddit&utm_medium=web2x&context=3
     text: I'm really rooting for your project to grow. I'm very excited about its concept. Because I think no framework has it figured out yet, so I really welcome every new solution to make web dev easier.
     from: reddit
 
-  - user: edimoldovan
-    text: Great job with Nue JS, you are hitting many of the pain points I had with the frontend tooling.
-    url: //github.com/nuejs/nuejs/discussions/43#discussion-5657161
-    from: gh
-
   - user: CoooolXyh
     text: If you haven’t tried Nuejs yet, you better hurry up and give it a go!
     id: "1703687501599347079"
+
+  - user: edimoldovan
+    text: Great job with Nue, you are hitting many of the pain points I had with the frontend tooling.
+    url: //github.com/nuejs/nuejs/discussions/43#discussion-5657161
+    from: gh
 
   - user: ilrwbwrkhv
     text: More frontend devs needs to stop following the herd and think for themselves and look back at how hackers used to work back in the day to use as little memory as possible.
     id: "37518231"
     from: hn
 
-  - user: pedrclopes
-    text: Nue JS is an incredibly compact JavaScript library for creating web interfaces.
-    id: "1702729003982062032"
 
 
 

@@ -9,7 +9,7 @@
    <section class="main" :if="items[0]">
 
     <input id="toggle-all" class="toggle-all" type="checkbox"
-      @change="toggleAll" :checked="items[0] && !numActive()">
+      @change="toggleAll" :checked="items[0] && !numActive">
     <label for="toggle-all">Mark all as complete</label>
 
 
@@ -30,17 +30,17 @@
       </li>
     </ul>
 
-    <footer class="footer" :if="items[0]">
+    <footer class="footer">
       <span class="todo-count">
-        <strong>{ numActive() }</strong> item{ numActive() != 1 && 's' } left
+        <strong>{ numActive }</strong> item{ numActive != 1 && 's' } left
       </span>
 
       <ul class="filters">
         <li><a :for="name in filters" class="{ selected: filter == name }"
-          @click="setFilter(name)">{ name }</a></li>
+          @click="filter = name">{ name }</a></li>
       </ul>
 
-      <button class="clear-completed" @click="clearCompleted" :if="hasCompleted()">
+      <button class="clear-completed" @click="clearCompleted" :if="hasCompleted">
         Clear completed
       </button>
     </footer>
@@ -56,15 +56,15 @@
       localStorage.nuedo = JSON.stringify(this.items)
     }
 
-    numActive() {
+    get numActive() {
       return this.items.filter(item => !item.done).length
     }
 
-    hasCompleted() {
+    get hasCompleted() {
       return this.items.find(item => item.done)
     }
 
-    setFilter(name) {
+    set setFilter(name) {
       history.replaceState('', '', '#' + name)
       this.filter = name
     }

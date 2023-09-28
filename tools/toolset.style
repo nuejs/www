@@ -33,9 +33,16 @@ h1 + p
     list-style none
     p 0
   li
-    p 1em 1.5em
+    p 1.3em 1.5em 1.7em
     radius 6px
     mb 2.4em
+
+  del
+    text-decoration none
+    font 95% 600 #fff
+    p .3em .5em
+    radius 3px
+    bg $pink
 
 
 li

@@ -26,7 +26,7 @@ Developers discovered React and single-page applications, and Facebook started d
 
 ### But... The magic is still there [magic]
 
-First, we must recognize that a content-focused website is a whole different beast than a single-page application. Then we need to understand that UX development is [so very different][back] from JS development. The goals, skillsets, and interests are different.
+First, we must recognize that a content-focused website is a whole different beast than a single-page application. Secondly, we need to understand that UX development is a whole [different field][back] from JS development. The goals, skillsets, and interests are different.
 
 Nue is an ambitious attempt to fix the status quo. It offers drastically simpler tooling for both JS and UX developers. It brings back the [web standards model][standards] and coins it with the latest innovations. It makes web development enjoyable again.
 

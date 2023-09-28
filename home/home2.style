@@ -140,9 +140,10 @@ hr
 .signature
   font 85%
   mt .5em
-  ml 2em
   p
     m 0
+  p:last-child
+    font 85%
 
 
 .quotes

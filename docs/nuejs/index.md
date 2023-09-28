@@ -38,7 +38,7 @@ The [React version](https://headlessui.com/react/listbox) is 2500 lines of JavaS
 Nue uses HTML-based template syntax:
 
 ``` html
-<div @name="media-object" class="{ type }">
+<div class="{ type }">
   <img src="{ img }">
   <aside>
     <h3>{ title }</h3>
@@ -53,6 +53,7 @@ While React claims to be "Just JavaScript", then Nue can be thought of as "Just 
 [Compare](/compare/component.html) Nue coding style with *React, Vue, Svelte, Tailwind*, and *Astro*.
 
 [divide]: https://css-tricks.com/the-great-divide/
+
 
 ## Built to scale
 Three reasons why Nue brings new levels of scalability to frontend development:

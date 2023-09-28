@@ -92,7 +92,7 @@ This is more like fixing a broken tire or replacing a massive pickup truck with 
 
 
 ## Why not Tailwind? [tailwind]
-Nue uses semantic CSS and external stylesheets because:
+Nue prefers semantic CSS and external stylesheets, because:
 
 1. *Decoupled design*: when styling is decoupled from the component it's easy make the component look different in various places by taking advantage of the cascade or using a different stylesheet
 

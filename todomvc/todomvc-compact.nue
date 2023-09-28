@@ -4,37 +4,39 @@
 
   <form @submit.prevent="add">
     <input type="checkbox" title="Mark all as completed" class="toggle-all"
-      @change="toggleAll" :checked="items[0] && !numActive()">
+      @change="toggleAll" :checked="items[0] && !numActive">
     <input type="text" name="desc" placeholder="What needs to be done?" autofocus>
   </form>
 
-  <ul :if="items[0]">
-    <li :for="item in items" class="{ done: item.done, editing: item.edit }"
-      :hidden="!isShown(item)">
+  <section :if="items[0]">
+    <ul>
+      <li :for="item in items" class="{ done: item.done, editing: item.edit }"
+        :hidden="!isShown(item)">
 
-      <input type="checkbox" class="toggle" :checked="item.done" :disabled="item.edit"
-        @change="item.done = !item.done; save()">
+        <input type="checkbox" class="toggle" :checked="item.done" :disabled="item.edit"
+          @change="item.done = !item.done; save()">
 
-      <label @dblclick="item.edit = !item.edit" :if="!item.edit">{ item.desc }</label>
+        <label @dblclick="item.edit = !item.edit" :if="!item.edit">{ item.desc }</label>
 
-      <input type="text" :if="item.edit" :value="item.desc"
-        @keydown="handleEdit(item, $event)"
-        @blur="updateItem(item, $event)">
+        <input type="text" :if="item.edit" :value="item.desc"
+          @keydown="handleEdit(item, $event)"
+          @blur="updateItem(item, $event)">
 
-      <a class="destroy" @click="items.remove(item); save()">&times;</a>
-    </li>
-  </ul>
+        <a class="destroy" @click="items.remove(item); save()">&times;</a>
+      </li>
+    </ul>
 
-  <footer class="footer" :if="items[0]">
-    <p>{ numActive() } item{ numActive() != 1 && 's' } left</p>
+    <footer class="footer">
+      <p>{ numActive } item{ numActive != 1 && 's' } left</p>
 
-    <nav>
-      <a :for="name in filters" class="{ selected: filter == name }"
-        @click="setFilter(name)">{ name }</a>
-    </nav>
+      <nav>
+        <a :for="name in filters" class="{ selected: filter == name }"
+          @click="filter = name">{ name }</a>
+      </nav>
 
-    <p><a @click="clearCompleted" :if="hasCompleted()">Clear completed</a></p>
-  </footer>
+      <p><a @click="clearCompleted" :if="hasCompleted">Clear completed</a></p>
+    </footer>
+  </section>
 
   <script>
     items = JSON.parse(localStorage.nuedo || '[]')
@@ -45,15 +47,15 @@
       localStorage.nuedo = JSON.stringify(this.items)
     }
 
-    numActive() {
+    get numActive() {
       return this.items.filter(item => !item.done).length
     }
 
-    hasCompleted() {
+    get hasCompleted() {
       return this.items.find(item => item.done)
     }
 
-    setFilter(name) {
+    set filter(name) {
       history.replaceState('', '', '#' + name)
       this.filter = name
     }

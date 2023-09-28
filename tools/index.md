@@ -10,7 +10,7 @@ Eventually Nue is a complete frontend development toolset. An alternative to eco
 
 
 [.board]
-  ### Done
+  ### Published
 
   * ## Nue JS
     Build user interfaces with cleaner code
@@ -24,7 +24,7 @@ Eventually Nue is a complete frontend development toolset. An alternative to eco
   [svelte]: //svelte.dev
 
   ---
-  ### Todo
+  ### Not out yet
 
 
   * ## Nue CSS
@@ -32,23 +32,25 @@ Eventually Nue is a complete frontend development toolset. An alternative to eco
 
     Alternative to [CSS-in-JS][cssjs], [Tailwind][tailwind], and [SASS][sass]
 
-  * ## Nue MVC
-    Build intuitive single-page apps that scale
-
-    Alternative to [react-router][react-router], [vue-router][vue-router], [Redux][redux], and [Pinia][pinia]
+    ~Out next~
 
   * ## Nue UI [ui]
-    Reusable components for rapid UI development
+    Extremely small and simple UI library
 
     Alternative to [Headless UI][headless], [Radix UI][radix], and [Chakra UI][chakra]
 
+  * ## Nue MVC
+    Build intuitive apps that scale
+
+    Alternative to [react-router][react-router], [vue-router][vue-router], [Redux][redux], and [Pinia][pinia]
+
   * ## Nuemark
-    Markdown flavor for rich and interactive content
+    Markdown flavor for rich content
 
     Alternative to [MDX][mdx], [MDC][mdc], and [Markdoc][markdoc]
 
   * ## Nuekit
-    Build websites and webapps with cleaner code
+    Build websites and apps with cleaner code
 
     Alternative to [Vite][vite], [Next.js][next], [Nuxt.js][nuxt], and [Astro][astro]
 
