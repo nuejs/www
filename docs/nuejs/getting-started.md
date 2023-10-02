@@ -9,6 +9,7 @@ title: Nue JS • Getting started
 
 - Familiarity with the command line
 - Install [Bun](//bun.sh) or [Node](//nodejs.org/en)
+- [VSCode Extension](https://marketplace.visualstudio.com/items?itemName=yaoyuanzhang.nue&ssr=false) Visual Studio users (optional)
 
 
 ## Option 1: create-nue
