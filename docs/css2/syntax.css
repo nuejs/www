@@ -1,7 +1,7 @@
 
 /* syntax highlight */
 pre {
-  background: var(--gray-900);
+  background: var(--gray-800);
   font-family: Fira,Menlo,Monaco,Lucida Console;
   border-radius: 4px;
   font-size: 1.1rem;
@@ -15,7 +15,7 @@ pre {
 pre b { font-weight: normal; }
 
 /* gray */
-.hl-char { color: #666 }
+.hl-char { color: #888 }
 
 /* gray */
 .hl-comment { color: #777 }
@@ -81,4 +81,10 @@ pre {
   padding-left: 1.2em;
   border-left: .3em solid #96cbfe;
   width: 110%;
+}
+
+@media (max-width: 768px) {
+  pre {
+    font-size: 1rem;
+  }
 }

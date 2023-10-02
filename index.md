@@ -37,7 +37,7 @@ include: [home, bunny/video]
   ### Hello, World!
   Author here. I've been working on this for the past year or so, lately full-time. There are two things here:
 
-  1. [Nue JS](/docs/nuejs/) — A tiny (2.3kb minzipped) JavaScript library for building user interfaces. It's like React/Vue, but there are no hooks, effects, props, or other unusual abstractions on your way. Know the basics of HTML, CSS, and JavaScript and you are good to go. It supports both server-side rendering and client-side reactive components. It takes inspiration from Vue 2.0 and Riot.js. (I'm actually the original author of Riot).
+  1. [Nue JS](/docs/nuejs/) — A tiny (2.3kb minzipped) JavaScript library for building user interfaces. It's like React/Vue, but there are no hooks, effects, props, or other unusual abstractions on your way. Know the basics of HTML, CSS, and JavaScript and you are good to go. It supports both server-side rendering and client-side reactive components. It takes inspiration from Vue 2.0 and Riot.js. (I'm the original author of Riot).
 
   2. [Nue tools](//nuejs.org/tools/) — A complete frontend development toolset. Once finished, Nue is an alternative to systems like Vite, Next.js, and Astro. This is the ultimate goal.
 
@@ -55,7 +55,7 @@ include: [home, bunny/video]
 
 
   [.signature]
-    [image src="/backstory/tero.png" width="70"]
+    [image src="/global/img/tero.png" width="70"]
 
     [@tipiirai](//twitter.com/tipiirai)
 
@@ -67,6 +67,11 @@ include: [home, bunny/video]
     text: Awesome project, feels very refreshing even for me being a great fan of Vite and Astro.
     id: "37519741"
     from: hn
+
+  - user: ondreian
+    text: Nice to see you still out in the wild writing code and working to solve problems in our ecosystem @tipiirai
+    url: //lobste.rs/s/goxx8g/nue_react_vue_vite_astro_alternative#c_nfn3p0
+    from: lobster
 
   - user: eh8
     text: It's really awesome to see this recent counter-revolution of developer tools emphasizing simplicity. Nue gives me the same optimistic, feel-good vibe that htmx and Alpine.js gave me when I first read about them.
@@ -86,6 +91,10 @@ include: [home, bunny/video]
     text: Seems like Nue could finally bring back something we lost all the way
     id: "1702763687860162703"
 
+  - user: ilrwbwrkhv
+    text: More frontend devs needs to stop following the herd and think for themselves and look back at how hackers used to work back in the day to use as little memory as possible.
+    id: "37518231"
+    from: hn
 
   - user: ctrlzkids
     text: Insanely impressive. Well done 👏
@@ -106,10 +115,6 @@ include: [home, bunny/video]
     url: //github.com/nuejs/nuejs/discussions/43#discussion-5657161
     from: gh
 
-  - user: ilrwbwrkhv
-    text: More frontend devs needs to stop following the herd and think for themselves and look back at how hackers used to work back in the day to use as little memory as possible.
-    id: "37518231"
-    from: hn
 
 
 

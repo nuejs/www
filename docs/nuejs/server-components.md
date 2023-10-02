@@ -13,7 +13,7 @@ Server components are the basis for content-focused websites or multi-page appli
 Server-side rendering happens with the `render` method:
 
 ```
-import { render } from 'nue'
+import { render } from 'nuejs-core'
 
 // define a component
 const component = `
@@ -86,7 +86,7 @@ Nue allows you to render complex apps with multiple nested components from sever
 
 ```
 // grab the parse method
-import { parseFile } from 'nue'
+import { parseFile } from 'nuejs-core'
 
 // import the data/business model of your application
 import model from './business-model.js'

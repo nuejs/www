@@ -146,7 +146,6 @@ Fetch data from server and update the view with the new items
       const req = await fetch('fruits.json')
       const fruits = await req.json()
       fruits.forEach(this.images.push)
-      this.update()
     }
   </script>
 </figure>
@@ -244,15 +243,24 @@ Rendering with `:for` loop
 Nue auto-renders when arrays are manipulated
 
 ```
-<figure>
+<div>
+
+  <p>
+    <button @click="addFruit">Add</button>
+    <button @click="images.pop()" :disabled="!images[4]">Remove</button>
+  </p>
+
   <img :for="img in images" :src="/demo/img/{img}.jpg">
-  <button @click="images.push('tomatoes')">Add tomatoes</button>
-  <button @click="images.pop()">Remove last</button>
 
   <script>
-    images = ['popcorn', 'peas', 'lemons']
+    images = ['popcorn', 'peas', 'lemons', 'tomatoes']
+
+    addFruit() {
+      const img = this.images[Math.floor(Math.random() * 4)]
+      this.imagesı.push(img)ı
+    }
   </script>
-</figure>
+</div>
 ```
 
 [demo "reactive-loop"]

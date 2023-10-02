@@ -1,6 +1,6 @@
 
 main
-  max-width 45em
+  max-width $page-width
 
   img:first-child
     width 4em

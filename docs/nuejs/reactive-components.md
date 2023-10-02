@@ -55,7 +55,7 @@ Worth noticing that you need less than 20 lines of code to implement a basic gal
 Before you can run Nue code on the browser, you must convert it into JavaScript. This happens on the server side with a `compile` or `compileFile` command:
 
 ```
-import { compileFile } from 'nue'
+import { compileFile } from 'nuejs-core'
 
 await compileFile('gallery.nue', 'www/lib/gallery.js')
 ```
@@ -73,7 +73,7 @@ export default lib[0]
 There is also a `compile` method that takes a raw string as input and compiles it into JavaScript:
 
 ```
-import { compile } from 'nue'
+import { compile } from 'nuejs-core'
 
 const js = compile('<p>Hello, { name }!</p>')
 ```

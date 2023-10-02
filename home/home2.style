@@ -183,6 +183,9 @@ hr
   transform rotate(-.7deg)
   bg /nueui/img/reddit.svg
 
+.from-lobster
+  bg /home/img/lobsters.png
+  transform rotate(.2deg)
 
 // animations
 h2, h2 + p, figure, .video

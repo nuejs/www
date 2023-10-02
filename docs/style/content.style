@@ -1,5 +1,5 @@
 article
-  font 1.1em
+  font 1.2em
 
   > img, figure
     mb 1em
@@ -27,11 +27,9 @@ article
     relative -.1em
     font 115% $main-600
 
-h1
-  font 3.5em
-  + p em:first-child
-    font-style normal
-    font 700
+h1 + p em:first-child
+  font-style normal
+  font 700
 
 
 .small-image

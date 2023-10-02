@@ -21,7 +21,8 @@ h1, h2, h3, h4
 
 
 h1
-  font 4.5em 1.05 900 -.1rem
+  font 4rem 1.05 900 -.1rem
+  mb .4rem
 
   @medium-
     font 3.5em

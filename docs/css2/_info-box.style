@@ -1,15 +1,4 @@
 
-.info-box
-  bg /nueui/img/info-blue.svg $main-100 no-repeat
-  bg-pos 1em .85em
-  bg-size 1.2em
-  p .6em 3em
-  border 1px solid #0001
-  radius 5px
-  mb 1.5em
-
-  :last-child
-    mb 0
 
 .grayed
   bg /nueui/img/info.svg $gray-100

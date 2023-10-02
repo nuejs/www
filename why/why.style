@@ -10,7 +10,7 @@ h2 em
   text-underline-offset 4px
 
 blockquote
-  border-color $pink
+  border-color $gray-200
 
 #separate
   max-width 11em
@@ -81,24 +81,21 @@ hr
     ml 1em
 
 .info
-  padding 1.2em
-  m 3em 0
-  bg $main-100
-
-  @medium
-    mx -1.2em
+  border-left 5px solid $blue
+  p .5em 1.5em
   p
-    font 1.15em
+    font 110%
+    max-width 27em
 
-  code
-    font 600
-    float left
-    mr 1em
-
+  h4
+    bg /nueui/img/info.svg no-repeat
+    bg-size 1em
+    bg-pos 0 center
+    p .2em 1.5em
+    font 110% 600 $blue
 
 
 @medium
-
   .centered
     m 3em -4em
     block

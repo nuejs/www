@@ -31,6 +31,15 @@
 </button>
 
 
+<!-- counter 2 -->
+<div @name="counter2">
+  <h3>You clicked {count} times!</h3>
+  <button @click="count--">Decrement</button>
+  <button @click="count++">Increment</button>
+  <script>count = 0</script>
+</div>
+
+
 <!-- direct HTML render -->
 <button @name="html-button">
   {{ label }}
@@ -93,18 +102,24 @@
 
 
 <!-- reactive loop -->
-<figure @name="reactive-loop">
+<div @name="reactive-loop">
+
+  <p>
+    <button @click="addFruit">Add</button>
+    <button @click="images.pop()" :disabled="!images[4]">Remove</button>
+  </p>
+
   <img :for="img in images" :src="/demo/img/{img}.jpg">
 
-  <figcaption>
-    <button @click="images.push('tomatoes')">Add tomatoes</button>
-    <button @click="images.pop()">Remove last</button>
-  </figcaption>
-
   <script>
-    images = ['popcorn', 'peas', 'lemons']
+    images = ['popcorn', 'peas', 'lemons', 'tomatoes']
+
+    addFruit() {
+      const img = this.images[Math.floor(Math.random() * 4)]
+      this.images.push(img)
+    }
   </script>
-</figure>
+</div>
 
 
 <!-- fetch fruits -->
@@ -122,7 +137,6 @@
       const req = await fetch('fruits.json')
       const fruits = await req.json()
       fruits.forEach(this.images.push)
-      this.update()
     }
   </script>
 </figure>
@@ -259,6 +273,31 @@
   <script>
     constructor() {
       console.info('masssive')
+    }
+  </script>
+</div>
+
+
+<!-- update() method -->
+<div @name="user-update" class="user">
+  <img :src="user.avatar">
+  <h3>{ user.name }</h3>
+  <p>{ user.email }</p>
+
+  <button @click="loadJane" :disabled="is_loaded">Load Jane</button>
+
+  <script>
+    user = {
+      avatar: '/demo/img/face-4.jpg',
+      email: 'john@acme.org',
+      name: 'John Doe',
+    }
+
+    async loadJane() {
+      const req = await fetch('/docs/nuejs/examples/jane.json')
+      this.user = await req.json()
+      this.is_loaded = true
+      this.update()
     }
   </script>
 </div>

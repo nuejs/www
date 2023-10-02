@@ -19,7 +19,7 @@ I'm [Tero Piirainen](//twitter.com/tipiirai), a frontend developer from *Helsink
 
 
 ## What is Nue? [nue]
-Nue is a frontend development toolset. It's a new way to build websites and reactive user interfaces. It's an alternative to ecosystems like Vue, React, and Svelte. "Nue" comes from the German word `/neu/`, which translates to "new" in English.
+Nue is a frontend development toolset. It's a new way to build websites and reactive user interfaces. It's an alternative to ecosystems like Vue, React, and Svelte. "Nue" comes from the German word "neu", which translates to "new" in English. It is pronounced like `/nju/`.
 
 
 Nue is an open-source project hosted on [GitHub][gh], licensed with [MIT license][mit].
@@ -85,7 +85,7 @@ At least for me, the secret to minimalism is to start from scratch several times
 
 
 ## Do we need another framework? [yet-another]
-We do. Frontend developer fatigue is a serious thing. Please read the [backstory](/backstory/).
+We do. Frontend developer fatigue is a serious thing. Please read the [backstory](/blog/backstory/).
 
 ## Aren't you reinventing the wheel? [re-inventing]
 This is more like fixing a broken tire or replacing a massive pickup truck with a modern electric car.

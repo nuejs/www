@@ -36,7 +36,7 @@ You can use whatever extension you wish on the component file, but `.nue` extens
 
 ```
 // import rendering method
-import { renderFile } from 'nue'
+import { renderFile } from 'nuejs-core'
 
 // render the component
 const html = renderFile('media-object.nue', {

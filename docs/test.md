@@ -54,7 +54,7 @@ nue compile app.nue dist
 joooo
 
 ```
-import { compile } from 'nue'
+import { compile } from 'nuejs-core'
 
 compile(<nav @name="sidebar> ...</nav>)
 ```

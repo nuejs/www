@@ -2,6 +2,7 @@
   border 3px dashed
   radius 4px
   p 2em
+  mb 2em
 
   figcaption
     mt 1em

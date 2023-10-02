@@ -1,4 +1,8 @@
 
+:root
+  $page-width 45em
+
+
 // normalize
 *, *::before, *::after
   box-sizing border-box

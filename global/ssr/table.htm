@@ -1,8 +1,9 @@
 
 <!-- Easier Markdown table alternative -->
-<table @name="table">
+<table @name="nue-table">
+
   <thead>
-    <tr><th :for="val in head.split(separ)" :html="format(val)"/> </tr>
+    <tr><th :for="val in head.split(separ)" :html="format(val)"/></tr>
   </thead>
 
   <tr :for="row in rows">

@@ -9,10 +9,11 @@ include: [bunny/video]
 
 > Nue uses **progressive enhancement, separation of concerns**, and **semantic web design** to deliver new levels of performance, better scalability, and massively improved development experience.
 
-Nue is open-source software released under the MIT license. It's an engineering attempt to bring a long-term solution to the prevailing [frontend fatigue](/backstory/).
+Nue is open-source software released under the MIT license. It's an engineering attempt to bring a long-term solution to the prevailing [frontend fatigue](/blog/backstory/).
 
 [.info]
-  `!important` This document describes the benefits of [Nue toolset](/tools/), which is not ready yet. Currently only [Nue JS](/docs/nuejs) is publicly available.
+  #### Note
+  This document describes the benefits of [Nuekit](/tools/), which is not publicly available yet. Currently only [Nue JS](/docs/nuejs/) is ready.
 
 
 ## Create both websites *and* webapps
@@ -156,7 +157,7 @@ Thanks to minimalism, Nue can shoot for the fastest possible page rendering perf
 
 Nue is fast because of an undervalued technique called *progressive enhancement*. The content and primary CSS are loaded first, then secondary CSS, and finally JavaScript. You cannot get faster with any other approach.
 
-While frameworks like *Astro* have taken steps towards progressive enhancement they have a hard time fitting the content and CSS to the first HTTP packet because of the [spaghetti code](/compare/homepages.html#Astro).
+While frameworks like *Astro* have taken steps towards improved load performance they have a hard time fitting the content and CSS to the first HTTP packet because CSS-in-JS does not play well with progressive enhancement.
 
 
 ### Optimization

@@ -20,11 +20,11 @@ figcaption
 // inline code
 p, li
   code
-    border 1px solid $gray-300
+    border 1px solid $gray-200
     font-family courier
-    color $main-800
-    font 95% 400
-    bg $main-200
+    color $gray-600
+    font 90% 400
+    bg $gray-100
     p 0 .3em .05em
     radius 2px
 
@@ -43,3 +43,13 @@ mark, .mark
   bg #ffff0099
   transition .6s
   transform scale (1.05)
+
+
+a.subtle
+  font underline
+  color inherit
+  text-underline-offset .2em
+  text-decoration-color $gray-300
+
+  &:hover
+    text-decoration-color $gray-400

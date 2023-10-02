@@ -44,6 +44,16 @@ nav > a
     p 0 .8em
     font nowrap
 
+  [href="/blog/"]
+    relative
+    &:after
+      absolute .2em right .2em
+      radius 20px
+      size 8px
+      content ""
+      bg red
+      block
+
 
 .subnav
   justify-content right
@@ -74,3 +84,4 @@ nav > a
 
   .burger
     inline-block
+
