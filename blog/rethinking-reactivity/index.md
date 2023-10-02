@@ -17,7 +17,7 @@ include: [examples.js]
   caption: Less is more
 
 
-Nue was linked to [Hacker News][hn], [Lobsters][lobsters], and [Reddit][reddit] just two weeks ago (18. Sep) and it was really a dream start for the project. I had a super warm welcome from people, over 120k developers came to see the website, and the project rapidly got 3.3k stars on GitHub. My time lately has gone on fixing bugs, merging pull requests, giving support, answering questions, and [providing examples](/docs/nuejs/examples).
+Nue was linked to [Hacker News][hn], [Lobsters][lobsters], and [Reddit][reddit] just two weeks ago (18. Sep) and it was really a dream start for the project. I received a super warm welcome from developers, over 120k people came to see the website, and the project rapidly got over 3k stars on GitHub. My time lately has gone on fixing bugs, merging pull requests, giving support, answering questions, and [providing examples](/docs/nuejs/examples).
 
 Common questions are: "How does reactivity work"? and "How is this different from React or Svelte"? Here I do my best to answer those exact questions.
 
@@ -158,9 +158,9 @@ Nue uses classes to bring the DHTML vibes back to modern component-based web dev
 </form>
 ```
 
-The most notable thing is the `<script>` tag, which is now nested _inside_ the component. This is your ES6 class and a place for your instance variables and methods.
+The most notable thing is the `<script>` tag, which is now nested _inside_ the component. This is the place for your ES6 class variables and methods.
 
-ES6 classes make your code look amazingly clean and understandable. You can add variables, methods, [getters][getters], [setters][setters], and `async` methods with the cute and short syntax. Here is a snippet from a [Todo MVC](/todomvc/) app written with Nue:
+ES6 classes make your code look amazingly compact and clean. You can add variables, methods, [getters][getters], [setters][setters], and `async` methods with the cute and short syntax. Here is a snippet from a [Todo MVC](/todomvc/) app written with Nue:
 
 ```
 <script>

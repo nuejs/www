@@ -68,6 +68,10 @@ include: [home, bunny/video]
     id: "37519741"
     from: hn
 
+  - user: ulrischa
+    text: Seems like Nue could finally bring back something we lost all the way
+    id: "1702763687860162703"
+
   - user: ondreian
     text: Nice to see you still out in the wild writing code and working to solve problems in our ecosystem @tipiirai
     url: //lobste.rs/s/goxx8g/nue_react_vue_vite_astro_alternative#c_nfn3p0
@@ -87,9 +91,10 @@ include: [home, bunny/video]
     text: This is surprisingly good news for the frontend. I'm looking forward to the release of Nue's entire ecosystem.
     from: gh
 
-  - user: ulrischa
-    text: Seems like Nue could finally bring back something we lost all the way
-    id: "1702763687860162703"
+  - user: auraham
+    text: I am very impressed by the examples, they are so easy to read. I have zero experience with React, Svelte and JS in general, but after reading the examples make me want to learn more.
+    id: "37734713"
+    from: hn
 
   - user: ilrwbwrkhv
     text: More frontend devs needs to stop following the herd and think for themselves and look back at how hackers used to work back in the day to use as little memory as possible.
@@ -100,6 +105,7 @@ include: [home, bunny/video]
     text: Insanely impressive. Well done 👏
     url: https://www.reddit.com/r/vuejs/comments/16ifij7/comment/k0jhbyl/?utm_source=reddit&utm_medium=web2x&context=3
     from: reddit
+
 
   - user: en_ka8
     url: //www.reddit.com/r/vuejs/comments/16ifij7/comment/k0v49y7/?utm_source=reddit&utm_medium=web2x&context=3
@@ -115,7 +121,10 @@ include: [home, bunny/video]
     url: //github.com/nuejs/nuejs/discussions/43#discussion-5657161
     from: gh
 
-
+  - user: OsrsNeedsf2P
+    text: It's funny how React and other frameworks spent so much effort abstracting the render loop, meanwhile Nue is just like "call update()". And in the end, Nue looks a lot simpler to use.
+    id: "37734990"
+    from: hn
 
 
 
