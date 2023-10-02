@@ -1,0 +1,49 @@
+
+main
+  max-width $page-width
+
+
+// hero
+h1 + p
+  font 1.2em 500
+
+@large
+  h1 + p + figure
+    ml -2em
+    mb 2em
+
+    img
+      min-width calc(100% + 7em)
+    figcaption
+      ml 2.2rem
+
+.blog-header
+  mb 3.5em
+  + article
+    font 1.2em
+
+// author
+.author
+  align-items center
+  gap 1em
+  flex
+
+  h4
+    font 1.15em $gray-800
+
+  img
+    filter grayscale(1)
+    transition .1s
+    width 4em
+
+    &:hover
+      transform rotate(-1deg) scale(1.02)
+      filter none
+  p
+    mb .2em
+
+  time
+    font 90%
+
+
+

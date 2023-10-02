@@ -1,0 +1,32 @@
+
+
+// @font-face
+//   font-family handwriting
+//   src url("/global/font/gochi-hand.woff2") format("woff2")
+
+body
+  bg /home/img/grid.svg no-repeat
+  bg-pos 30% 100px
+  bg-size 85%
+
+h1
+  mb 1em
+  + p:first-letter
+    font 5em 1 800 $main
+    m -.05em .12em -.2em -.13em
+    font-family georgia, garamond
+    float left
+
+article
+  > p, > h3
+    font 1.1em
+
+  h3
+    m 1.5em 0
+    a
+      none
+
+
+.signature
+  m 1em 0 0 -1.7em
+  width 17em

@@ -1,0 +1,44 @@
+
+@import url("/docs/css2/examples.css")
+@import url("/docs/css2/syntax.css")
+
+@font-face
+  font-family handwriting
+  src url("/global/font/gochi-hand.woff2") format("woff2")
+
+h1 em
+  relative
+  font 900
+
+h1 em:after
+  content "solving"
+  absolute right 0em bottom -.2em
+  bg /home/img/overline.png no-repeat
+  font-family handwriting
+  text-shadow 0 0 5px white
+  bg-size 120%
+  bg-pos .1em 85%
+  height 1.6em
+  font 1.18em
+  color red
+  p 0 .3em
+  transform scale(.5)
+  transform-origin 0 100%
+  transition .5s
+  opacity 0
+
+  .loaded &
+    transform scale(1) rotate(-7deg)
+    opacity 1
+
+.dhtml-book
+  width 9em
+  float right
+  ml 2em
+
+  @large
+    ml 2em
+
+
+.mastnav [href="/blog/"]:after
+  none

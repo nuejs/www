@@ -1,0 +1,48 @@
+
+.blog-entry
+  align-items center
+  font 1.2em
+  gap 2em
+  mt 3em
+  flex
+
+  > img
+    box-shadow 0 0 0 .6em $gray-100
+    radius 8px
+    width 10em
+
+  p
+    font 400 $gray 1.6
+    max-width 17em
+    m -.2em 0 .8em
+
+  figure
+    align-items center
+    gap .5em
+    flex
+
+    img
+      size 1.2em 1.5em
+      grayscale
+
+    figcaption
+      font 1rem 500 #000
+      m 0
+
+    time
+      font 80% 400 $gray
+      ml -.2em
+      &:before
+        content "• "
+
+  &:hover > img
+    box-shadow 0 0 0 .5em white, 0 0 0 .6em $main
+
+  &:active
+    transform scale(.99)
+
+.tag
+  font .8rem uppercase 600 .05em #fff
+  radius 3px
+  p 0 .5em
+  bg $red

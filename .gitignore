@@ -4,7 +4,6 @@
 .ssl
 *.mp4
 admin
-blog
 poll
 Makefile
 node_modules

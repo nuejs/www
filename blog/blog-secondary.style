@@ -1,0 +1,76 @@
+
+// secondary CSS
+@import url("/why/permlink.css")
+
+
+
+/* blockquote
+.quote
+  max-width 55em
+  mb 2em
+  p
+    font 165% -1px $serif
+
+
+.quote:after
+  content: '— ' attr(data-from)
+  font 120% 600 $main
+  mt .6em
+  block
+
+  .boxes
+    gap 1.5em
+    flex
+*/
+
+
+.boxes
+  bg $gray-50
+  m 2em 0 3em
+  gap 3em
+  p 3em
+
+  @medium
+    mx -3em
+    flex
+
+  .block
+    border 1px solid $gray-200
+    box-shadow 0 1px 2px #0002
+    radius 4px
+    bg white
+    p 2em
+    flex 1
+    h3
+      m 0 0 .5em 1em
+    li
+      mb .3em
+
+    @medium-
+      m 0 auto 3em
+      max-width 20em
+
+.bordered img
+  border 1.5em solid $gray-100
+  p 2em
+
+table
+  border-collapse collapse
+  width 100%
+  font left
+  m 2em 0
+
+td
+  border-bottom
+  font 500 $gray
+  p .4em
+
+  &:first-child
+    color black
+
+tr:last-child td
+  border-bottom-width 0
+
+th
+  border-bottom $gray
+  p .4em

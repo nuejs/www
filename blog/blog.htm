@@ -1,0 +1,55 @@
+
+
+<header @name="area-header" class="blog-header">
+  <figure class="author">
+    <img src="/global/img/tero.png">
+    <figcaption>
+      <h4>Tero Piirainen</h4>
+      <p><a href="//twitter.com/tipiirai">@tipiirai</a></p>
+      <pretty-date :date="date"/>
+    </figcaption>
+  </figure>
+</header>
+
+
+<nav @name="blog-index">
+  <a :for="el in entries" :href="el.url" class="blog-entry">
+    <img src="/blog/img/{el.thumb}">
+    <aside>
+      <h2>{ el.title }</h2>
+      <p>{ el.desc }</p>
+      <figure>
+        <img src="/global/img/tero.png">
+        <figcaption>Tero Piirainen</figcaption>
+        <pretty-date :date="el.date"/>
+        <span class="tag alarm" :if="isNew(el.date)">New</span>
+      </figure>
+    </aside>
+  </a>
+
+  <script>
+    isNew(date) {
+      const diff = new Date() - date
+      return diff < 7 * 24 * 3600 * 1000
+    }
+    constructor({ pages }) {
+      this.entries = pages.filter(el => el.date)
+      this.entries.sort((a, b) => b.date - a.date)
+    }
+  </script>
+</nav>
+
+
+<time @name="pretty-date" :datetime="iso">
+  { pretty }
+
+  <script>
+    constructor({ date }) {
+      const ts = new Date(date)
+      this.iso = ts.toISOString()
+      this.pretty = ts.toLocaleDateString('en-US', {
+        year: 'numeric', month: 'long', day: 'numeric'
+      })
+    }
+  </script>
+</time>
