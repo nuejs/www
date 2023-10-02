@@ -140,7 +140,7 @@ Yes, HTML was in all caps back then. And there were no `type="email"` fields, no
 
 Today HTML, CSS, and JavaScript have incredibly more power. Especially JavaScript. One notable thing is [classes][classes], introduced in ECMAScript 2015 (aka "ES6") and now supported by all major browsers.
 
-Nue uses classes to bring the DHTML wibes back to modern component-based web development. Let's rewrite the above example with Nue:
+Nue uses classes to bring the DHTML vibes back to modern component-based web development. Let's rewrite the above example with Nue:
 
 ```
 <form @submit.prevent="submit">
