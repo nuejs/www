@@ -17,10 +17,13 @@ title: Nue JS • Getting started
 
 ``` sh
 # clone the repository
-git clone https://github.com/nuejs/create-nue.git
+git clone https://github.com/nuejs/create-nue.git --depth 1
 
 # cd to your newly created app
 cd create-nue
+
+# remove git directory
+rm -rf .git
 
 # install dependencies
 npm install
