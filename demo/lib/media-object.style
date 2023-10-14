@@ -24,7 +24,7 @@
 
 .art-gallery
   display grid
-  linear-gradient #000, #222
+  background var(--gray-800)
   radius .6em
   font 75%
   gap 3em
