@@ -44,6 +44,7 @@ nav > a
     p 0 .8em
     font nowrap
 
+  /* red dot
   [href="/blog/"]
     relative
     &:after
@@ -53,7 +54,7 @@ nav > a
       content ""
       bg red
       block
-
+  */
 
 .subnav
   justify-content right

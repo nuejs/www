@@ -1,0 +1,206 @@
+<p class="line-count">204 lines</p><div class="columns">
+<pre class="pre-1"><h3>layout.html</h3>
+&lthtml :class="class"&gt
+  &lthead&gt
+    &ltmeta charset="utf-8"&gt
+    &ltmeta name="generator" content="Nue (nuejs.org)"&gt
+    &ltmeta name="date.updated" content="{ timestamp.toISOString() }"&gt
+    &ltlink rel="shortcut icon" src="{root}{favicon}"&gt
+    &ltmeta name="viewport" content="width=device-width"&gt
+    &lttitle&gt{ title }&lt/title&gt
+    &ltmeta name="description" :content="desc"&gt
+    &ltmeta property="og:image" content="https://nuejs.org{root}{og}"&gt
+    &ltstyle&gt{ primary_css  }&lt/style&gt
+    &ltlink :for="href in secondary_css" href="{root}{href}" rel="stylesheet"&gt
+  &lt/head&gt
+
+  &ltbody&gt
+    &ltheader&gt
+      &lta href="/"&gt&ltimg class="avatar" src="{avatar}"&gt&lt/a&gt
+      &ltnav class="mastnav"&gt
+        &lta :for="name in nav" href="/{name.toLowerCase()}/"&gt{ name }&lt/a&gt
+      &lt/nav&gt
+      &lta id="modeswitch"&gt&lt/a&gt
+    &lt/header&gt
+
+    &ltmain :html="page"/&gt
+
+    &ltfooter&gt
+      &ltnav class="mastnav"&gt
+        &lta :for="name in nav" href="{root}/{name.toLowerCase()}/"&gt{ name }&lt/a&gt
+      &lt/nav&gt
+      &ltp&gt{ copyright }&lt/p&gt
+    &lt/footer&gt
+
+    &ltscript :for="src in scripts" src="{root}{src}" type="module"&gt&lt/script&gt
+  &lt/body&gt
+
+&lt/html&gt
+
+</pre>
+<pre class="pre-2"><h3>home.html</h3>
+&ltmain&gt
+
+  &ltsection class="hero"&gt
+    &ltheader :html="body"/&gt
+
+    &lt!-- social icons --&gt
+    &ltnav&gt
+      &lta :for="[key, url] in Object.entries(social)"
+         href="//{key.toLowerCase()}.com{url}"&gt
+        &ltimg class="icon" src="{root}/img/{key.toLowerCase()}.svg"&gt
+      &lt/a&gt
+    &lt/nav&gt
+
+    &lt!-- gallery --&gt
+    &ltdiv class="gallery"&gt
+      &ltfigure :for="src in pics"&gt&ltimg loading="lazy" src="{root}/home/img/{src}"&gt&lt/figure&gt
+    &lt/div&gt
+  &lt/section&gt
+
+  &ltaside&gt
+
+    &lt!-- blog entries --&gt
+    &ltnav class="entry-list"&gt
+      &lta :for="el in blog_entries" href="{root}{el.url}" class="entry"&gt
+        &lttime&gt{ format(el.date) }&lt/time&gt
+        &ltdiv&gt
+          &lth3&gt{ el.title }&lt/h3&gt
+          &ltp&gt{ el.desc }&lt/p&gt
+          &ltsmall&gtRead article ›&lt/small&gt
+        &lt/div&gt
+      &lt/a&gt
+    &lt/nav&gt
+
+
+    &lt!-- waitlist form --&gt
+    &ltdiv class="box entry"&gt
+      &lth3 class="flex"&gt
+        &ltimg class="icon" src="{root}/img/email.svg"&gt
+        &ltb&gt{ copy.notify }&lt/b&gt
+      &lt/h3&gt
+
+      &ltp&gt{ copy.notify_desc }&lt/p&gt
+
+      &ltform action="{root}/blog/thank-you" class="flex"&gt
+        &ltinput type="email" placeholder="Email address" required&gt
+        &ltbutton&gt{ copy.join }&lt/button&gt
+      &lt/form&gt
+    &lt/div&gt
+
+    &lt!-- jobs --&gt
+    &ltdiv class="box entry"&gt
+      &lth3 class="flex"&gt
+        &ltimg class="icon" src="{root}/img/briefcase.svg"&gt
+        &ltb&gtWork&lt/b&gt
+      &lt/h3&gt
+
+      &ltul&gt
+        &ltli :for="el in jobs" class="flex"&gt
+          &ltfigure&gt&ltimg src="{root}/home/img/{ el.logo }.svg" class="brand"&gt&lt/figure&gt
+          &ltdiv&gt
+            &lth4&gt{ el.org }&lt/h4&gt
+            &ltp&gt{ el.role }&lt/p&gt
+          &lt/div&gt
+          &lttime&gt{ el.time }&lt/time&gt
+        &lt/li&gt
+      &lt/ul&gt
+
+      &ltbutton class="secondary"&gt
+        Download CV &ltimg class="icon" src="{root}/img/arrow-down.svg"&gt
+      &lt/button&gt
+    &lt/div&gt
+  &lt/aside&gt
+
+  &ltscript&gt
+    format(date) {
+      return date.toLocaleDateString('en-us', {
+        weekday: 'long', month: 'short', day: 'numeric', year: 'numeric'
+      })
+    }
+  &lt/script&gt
+&lt/main&gt
+
+</pre>
+<pre class="pre-3"><h3>site.data</h3>
+title: Emma Bennet • Personal website
+desc: Emma Bennett — UX engineer, designer, and urban explorer from Berlin. Bringing clarity and joy for users @ Dribbble. In my free time I love to walk around the city with my friends and enjoy the unique spirit of the capital.
+
+og: /img/og.jpg
+favicon: /img/favicon.jpg
+avatar: /img/avatar.jpg
+copyright: © 2023 Emma Bennet. All rights reserved.
+email: emma@bennett.co
+nav: [ About, Setup, Projects, Blog ]
+
+# root: /~emma.bennet
+
+# spotlight only
+modeswitch: true
+
+# microcopy
+copy:
+  notify: Stay up to date
+  notify_desc: Get notified when I publish something new. Unsubscribe any time
+  join: Join
+
+social:
+  Twitter: /tipiirai
+  Instagram: /
+  Github: /nuejs/nuejs
+  LinkedIn: /in/tipiirai
+
+jobs:
+  - org: Dribbble
+    logo: dribbble
+    role: UX engineer
+    time: 2022 — Present
+
+  - org: Behance
+    role: UI developer
+    time: 2016 — 2022
+    logo: behance
+
+  - org: Weirdly Odd
+    logo: wasm
+    role: Lead designer
+    time: 2013 — 2016
+
+  - org: Umbrella Design
+    role: Designer
+    time: 2010 — 2013
+    logo: acme
+
+
+
+# Shown on 1. front page, 2. blog index, 3. blog entry footer
+blog_entries:
+  - date: 2023-10-17
+    title: CSS class naming strategies for scaleable dasboard design
+    url: /blog/class-naming-strategies.html
+    desc: When designing complex dashboards, CSS can quickly turn into an unmanageable mess if you don't use a consistent class naming strategy. By implementing a few key rules, you can keep your stylesheet clean and scalable.
+  - date: 2023-05-22
+    title: Crafting a scaleable CSS design system
+    url: /blog/scaleable-design-system.html
+    desc:   In this article, we'll explore strategies for crafting a flexible CSS architecture that promotes consistency, maintainability, and cross-functional collaboration.
+  - date: 2022-06-13
+    title: Strategies for using colors in CSS
+    url: /blog/color-strategies.html
+    desc: Exploring practical techniques for effectively implementing color palettes, theming, accessibility, animations, and more with CSS.
+
+</pre>
+<pre class="pre-4"><h3>index.md</h3>
+---
+pics:
+  - berlin.jpg
+  - graffiti.jpg
+  - books.jpg
+  - doless.jpg
+  - colors.png
+  - techno.jpg
+---
+
+
+# Minimalist, UX engineer, designer, urban explorer.
+I’m **Emma Bennett**, a user experience designer and developer based in **Berlin**. I'm currently working as a UX engineer at **Dribbble** where I attempt to bring clarity and joy for our users. In my free time I just like to walk around with my friends and enjoy the unique spirit of Berlin.</pre>
+</div>

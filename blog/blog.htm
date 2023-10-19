@@ -30,7 +30,7 @@
   <script>
     isNew(date) {
       const diff = new Date() - date
-      return diff < 7 * 24 * 3600 * 1000
+      return diff < 4 * 24 * 3600 * 1000
     }
     constructor({ pages }) {
       this.entries = pages.filter(el => el.date)

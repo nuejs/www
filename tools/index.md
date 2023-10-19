@@ -39,11 +39,6 @@ Eventually Nue is a complete frontend development toolset. An alternative to eco
 
     Alternative to [Headless UI][headless], [Radix UI][radix], and [Chakra UI][chakra]
 
-  * ## Nue MVC
-    Build intuitive apps that scale
-
-    Alternative to [react-router][react-router], [vue-router][vue-router], [Redux][redux], and [Pinia][pinia]
-
   * ## Nuemark
     Markdown flavor for rich content
 
@@ -53,6 +48,11 @@ Eventually Nue is a complete frontend development toolset. An alternative to eco
     Build websites and apps with cleaner code
 
     Alternative to [Vite][vite], [Next.js][next], [Nuxt.js][nuxt], and [Astro][astro]
+
+  * ## Nue MVC
+    Build scaleable single-page apps
+
+    Alternative to [react-router][react-router], [vue-router][vue-router], [Redux][redux], and [Pinia][pinia]
 
   [cssjs]: //en.wikipedia.org/wiki/CSS-in-JS
   [tailwind]: //tailwindcss.com
