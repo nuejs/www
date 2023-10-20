@@ -1,0 +1,8 @@
+
+.join
+  max-width 20em
+  font 90%
+  mb 1em
+
+  input
+    mb .3em

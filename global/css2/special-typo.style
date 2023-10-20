@@ -12,7 +12,7 @@ li
     font bold $main
 
 figcaption
-  font 90% $gray
+  font .95rem $gray
   max-width 48em
   mt .5em
 
@@ -53,3 +53,18 @@ a.subtle
 
   &:hover
     text-decoration-color $gray-400
+
+
+.info
+  border-left 5px solid $blue
+  p .5em 1.5em
+  p
+    font 110%
+    max-width 27em
+
+  h4
+    bg /nueui/img/info.svg no-repeat
+    bg-size 1em
+    bg-pos 0 center
+    p .2em 1.5em
+    font 110% 600 $blue

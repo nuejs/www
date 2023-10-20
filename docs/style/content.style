@@ -66,6 +66,9 @@ h1 del, h2 del
 .taller
   m 2em 0
 
+.tall
+  m 3em 0
+
 @large
   .wide-right
     mr -4em

@@ -1,0 +1,7 @@
+
+<form @name="join-list" class="join">
+  <h4>Nue mailing list</h4>
+  <input type="email" name="email" placeholder="Your email">
+  <textarea name="email" placeholder="Optional thoughts"></textarea>
+  <button class="secondary">Join</button>
+</form>

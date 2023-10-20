@@ -23,6 +23,33 @@
     flex
 */
 
+.cols
+  display flex
+  gap 1em
+  mb 2em
+  img
+    radius 4px
+    block
+
+.clickable
+  pointer
+  &:hover
+    img
+      box-shadow 0 0 0 2px $main
+    figcaption
+      font #000
+
+@xlarge
+  .wider
+    m 2em -12em 2em -3.5rem
+    img
+      max-width calc(100% + 12em)
+
+@xlarge
+  .super-wide
+    m 2em -12em 2em
+    img
+      max-width calc(100% + 24em)
 
 .boxes
   bg $gray-50
@@ -51,8 +78,14 @@
       max-width 20em
 
 .bordered img
-  border 1.5em solid $gray-100
-  p 2em
+  border 2vw solid $gray-100
+  p 2vw
+
+.small-bordered img
+  border 1px solid $gray-200
+  p 3vw
+
+
 
 table
   border-collapse collapse

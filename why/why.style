@@ -80,21 +80,6 @@ hr
   h3
     ml 1em
 
-.info
-  border-left 5px solid $blue
-  p .5em 1.5em
-  p
-    font 110%
-    max-width 27em
-
-  h4
-    bg /nueui/img/info.svg no-repeat
-    bg-size 1em
-    bg-pos 0 center
-    p .2em 1.5em
-    font 110% 600 $blue
-
-
 @medium
   .centered
     m 3em -4em

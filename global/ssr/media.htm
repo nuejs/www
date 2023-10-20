@@ -1,6 +1,6 @@
 
-<figure @name="media" :id="id" :class="class { clickable: href }"
-  onclick="if({!!href}) location.href='{href}'">
+<figure @name="media" :id="id" class="{ class } { clickable: href }"
+  onclick="if({!!href}) location.href=\'{href}\'">
 
   <picture :style="bg">
     <source :for="el in sources" :srcset="el.src" :media="el.media" :type="el.type">
