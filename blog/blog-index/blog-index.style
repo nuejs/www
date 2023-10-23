@@ -12,8 +12,8 @@
     width 10em
 
   p
-    font 400 $gray 1.6
-    max-width 17em
+    font 95% 400 $gray 1.6
+    max-width 20em
     m -.2em 0 .8em
 
   figure

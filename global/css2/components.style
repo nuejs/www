@@ -1,8 +1,14 @@
 
 .join
-  max-width 20em
+  max-width 23em
   font 90%
   mb 1em
 
   input
-    mb .3em
+    bg /nueui/img/email.svg no-repeat
+    bg-size 1.1em
+    bg-pos 95% 55%
+
+  textarea
+    height 6em
+    m .5em 0

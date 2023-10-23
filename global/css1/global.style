@@ -12,6 +12,8 @@
 
 a
   text-decoration none
+
+a[href]
   pointer
 
 html

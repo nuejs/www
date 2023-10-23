@@ -1,14 +1,14 @@
 ---
 title: Tailwind vs Semantic CSS
-desc: Comparing two identically designed websites, their size, rendering speed, and best practices.
+desc: Comparing two identically designed websites, their weight, amount of HTML and CSS, rendering speed, and best practices.
 og: img/og.jpg
-thumb: img/og-thumb.jpg
-date: 2023-10-22
+thumb: tw-thumb.jpg
+date: 2023-10-23
 include: syntax
 ---
 
 # Tailwind CSS vs. Semantic CSS
-This study compares two websites with a similar design: A commercial Tailwind "spotlight" template, and the same site crafted with semantic CSS and [Nue server components](/docs/nuejs/server-components). We'll take a deep look at what is under the hood and how the sites are built.
+This study compares two websites with a similar design: the official Tailwind "spotlight" template from the developers of Tailwind, and the same site crafted with semantic CSS and [Nue server components](/docs/nuejs/server-components.html). We'll take a deep look at what is under the hood and how the sites are built.
 
 [.cols]
   [media]
@@ -51,7 +51,7 @@ Here is the full HTML source code of the front page.
   caption: Full HTML coding on the front page
   class: small-bordered wider
 
-Tailwind is 75K of unminified HTML, while the semantic version is 8K. That is: Tailwind and Next.js require ~nine times more HTML~ to render the same design than the semantic version.
+Tailwind (and Next.js) generate 75K of unminified HTML, while the semantic version is only 8K. While some parts come from Next, it's pretty clear that Tailwind requires significantly more HTML to render the same design than the semantic version.
 
 With Tailwind the [Text to HTML Ratio][tw-ratio] is only 2.3%, which is "Very low" according to SiteGuru. [Nue ratio][nue-ratio], however, is 20.3% which is "Good".
 
@@ -87,7 +87,7 @@ Some key takes:
   caption: Creating a new design by extending a semantic base design
   class: tall
 
-Theming or "skinning" is a powerful concept in semantic CSS. You can alter your design by swapping parts of your CSS with another one or overriding a [base version](/@base/). Theming is impossible with Tailwind because the design is tightly coupled to the markup. If you want a new design, you must rewrite your HTML and wipe out your earlier work.
+Theming or "skinning" is a powerful concept in semantic CSS. You can alter your design by swapping parts of your CSS with another one or overriding a [base version](/@base/). CSS theming is impossible with Tailwind because the design is coupled to the markup. If you want a new design, you must edit your markup and override your earlier work.
 
 
 
@@ -105,7 +105,7 @@ Please compare [Tailwind metrics](//pagespeed.web.dev/analysis/https-spotlight-t
 
 Two reasons why the semantic version is faster:
 
-1. The primary CSS is [inlined](//blog.logrocket.com/improve-site-performance-inlining-css/) on the HTML page so that all the assets for the first viewport are fetched in the initial request.
+1. The primary CSS is [inlined](//imkev.dev/loading-css) on the HTML page so that all the assets for the first viewport are fetched in the initial request. This is probably the most important performance optimization for the perceived page loading experience.
 
 2. The first request is [less than 14K][14k], which is the maximum size of the first TCP packet.
 
@@ -188,6 +188,8 @@ To this
 <button class="secondary">
 ```
 
+Without turning into components.
+
 
 ### But co-location is important?
 Co-location is a catchy name for tight coupling. A term to promote the idea that styling should be tied to the presentation. Repeating things vs. re-using things. See above.
@@ -221,5 +223,5 @@ I'm working on it! I wanted to push out this blog entry quickly without the over
 
 [join-list]
 
-I'd appreciate your thoughts. I'd like to understand what people think of all this. You can also participate in the [discussion at Hacker News](/).
+I'd appreciate your thoughts. I'd like to understand what people think of all this. You can also participate in the [discussion at Hacker News](//news.ycombinator.com/item?id=37982407).
 

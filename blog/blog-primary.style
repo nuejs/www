@@ -29,21 +29,22 @@ h1 + p
   flex
 
   h4
-    font 1.15em $gray-800
+    font 1em $gray-800
+    mb .1em
 
   img
     filter grayscale(1)
     transition .1s
-    width 4em
+    width 3.4em
 
     &:hover
       transform rotate(-1deg) scale(1.02)
       filter none
   p
-    mb .2em
+    mb 0
 
   time
-    font 90%
+    font 85%
 
 
 

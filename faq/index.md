@@ -92,28 +92,7 @@ This is more like fixing a broken tire or replacing a massive pickup truck with 
 
 
 ## Why not Tailwind? [tailwind]
-Nue prefers semantic CSS and external stylesheets, because:
-
-1. *Decoupled design*: when styling is decoupled from the component it's easy make the component look different in various places by taking advantage of the cascade or using a different stylesheet
-
-1. *Page weight*: It's easier to keep your initial TCP packet under the 14kb limit when the HTML code is leaner and the style is easy to split into primary and secondary CSS.
-
-1. *Standards-based*: writing CSS directly makes you master the standard and you can play around with things like [container queries](//developer.mozilla.org/en-US/docs/Web/CSS/CSS_container_queries), [:has() selector](//developer.mozilla.org/en-US/docs/Web/CSS/:has), or [@layer](//developer.mozilla.org/en-US/docs/Web/CSS/@layer).
-
-Look for [details and examples](/docs/nuejs/styling-components.html)
-
-
-## Why not TypeScript? [ts]
-Nue is written with plain JavaScript because:
-
-1. *ES6 is awesome*: think [modules][modules], [destructuring][destroy], and the [proxy][proxy]
-
-1. *Dynamic typing* is a good thing and you can [use it to your advantage][dynamic].
-
-1. *Browser standard*: JavaScript runs natively on the browser without an extra compilation step.
-
-Nue is obviously usable in both JavaScript and TypeScript projects.
-
+Because semantic CSS is significantly leaner, it renders faster, and is easier to modify and extend. I've written [a few hundred words](/blog/tailwind-vs-semantic-css/) about it.
 
 
 [antirez]: //twitter.com/antirez/status/1378272801522597888
