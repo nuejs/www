@@ -1,5 +1,5 @@
 
-<section @name="unit-test">
+<section @name="unit-test" translate="no">
 
   <!--
   <combobox name="role" label="Select type" :options="options"

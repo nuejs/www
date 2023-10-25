@@ -20,7 +20,7 @@
     + Add someone
   </button>
 
-  <section class="user-list">
+  <section class="user-list" translate="no">
     <media-object :for="user in users" :bind="user"/>
   </section>
 

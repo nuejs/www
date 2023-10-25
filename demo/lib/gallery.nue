@@ -2,7 +2,7 @@
 <!--
   https://www.apple.com/shop/product/MPNY3AM/A/airpods-3rd-generation-with-lightning-charging-case
 -->
-<section @name="image-gallery" class="image-gallery">
+<section @name="image-gallery" class="image-gallery" translate="no">
 
   <div>
     <a class="seek prev" @click="index--" :if="index"></a>

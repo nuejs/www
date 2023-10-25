@@ -23,7 +23,7 @@
 </label>
 
 
-<section @name="view-src">
+<section @name="view-src" translate="no">
   <div class="tabs secondary-tabs">
     <a :for="name, i in names" :class="{ selected: i == index }" @click="navigate(name, i)">
       { name } { suffix.replace('src', 'source') }</a>

@@ -6,7 +6,7 @@
       placeholder="What needs to be done?" autofocus>
   </header>
 
-   <section class="main" :if="items[0]">
+   <section class="main" :if="items[0]" translate="no">
 
     <input id="toggle-all" class="toggle-all" type="checkbox"
       @change="toggleAll" :checked="items[0] && !numActive">

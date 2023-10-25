@@ -19,7 +19,7 @@ Let's start with an example. Here is a classic *image gallery* component that yo
 Here's the code for our gallery component:
 
 ```
-<section @name="image-gallery" class="gallery">
+<section @name="image-gallery" class="gallery" translate="no">
 
   <div>
     <a class="seek prev" @click="index--" :if="index"></a>
