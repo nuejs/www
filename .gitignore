@@ -8,3 +8,5 @@ poll
 Makefile
 node_modules
 ext
+.vscode
+.idea
