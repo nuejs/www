@@ -255,7 +255,7 @@ Here's an example library that defines both a shopping cart and a button compone
 
   <script>
     constructor() {
-!     this.items = shopping_cart.getItems()
+     this.items = shopping_cart.getItems()
     }
   </script>
 </article>
@@ -264,7 +264,7 @@ Here's an example library that defines both a shopping cart and a button compone
 <button @name="add-to-cart" @click="click">
   <script>
     click() {
-!     addToCart(this.data)
+     addToCart(this.data)
     }
   </script>
 </button>
