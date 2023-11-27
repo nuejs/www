@@ -65,9 +65,11 @@ h1 del, h2 del
 
 .taller
   m 2em 0
+  block
 
 .tall
   m 3em 0
+  block
 
 @large
   .wide-right

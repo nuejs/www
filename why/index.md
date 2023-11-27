@@ -9,11 +9,12 @@ include: [bunny/video]
 
 > Nue uses **progressive enhancement, separation of concerns**, and **semantic web design** to deliver new levels of performance, better scalability, and massively improved development experience.
 
-Nue is open-source software released under the MIT license. It's an engineering attempt to bring a long-term solution to the prevailing [frontend fatigue](/blog/backstory/).
+Nue is open-source software released under the MIT license. It's an engineering attempt to bring a long-term solution to the prevailing [frontend fatigue](/blog/backstory/). It's a work im progress with the following release schedule:
 
-[.info]
-  #### Note
-  This document describes the benefits of [Nuekit](/tools/), which is not publicly available yet. Currently only [Nue JS](/docs/nuejs/) is ready.
+[media]
+  small: /img/roadmap.png
+  large: /img/roadmap-big.png
+  class: taller wider
 
 
 ## Create both websites *and* webapps

@@ -1,32 +1,40 @@
 
-/*
-  Primary CSS to render the first viewport
-
-  All the rest in ./home2.style
-*/
-
 h1
-  position relative
-  max-width 8em
-  font 3.5em 1 $main
-  inline-block
-  m .15em 0
+  max-width 10em
+  mb .2em
 
-  @small
-    font 4.5em
-
-  @medium
-    font 6em
-
-  em
-    transform rotate(-0.4deg) translateX(-.1em)
-    font-style normal
-    inline-block
-    color black
+  @large
+    font 4.3em
 
   + p
-    max-width 29em
-    font 1.9em 500 1.4
-    mb 2em
+    font 1.5em 1.6
+    max-width 27em
+
+    em
+      font 500 normal
+      px .2em
+      pb .1em
+      radius 3px
+      bg $yellow
+
+h2
+  font 2em -0.04em
+  mt 3em
+
+  + p
+    font 1.2em
+
+// the image
+.roadmap
+  m 5em 0 3em
+  block
 
 
+main .join
+  mb 5em
+
+  h4
+    none
+
+  button
+    font 105%

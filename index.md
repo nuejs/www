@@ -1,68 +1,72 @@
 
 ---
-include: [home, bunny/video]
+include: [home]
 ---
 
-# Frontend *Troublemaker*
-**Nue** is a powerful **React, Vue, Next.js, Vite**, and **Astro** alternative. It might *change the way you develop for the web.*
+# The closer-to-standards web framework
+Nue is a simple **Next.js**, and **Astro** alternative focusing on *minimalism*, *separation of concerns*, and *semantic web design*.
 
-[image-link]
-  href: /compare/component.html
-  src: /home/img/compare-react.jpg
-  caption: The difference in coding style • Click for details 👉
-  class: compare-shot
+## What is Nue? [tools]
+Nue offers all the essentials for standards-based web development:
 
+[.tools]
+  * `HTML`
+    ### Nue JS
+    Build user interfaces with obvious, HTML-based markup
 
-[.fast.dark]
-  ## *Nue* levels of speed
-  Nue takes the HELL🔥 out of minimalism and the TCP slow start algorithm
+    [A (2.3kb) alternative](/docs/nuejs/) to *React*, *Vue*, and *Svelte*
 
-  [media]
-    large: /why/img/stats-big.png
-    caption: Nue helps you keep the initial page load (HTML + primary CSS) under the critical 14kb limit
+  * `CSS`
+    ### Nue CSS
+    Bring back the power of modular, cascaded styling.
 
+    Standards-based alternative to *Tailwind* and other *CSS-in-JS* libs
 
-[.fun]
-  ## *Nue* way to develop
-  Massively improved developer experience with *separation of concerns* and *universal hot reloading*
+  * `M↓`
+    ### Nuemark
+    Bring back content-first approach to web development.
 
-  [bunny-video]
-    videoId: e78eec4c-9e81-4274-87d5-080d0459d1be
-    poster: thumbnail_b04e314f.jpg
-    caption: Nue provides a better developer experience for UX engineers, JavaScript developers, and content creators.
+    Semantic alternative to *Headless UI* and *Shadcn UI*
 
-- - -
-
-[.hello]
-  ### Hello, World!
-  Author here. I've been working on this for the past year or so, lately full-time. There are two things here:
-
-  1. [Nue JS](/docs/nuejs/) — A tiny (2.3kb minzipped) JavaScript library for building user interfaces. It's like React/Vue, but there are no hooks, effects, props, or other unusual abstractions on your way. Know the basics of HTML, CSS, and JavaScript and you are good to go. It supports both server-side rendering and client-side reactive components. It takes inspiration from Vue 2.0 and Riot.js. (I'm the original author of Riot).
-
-  2. [Nue tools](//nuejs.org/tools/) — A complete frontend development toolset. Once finished, Nue is an alternative to systems like Vite, Next.js, and Astro. This is the ultimate goal.
-
-  The thing is that I'm not happy with the current state of web development, so I'm building everything from scratch in a super minimalistic way *to make things easier for web developers*. I'm taking advantage of the "old school" innovations like progressive enhancement, separation of concerns, and semantic web design. All the benefits are highlighted [here](/why/).
-
-  Some first reactions in [Hacker News][hn], [GitHub][gh], and [Reddit][reddit].
-
-  It looks like developers are loving Nue, so I'm super motivated and committed to completing all items on the [roadmap](/tools/). All projects are released under the MIT license.
-
-  **Thank You!** ❤️
-
-  [hn]: //news.ycombinator.com/item?id=37507419
-  [gh]: //github.com/nuejs/nuejs/discussions
-  [reddit]: //www.reddit.com/r/vuejs/comments/16ifij7/nue_powerful_reactvueviteastro_alternative/
+  * `HTML`
+    ### Nue UI [ui]
+    Small, standards-based, and themable UI library.
 
 
-  [.signature]
-    [image src="/global/img/tero.png" width="70"]
+    Rich, human alternative to *Markdown*, *MDX* and *Markdoc*
 
-    [@tipiirai](//twitter.com/tipiirai)
+  * `MVC`
+    ### Nue MVC
+    Model-view-controller: separate your view from the business logic.
 
-    Tero Piirainen
+    Common sense alternative to *React router*, *Redux*, and *Pinia*
 
+// ## Why nue?
+// You may have the latest and the greatest, but it will never beat a minimalistic and standards-based system. [Learn why](/why/).
+
+
+## Release schedule [schedule]
+Nue is released as follows:
+
+[media]
+  small: /img/roadmap.png
+  large: /img/roadmap-big.png
+  class: roadmap
+
+## Join the waitlist
+Get an email when a new version is out:
+[join-list]
+
+
+## Developer feedback
+Both   and experienced professionals love Nue:
 
 [quotes]
+  - user: retiagod
+    text: What a great contribution to the world!
+    id: 1706347206285082799
+    class: hilite
+
   - user: aziis98
     text: Awesome project, feels very refreshing even for me being a great fan of Vite and Astro.
     id: "37519741"
@@ -71,6 +75,7 @@ include: [home, bunny/video]
   - user: ulrischa
     text: Seems like Nue could finally bring back something we lost all the way
     id: "1702763687860162703"
+    class: hilite
 
   - user: ondreian
     text: Nice to see you still out in the wild writing code and working to solve problems in our ecosystem @tipiirai
@@ -81,10 +86,6 @@ include: [home, bunny/video]
     text: It's really awesome to see this recent counter-revolution of developer tools emphasizing simplicity. Nue gives me the same optimistic, feel-good vibe that htmx and Alpine.js gave me when I first read about them.
     id: "37519371"
     from: hn
-
-  - user: retiagod
-    text: What a great contribution to the world!
-    id: 1706347206285082799
 
   - user: darkhorse007
     url: //github.com/nuejs/nuejs/discussions/1#discussioncomment-7042460
@@ -105,7 +106,7 @@ include: [home, bunny/video]
     text: Insanely impressive. Well done 👏
     url: https://www.reddit.com/r/vuejs/comments/16ifij7/comment/k0jhbyl/?utm_source=reddit&utm_medium=web2x&context=3
     from: reddit
-
+    class: hilite
 
   - user: en_ka8
     url: //www.reddit.com/r/vuejs/comments/16ifij7/comment/k0v49y7/?utm_source=reddit&utm_medium=web2x&context=3

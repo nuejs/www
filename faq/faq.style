@@ -6,9 +6,6 @@ main
     width 4em
     none
 
-  h1
-    max-width 8em
-
   h2
     mt 3em
     font 1.8em

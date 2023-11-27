@@ -1,6 +1,6 @@
 
 <nav @name="navi">
-  <h4 :if="title">{ title } </h4>
+  <h4 :if="heading">{ heading } </h4>
 
   <a :for="el in els" class="{ el.class } { selected: el.url == url }"
     :role="el.role" :data-name="el.mount"

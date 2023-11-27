@@ -202,9 +202,9 @@ Tailwind has great defaults for colors, spacing, and responsive design. That par
 ### But I move faster with Tailwind
 Yes. You can move faster with Tailwind. But only when:
 
-1. You are comparing Tailwind with your earlier, badly structured CSS or you are completely new to CSS development.
+1. You are comparing Tailwind with your earlier, bad experiences with CSS or you are new to CSS development.
 
-2. You don't care about building reusable modules for later use. That is: you are not naming things that repeat.
+2. You don't care about building reusable CSS for later use. That is: you are not naming things that repeat.
 
 If you really want to move faster, you'll create a set of CSS components that you can reuse. Like `<button class="secondary">`.
 

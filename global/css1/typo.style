@@ -17,6 +17,7 @@ body
 h1, h2, h3, h4
   overflow-wrap break-word
   line-height 1.15
+  color black
   mb .3em
 
 

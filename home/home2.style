@@ -1,149 +1,52 @@
 
-@font-face
-  font-family handwriting
-  src url("/global/font/gochi-hand.woff2") format("woff2")
 
 body
   bg /home/img/grid.svg no-repeat
-  bg-pos -8vw 12vh
-  bg-size 1000px
-
-  @large
-    bg-size 100%
-
-// "maker"
-h1 em:after
-  absolute right -.1em bottom -.3em
-  bg /home/img/overline.png no-repeat
-  font-family handwriting
-  text-shadow 0 0 5px white
-  bg-size 100%
-  content "solver"
-  bg-pos .1em 85%
-  height 1.6em
-  font 1.18em
-  color red
-  p 0 .2em
-  transform scale(.5)
-  transform-origin 0 100%
-  transition .5s
-  opacity 0
-
-  .loaded &
-    transform scale(1) rotate(-7deg)
-    opacity 1
+  bg-size 80%
+  bg-pos -8em 3em
 
 
+.tools
+  mb 7em
 
-// yellow text
-p em
-  font 600
-  font-style normal
-  bg $yellow
-  p 0 .3em .2em
-  radius 4px
+  code
+    font 70% 800 1px
+    text-shadow 0 0 2px white
+    border-color $main-100
+    font-family inherit
+    bg $main-200
+    p .1em .8em
+    inline-block
 
-  .dark &
-    bg $gray-700
+  ul
+    list-style none
+    grid-template-columns repeat( auto-fit, minmax(300px, 1fr))
+    display grid
+    gap 1.5rem
+    p 0
 
+  li
+    box-shadow 0 1px 2em #0001
+    p 1.5em 1.7em 2em
+    radius 12px
+    border
+    m 0
 
+  h3
+    letter-spacing -0.03em
+    font 800
+    + p
+      font 500
+      max-width 16em
 
-// h2
-h2
-  font 3.8em .8 900 -1px
-  mb .3em
-  + p
-    font 1.8em
-    max-width 28em
+  p + p
+    border-top 2px dashed
+    font 85% $gray
+    max-width 80%
+    pt .7em
 
   em
-    font-family handwriting
-    font 1.4em $main .7
-    mr .1em
-
-  @medium
-    font 4.5em
-
-
-// hero image hover
-.compare-shot
-  transition transform .1s
-  block
-  &:hover
-    filter brightness(110%)
-    transform scale(1.005)
-
-
-.fast
-  bg /home/img/pattern.jpg cover
-  m 7em -2.5em
-  p 8% 10%
-
-  h2 + p
-    max-width inherit
-
-  h2
-    max-width 6em
-    text-indent -.2em
-
-  @large
-    radius 1em
-    h2
-      max-width inherit
-      mb 0
-  figure
-    max-width 800px
-
-
-.fun
-  mb 5em
-
-  h2
-    mb .05em
-
-  h2 em
-    color $pink
-    pr .1em
-    mr -.05em
-
-  h2 + p
-    max-width 24em
-
-  figcaption
-    max-width 28em
-
-.video
-  max-width 950px
-
-.splash video
-  filter brightness(50%)
-  box-shadow 0 0 50px black inset
-
-hr
-  mb 4em
-  border
-
-.hello
-  max-width 33em
-  font 1.4em $gray-600
-  m 0 auto 4em
-  h3
-    font-family handwriting
-    transform rotate(-0.8deg)
-    m 0 0 -.1em -.1em
-    font 3.5em
-    color $pink
-
-  h4
-    color black
-
-.signature
-  font 85%
-  mt .5em
-  p
-    m 0
-  p:last-child
-    font 85%
+    font 600 normal #000
 
 
 .quotes
@@ -157,8 +60,6 @@ hr
   box-shadow 0 0 8em #0001
   break-inside avoid-column
   bg-pos right 1em top 1em
-  transform rotate(-.3deg)
-  font 110%
   bg-size 1.4em
   max-width 25em
   radius 8px
@@ -172,36 +73,14 @@ hr
 
 
 .from-twitter
-  transform rotate(.3deg)
   bg /nueui/img/twitter.svg
 
 .from-gh
-  transform rotate(.7deg)
   bg /nueui/img/github.svg
 
 .from-reddit
-  transform rotate(-.7deg)
   bg /nueui/img/reddit.svg
 
 .from-lobster
   bg /home/img/lobsters.png
-  transform rotate(.2deg)
 
-// animations
-h2, h2 + p, figure, .video
-  transform translateY(1em)
-  transition transform .5s, opacity .5s
-  opacity 0
-
-  .in-viewport &
-    transform translateY(0)
-    opacity 1
-
-h2
-  transition-delay .4s
-
-h2 + p
-  transition-delay .8s
-
-figure, .video
-  transition-delay 1.2s
