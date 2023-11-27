@@ -26,14 +26,14 @@ Nue offers all the essentials for standards-based web development:
     ### Nuemark
     Bring back content-first approach to web development.
 
-    Semantic alternative to *Headless UI* and *Shadcn UI*
+    Rich, human alternative to *Markdown*, *MDX* and *Markdoc*
 
   * `HTML`
     ### Nue UI [ui]
     Small, standards-based, and themable UI library.
 
 
-    Rich, human alternative to *Markdown*, *MDX* and *Markdoc*
+    Semantic alternative to *Headless UI* and *Shadcn UI*
 
   * `MVC`
     ### Nue MVC
