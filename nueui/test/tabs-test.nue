@@ -1,5 +1,5 @@
 
-<section @name="tabs-test">
+<section @name="tabs-test" translate="no">
 
   <tabs :options="ranges"/>
 

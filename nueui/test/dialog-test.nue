@@ -21,7 +21,7 @@
   </div>
 
 
-  <section class="card user-info">
+  <section class="card user-info" translate="no">
     <header>
       <avatar :user="el"/>
       <h3>{ el.name }</h3>

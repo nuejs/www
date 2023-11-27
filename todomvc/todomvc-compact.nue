@@ -8,7 +8,7 @@
     <input type="text" name="desc" placeholder="What needs to be done?" autofocus>
   </form>
 
-  <section :if="items[0]">
+  <section :if="items[0]" translate="no">
     <ul>
       <li :for="item in items" class="{ done: item.done, editing: item.edit }"
         :hidden="!isShown(item)">

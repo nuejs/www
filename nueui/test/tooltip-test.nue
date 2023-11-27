@@ -1,5 +1,5 @@
 
-<section @name="tooltip-test">
+<section @name="tooltip-test" translate="no">
   <p>
     On this paragraph
     <a class="subtle" aria-label="Thank you!">we have tip on top</a>

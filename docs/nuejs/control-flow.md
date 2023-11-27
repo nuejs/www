@@ -253,7 +253,7 @@ Here's the full source code for the above demo:
     Add user
   </button>
 
-  <section class="user-list">
+  <section class="user-list" translate="no">
     <media-object :for="user in users" :bind="user"/>
   </section>
 

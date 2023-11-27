@@ -1,5 +1,5 @@
 
-<section @name="form-test">
+<section @name="form-test" translate="no">
   <label class="label mb-2">
     <h5>Email</h5>
     <input class="input has-error" value="jonatha@supercool.co^">
