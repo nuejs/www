@@ -24,7 +24,7 @@
 
 .art-gallery
   display grid
-  linear-gradient #000, #222
+  background var(--gray-800)
   radius .6em
   font 75%
   gap 3em
@@ -35,7 +35,7 @@
     grid-template-columns 1fr 1fr 1fr
 
   @xlarge
-    margin 3em -15em
+    margin 3em auto
 
   h3
     font #fffe 500
@@ -144,7 +144,7 @@
     font-size 140%
 
   @xlarge
-    margin 2em -6em
+    margin 2em auto
     h3
       font 220%
 
@@ -174,5 +174,3 @@
     .fade-in
       transform scale(1)
       opacity 1
-
-
