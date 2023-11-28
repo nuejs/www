@@ -1,0 +1,62 @@
+
+<script>
+  function capitalize(str) {
+    return str[0].toUpperCase() + str.slice(1).replaceAll('-', ' ')
+  }
+
+  function toUrl(cat, label) {
+    if (cat == 'upcoming') return ''
+    const slug = label.toLowerCase().replaceAll(' ', '-')
+    return `/docs2/${cat}/${slug}.html`
+  }
+
+  function createTopics(cat, labels) {
+    return labels.map(label => {
+      return { url: toUrl(cat, label), label }
+    })
+  }
+</script>
+
+<p @name="page-header" class="eyebrow">
+  { eyebrow }
+</p>
+
+
+<aside @name="area-header" class="sidebar">
+
+  <a href="/docs2/">Getting started</a>
+
+  <details :for="el in items" open>
+    <summary>{ el.title }</summary>
+    <nav>
+      <a :for="topic in el.topics" :href="topic.url" class="{ selected: topic.url == url }">
+        { topic.label }
+      </a>
+    </nav>
+
+  </details>
+
+  <script>
+    constructor({ titles, cats }) {
+      this.items = Object.keys(cats).map(cat => {
+        return {
+          title: titles[cat] || capitalize(cat),
+          topics: createTopics(cat, cats[cat]),
+          cat,
+        }
+      })
+    }
+
+  </script>
+</aside>
+
+<aside @name="area-footer" class="aside">
+
+  <nav>
+    <h4>On this page</h4>
+    <a :for="el in toc" :href="#{el.hash}" class="level-{ el.level}" :html="el.html">
+
+    </a>
+  </nav>
+
+</aside>

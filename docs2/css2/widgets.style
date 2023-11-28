@@ -1,0 +1,35 @@
+
+
+table
+  border-collapse collapse
+  width 100%
+  mb 3em
+
+  img
+    width 1.2em
+    margin-bottom 0 !important
+
+
+th, td
+  text-align left
+  padding 1.8em 1.2em
+  font 90%
+
+tbody tr:nth-child(odd)
+  bg $gray-50
+
+td:first-child
+  font-weight bold
+
+
+.reference h3
+  font-family $monospaced
+  margin-top 2em
+  font 95%
+
+  a
+    &:before
+      color $gray-300
+
+    &:hover:before
+      color $main

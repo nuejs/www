@@ -1,0 +1,112 @@
+
+body > *
+  max-width 1300px
+
+main
+  gap 5em
+  flex
+
+.sidebar
+  font 95%
+
+  details
+    m 2em 0
+
+  summary
+    font 600
+    pointer
+
+    &:hover::marker
+      color $main
+
+  nav
+    ml .6em
+
+  a
+    display block
+    font $gray 400 nowrap
+    p .1em
+    m .3em 0
+    radius .2em
+    ml -.6em
+    px .6em
+
+    &:not(.selected):hover
+      bg $gray-50
+
+  .selected
+    color white
+    bg $main
+    default
+
+  @large
+    max-height 100vh
+    overflow scroll
+    position sticky
+    min-width 16em
+    border-right
+    ml -1em
+    p 1em 2em 2em 1em
+    flex .5
+    top 0
+
+article
+  max-width 42em
+
+.aside
+  pt .5em
+
+  h4
+    m 1em 0
+    font .95rem 550
+
+  a
+    text-overflow ellipsis
+    font 90% 1.3 400 nowrap
+    overflow hidden
+    max-width 14em
+    block
+
+  code
+    font 110%
+    relative -.1em
+    bg $gray-50
+    p .1em .3em
+    m 0 -.3em
+
+  @xxlarge-
+    none
+
+
+  .level-1
+    none
+
+  .level-2
+    mt 1em
+
+  .level-3, .level-4
+    ml .2em
+
+
+
+// mobile layout
+@large-
+  main
+    block
+
+  .sidebar
+    border
+    p 1.5em 2em
+    column-width 10em
+    column-gap 3em
+    m -3em 0 3em
+    max-width 100%
+
+  .todo
+    none
+
+  article
+    max-width inherit
+
+
+

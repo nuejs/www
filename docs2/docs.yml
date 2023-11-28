@@ -1,0 +1,67 @@
+
+class: docs-area
+include: [permlink]
+base: /docs2
+
+titles:
+  concepts: Core concepts
+  upcoming: Upcoming topics
+  why-nue: Why Nue
+
+cats:
+  why-nue:
+    - Developer experience
+    - Website performance
+    - Closer to standards
+
+  tutorials:
+    - Build a simple blog
+    - Build a simple SPA
+
+  concepts:
+    - Files and directories
+    - Layout components
+    - SEO and metadata
+    - Content collections
+    - Client-side navigation
+    - Universal hot-reloading
+    - Reactive islands
+    - JS/TypeScript modules
+    - Performance optimization
+
+  reference:
+    - Application router
+    - Command line interface
+    - Configuration options
+    - Components
+    - Template syntax
+    - Event handlers
+
+  upcoming:
+    - View transitions
+    - Scroll transitions
+    - Skinning and theming
+    - Backend communication
+    - Content islands (M↓)
+    - Images, Videos, and Fonts
+    - JavaScript lazy-loading
+    - Internationalization
+    - RSS feeds
+    - Deployements
+    - Build a full SAAS app
+
+  nuejs:
+    - Intro
+    - Examples
+    - Getting started
+    - Component basics
+    - Server components
+    - Reactive components
+    - Isomorphic components
+    - Template syntax
+    - Event handlers
+    - Control flow
+    - Styling components
+
+
+
