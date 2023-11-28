@@ -4,15 +4,16 @@
     return str[0].toUpperCase() + str.slice(1).replaceAll('-', ' ')
   }
 
-  function toUrl(cat, label) {
+  function toUrl(cat, label, slug) {
     if (cat == 'upcoming') return ''
-    const slug = label.toLowerCase().replaceAll(' ', '-')
+    if (!slug) slug = label.toLowerCase().replaceAll(' ', '-')
     return `/docs2/${cat}/${slug}.html`
   }
 
   function createTopics(cat, labels) {
-    return labels.map(label => {
-      return { url: toUrl(cat, label), label }
+    return labels.map(el => {
+      const [label, slug] = el.split(' | ')
+      return { url: toUrl(cat, label, slug), label }
     })
   }
 </script>

@@ -45,7 +45,7 @@ main
     position sticky
     min-width 16em
     border-right
-    ml -1em
+    m -5rem 0 0 -1em
     p 1em 2em 2em 1em
     flex .5
     top 0
@@ -62,7 +62,7 @@ article
 
   a
     text-overflow ellipsis
-    font 90% 1.3 400 nowrap
+    font 90% 1.3 400 nowrap $gray-400
     overflow hidden
     max-width 14em
     block
@@ -87,6 +87,8 @@ article
   .level-3, .level-4
     ml .2em
 
+  .no-aside &
+    hidden
 
 
 // mobile layout

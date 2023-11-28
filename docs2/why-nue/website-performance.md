@@ -1,9 +1,6 @@
 
----
-eyebrow: Why Nue?
----
-
 # Website performance
+Nue is fast by default. It's hard/impossible to build a slow website with Nue.
 
 
 ## Less to load

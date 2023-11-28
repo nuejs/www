@@ -1,8 +1,4 @@
 
----
-eyebrow: Why Nue?
----
-
 # Develop closer to web standards
 
 ## Less room for errors

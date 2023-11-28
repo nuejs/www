@@ -22,10 +22,13 @@ td:first-child
   font-weight bold
 
 
+// reference
 .reference h3
   font-family $monospaced
-  margin-top 2em
-  font 95%
+  font 95% $main-800
+  margin-top 2.5em
+  border-bottom $gray-300
+  pb .3em
 
   a
     &:before
@@ -33,3 +36,7 @@ td:first-child
 
     &:hover:before
       color $main
+
+
+.reference .level-3
+  none

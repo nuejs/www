@@ -1,8 +1,9 @@
 
 
 # SEO and metadata
+Nue has a simple, hierarchical system for defining metadata to your `<head>` tag for better discoverability for search engines.
 
-Nue has a hierarchical system for defining your SEO-specific metadata and other properties inside your `<head>` tag. Lets say you have a page "hello-world.md" in "blog" application directory. First, the global, site-wide data is taken from `site.yaml` on the root directory.
+Lets say you have a page "hello-world.md" in "blog" application directory. First, the global, site-wide data is taken from `site.yaml` on the root directory.
 
 ```
 title: Emma Bennet
@@ -52,7 +53,7 @@ With the above configuration in place the document's `<head>` section is rendere
 ```
 
 
-## Meta reference
+## All properties
 Here are all the supported properties that impact the contents of your HEAD:
 
 [.reference]

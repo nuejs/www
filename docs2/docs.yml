@@ -21,18 +21,18 @@ cats:
   concepts:
     - Files and directories
     - Layout components
-    - SEO and metadata
     - Content collections
     - Client-side navigation
     - Universal hot-reloading
     - Reactive islands
-    - JS/TypeScript modules
+    - JS/TypeScript modules | js-modules
     - Performance optimization
 
   reference:
-    - Application router
-    - Command line interface
     - Configuration options
+    - Command line interface
+    - Application router | app-router
+    - SEO and metadata
     - Components
     - Template syntax
     - Event handlers

@@ -11,7 +11,10 @@ article
 
   h1
     font 2.8em
-    max-width 11em
+    mb .4em
+
+    + p
+      font 1.3em
 
   em
     font-style normal
@@ -38,11 +41,18 @@ article
 
 // content
 p del
-  font 600
+  font 700
   font-style normal
+  text-decoration none
   bg $yellow
   p 0 .3em .2em
   radius 4px
+
+h2 + ul
+  pl 0
+  mt 1em
+  li
+    mb .5em
 
 
 .taller
