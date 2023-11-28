@@ -3,9 +3,12 @@
 # Content collections
 A content collection is an array of content files, where each entry holds information about the content such as the title, description, and url. These collections are used to render content lists such as this one on the [blog example](/@simple-blog)
 
-![image here](/docs/img/stripes.jpg)
-  ! list of blog entries (simple-blog)
-
+[media]
+  small: /img/content-collection.png
+  large: /img/content-collection-big.png
+  caption: Blog index implemented with content collections
+  class: bordered
+  href: /@simple-blog
 
 ## Content entries
 Content information is stored in the "front matter" of each Markdown file. For example:

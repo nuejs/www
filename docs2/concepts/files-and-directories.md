@@ -2,35 +2,37 @@
 # Files and directories
 Nue does not force you to any fixed directory structure so you can freely organize your website and it's files. You can, for example, start small with just a langing page and grow organically as you need more features:
 
-![video](/docs/img/stripes.jpg)
-
-! From a landing page to full blown multi-page application. Nue grows as you grow.
+[media]
+  small: /img/folder-structures.png
+  large: /img/folder-structures-big.png
+  class: tall
+  alt: Nue grows naturally from a simple landing page to a hybrid single/multi-page application.
 
 
 ## Application directories
 Each directory on your project is an *application directory*. Either a multi-page application with several content files, or a single-page application where a single file handles all the requests of the application
 
-! MPA vs SPA
+[media]
+  small: /img/mpa-vs-spa.png
+  large: /img/mpa-vs-spa-big.png
+  class: tall
 
-**Multi-page applications** consist of one or more Markdown files. Good examples are documentation, blogging area, or a feature tour. These apps are rendered server-side so that they can be easily consumed by search engines. The use of client-side JavaScript is optional.
+*Multi-page applications* consist of one or more Markdown files. Good examples are documentation, blogging area, or a feature tour. These apps are rendered server-side so that they can be easily consumed by search engines. The use of client-side JavaScript is optional.
 
-**Single-page applications** consist of single `index.html` file that serves all HTML requests. These are admin dashboards, onboarding flows, surveys, or login pages. The application is rendered on the client-side with [Nue's reactive components](). SPAs are typically hidden from search engines.
+*Single-page applications* consist of single `index.html` file that serves all HTML requests. These are admin dashboards, onboarding flows, surveys, or login pages. The application is rendered on the client-side with [Nue's reactive components](). SPAs are typically hidden from search engines.
 
 
 ## Dependency management [deps]
-Nue supports automatic dependency management in such way that all assets (styles & components) inside an application directory and all the subdirectories are automatically included on the pages inside the app.
+Nue supports automatic dependency management in such way that all assets (scripts, styles, and components) inside an application directory and all the subdirectories are automatically included on the pages inside the app.
 
-! App dependencies (no globals)
 
 Moreover, you can define directories that are global to all applications in your `site.yaml` file on the root directory:
 
 ```
-globals: [ components, themes/brutal, skins/dark ]
+globals: [ globals, modules, style, themes/brutal ]
 ```
 
-! Global dependencies
-
-The assets under global directories are automatically included on to every page, regardlss of where they reside on the file system:
+The assets under global directories are automatically included on to every page, regardlss of where they reside on the file system.
 
 
 
@@ -42,8 +44,6 @@ appdir: home
 ```
 
 With the above setting all assets inside the "home" directory become dependencies for your root level `index.md`.
-
-! Home dependencies
 
 
 ## Depency types

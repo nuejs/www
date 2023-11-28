@@ -63,6 +63,14 @@ h2 + ul
   m 3em 0
   block
 
+.bordered img
+  border 1px solid $gray-300
+  padding 2em
+  radius 5px
+
+.clickable img:hover
+  box-shadow 0 0 0 2px $main
+
 @xlarge
   .wider
     m 2em -12em 2em -3.5rem
