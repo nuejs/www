@@ -1,0 +1,13 @@
+
+.aside
+  none
+
+article h1
+  max-width 12em
+  font-size 3.5em
+  mb .2em
+
+h2 + p
+  font 1.3rem
+  max-width 30em
+  color $gray

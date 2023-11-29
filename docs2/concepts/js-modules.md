@@ -1,7 +1,7 @@
 
-# JavaScript or TypeScript Modules
+# JavaScript & TypeScript Modules
 
-While the majority of the JavaScript comes in the form of [reactive islands](reactive-islands), there are still places where plain JavaScript and TypeScript files are benefical:
+While the majority of the JavaScript comes in the form of [reactive islands](reactive-islands.html), there are still places where plain JavaScript and TypeScript files are benefical:
 
 1. *Page extensions* — where the extension changes the behaviour of the whole page and is not a specific/visible UI componennt. Examples of page extensions are scroll transitions, page transitions, and website analytics extensions.
 
@@ -76,7 +76,7 @@ Three performance reasons why Nue defaults to unbundled JavaScript:
 
 3. **More effective caching** when you keep each module separate, they can be cached and expired separately. If you have 10 modules, and only one change, the other 9 remain cached. In other words: bundlers can be bad for performance.
 
-5. *Lazy loading* [dynamic imports](//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) lets you defer loading of JavaScript when needed. With You can fully control the timing of your imports.
+5. [Dynamic imports](//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) gives you lazy loading of JavaScript. You can fully control the timing of your imports instead of loading everything in one bunch.
 
 Other reasons include:
 
@@ -84,21 +84,20 @@ Other reasons include:
 
 2. **Easier to debug**. When there is an error, the browser tells exactly where it is. Files are shipped in their named form and there is no need for source maps.
 
-3. **Closer to standards** ES6 import statement is well supported accross all modern browsers. Bundlers are no longer necessary.
+3. **Closer to standards** ES6 import statement is well supported accross all modern browsers.
 
 
 
 ## Bundled distribution [bundled]
-To bundle a file means to inline any imported dependencies into the file itself. This process is recursive so dependencies of dependencies (and so on) will also be inlined.
-
 While Nue recommends unbundled JavaScript, you can still bundle selected files with `bundle` configuration option. For example, the following option will always bundle files with a name `index.ts`, regardless of their directory:
+
 
 ``` yaml
 # files named index.ts will be bundled
 bundle: [ index.ts ]
 ```
 
-Bundling is benefical for two reasons:
+To bundle a file means to inline any imported dependencies into the file itself. This process is recursive so dependencies of dependencies (and so on) will also be inlined. Bundling is benefical for two reasons:
 
 1. You need to import stuff from the `node_modules`
 

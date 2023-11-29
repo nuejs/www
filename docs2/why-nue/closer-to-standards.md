@@ -1,35 +1,37 @@
 
 # Develop closer to web standards
 
-## Less room for errors
-Nue brings the least amount of abstractions. There's less to learn and less room for errors:
+## Work closer to metal
+Nue projects introduce 100× less NPM modules than Next.js. There's 100× less abstractions, less to learn, and less room for errors:
 
-! compare NPM modules
+[media]
+  small: /img/project-sizes.png
+  large: /img/project-sizes-big.png
+  class: wide
 
-(Next 300+ MB, Astro 300+ MB, Vite 100+ MB.)
+[.small]
+  The contents of `node_modules` folder in blog starter template
 
 
-## Less "spaghetti" code
-Nue offers a easy-to-use and familiar development environment for UX engineers, JS developers, and content creators:
+
+## Separate your concerns
+Nue isolates HTML and CSS to UX developers, TypeScript to JS developers, and Markdown to content creators:
 
 ! Spaghetti vs Loose coupling
 TypeScript-focused only vs harness different skillsets for optimal outcome
 
+[media]
+  small: /img/spaghetti.png
+  large: /img/spaghetti-big.png
 
 > Big, Elliot quote
 
 
-## Use CSS as intended
-Bring back skinning and theming trough semantic HTML and cascaded stylesheets and progressive enhancement:
-
-! Spotlight template: 2 x versions
-
 
 ## Stand the test of time
-Reduce the risk of vendor lock-ins by staying closer to standards.
+Avoid vendor lock-ins and stay closer to standards. Sooner or later, we'll look back this ongoing CSS-in-JS era with amaze:
 
 ! Tailwind vs Semantic CSS:
-caption: After 2-3 years Tailwind syntax may cause you a "WTF moment"
 
 Look for more detailed comparison between [Tailwind vs Semantic CSS](/blog/)
 

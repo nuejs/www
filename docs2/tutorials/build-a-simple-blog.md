@@ -3,9 +3,11 @@
 # Build a simple blog with Nue
 In this tutorial, you’ll see Nue's key features and benefits by building a fully-functioning blog, from zero to production website.
 
-! Nue grows on you: from landing page to full blown (hybrid) MPA
-
-! Hello, World -> Final shot on mobille / PC
+[media]
+  small: /img/simple-blog.png
+  large: /img/simple-blog-big.png
+  href: /@simple-blog
+  caption: The final result of this tutorial
 
 
 ## Install Nue

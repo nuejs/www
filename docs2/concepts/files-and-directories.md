@@ -6,6 +6,7 @@ Nue does not force you to any fixed directory structure so you can freely organi
   small: /img/folder-structures.png
   large: /img/folder-structures-big.png
   class: tall
+  width: 700
   alt: Nue grows naturally from a simple landing page to a hybrid single/multi-page application.
 
 
@@ -15,6 +16,7 @@ Each directory on your project is an *application directory*. Either a multi-pag
 [media]
   small: /img/mpa-vs-spa.png
   large: /img/mpa-vs-spa-big.png
+  width: 600
   class: tall
 
 *Multi-page applications* consist of one or more Markdown files. Good examples are documentation, blogging area, or a feature tour. These apps are rendered server-side so that they can be easily consumed by search engines. The use of client-side JavaScript is optional.

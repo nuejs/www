@@ -3,7 +3,7 @@ body > *
   max-width 1300px
 
 main
-  gap 5em
+  gap 4em
   flex
 
 .sidebar
@@ -47,7 +47,7 @@ main
     border-right
     m -5rem 0 0 -1em
     p 1em 2em 2em 1em
-    flex .5
+    flex .45
     top 0
 
 article

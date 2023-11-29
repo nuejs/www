@@ -1,7 +1,6 @@
 
 class: docs-area
 include: [permlink]
-base: /docs2
 
 titles:
   concepts: Core concepts

@@ -23,9 +23,6 @@ Nue is a "closer-to-standards web framework". The focus is on *minimalism*, *sep
 
 
 ## Do we need another framework? [fatique]
-Happy with status quo -> Makes you feel more fatique
-See the benefits of Nue -> You probably
-
 We do. Developers are suffering. UX developers in particular. And the role of a web designer is practically gone. There are so many build steps in the current stack that only the more savvy JavaScript engineers can understand. Please read the [backstory](/blog/backstory/) for a deeper rant.
 
 There's also a huge amount of *resistance*: developers have adopted new, nonstandard ways of building things and it's hard/impossible to change their minds. So a lot of time will go into writing. Help needed!
@@ -63,7 +60,7 @@ Please do! Send me email: tipiirai @ gmail com.
 
 [media]
   small: workplace.jpg
-  caption: My workplace in Kallio
+  caption: Nue offices in Kallio, Helsinki
   class: superwide
 
 ## Who is Nue inspired by? [Inspiration]

@@ -39,21 +39,14 @@ article
     relative -.1em
     font 115% $main-600
 
-// content
-p del
-  font 700
-  font-style normal
-  text-decoration none
-  bg $yellow
-  p 0 .3em .2em
-  radius 4px
-
 h2 + ul
   pl 0
   mt 1em
   li
     mb .5em
 
+.small
+  font 85% $gray
 
 .taller
   m 2em 0
@@ -72,13 +65,11 @@ h2 + ul
   box-shadow 0 0 0 2px $main
 
 @xlarge
-  .wider
-    m 2em -12em 2em -3.5rem
+  .wide
+    m 2em -7em 0 0
+    block
     img
-      max-width calc(100% + 12em)
-
-    figcaption
-      ml 3.5rem
+      max-width calc(100% + 7em)
 
 @small-
   pre

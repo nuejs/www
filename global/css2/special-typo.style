@@ -56,10 +56,11 @@ a.subtle
 
 
 .info
-  border-left 5px solid $blue
+  border-left 5px solid $main
   p .5em 1.5em
+
   p
-    font 110%
+    font 105% 1.7 $gray-600
     max-width 27em
 
   h4
@@ -67,4 +68,17 @@ a.subtle
     bg-size 1em
     bg-pos 0 center
     p .2em 1.5em
-    font 110% 600 $blue
+    font 110% 600 $main-600
+
+  strong
+    color black
+
+
+
+del
+  font 700
+  font-style normal
+  text-decoration none
+  bg $yellow
+  p 0 .3em .2em
+  radius 4px

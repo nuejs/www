@@ -9,7 +9,7 @@
     <h4>Nue mailing list</h4>
     <input type="email" name="email" placeholder="Your email" required>
     <textarea name="comment" placeholder="Your thoughts (optional)"></textarea>
-    <button class="secondary">Join the waitlist</button>
+    <button class="secondary">Notify me</button>
   </form>
 
   <script>

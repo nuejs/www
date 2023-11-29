@@ -99,11 +99,6 @@ Everything you do: editing content, adding new assets, changing the layout, modi
   poster: thumbnail_b04e314f.jpg
   caption: Universal hot reloading in action
 
-
-[seo-video]
-  src: /video/hot-reload-1600.mp4
-  caption: Hot-reload in action
-
 With this feature, UX developers, JavaScript developers, and content creators can move faster and enjoy a significantly better developer experience.
 
 

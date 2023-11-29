@@ -4,7 +4,7 @@ title: Nue JS • Introduction
 include: [listbox, menu-options]
 ---
 
-# Nue ~JS~ • Introduction
+# Nue JS • Introduction
 
 Nue JS is an extremely small (2.3kb minzipped) JavaScript library for building user interfaces. It is the core of [Nue toolset](/tools/). It’s like *Vue.js, React.js*, or *Svelte* but there are no hooks, effects, props, portals, watchers, injects, suspensions, or other unusual abstractions on your way. ~Learn the basics of HTML, CSS, and JavaScript and you are good to go~.
 
