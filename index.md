@@ -4,57 +4,53 @@ include: [home]
 ---
 
 # The closer-to-standards web framework
-Nue is a simple **Next.js**, and **Astro** alternative focusing on *minimalism*, *separation of concerns*, and *semantic web design*.
-
-## What is Nue? [tools]
-Nue offers all the essentials for standards-based web development:
-
-[.tools]
-  * `HTML`
-    ### Nue JS
-    Build user interfaces with obvious, HTML-based markup
-
-    [A (2.3kb) alternative](/docs/nuejs/) to *React*, *Vue*, and *Svelte*
-
-  * `CSS`
-    ### Nue CSS
-    Bring back the power of modular, cascaded styling.
-
-    Standards-based alternative to *Tailwind* and other *CSS-in-JS* libs
-
-  * `M↓`
-    ### Nuemark
-    Bring back content-first approach to web development.
-
-    Rich, human alternative to *Markdown*, *MDX* and *Markdoc*
-
-  * `HTML`
-    ### Nue UI [ui]
-    Small, standards-based, and themable UI library.
-
-
-    Semantic alternative to *Headless UI* and *Shadcn UI*
-
-  * `MVC`
-    ### Nue MVC
-    Model-view-controller: separate your view from the business logic.
-
-    Common sense alternative to *React router*, *Redux*, and *Pinia*
-
-// ## Why nue?
-// You may have the latest and the greatest, but it will never beat a minimalistic and standards-based system. [Learn why](/why/).
-
-
-## Release schedule [schedule]
-Nue is released as follows:
+Nue is a static website and web application generator. It's a powerful **Next.js** and **Astro** alternative focusing on *minimalism* and *separation of concerns*.
 
 [media]
   small: /img/roadmap.png
   large: /img/roadmap-big.png
   class: roadmap
+  width: 900
 
-## Join the waitlist
-Get an email when a new version is out:
+
+[.tools]
+  * ### Nue JS
+    Build user interfaces with obvious, HTML-based markup
+
+    [A (2.3kb) alternative](/docs/nuejs/) to *React*, *Vue*, and *Svelte*
+
+  * ### Nuekit
+    Build faster websites and webapps with less time and effort.
+
+    Common sense alternative to *Next.js* and *Astro*
+
+  * ### Nuemark
+    Bring back content-first approach to web development.
+
+    Rich, human alternative to *Markdown*, *MDX* and *Markdoc*
+
+  * ### Nue CSS
+    Bring back the power of modular, cascaded styling.
+
+    Standards-based alternative to *Tailwind* and other *CSS-in-JS* libs
+
+  * ### Nue Templates
+    The easiest way to create a modern, themable site.
+
+    Themable alternative to *Tailwind-*, *Next-*, and *Astro* templates
+
+  * ### Nue Cloud
+    Cloud hosting for Nue-powered frontends.
+
+    Simple alternative to *Vercel*, *Gatsby*, and *Netlify*
+
+[.info]
+  #### Status update (Nov 29, 2023)
+  🎁 **Nuekit is out before Christmas:** you can then create websites and single-page apps and enjoy the power of [universal hot-reloading](/why/#hot-reload).
+
+
+## Nue waitlist
+Receive an email when something major comes out:
 [join-list]
 
 

@@ -7,22 +7,13 @@ body
 
 
 .tools
-  mb 7em
-
-  code
-    font 70% 800 1px
-    text-shadow 0 0 2px white
-    border-color $main-100
-    font-family inherit
-    bg $main-200
-    p .1em .8em
-    inline-block
+  mb 3em
 
   ul
     list-style none
     grid-template-columns repeat( auto-fit, minmax(300px, 1fr))
     display grid
-    gap 1.5rem
+    gap 2rem
     p 0
 
   li
@@ -33,16 +24,14 @@ body
     m 0
 
   h3
-    letter-spacing -0.03em
-    font 800
-    + p
-      font 500
-      max-width 16em
+    font 700 $main-600
+  p
+    font 400 $gray
+    max-width 16em
 
   p + p
     border-top 2px dashed
-    font 85% $gray
-    max-width 80%
+    font 85%
     pt .7em
 
   em
