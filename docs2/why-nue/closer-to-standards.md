@@ -14,24 +14,24 @@ Nue projects introduce 100× less NPM modules than Next.js. There's 100× less a
 
 
 
-## Separate your concerns
-Nue isolates HTML and CSS to UX developers, TypeScript to JS developers, and Markdown to content creators:
-
-! Spaghetti vs Loose coupling
-TypeScript-focused only vs harness different skillsets for optimal outcome
+## Separation of concerns
+Nue separates HTML and CSS for UX developers, TypeScript for JS developers, and Markdown for content creators. Separation of concerns is the leading principle in Nue:
 
 [media]
-  small: /img/spaghetti.png
-  large: /img/spaghetti-big.png
+  small: /img/coupling.png
+  large: /img/coupling-big.png
 
 > Big, Elliot quote
 
 
 
 ## Stand the test of time
-Avoid vendor lock-ins and stay closer to standards. Sooner or later, we'll look back this ongoing CSS-in-JS era with amaze:
+CSS-in-JS is trending now, but standards and separation of concerns are forever. Sooner or later we'll look at Tailwind with amaze:
 
-! Tailwind vs Semantic CSS:
+[media]
+  small: /img/tailwind-vs-semantic.jpg
+  large: /img/tailwind-vs-semantic-big.jpg
+  class: wide
 
 Look for more detailed comparison between [Tailwind vs Semantic CSS](/blog/)
 

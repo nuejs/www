@@ -37,7 +37,7 @@ Nue defaults to [unbundled distribution](../concepts/js-modules#unbundled) so on
   large: /img/cache-friendly-big.png
 
 
-## Write leaner CSS
+## Serve less CSS
 Build faster sites with inlineable, cacheable, and modular CSS. Here’s the official Tailwind "Spotlight" template made with [Tailwind CSS]( //spotlight.tailwindui.com/) and [Semantic CSS](//nuejs.org/@spotlight/):
 
 [media]
@@ -45,6 +45,5 @@ Build faster sites with inlineable, cacheable, and modular CSS. Here’s the off
   large: /img/less-css-big.png
   class: wide
 
-! Spotlight template: 2 x versions
 
 

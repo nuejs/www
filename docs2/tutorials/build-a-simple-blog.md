@@ -45,8 +45,10 @@ nue
 
 Open `http://localhost:8080/` with your browser and you'll see this:
 
-! browser: Hello, World?
-
+[media]
+  small: /img/hello-world.png
+  large: /img/hello-world-big.png
+  width: 600
 
 ## HTML source
 Let's view the source code of that page at `view-source:http://localhost:8080/`
@@ -106,7 +108,11 @@ Again, as you edit the metadata you can see your page title change on the browse
 ## Complete the page
 Then we add a folder called `img` to hold all our images and complete editing the content and styling until we are happy. And we can watch the page evolve on the browser from start to finish in a "What you see is what you get" (WYSIWYG) manner.
 
-! final page design
+[media]
+  small: /img/blog-entry.png
+  large: /img/blog-entry-big.png
+  class: tall
+  width: 400
 
 
 
@@ -156,21 +162,60 @@ social:
     alt: Github projects
 ```
 
-You can see your page headers and footers update on your browser as you edit the layout or the data file.
+You can see your page headers and footers update on your browser as you edit the layout or the data file. The header and footer are inherited from the root level `layout.html`
 
 
-## Add more pages
-Next we add two more pages to the directory. Each one will automatically share the same header, footer, and styling.  Here's what our website looks at this point:
 
-! 3 x pages
+## Add page layout
+Next we add a *main* element to our layout file to render the "hero" area for our blog entries. This will render data from the Markdown pages (front matter area) and if not present, then the data is taken from the `site.yaml` file.
+
+```
+<!-- in layout.html: -->
+<main>
+
+  <h1>{ title }</h1>
+
+  <p>
+    <pretty-date :date/> (by AI) •
+    Photo credits: <a href="//dribbble.com/{ credits }">{ credits }</a>
+  </p>
+
+  <img class="hero" :src="hero" width="1000" height="800" alt="Hero image for { title }">
+
+  <article>
+
+    <!-- slot for the Markdown content -->
+    ı<slot for="content"/>ı
+
+  </article>
+
+</main>
+```
+
+
+## Add all the pages
+Next we add two more pages to the directory. Each one will share the same header, footer, page layout, and styling. Here's what we have at this point:
+
+[media]
+  small: /img/blog-entries.png
+  large: /img/blog-entries-big.png
+  class: tall
+  width: 650
 
 Pretty good. Of course hot-reloading was there to provide a great content authoring and styling experience for all the pages.
 
 
-## Create blog index
-Next we move all our pages to "posts" folder to make room to our new front page, which lists all our entries from newest to latest:
 
-! New folder structure
+## Create blog index
+Next we move all our pages to "posts" folder to make room to our new front page, which lists all our entries from newest to latest. Nue treats the "posts" directory as a separate *multi-page application* that can be configured with it's own layout and styling.
+
+We also add a new "global" folder to hold all our global components and stylesheets. The root directory has assets for the front page only, and the posts directory has assets for our blog entries only. Here's what our folder structure looks like:
+
+[media]
+  small: /img/blog-folders.png
+  large: /img/blog-folders-big.png
+  class: tall
+  width: 300
 
 Here's our new front page / index.md:
 
@@ -178,14 +223,14 @@ Here's our new front page / index.md:
  ---
  title: Emma Bennet Blog
  description: Writing on design, UX engineering, minimalism, and product thinking
- content_collection: posts
+ content_collection: ıpostsı
  ---
 
  # Minimalist, UX engineer, designer, urban explorer.
  I’m Emma Bennett, a user experience designer and developer from Berlin. Here  are my thoughts on design, UX engineering, and product thinking.
 ```
 
-The page is configured with a new [content collection](content-collections) option to hold information of all our posts. We use this information to render the posts on our updated `layout.html` file:
+The page is configured with a new [content collection](content-collections) option to hold information of all our pages on the `posts`- folder. We use this information to render the posts on our updated `layout.html` file:
 
 ```
 <!-- front page main layout -->
@@ -194,11 +239,11 @@ The page is configured with a new [content collection](content-collections) opti
   <slot for="content"/>
 
   <!-- list of blog posts by looping the "posts" variable  -->
-  <a :for="post in posts" :href="post.url">
+  <a :for="post in ıpostsı" :href="post.url">
     <img src="{ post.dir }/{ post.hero }">
     <aside>
       <h2>{ post.title }</h2>
-      <p>{ post.description }</p>
+      <p>{ post.pubDate }</p>
     </aside>
   </a>
 </main>
@@ -213,38 +258,26 @@ The page is configured with a new [content collection](content-collections) opti
 </footer>
 ```
 
-## Blog post layout
-Nue treats our "posts" directory as a separate *multi-page application* that can be configured with it's own layout and styling. Here's our post specific main layout that overrides the global one:
+And here's our resulting blog index page:
 
-```
-<!-- posts/layout.html -->
-<main>
+[media]
+  small: /img/blog-index.png
+  large: /img/blog-index-big.png
+  class: tall
+  width: 500
 
-  <h1>{ title }</h1>
-
-  <p>
-    <pretty-date :date/> (by AI) •
-    Photo credits: <a href="//dribbble.com/{ credits }">{ credits }</a>
-  </p>
-
-  <img class="hero" :src="hero" width="1000" height="800" alt="Hero image for { title }">
-
-  <article>
-    <slot for="content"/>
-  </article>
-
-</main>
-```
-
-The header and footer are inherited from the root level `layout.html`
 
 
 ## Add a reactive "island"
 Next we add an interactive feedback component that can be opened from a chat icon on the bottom/right corner of the page.
 
-! img: feedback component
+[media]
+  small: /img/feedback-component.png
+  large: /img/feedback-component-big.png
+  class: tall
+  width: 650
 
-Lets create the interactive feedback component with the same Nue template syntax that is used for defining the server-side layouts:
+Interactive components are created with the same kind of HTML- based template language that is used for defining the server-side layouts:
 
 ```
 <!-- file: feedback.nue -->
@@ -287,6 +320,7 @@ Lets create the interactive feedback component with the same Nue template syntax
 </dialog>
 ```
 
+### Dialog opener element
 Then we add the component to the footer and add a trigger element that opens up the dialog:
 
 ```
@@ -310,11 +344,10 @@ Needless to say, that hot-reloading facility is there again to speed up developm
 ## Optimize for production
 Our blog is now ready. It's time to build a minified production version:
 
-``` sh
-nue build --production
-```
-
-! video
+[media]
+  small: /img/blog-build.png
+  large: /img/blog-build-big.png
+  width: 600
 
 
 We can also preview the production version at `http://localhost:8081`
@@ -323,7 +356,7 @@ We can also preview the production version at `http://localhost:8081`
 nue serve --production
 ```
 
-You can now push the production version at `.dist/prod` to some public server. You currently need to do this manually before the official deployement tool is available.
+You can now push the production version at `.dist/prod` to some public server. You currently need to do this manually before the official deployement tool and Nue cloud is available.
 
 
 
