@@ -3,8 +3,10 @@
 # Reactive islands
 Rreactive island is an interactive UI component on an otherwise static HTML page.
 
-![video](/docs/img/stripes.jpg)
-! video: reactive feedback widget
+[bunny-video]
+  videoId: 6e00cbdf-e36e-43a2-af0a-f95e0430ddad
+  caption: Feedback component in action
+  width: 650
 
 Nue makes a perfect environment to author, create, update, and manage reactive islands. It's trivial to add a new UI library and Nue automatically takes care of dependency management, mounting, and hot-reloading.
 
@@ -85,8 +87,6 @@ After the component is defined and placed somewhere on your layout, Nue takes ca
 You can add as many islands as you want and it has minor impact on loading performance because all the islands are lazily mounted after the HTML and CSS is fully loaded and rendered. This is called "progressive enhancement" (or "hydration" in post 2019 terminology).
 
 NOTE: the key to [performance optimization](performance-optimization) is more about the first stages of page loading (HTML and CSS) and less about JavaScript and reactive islands.
-
-
 
 
 ## Single-page applications

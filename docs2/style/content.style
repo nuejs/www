@@ -74,3 +74,14 @@ h2 + ul
 @small-
   pre
     font 1.1em
+
+.cols
+  gap 2em
+  > *
+    flex 1
+    mb 2em
+  img
+    mb 1em
+
+  @small
+    display flex

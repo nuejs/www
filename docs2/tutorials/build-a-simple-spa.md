@@ -2,9 +2,11 @@
 # Build a simple SPA with Nue
 In this tutorial, you’ll learn Nue's key features and benefits by building a fully-functioning single-page application (SPA), from zero to production.
 
-! directory: Nue grows on you: from zero to full blown SPA
-
-! Hello, World -> dribbble canvas
+[media]
+  small: /img/simple-spa.png
+  large: /img/simple-spa-big.png
+  href: /@simple-blog
+  caption: The final result of this tutorial
 
 
 ## Install Nue
@@ -33,15 +35,18 @@ cd admin-dashboard
 echo '<app/>' > index.html
 ```
 
-Well done! Your first Nue single-page application is ready 🍾🍾
-
-You can start developing it with `nue` command:
+Well done! Your first Nue single-page application is ready 🍾🍾. You can start developing it with a plain `nue` command inside the project directory:
 
 ```
 nue
 ```
 
-You can now see an empty page at [localhost:8080](http://localhost:8080/)
+You should now see an empty page at [localhost:8080](http://localhost:8080/)
+
+[media]
+  small: /img/hello-spa.png
+  large: /img/hello-spa-big.png
+  width: 600
 
 
 ## HTML source
@@ -308,22 +313,37 @@ globals: [style]
 
 This change is detected by hot-reloader and the app silently turns into a properly designed graphical user interface. Here's what we have now:
 
-! 3 x img
+[media]
+  small: /img/spa-pages.png
+  large: /img/spa-pages-big.png
+  class: tall
+
 
 We could also implement alternate designs, like `theme/brutalist` and update the `globals` option accordingly. Just to experience the beauty in semantic HTML.
 
 
 
-## The result
+## Build for production
 Lets build a production distributable with minified/bundled JS and CSS:
 
-! video (11ms :)
+[media]
+  small: /img/spa-build.png
+  large: /img/spa-build-big.png
+  width: 450
 
-The result is a single-page application that is easy to scale and enjoyable to work with.
+
+*Done* 👍: we now have a single-page application that is easy to scale and enjoyable to work with.
 
 
 ## Next steps
 Here is a sligtly more advanced SPA example with 6,968 leads and 985 customers on the backend. There is searching and sorting possibilities and the client state is stored on the URL. The model features lazy-loading and client-side storage so that every operation is instant:
+
+[bunny-video]
+  videoId: 7c291fcd-b344-4ff9-bd3f-5c7301707c5d
+  caption: Simple, instant CRM with 10k+ entries in the backend
+  width: 650
+
+
 
 ! video:
 

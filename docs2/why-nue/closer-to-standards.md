@@ -15,18 +15,17 @@ Nue projects introduce 100× less NPM modules than Next.js. There's 100× less a
 
 
 ## Separation of concerns
-Nue separates HTML and CSS for UX developers, TypeScript for JS developers, and Markdown for content creators. Separation of concerns is the leading principle in Nue:
+Nue separates HTML and CSS for UX developers, TypeScript for JS developers, and Markdown for content creators
 
 [media]
   small: /img/coupling.png
   large: /img/coupling-big.png
-
-> Big, Elliot quote
+  caption: Separation of concerns is the leading principle in Nue
 
 
 
 ## Stand the test of time
-CSS-in-JS is trending now, but standards and separation of concerns are forever. Sooner or later we'll look at Tailwind with amaze:
+CSS-in-JS is trending now, but standards are forever. Sooner or later we all look at Tailwind with amaze:
 
 [media]
   small: /img/tailwind-vs-semantic.jpg

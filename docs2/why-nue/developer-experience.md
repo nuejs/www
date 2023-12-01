@@ -1,24 +1,53 @@
----
-eyebrow: Why Nue?
-include: [bunny/video]
----
-
 
 # Greatly Improved Developer Experience
 
 ## Universal hot reloading
-*If you had to pick only one reason to use Nue, it's this one:*
+Create entire websites without touching your browser
+
+[bunny-video]
+  videoId: 18714305-d2f3-453d-83a9-0bd017166949
+  poster: thumbnail_13eb9805.jpg
+  class: wide
 
 
-![video here](/docs/img/stripes.jpg)
 [.subtle]
-  Make changes to your your content, layout, styling, or interactive islands and Nue magically keeps your browser in sync
+  Make changes to your your content, layout, styling, or interactive islands and Nue magically keeps your browser in sync. [Learn more](../concepts/universal-hot-reloading.html)
 
+
+
+## Write less code
+Thanks to Nue's *extreme minimalism* and [standards- based](closer-to-standards.html) programming style, you need less effort to do the same thing
+
+[.cols]
+  [image-link src="/img/next-starter.png" class="clickable" width="350"]
+    href: //next-blog-starter.vercel.app/
+
+  #### Next.js blog template
+
+  [Live demo](/) • [Source Code](//github.com/vercel/next.js/tree/canary/examples/blog-starter)
+  ---
+  [image-link src="/img/nue-starter.png" class="clickable" width="350"]
+    href: //nuejs.org/@nextjs-blog
+
+  #### Nue blog template
+
+  [Live demo](/) • [Source Code](/)
+
+[media]
+  small: /img/less-to-code.png
+  large: /img/less-to-code-big.png
+  caption: Next.js uses 5x more characters for the blog starter template
+  class: wide
 
 
 
 ## Websites and web applications
-Use the same syntax and simple programming style for both multi-page, and single-page applications:
+Use the same, simple syntax and hot-reloading boost for both websites and single-page applications
+
+#### Simple Blog
+[Tutorial](../tutorials/build-a-simple-blog) /
+[Live demo](/@simple-blog) /
+[Source code](//github.com/...)
 
 [media]
   small: /img/simple-blog.png
@@ -26,9 +55,10 @@ Use the same syntax and simple programming style for both multi-page, and single
   href: /@simple-blog
   width: 650
 
-Simple Blog:
-[Demo](/@simple-blog) /
-[How to build](../tutorials/build-a-simple-blog) /
+#### Simple SPA
+
+[Tutorial](../tutorials/build-a-simple-spa) /
+[Live demo](/@simple-admin) /
 [Source code @ Github](//github.com/...)
 
 [media]
@@ -37,28 +67,11 @@ Simple Blog:
   href: /@simple-admin
   width: 650
 
-Simple SPA:
-[Demo](/@simple-admin) /
-[How to build](../tutorials/build-a-simple-spa) /
-[Source code @ Github](//github.com/...)
 
 
 
-
-## Write less code
-Nue has [far less abstractions](standards-based.html#less-abstractions) so you typically need less code and effort to implement the same app:
-
-[media]
-  small: /img/less-to-code.png
-  large: /img/less-to-code-big.png
-  class: wide
-
-2 x 2 links to demos & source code
-
-
-
-## Extremely fast build times
-Nue is orders of maginitude faster than it's cousins:
+## Significantly faster build times
+Nue is order of maginitude faster than it's cousins:
 
 [bunny-video]
   videoId: 45b73e3a-3edd-47af-bcd8-49039496b107

@@ -55,7 +55,20 @@ Receive an email when something major comes out:
 
 
 ## Developer feedback
-Both   and experienced professionals love Nue:
+Both beginners and experienced professionals love Nue:
+
+
+[.hero-quote]
+  ![Elliot profile image]( /home/img/elliot-jay-stocks.jpg)
+
+  > At some point in the last decade, popular frameworks and platforms have eschewed semantic markup and, as a result, the web has become way more bloated than it ever needed to be. Stripping away presentational markup and unreadable CSS is something all web developers once believed in.
+
+  > **I'm glad Nue is bringing back that power.**
+
+  —
+  [Elliot Jay Stocks](//elliotjaystocks.com/)
+  Legendary designer & CSS guru
+
 
 [quotes]
   - user: retiagod

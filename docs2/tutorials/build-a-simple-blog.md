@@ -35,9 +35,7 @@ cd simple-blog
 echo '# Hello, World!' > index.md
 ```
 
-Congrats! Your first Nue application is ready 🍻🍻
-
-You can start developing it with `nue` command:
+Congrats! Your first Nue application is ready 🍻🍻. You can start developing it with `nue` command:
 
 ```
 nue
@@ -341,7 +339,7 @@ Then we add the component to the footer and add a trigger element that opens up 
 Needless to say, that hot-reloading facility is there again to speed up development. The dialog is not only updating live, but the also the potential form values are retained and the dialog remains open while we make changes.
 
 
-## Optimize for production
+## Build for production
 Our blog is now ready. It's time to build a minified production version:
 
 [media]

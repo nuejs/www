@@ -2,13 +2,19 @@
 # Client-side navigation
 Nue supports near-instant, client-side navigation between two pages. This means that the page transition happens using JavaScript, which is faster than the default navigation done by the browser
 
+[bunny-video]
+  videoId: d53e052f-f4c5-43f0-af1c-777b18bad8ed
+  caption: Client-side navigation in action
+  width: 650
+
+
 ![video here](/docs/img/stripes.jpg)
 
 Nue's implementation is unique for two reaons:
 
 1. A simple configuration option: `page_router: true` is enough to enable near-instant page switching on your multi-page application. All the internal links, including the ones inside your Markdown content are impacted. There is no need to tag your links individually or add any complex JavaScript code.
 
-2. Nue's instant navigation works across multi-page applications and single-page applications. You can click trough your website, onboarding flow, login page, and the single-page app and use browser's back/forward buttons and experience an overall instant feel of the site.
+2. Instant routing works across multi-page applications and single-page applications. You can click trough your website, onboarding flow, login page, and the single-page app and use browser's back/forward buttons and experience an overall instant feel of the site.
 
 
 ## Page router

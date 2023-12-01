@@ -4,7 +4,7 @@ Nue is fast by default. It's almost impossible to build a slow website with Nue.
 
 
 ## Load less resources
-Nue takes a simple path to performance: load less stuff. Here's a comparison of the blog starter template [made with Next.js](//next-blog-starter.vercel.app/) vs [made with Nue](//nuejs.org/@nextjs-blog/):
+Nue takes a simple path to performance: load less stuff. Here are the assets loaded by the blog starter template in [Next.js](//next-blog-starter.vercel.app/) vs [Nue](//nuejs.org/@nextjs-blog/):
 
 [media]
   small: /img/less-to-load.png
@@ -13,13 +13,17 @@ Nue takes a simple path to performance: load less stuff. Here's a comparison of 
 
 
 ## Instant page switches
-Nue offers seamless client-side routing accross multi-page and single-page applications:
+Nue provides instant client-side navigation for websites and single-page applications:
 
-! video
+[bunny-video]
+  videoId: d53e052f-f4c5-43f0-af1c-777b18bad8ed
+  caption: Instant page switching in action
+  width: 650
 
+[View demo](/@simple-blog) • [Learn the details](../concepts/client-side-navigation.html)
 
 ## Simple performance optimization
-Reach the highest performance scores with simple configuration options for CSS inlining and pre-fetching:
+Nue offers simple configuration options for even faster performance:
 
 ``` yaml
 inline_css: true
@@ -27,6 +31,8 @@ prefetch_global_css: true
 preload_images: [ my-hero.webp ]
 page_router: true
 ```
+
+[Learn the details](../concepts/performance-optimization.html)
 
 
 ## Cache- friendly
@@ -40,9 +46,27 @@ Nue defaults to [unbundled distribution](../concepts/js-modules#unbundled) so on
 ## Serve less CSS
 Build faster sites with inlineable, cacheable, and modular CSS. Here’s the official Tailwind "Spotlight" template made with [Tailwind CSS]( //spotlight.tailwindui.com/) and [Semantic CSS](//nuejs.org/@spotlight/):
 
+[.cols]
+  [image-link src="/img/tw-spotlight.jpg" class="clickable" width="350"]
+    href: //spotlight.tailwindui.com/
+
+  #### Tailwind version
+
+  [Live demo](//spotlight.tailwindui.com/)
+
+  ---
+  [image-link src="/img/nue-spotlight.jpg" class="clickable" width="350"]
+    href: //nuejs.org/@spotlight
+
+  #### Semantic Nue version
+
+  [Live demo](//nuejs.org/@spotlight)
+
+
 [media]
   small: /img/less-css.png
   large: /img/less-css-big.png
+  caption: Amount of CSS loaded by the official Tailwind Spotlight template
   class: wide
 
 
