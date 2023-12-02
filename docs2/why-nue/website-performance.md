@@ -44,13 +44,13 @@ Nue defaults to [unbundled distribution](../concepts/js-modules#unbundled) so on
 
 
 ## Serve less CSS
-Build faster sites with inlineable, cacheable, and modular CSS. Here’s the official Tailwind "Spotlight" template made with [Tailwind CSS]( //spotlight.tailwindui.com/) and [Semantic CSS](//nuejs.org/@spotlight/):
+Build faster sites with leaner CSS that is easy to inline
 
 [.cols]
   [image-link src="/img/tw-spotlight.jpg" class="clickable" width="350"]
     href: //spotlight.tailwindui.com/
 
-  #### Tailwind version
+  #### Tailwind CSS
 
   [Live demo](//spotlight.tailwindui.com/)
 
@@ -58,7 +58,7 @@ Build faster sites with inlineable, cacheable, and modular CSS. Here’s the off
   [image-link src="/img/nue-spotlight.jpg" class="clickable" width="350"]
     href: //nuejs.org/@spotlight
 
-  #### Semantic Nue version
+  #### Semantic CSS
 
   [Live demo](//nuejs.org/@spotlight)
 

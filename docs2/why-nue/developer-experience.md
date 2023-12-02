@@ -6,7 +6,7 @@ Create entire websites without touching your browser
 
 [bunny-video]
   videoId: 18714305-d2f3-453d-83a9-0bd017166949
-  poster: thumbnail_13eb9805.jpg
+  poster: /img/hot-reload-hero.jpg
   class: wide
 
 
@@ -16,7 +16,7 @@ Create entire websites without touching your browser
 
 
 ## Write less code
-Thanks to Nue's *extreme minimalism* and [standards- based](closer-to-standards.html) programming style, you need less effort to do the same thing
+Thanks to Nue's [simple and standards- based](closer-to-standards.html) approach, you need less time and effort to build the same thing:
 
 [.cols]
   [image-link src="/img/next-starter.png" class="clickable" width="350"]
@@ -36,8 +36,7 @@ Thanks to Nue's *extreme minimalism* and [standards- based](closer-to-standards.
 [media]
   small: /img/less-to-code.png
   large: /img/less-to-code-big.png
-  caption: Next.js uses 5x more characters for the blog starter template
-  class: wide
+  caption: "Blog starter template: 5x less coding with Nue"
 
 
 

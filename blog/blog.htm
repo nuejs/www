@@ -7,6 +7,7 @@
       <h4>Tero Piirainen</h4>
       <p><a href="//twitter.com/tipiirai">@tipiirai</a></p>
       <pretty-date :date="date"/>
+      <span :if="update">• <time>Updated</time> on <pretty-date :date="update"/></span>
     </figcaption>
   </figure>
 </header>
@@ -21,7 +22,7 @@
       <figure>
         <img src="/global/img/tero.png">
         <figcaption>Tero Piirainen</figcaption>
-        <pretty-date :date="el.date"/>
+        <pretty-date :date="el.update || el.date"/>
         <span class="tag alarm" :if="isNew(el.date)">New</span>
       </figure>
     </aside>

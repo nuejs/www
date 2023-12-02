@@ -7,9 +7,6 @@ Nue supports near-instant, client-side navigation between two pages. This means 
   caption: Client-side navigation in action
   width: 650
 
-
-![video here](/docs/img/stripes.jpg)
-
 Nue's implementation is unique for two reaons:
 
 1. A simple configuration option: `page_router: true` is enough to enable near-instant page switching on your multi-page application. All the internal links, including the ones inside your Markdown content are impacted. There is no need to tag your links individually or add any complex JavaScript code.

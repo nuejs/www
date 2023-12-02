@@ -55,7 +55,6 @@ Receive an email when something major comes out:
 
 
 ## Developer feedback
-Both beginners and experienced professionals love Nue:
 
 
 [.hero-quote]
@@ -65,9 +64,8 @@ Both beginners and experienced professionals love Nue:
 
   > **I'm glad Nue is bringing back that power.**
 
-  —
   [Elliot Jay Stocks](//elliotjaystocks.com/)
-  Legendary designer & CSS guru
+  Legendary designer & early CSS advocate
 
 
 [quotes]

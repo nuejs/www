@@ -6,7 +6,9 @@ page_class: hmr-page
 
 Nue provides a powerful hot-reloading utility that automatically updates your page on the browser as you edit your content, styling, layout, data files, or reactive components.
 
-![video here](/docs/img/stripes.jpg)
+[bunny-video]
+  videoId: 18714305-d2f3-453d-83a9-0bd017166949
+  poster: /img/hot-reload-hero.jpg
 
 Hot-reloading is automatically enabled in development. The client-server communication is based on server-sent events. Instead making a full reload, Nue uses a technique called *DOM diffing* to only update the parts on the page that have changed. Here are the details what gets automatically updated:
 
@@ -28,12 +30,28 @@ Hot-reloading is automatically enabled in development. The client-server communi
 - Form components: potential form data is restored to the updated component
 - Dialog components: dialogs and overlays remain open after they update
 
+[bunny-video]
+  videoId: abe66a92-71a9-4441-866b-20fdf31a7180
+  caption: Hot-reloading a reactive component
+
+
 ## Single-page apps
 - Changes to the server-side HTML code in `index.html`
 - The main reactive application changes
 - Any dependant component changes
 - The application state is retained trough [application router](app-router)
 - site.yaml or app.yaml data passed to the reactive client
+
+
+## Compiler errors
+- JavaScript/Typescript syntax errors
+- HTML layouts
+- Reactive components
+
+[.cols]
+  ![JS error](/img/js-error.png)
+  ---
+  ![Layout error](/img/nue-error.png)
 
 
 ## Non- goals

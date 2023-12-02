@@ -67,8 +67,7 @@ Single-page applications have no concept of main.js, since they can import modul
 
 
 ## Unbundled distribution [unbundled]
-By default Nue copies JavaScript files directly to the distribution directory and TypeScript files are run through `Bun.build()` or `esbuild.build()` under Node. And the default behaviour is to [build, but not bundle](//blog.logrocket.com/building-without-bundling/). That is: the imported dependencies are *not* inlined into the file itself to form a single, bigger JS bundle.
-
+Nue runs all JavaScript and TypeScript files through `Bun.build()` or `esbuild.build()` if you are working under Node. The default is to [build, but not bundle](//blog.logrocket.com/building-without-bundling/). That is: the imported dependencies are *not* inlined into the file itself to form a single, bigger JS bundle.
 
 Three performance reasons why Nue defaults to unbundled JavaScript:
 

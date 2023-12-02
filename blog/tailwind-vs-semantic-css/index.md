@@ -4,36 +4,33 @@ desc: Comparing two identically designed websites, their weight, amount of HTML 
 og: img/og.jpg
 thumb: tw-thumb.jpg
 date: 2023-10-23
+update: 2023-12-02
 include: syntax
 ---
 
-# Tailwind CSS vs. Semantic CSS
-This study compares two websites with a similar design: the official Tailwind "spotlight" template from the developers of Tailwind, and the same site crafted with semantic CSS and [Nue server components](/docs/nuejs/server-components.html). We'll take a deep look at what is under the hood and how the sites are built.
+# Tailwind _vs._ Semantic CSS
+This study compares two websites with identical design: the commercial Spotlight template from developers of Tailwind vs the same site with semantic CSS:
 
 [.cols]
   [media]
     href: //spotlight.tailwindui.com/
     small: img/tw-home.png
     large: img/tw-home-big.png
-    caption: Tailwind UI version →
   ---
   [media]
     href: /@spotlight/
     large: img/nue-home-big.png
     small: img/nue-home.png
-    caption: Semantic version →
-
-
 
 [.info]
-  #### Gist
-  **The semantic version is 8 &times; smaller, renders faster, and is easier to modify and extend.**
+  #### In short
+  **Semantic version is 8 &times; smaller, renders faster, and is easier to work with.**
 
 
 ## Front page HTML
-The main difference is that Tailwind uses "utility" class names and Nue uses semantic class names. That is: Nue gives meaning to the elements like `nav`, `button`, and `.gallery` and styles them with an external stylesheet. Tailwind styles elements inline — directly on the markup.
+The main difference: Tailwind uses "utility" classes and the semantic version uses external stylesheets. That is: Tailwind styles elements inline, directly on the markup and the semantic version respects the [separation of concerns](//en.wikipedia.org/wiki/Separation_of_concerns) principle.
 
-We can easily see the difference in the HTML markup by drilling down to the first element on the main navigation:
+You can see the difference by drilling down to the first A-element:
 
 [media]
   small: img/markup.png
@@ -41,7 +38,7 @@ We can easily see the difference in the HTML markup by drilling down to the firs
   caption: Drilling down to the first element on the main navigation
   class: bordered wider
 
-The semantic version is smaller because it utilizes high-level, semantic components like `.nav` and the external CSS can target elements with CSS selectors like `body > header`. Tailwind needs significantly more markup because the utility-first approach lacks the power of CSS selectors. You are forced to wrap divs inside divs inside divs and fill the elements with Tailwind-specific class syntax.
+Tailwind needs significantly more coding because you are completely lacking the power of CSS: the way it cascades and the richness of the selectors. You are forced to wrap divs inside divs inside divs and fill the elements with Tailwind-specific class syntax.
 
 Here is the full HTML source code of the front page.
 
@@ -87,7 +84,7 @@ Some key takes:
   caption: Creating a new design by extending a semantic base design
   class: tall
 
-Theming or "skinning" is a powerful concept in semantic CSS. You can alter your design by swapping parts of your CSS with another one or overriding a [base version](/@base/). CSS theming is impossible with Tailwind because the design is coupled to the markup. If you want a new design, you must edit your markup and override your earlier work.
+Theming is a powerful concept in CSS. You can alter your design by swapping parts of your CSS with another one or overriding a [base version](/@base/). Theming is impossible with Tailwind because the design is tightly coupled to the markup. If you want a new design, you must edit your markup and override your earlier work.
 
 
 
@@ -105,7 +102,7 @@ Please compare [Tailwind metrics](//pagespeed.web.dev/analysis/https-spotlight-t
 
 Two reasons why the semantic version is faster:
 
-1. The primary CSS is [inlined](//imkev.dev/loading-css) on the HTML page so that all the assets for the first viewport are fetched in the initial request. This is probably the most important performance optimization for the perceived page loading experience.
+1. The primary CSS is [inlined](//imkev.dev/loading-css) on the HTML page so that all the assets for the first viewport are fetched in the initial request. This is probably the most important performance optimization for the perceived page-loading experience.
 
 2. The first request is [less than 14K][14k], which is the maximum size of the first TCP packet.
 
@@ -121,7 +118,7 @@ The Preview tab on the Developer console is a great way to debug FCP:
 
 
 ## Best practices
-The key best practice of Tailwind is **tight coupling**. That is: the structure and styling are tied together. The semantic approach is the opposite: the structure and styling are loosely coupled**. Let's see what that means by studying the gallery component on the front page:
+Tailwind embraces **tight coupling**. That is: the structure and styling are tied together. The semantic approach is the opposite: the structure and styling are loosely coupled**. Here's what that means:
 
 [media]
   small: img/coupling.png
@@ -210,18 +207,15 @@ If you really want to move faster, you'll create a set of CSS components that yo
 
 
 ### But why is Tailwind so popular then?
-Because mastering CSS requires practice. It takes several failed attempts before you get it. Most developers haven't gone through that so they only remember the bad things. They have never built or used well-structured CSS.
+Because mastering CSS requires practice. It takes several failed attempts before you get it. Most developers haven't gone through that so they only remember the bad things.
 
-But when you truly master CSS, there is no turning back.
+The fact is that Tailwind's popularity will eventually fade. CSS-in-JS is trending now, but standards are forever. At some point, we'll all experience a "WTF moment" when looking at the tightly coupled Tailwind code.
 
-Tailwind, however, forces you to write divs inside divs and fill your elements with an insane amount of class names. I guess that Tailwind's popularity will eventually fade and the codebases will turn to technical debt. It's just a matter of time.
+- - -
 
-
-
-### Where is the source code?
-I'm working on it! I wanted to push out this blog entry quickly without the overhead of making this an open-source project. My next task is to work on the [Nue starter kit](//github.com/nuejs/create-nue) so that it generates a personal blog. I'll also write a blog entry called "Next.js vs Nue". It tackles the bigger picture and shows what's wrong with the current front-end ecosystem. You can join the mailing list, and I'll notify you when it's ready:
+## 🎁 Christmas is coming
+Nue is released before Christmas eve. Receive an email when that happens:
 
 [join-list]
 
-I'd appreciate your thoughts. I'd like to understand what people think of all this. You can also participate in the [discussion at Hacker News](//news.ycombinator.com/item?id=37982407).
 

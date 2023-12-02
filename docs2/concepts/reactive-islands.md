@@ -92,5 +92,7 @@ NOTE: the key to [performance optimization](performance-optimization) is more ab
 ## Single-page applications
 A single-page application is essentially a one, big reactive island. You develop them in [almost the same way](../tutorials/build-a-simple-spa.html) as you'd develop a simpler island. And you can enjoy the development boost of hot-reloading even if you have multiple/nested views and the UI is connected with the backend data over the network:
 
-![video](/docs/img/stripes.jpg)
-! SPA: one big reactive island
+[bunny-video]
+  videoId: 7c291fcd-b344-4ff9-bd3f-5c7301707c5d
+  caption: "Single-page application — one big reactive island"
+  poster: thumbnail_0e853239.jpg

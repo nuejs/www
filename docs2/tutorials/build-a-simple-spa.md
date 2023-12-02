@@ -2,6 +2,7 @@
 # Build a simple SPA with Nue
 In this tutorial, you’ll learn Nue's key features and benefits by building a fully-functioning single-page application (SPA), from zero to production.
 
+
 [media]
   small: /img/simple-spa.png
   large: /img/simple-spa-big.png
@@ -191,6 +192,7 @@ The model is kept as "dummy" as possible. It doesn't know anything about the vie
 ## Create views
 Next we create three reactive views with Nue's [template syntax](template-syntax):
 
+
 #### Users view
 
 ```
@@ -341,15 +343,13 @@ Here is a sligtly more advanced SPA example with 6,968 leads and 985 customers o
 [bunny-video]
   videoId: 7c291fcd-b344-4ff9-bd3f-5c7301707c5d
   caption: Simple, instant CRM with 10k+ entries in the backend
-  width: 650
+  poster: thumbnail_0e853239.jpg
 
 
-
-! video:
 
 The Readme link on the top/right corner takes you away from the SPA to a normal multi-page application, and the app router is seamlessly switched to a [page router](client-side-navigation). Hitting browser's back and forward button toggles between the two routing methods.
 
-Here is the [demo] and the [source code]() for this more advanced example. For inspiration.
+Here is the [demo](/@simple-crm) and the [source code]() for this more advanced example. For inspiration.
 
 Enjoy!
 

@@ -1,6 +1,6 @@
 
 class: docs-area
-include: [permlink]
+include: [permlink, bunny/video]
 
 titles:
   concepts: Core concepts
@@ -37,17 +37,19 @@ cats:
     - Event handlers
 
   upcoming:
-    - View transitions
-    - Scroll transitions
+    - Rich/interactive content
     - Skinning and theming
-    - Backend communication
-    - Content islands (M↓)
     - Images, Videos, and Fonts
-    - JavaScript lazy-loading
+    - Scroll transitions
+    - View transitions
+    - Site search
     - Internationalization
+    - Backend communication
     - RSS feeds
     - Deployements
-    - Build a full SAAS app
+    - ---
+    - Build a full website
+    - Build a full SPA
 
   nuejs:
     - Intro

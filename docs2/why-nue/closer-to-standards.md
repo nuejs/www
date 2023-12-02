@@ -1,8 +1,9 @@
 
-# Develop closer to web standards
+# Standards are forever
+Stand the test of time by working closer to web standards
 
-## Work closer to metal
-Nue projects introduce 100× less NPM modules than Next.js. There's 100× less abstractions, less to learn, and less room for errors:
+## Be closer to metal
+Nue projects are 100× leaner than Next.js projects. Simple means everything. There's less abstractions, less to learn, less headaches, and less room for errors.
 
 [media]
   small: /img/project-sizes.png
@@ -10,29 +11,43 @@ Nue projects introduce 100× less NPM modules than Next.js. There's 100× less a
   class: wide
 
 [.small]
-  The contents of `node_modules` folder in blog starter template
+  The contents of `node_modules` folder in the Blog starter template
 
 
 
 ## Separation of concerns
-Nue separates HTML and CSS for UX developers, TypeScript for JS developers, and Markdown for content creators
+Nue separates HTML and CSS for UX developers, TypeScript for JS developers, and Markdown for content creators. Separation of concerns is the leading principle in Nue
 
 [media]
   small: /img/coupling.png
   large: /img/coupling-big.png
-  caption: Separation of concerns is the leading principle in Nue
+  caption: Source codes for the blog starter template
 
 
 
 ## Stand the test of time
-CSS-in-JS is trending now, but standards are forever. Sooner or later we all look at Tailwind with amaze:
+CSS-in-JS is trending now, but standards are forever. At some point we'll all experience a "WTF moment" when looking at this code from the era of tight coupling:
 
 [media]
   small: /img/tailwind-vs-semantic.jpg
   large: /img/tailwind-vs-semantic-big.jpg
   class: wide
 
-Look for more detailed comparison between [Tailwind vs Semantic CSS](/blog/)
+
+[.cols.tall]
+  ##### Tailwind- based:
+
+  [image-link src="/img/tw-spotlight.jpg" class="clickable" width="350"]
+    href: //spotlight.tailwindui.com/
+
+  See Nue blog: [Tailwind vs Standards](/blog/tailwind-vs-semantic-css/)
+  ---
+  ##### Standards- based:
+
+  [image-link src="/img/nue-spotlight.jpg" class="clickable" width="350"]
+    href: //nuejs.org/@spotlight
+
+
 
 
 
