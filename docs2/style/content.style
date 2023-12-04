@@ -29,7 +29,11 @@ article
     mt 3em
 
   > h3
+    font 1.07em
     mt 3em
+
+    a:before
+      color $gray-300
 
   > h4
     m 2em 0 .7em

@@ -20,20 +20,12 @@ The `prefetch_global_css` is a perfect companion for CSS inlining: it will prefe
 
 
 ## Preload your hero image
-Nue gives you simple settings to preload your critical "hero" images as soon as possible. If you are optimizing Largest Contentful Paint (LCP), preload can give you a massive boost on download priority.
+Nue offers a `preload_image` configuration option to preload your critical "hero" image as soon as possible. This will boost your Largest Contentful Paint (LCP).
 
 ``` yaml
 # Preload the hero image
-preload_image: my-hero.webp
-
-# Preload
-preload_imageset: hero-small.png 800px, hero-large.png
+preload_image: my-hero.png
 ```
-
-The `preload_imageset` accepts an array of images with an optional max-width attribute followed after the image. If the max-width is omitted, the image is be used when no matching image was found. ie. in above, the "hero-large.png" will be used when the screen is larger than 800px.
-
-In both properties, if the image path is not prefixed with slash or dot, Nue prefixes the directory name to the image name.
-
 
 ## Lazy load non-hero images
 Every other image, except the hero image on your layout should be given the standard [lazy loading](//developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading) attribute. This makes sure that no images are loaded unless they are visible on the viewport. For example:
@@ -41,7 +33,6 @@ Every other image, except the hero image on your layout should be given the stan
 ```
 <img src="/img/my-image.png" ıloading="lazy"ı>
 ```
-
 
 
 ## Speed up successive page loads

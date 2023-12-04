@@ -32,14 +32,13 @@ cats:
     - Command line interface
     - Application router | app-router
     - SEO and metadata
-    - Components
     - Template syntax
-    - Event handlers
+    - Reactive components
 
   upcoming:
     - Rich/interactive content
     - Skinning and theming
-    - Images, Videos, and Fonts
+    - Fonts, Images, and Videos
     - Scroll transitions
     - View transitions
     - Site search

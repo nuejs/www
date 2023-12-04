@@ -17,7 +17,7 @@ Name of the application directory a page belongs to. For example, the root level
 The base directory where all the styles and components are loaded on the frontend. This is similar to [<base>](//developer.mozilla.org/en-US/docs/Web/HTML/Element/base) tag and allows you to deploy the project under some path such as [/@simple-blog/](/@simple-blog/), instead to a root domain like `simple-blog.nuejs.org`.
 
 ### include
-By default Nue looks for a file named "main.js" and includes that automatically on your pages. You can change this with this setting. For example a value such as `['index.js']` would auto-include "index.js". See details of [JS/Typescript modules](../concepts/js-modules.html)
+By default Nue looks for a file named "main.js" and includes it automatically on your page requests. You can change this with this setting. For example a value such as `['index.js']` would auto-include "index.js". See details of [JS/Typescript modules](../concepts/js-modules.html)
 
 ### bundle
 Specifies files that should be bundled so that the imported dependencies are *inlined into the file itself. For example: ´bundle: [index.js]`. See [to bundle or not to bundle](../concepts/js-modules.html#unbundled).
@@ -46,6 +46,9 @@ Settinng this to `true` pre- fetches all global stylesheets to make the successi
 
 ### page_router
 Settinng this to `true` enables [client-side-navigation] for making the successive page loads feel instant.
+
+### preload_image
+This settings tells the browser about critical resources that you want to load as soon as possible, before they are discovered in HTML. For example: `preload_image: my-hero.png`
 
 ### port
 The port number of the development server. Default is 8080

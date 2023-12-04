@@ -318,7 +318,7 @@ Interactive components are created with the same kind of HTML- based template la
 </dialog>
 ```
 
-### Dialog opener element
+## Add dialog launcher
 Then we add the component to the footer and add a trigger element that opens up the dialog:
 
 ```

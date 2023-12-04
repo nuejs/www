@@ -49,11 +49,7 @@ Similar to `:else`, a `:else-if` element must immediately follow a `:if` or a `:
 
 
 ## Loops
-Nue uses `:for` attribute to render over arrays, objects, and components. Nue has a somewhat simpler syntax for loops than Vue. For example, you don't need to maintain a loop state with a special "key" variable.
-
-
-## Array loops
-Arrays are looped with syntax like `item in items`, where `items` is the data array and `item` is the element being iterated:
+Nue uses `:for` attribute to render over lists and objects. Arrays are looped with syntax like `item in items`, where `items` is the data array and `item` is the element being iterated:
 
 ```
 <ul>

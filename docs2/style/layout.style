@@ -67,6 +67,9 @@ article
     max-width 14em
     block
 
+  &:has(.level-3) .level-2
+    font 500 $gray-500
+
   code
     font 110%
     relative -.1em
@@ -84,8 +87,16 @@ article
   .level-2
     mt 1em
 
-  .level-3, .level-4
-    ml .2em
+    + .level-3
+      mt .5em
+
+  .level-3
+    ml .6em
+    mb .3em
+    font 85%
+
+  .level-4
+    none
 
   .no-aside &
     hidden
