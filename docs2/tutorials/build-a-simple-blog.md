@@ -228,7 +228,7 @@ Here's our new front page / index.md:
  I’m Emma Bennett, a user experience designer and developer from Berlin. Here  are my thoughts on design, UX engineering, and product thinking.
 ```
 
-The page is configured with a new [content collection](content-collections) option to hold information of all our pages on the `posts`- folder. We use this information to render the posts on our updated `layout.html` file:
+The page is configured with a new [content collection](../concepts/content-collections.html) option to hold information of all our pages on the `posts`- folder. We use this information to render the posts on our updated `layout.html` file:
 
 ```
 <!-- front page main layout -->

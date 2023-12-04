@@ -50,10 +50,6 @@ Less is more
  ┗┛┗┻━━┻━━┛
 ```
 
-Here's and example output of `nue build`:
-
-! video
-
 
 ## Usage examples
 Few more usage examples:
@@ -77,3 +73,11 @@ nue -p stats
 # show what will be built (without building)
 nue build .js .ts .nue --dry-run
 ```
+
+## Build example
+
+Here's and example output of `nue build`:
+
+[bunny-video]
+  videoId: 45b73e3a-3edd-47af-bcd8-49039496b107
+  width: 600

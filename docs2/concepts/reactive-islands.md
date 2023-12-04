@@ -12,7 +12,7 @@ Nue makes a perfect environment to author, create, update, and manage reactive i
 
 
 ## Defining islands
-Islands are defined in a file with a `.nue` extension. Nue- files can contain one or multiple components. You author them with the same [HTML- based syntax](template-syntax), as you create your [layout components](layout-components). For example, here is the source code for the feedback component in the intro- video of this page:
+Islands are defined in a file with a `.nue` extension. Nue- files can contain one or multiple components. You author them with the same [HTML- based syntax](../reference/template-syntax.html), as you create your [layout components](../concepts/layout-components.html). For example, here is the source code for the feedback component in the intro- video of this page:
 
 
 ```
@@ -86,7 +86,7 @@ After the component is defined and placed somewhere on your layout, Nue takes ca
 
 You can add as many islands as you want and it has minor impact on loading performance because all the islands are lazily mounted after the HTML and CSS is fully loaded and rendered. This is called "progressive enhancement" (or "hydration" in post 2019 terminology).
 
-NOTE: the key to [performance optimization](performance-optimization) is more about the first stages of page loading (HTML and CSS) and less about JavaScript and reactive islands.
+NOTE: the key to [performance optimization](performance-optimization.html) is more about the first stages of page loading (HTML and CSS) and less about JavaScript and reactive islands.
 
 
 ## Single-page applications

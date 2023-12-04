@@ -39,7 +39,7 @@ Hot-reloading is automatically enabled in development. The client-server communi
 - Changes to the server-side HTML code in `index.html`
 - The main reactive application changes
 - Any dependant component changes
-- The application state is retained trough [application router](app-router)
+- The application state is retained trough [application router](../reference/app-router.html)
 - site.yaml or app.yaml data passed to the reactive client
 
 

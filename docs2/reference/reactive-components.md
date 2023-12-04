@@ -1,13 +1,13 @@
 
 ---
 title: Nue reactive components
-include: gallery
+include: [gallery, media-object]
 ---
 
 # Reactive components
 Reactive components are interactive and make your pages feel dynamic. They respond to the user's mouse and keyboard events, and enhance your content-focused pages with small interactive "islands". They are also the building blocks for the more complex single-page applications.
 
-## Example: Image gallery
+## Example
 Let's start with an example. Here is a classic *image gallery* component that you can interact with the arrow buttons as well as with the small round dots below the image.
 
 [image-gallery]
@@ -15,7 +15,7 @@ Let's start with an example. Here is a classic *image gallery* component that yo
   basedir: /demo/img
 
 
-## Defining the gallery component
+### Defining the gallery component
 Here's the code for our gallery component:
 
 ```
@@ -94,7 +94,7 @@ You can pass arguments for the method calls:
 
 
 ### Event argument
-The method handler always receives [Event object](https://developer.mozilla.org/en-US/docs/Web/API/Event) as the last argument, unless it is explicitly given on the method call with a name `$event`:
+The method handler always receives [Event object](//developer.mozilla.org/en-US/docs/Web/API/Event) as the last argument, unless it is explicitly given on the method call with a name `$event`:
 
 ```
 <div>
@@ -123,7 +123,7 @@ The method handler always receives [Event object](https://developer.mozilla.org/
 
 
 ### Event modifiers
-Nue provides some handy shortcuts to deal with the common DOM event manipulation functions. For example, `@submit.prevent` is a shortcut to [event.preventDefault()](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault).
+Nue provides some handy shortcuts to deal with the common DOM event manipulation functions. For example, `@submit.prevent` is a shortcut to [event.preventDefault()](//developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault).
 
 ```
 <!-- prevent the default event from occurring-->
@@ -139,7 +139,7 @@ Nue provides some handy shortcuts to deal with the common DOM event manipulation
 The following modifiers are supported:
 
 - *.prevent* prevents the default behavior of the event from occurring
-- *.stop* prevents further [propagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) of the event
+- *.stop* prevents further [propagation](//developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) of the event
 - *.self* only trigger handler if `event.target` is the element itself
 - *.once* the event will be triggered at most once
 
@@ -153,7 +153,7 @@ Key modifier binds the event handler to a specific keyboard key:
 <input @keyup.enter="submit">
 ```
 
-You can directly use any valid key names exposed via [KeyboardEvent.key](https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values) as modifiers by converting them to kebab-case. So the following handler will only be called if `event.key` is equal to 'PageDown'.
+You can directly use any valid key names exposed via [KeyboardEvent.key](//developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values) as modifiers by converting them to kebab-case. So the following handler will only be called if `event.key` is equal to 'PageDown'.
 
 ```
 <input @keyup.page-down="onPageDown">
@@ -173,7 +173,7 @@ Nue provides the following aliases for the most commonly used keys:
 
 
 ## Reactive loops
-When you define a for loop, with the `:for`- expression Nue detects if the looped array is mutated and triggers necessary UI updates. These [array methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) include:
+When you define a for loop, with the `:for`- expression Nue detects if the looped array is mutated and triggers necessary UI updates. These [array methods](//developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) include:
 
 * `push(item)` adds a new item to the end of the array
 * `unshift(item)` adds a new item to the head of the array
@@ -196,13 +196,8 @@ search() {
 }
 ```
 
-
-## Animating new entries [animation]
-Nue lets you define an `oninsert` callback function that is called every time a new item is added to any of the array properties in the component. This gives you the possibility to add a CSS transition effect (among other things) for the newly added dom nodes.
-
-
-### Example animation
-Click on the "Add user" button below to see the animation in action
+### Loop animations [animation]
+Nue lets you define an `oninsert` callback function that is called every time a new item is added to any of the array properties in the component. This gives you the possibility to add a CSS transition effect (among other things) for the newly added dom nodes. For example:
 
 [animation-demo]
   items:
@@ -226,8 +221,7 @@ Click on the "Add user" button below to see the animation in action
       img: /demo/img/face-6.jpg
 
 
-### Source code
-Here's the full source code for the above demo:
+Here's the source code for the above demo:
 
 ```
 <article @name="animation-demo" class="user-list">
@@ -263,10 +257,10 @@ Here's the full source code for the above demo:
 </article>
 ```
 
+## Miscellaneous concepts
 
 
-
-## Lifecycle methods
+### Lifecycle methods
 Each component instance goes through a series of steps during its lifetime: first, it is created, then mounted on the page, and then it gets updated one or more times. Sometimes the component is removed or "unmounted" from the page.
 
 You can hook custom functionality to these steps by creating instance methods with a specific name:
@@ -274,13 +268,13 @@ You can hook custom functionality to these steps by creating instance methods wi
 ```
 <script>
 
-  // when the component is created. data is given as the first argument
+  // when the component is created. data/args is given as the first argument
   constructor(data) {
 
   }
 
   // after the component is mounted on the page
-  mounted() {
+  mounted(data) {
 
   }
 
@@ -322,7 +316,7 @@ The component re-renders itself automatically after calling an event handler, bu
 
 
 
-## References to nodes and components [refs]
+### References to nodes and components [refs]
 Sometimes you want to get handle to some DOM element or nested component inside your root component. Those are available via the `$refs` property on the application instance:
 
 ```
@@ -357,7 +351,7 @@ Sometimes you want to get handle to some DOM element or nested component inside 
 
 
 
-## Sharing code between components
+### Sharing code between components
 You can add and import shared code inside a top-level `<script>` tag.
 Here's an example library that defines both a shopping cart and a button component that adds items to the cart. The cart itself is defined in "cart.js", which is a plain JavaScript file. This cart is used by both components.
 
@@ -392,7 +386,7 @@ Here's an example library that defines both a shopping cart and a button compone
 ```
 
 
-## Mounting reactive components
+### Mounting reactive components
 Nue components are usually auto-mounted by the framework, but you can also create applications manually on a [JavaScript or TypeScript module](../concepts/js-modules.html) as follows:
 
 ```

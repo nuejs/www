@@ -190,7 +190,7 @@ The model is kept as "dummy" as possible. It doesn't know anything about the vie
 
 
 ## Create views
-Next we create three reactive views with Nue's [template syntax](template-syntax):
+Next we create three reactive views with Nue's [template syntax](../reference/template-syntax.html):
 
 
 #### Users view
@@ -242,7 +242,7 @@ Just like with the model, the goal here is similar: to keep the view layer as "d
 
 
 ## Create a controller
-Next we turn our `app.nue` to a **controller** that sits between the model and our application views. It controls what views are shown and on what conditions, and ties the views with the model data. We use Nue's simple [app router](app-router) for the job:
+Next we turn our `app.nue` to a **controller** that sits between the model and our application views. It controls what views are shown and on what conditions, and ties the views with the model data. We use Nue's simple [app router](../reference/app-router.html) for the job:
 
 ```
 <script>
@@ -349,7 +349,7 @@ Here is a sligtly more advanced SPA example with 6,968 leads and 985 customers o
 
 The Readme link on the top/right corner takes you away from the SPA to a normal multi-page application, and the app router is seamlessly switched to a [page router](client-side-navigation). Hitting browser's back and forward button toggles between the two routing methods.
 
-Here is the [demo](/@simple-crm) and the [source code]() for this more advanced example. For inspiration.
+Here is the [demo](/@simple-crm) and the [source code](gh-link) for this more advanced example. For inspiration.
 
 Enjoy!
 

@@ -19,7 +19,7 @@ Nue uses a simple HTML-based template syntax that you can use for both server-si
 
 If React is __"just JavaScript"__, then Nue is __"just HTML"__ because any valid HTML is also valid Nue. You can also extend the standard HTML with template expressions that help you build modern websites and web- applications ins simple, declarative way.
 
-Nue is best suited for *UX developers* dealing with the [front of the frontend](https://bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/) and with topics like interaction design, accessibility, and user experience.
+Nue is best suited for *UX developers* dealing with the [front of the frontend](//bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/) and with topics like interaction design, accessibility, and user experience.
 
 
 ## Nue components
@@ -96,7 +96,7 @@ Nue components are based on [ES6 classes][es6]: all the properties and methods a
 </div>
 ```
 
-ES6 classes make your code look amazingly compact and clean. Check out the reasoning behind classes and the HTML- based syntax from our blog entry: [rethinking reactivity](https://nuejs.org/blog/rethinking-reactivity/)
+ES6 classes make your code look amazingly compact and clean. Check out the reasoning behind classes and the HTML- based syntax from our blog entry: [rethinking reactivity](/blog/rethinking-reactivity/)
 
 [es6]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 
@@ -197,7 +197,7 @@ An expression is a piece of code that can be evaluated to a value. Therefore, th
 ```
 
 ### Function calls
-Expressions can call [instance methods](component-basics#instances)
+Expressions can call [instance methods](#instances)
 
 ```
 <time :datetime="date.toISOString()">
@@ -240,7 +240,7 @@ Standard HTML attributes like `id`, `class`, `style`, `data-*` remain on the ele
 
 
 ### Interpolation
-Nue supports the bracket syntax or [string interpolation](https://en.wikipedia.org/wiki/String_interpolation) directly in attribute values:
+Nue supports the bracket syntax or [string interpolation](//en.wikipedia.org/wiki/String_interpolation) directly in attribute values:
 
 ```
 <!-- attribute value with brackets -->
@@ -258,7 +258,7 @@ Nue supports the bracket syntax or [string interpolation](https://en.wikipedia.o
 
 
 ### Boolean Attributes
-Nue automatically detects [boolean attributes](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes). In the following example, the `disabled` attribute will be included if `is_disabled` has a truthy value, otherwise the attribute will be omitted.
+Nue automatically detects [boolean attributes](//html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes). In the following example, the `disabled` attribute will be included if `is_disabled` has a truthy value, otherwise the attribute will be omitted.
 
 ```
 <button :disabled="is_disabled">Press me</button>

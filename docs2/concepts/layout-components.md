@@ -70,7 +70,7 @@ Again, you can specify the main element on the root level and override it on eac
 
 
 ## Head element
-By default Nue generates the basic head elements from the data stored on your [data files](seo-and-metadata) plus auto-conifugures all `script`, `link`, and `style` tags based on your configuration and [directory structure](files-and-directories). You can extend this system data with a custom head module:
+By default Nue generates the basic head elements from the data stored on your [data files](../reference/seo-and-metadata.html) plus auto-conifugures all `script`, `link`, and `style` tags based on your configuration and [directory structure](files-and-directories.html). You can extend this system data with a custom head module:
 
 ```
 <!-- custom head settings -->

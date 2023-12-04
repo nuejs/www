@@ -7,7 +7,7 @@ body_class: no-aside
 Nue has a hierarchical configuration system where the site-wide settings are specified in `site.yaml` file on the root directory, the application-level settings are specified in `<appdir>/app.yaml`, and page-level setting in the front matter section of a Markdown file. App settings extends/overrides the global settings and page settings extends/overrides the app settings.
 
 
-## Options index
+## All options
 An alphabetical index of all the configuration options:
 
 ### appdir
@@ -30,7 +30,7 @@ Sets the `<body :class="class">` attribute in the default HTML layout for  page-
 The output directory. Default is .`dist/dev` for the development version and `.dist/prod` for the minified production version.
 
 ### content_collection
-This is a directory name for a [content collection](content-collection). Setting this to "posts" makes all the Markdown pages and their metadata available as a looped array for your template files. Good for making blog/docs indexes.
+This is a directory name for a [content collection](../concepts/content-collections.html). Setting this to "posts" makes all the Markdown pages and their metadata available as a looped array for your template files. Good for making blog/docs indexes.
 
 ### collection_name
 The name of the looped variable on the content collection. By default this is the name of the directory ie. the value of the `content_collection` option.
@@ -39,10 +39,10 @@ The name of the looped variable on the content collection. By default this is th
 A site-wide setting in your `site.yaml` file to define directories that are global to all your applications. The scripts, styles, and components under global directories are automatically included to all your pages. See [files and directories](files-and-directories).
 
 ### inline_css
-Settinng this to `true` inlines all CSS directly into the page to make it load faster. See [performance optimization](performance-optimization).
+Settinng this to `true` inlines all CSS directly into the page to make it load faster. See [performance optimization](../concepts/performance-optimization.html).
 
 ### prefetch_global_css
-Settinng this to `true` pre- fetches all global stylesheets to make the successive page load faster. This can only be enabled when `inline_css` is set to true. See [performance optimization](performance-optimization).
+Settinng this to `true` pre- fetches all global stylesheets to make the successive page load faster. This can only be enabled when `inline_css` is set to true. See [performance optimization](../concepts/performance-optimization.html).
 
 ### page_router
 Settinng this to `true` enables [client-side-navigation] for making the successive page loads feel instant.
@@ -54,10 +54,10 @@ This settings tells the browser about critical resources that you want to load a
 The port number of the development server. Default is 8080
 
 ### no_hotreload
-Disables [hot-reloading](hot-reloading). This is enabled by default.
+Disables [universal hot-reloading](../concepts/universal-hot-reloading.html). This is enabled by default.
 
 ### no_automount
-Disables automatic mounting of [reactive islands](reactive-islands). This is enabled by default.
+Disables automatic mounting of [reactive islands](../concepts/reactive-islands.html). This is enabled by default.
 
 
 

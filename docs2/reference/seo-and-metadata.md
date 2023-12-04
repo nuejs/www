@@ -88,11 +88,11 @@ Here are all the supported properties that impact the contents of your HEAD:
   Value for "robots" meta property. Use "noindex" to exclude the site/app/page from search engines.
 
   ### theme_color
-  Value for [theme color](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color) meta property. This is a color suggestion for user agents to customize the display of the page.
+  Value for [theme color](//developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color) meta property. This is a color suggestion for user agents to customize the display of the page.
 
   ### title
   The value of the `<title>` tag — the most important meta tag for SEO.
 
   ### viewport
-  The [viewport](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) value. Default is: "width=device-width,initial-scale=1"
+  The [viewport](//developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) value. Default is: "width=device-width,initial-scale=1"
 

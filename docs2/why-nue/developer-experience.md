@@ -24,14 +24,14 @@ Thanks to Nue's [simple and standards- based](closer-to-standards.html) approach
 
   #### Next.js blog template
 
-  [Live demo](/) • [Source Code](//github.com/vercel/next.js/tree/canary/examples/blog-starter)
+  [Live demo](//next-blog-starter.vercel.app/) • [Source Code](//github.com/vercel/next.js/tree/canary/examples/blog-starter)
   ---
   [image-link src="/img/nue-starter.png" class="clickable" width="350"]
-    href: //nuejs.org/@nextjs-blog
+    href: /@nextjs-blog
 
   #### Nue blog template
 
-  [Live demo](/) • [Source Code](/)
+  [Live demo](/@nextjs-blog) • [Source Code](gh-link)
 
 [media]
   small: /img/less-to-code.png
@@ -44,9 +44,9 @@ Thanks to Nue's [simple and standards- based](closer-to-standards.html) approach
 Use the same, simple syntax and hot-reloading boost for both websites and single-page applications
 
 #### Simple Blog
-[Tutorial](../tutorials/build-a-simple-blog) /
+[Tutorial](../tutorials/build-a-simple-blog.html) /
 [Live demo](/@simple-blog) /
-[Source code](//github.com/...)
+[Source code](gh-link)
 
 [media]
   small: /img/simple-blog.png
@@ -56,9 +56,9 @@ Use the same, simple syntax and hot-reloading boost for both websites and single
 
 #### Simple SPA
 
-[Tutorial](../tutorials/build-a-simple-spa) /
+[Tutorial](../tutorials/build-a-simple-spa.html) /
 [Live demo](/@simple-admin) /
-[Source code @ Github](//github.com/...)
+[Source code @ Github](gh-link)
 
 [media]
   small: /img/simple-spa.png

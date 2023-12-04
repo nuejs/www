@@ -42,7 +42,7 @@ Nue application router stores state to browser URL and it's query string. Two re
 
 1. *URLs are shareable* — You can copy/paste URL's and share the state to other people. Documenting, sharing, and reproducing page states becomes trivial.
 
-2. *Standards based* The browser URL is a logical place to store global application state using the standard [History.replaceState()](https://developer.mozilla.org/en-US/docs/Web/API/History/replaceState) call.
+2. *Standards based* The browser URL is a logical place to store global application state using the standard [History.replaceState()](//developer.mozilla.org/en-US/docs/Web/API/History/replaceState) call.
 
 3. Routing and state management becomes a one, simple, and unified concept. No need to spend time on learning multiple tools and clutter your code with large amounts of boilerplate code.
 

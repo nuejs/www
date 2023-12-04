@@ -67,8 +67,11 @@ article
     max-width 14em
     block
 
-  &:has(.level-3) .level-2
-    font 500 $gray-500
+  &:has(.level-3)
+    .level-2
+      font 500 $gray-500
+    h4
+      none
 
   code
     font 110%
