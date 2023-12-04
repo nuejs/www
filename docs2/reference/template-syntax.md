@@ -17,7 +17,7 @@ Nue uses a simple HTML-based template syntax that you can use for both server-si
 </div>
 ```
 
-If React is __"just JavaScript"__, then Nue is __"just HTML"__ because any valid HTML is also valid Nue. You can also extend the standard HTML with template expressions that help you build modern websites and web- applications ins simple, declarative way.
+If React is __"just JavaScript"__, then Nue is __"just HTML"__ because any valid HTML is also valid Nue. You can also extend the standard HTML with template expressions that help you build modern websites and web- applications in simple, declarative way.
 
 Nue is best suited for *UX developers* dealing with the [front of the frontend](//bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/) and with topics like interaction design, accessibility, and user experience.
 
@@ -63,7 +63,7 @@ You can pass data to your components with attributes. These can be static or dyn
 ### One-way data flow
 Attributes form a "one-way data flow": when the parent property updates, it will flow down to the child, but not the other way around. This prevents child components from mutating the parent's state, which makes the data flow harder to understand.
 
-Template expressions and data flow is heavily inspired by Vue, so Vue users should feel right at home when building apps with Nue.
+Template expressions and data flow are heavily inspired by Vue, so Vue users should feel right at home when building apps with Nue.
 
 
 
@@ -96,7 +96,7 @@ Nue components are based on [ES6 classes][es6]: all the properties and methods a
 </div>
 ```
 
-ES6 classes make your code look amazingly compact and clean. Check out the reasoning behind classes and the HTML- based syntax from our blog entry: [rethinking reactivity](/blog/rethinking-reactivity/)
+ES6 classes make your code look amazingly compact and clean. Check out the reasoning behind classes and the HTML-based syntax from our blog entry: [rethinking reactivity](/blog/rethinking-reactivity/)
 
 [es6]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 
@@ -117,7 +117,7 @@ The `<slot/>` element is added to the parent component as follows:
 </div>
 ```
 
-After this, we can pass custom content for the parent:
+After this, we can pass custom content to the parent:
 
 ```
 <media-object :for="item in items" :bind="item">
@@ -130,7 +130,7 @@ The slot element on the media object is replaced with the nested content on the 
 
 
 ### Component libraries
-Nue allows you to define multiple components on a single file. These library files are a great way to group related components together. For example, here is a skeleton for a `todo-list` application:
+Nue allows you to define multiple components on a single file. These library files are a great way to group related components. For example, here is a skeleton for a `todo-list` application:
 
 ```
 <!-- todo list component -->
@@ -236,7 +236,7 @@ All the attribute values are available inside the component:
 </div>
 ```
 
-Standard HTML attributes like `id`, `class`, `style`, `data-*` remain on the element. Nonstandard attributes like `:title` are removed after the value is passed to the component.
+Standard HTML attributes like `id`, `class`, `style`, and `data-*` remain on the element. Nonstandard attributes like `:title` are removed after the value is passed to the component.
 
 
 ### Interpolation
@@ -287,7 +287,7 @@ You can combine the object notation with other bracket expressions:
 
 
 ### Class attribute merging
-The parent class attribute is automatically merged with the child's class attribute:. Suppose we have the following component:
+The parent class attribute is automatically merged with the child's class attribute: Suppose we have the following component:
 
 ```
 <button @name="my-button" class="btn">Click me</button>

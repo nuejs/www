@@ -16,7 +16,7 @@ Create entire websites without touching your browser
 
 
 ## Write less code
-Thanks to Nue's [simple and standards- based](closer-to-standards.html) approach, you need less time and effort to build the same thing:
+Thanks to Nue's [simple and standards-based](closer-to-standards.html) approach, you need less time and effort to build the same thing:
 
 [.cols]
   [image-link src="/img/next-starter.png" class="clickable" width="350"]
@@ -70,7 +70,7 @@ Use the same, simple syntax and hot-reloading boost for both websites and single
 
 
 ## Significantly faster build times
-Nue is order of maginitude faster than it's cousins:
+Nue is in order of magnitude faster than its cousins:
 
 [bunny-video]
   videoId: 45b73e3a-3edd-47af-bcd8-49039496b107
@@ -79,7 +79,7 @@ Nue is order of maginitude faster than it's cousins:
 
 [bunny-video]
   videoId: 0619cc14-56f3-43df-b2b1-ab8d9c23637c
-  caption: Building indentical blog template with Next.js takes in 12.29s
+  caption: Building identical blog template with Next.js takes in 12.29s
   width: 650
 
 

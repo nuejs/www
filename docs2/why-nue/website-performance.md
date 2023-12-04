@@ -36,7 +36,7 @@ page_router: true
 
 
 ## Cache- friendly
-Nue defaults to [unbundled distribution](../concepts/js-modules#unbundled) so only the files that have changed are loaded from the server. Others remain in cache.
+Nue defaults to [unbundled distribution](../concepts/js-modules#unbundled) so only the files that have changed are loaded from the server. Others remain in the cache.
 
 [media]
   small: /img/cache-friendly.png
@@ -44,7 +44,7 @@ Nue defaults to [unbundled distribution](../concepts/js-modules#unbundled) so on
 
 
 ## Serve less CSS
-Build faster sites with leaner CSS that is easy to inline
+Build faster sites with leaner CSS that are easy to inline
 
 [.cols]
   [image-link src="/img/tw-spotlight.jpg" class="clickable" width="350"]

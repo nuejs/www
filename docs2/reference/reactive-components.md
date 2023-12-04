@@ -294,7 +294,7 @@ Inside the callback function `this` points to [instance API](#api).
 
 
 ### Instance API [api]
-The application instance is accessible as a return value to `createApp` and via `this` variable inside the lifecycle methods. It has following attributes and methods:
+The application instance is accessible as a return value to `createApp` and via `this` variable inside the lifecycle methods. It has the following attributes and methods:
 
 
 `$el` the root DOM node of the component instance
@@ -412,7 +412,7 @@ app.mount(wrapper)
 
 
 ### Mounting more complex apps
-You can import any number of components and pass them the all as dependencies for the creatApp method:
+You can import any number of components and pass them all as dependencies for the creatApp method:
 
 ```
 // import createApp method

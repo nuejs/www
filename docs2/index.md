@@ -1,5 +1,5 @@
 
 # Getting started with Nue
 
-- lolbol
-- dorgs
+- a
+- b

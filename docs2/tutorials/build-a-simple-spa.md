@@ -23,7 +23,7 @@ node install --global nue
 
 
 ## Create a SPA landing page
-Next we create a folder for our app and add a landing page in there:
+Next, we create a folder for our app and add a landing page in there:
 
 ``` sh
 # create a folder for our app
@@ -71,12 +71,12 @@ Let's view the results at `view-source:http://localhost:8080/`
 </html>
 ```
 
-Nue generates a basic HTML skeleton, sets up hot-reloading, and inserts a placeholder element our reactive single-page app, called simply the "app".
+Nue generates a basic HTML skeleton, sets up hot-reloading, and inserts a placeholder element in our reactive single-page app, called simply the "app".
 
 
 
 ## Create a skeleton app
-Next we create something visible to work on by adding a file called `app.nue` with the following code:
+Next, we create something visible to work on by adding a file called `app.nue` with the following code:
 
 ```
 <main @name="app">
@@ -102,13 +102,13 @@ Next we create something visible to work on by adding a file called `app.nue` wi
 </main>
 ```
 
-This simply renders a HTML table with two users, but works as a good starting point for our reactive single-page application. We can now edit both of our files (`index.html` and `app.nue`) and the browser magically hot-reloads itself as we make changes.
+This simply renders an HTML table with two users but works as a good starting point for our reactive single-page application. We can now edit both of our files (`index.html` and `app.nue`) and the browser magically hot-reloads itself as we make changes.
 
-*NOTE:* Hybrid apps with consisting of both server- and client-side components are called **isomorphic applications**.
+*NOTE:* Hybrid apps consisting of both server- and client-side components are called **isomorphic applications**.
 
 
 ## Add basic information
-HTML pages doesn't have a "front matter" section so we put all the basic information to `site.yaml`:
+HTML pages don't have a "front matter" section so we put all the basic information to `site.yaml`:
 
 ``` yaml
 # The document title
@@ -123,7 +123,7 @@ favicon: /img/nue-admin.svg
 
 After saving the file the browser title will automatically update.
 
-Next we hand this data to our app component by modifying our `index.html` as follows:
+Next, we hand this data to our app component by modifying our `index.html` as follows:
 
 ```
 <app :title :description/>
@@ -136,12 +136,12 @@ This data can then be rendered on our `app.nue` component like this:
 <p>{ description }</p>
 ```
 
-We need one manual reload to get the YAML data from the server (to be fixed), but after that we can edit all our three files (index.html, app.nue, and site.yaml) and the application hot-reloads itself automatically.
+We need one manual reload to get the YAML data from the server (to be fixed), but after that, we can edit all our three files (index.html, app.nue, and site.yaml) and the application hot-reloads itself automatically.
 
 
 
 ## Create a model
-Next we'll create a "business model" with TypeScript. This model is the [back of the frontend][brad] on our MVC- based architecture. The purpose of the model is to separate view code from the business logic so that UX developers can focus on the UX development and JS developers can focus on the logic without knowing anything about the view:
+Next, we'll create a "business model" with TypeScript. This model is the [back of the frontend][brad] on our MVC-based architecture. The purpose of the model is to separate view code from the business logic so that UX developers can focus on the UX development and JS developers can focus on the logic without knowing anything about the view:
 
 [brad]: //bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/
 
@@ -170,7 +170,7 @@ export default {
 
 When you save the model Nue converts our TypeScript file to JavaScript with `Bun.build()` or `esbuild.build()` under Node.
 
-At this point we use JSON mockup files, but the client is unaware of it because it operates with the model's public API methods without knowing the implementation details.
+At this point, we use JSON mockup files, but the client is unaware of it because it operates with the model's public API methods without knowing the implementation details.
 
 Here's what the return value of `getFeedback()` call looks like:
 
@@ -190,7 +190,7 @@ The model is kept as "dummy" as possible. It doesn't know anything about the vie
 
 
 ## Create views
-Next we create three reactive views with Nue's [template syntax](../reference/template-syntax.html):
+Next, we create three reactive views with Nue's [template syntax](../reference/template-syntax.html):
 
 
 #### Users view
@@ -207,7 +207,7 @@ Next we create three reactive views with Nue's [template syntax](../reference/te
 [View source @ GitHub]()
 
 
-#### Feedback view
+#### Feedback View
 
 ```
 <table @name="feedback-view">
@@ -238,11 +238,11 @@ Next we create three reactive views with Nue's [template syntax](../reference/te
 [View source @ GitHub]()
 
 
-Just like with the model, the goal here is similar: to keep the view layer as "dummy" as possible, unaware of the backend complexities like networking, authentication, and caching. They are be accssible for UX developers who are experts on topics like accessibility, and interaction design.
+Just like with the model, the goal here is similar: to keep the view layer as "dummy" as possible, unaware of the backend complexities like networking, authentication, and caching. They are accessible for UX developers who are experts on topics like accessibility, and interaction design.
 
 
 ## Create a controller
-Next we turn our `app.nue` to a **controller** that sits between the model and our application views. It controls what views are shown and on what conditions, and ties the views with the model data. We use Nue's simple [app router](../reference/app-router.html) for the job:
+Next, we turn our `app.nue` into a **controller** that sits between the model and our application views. It controls what views are shown and on what conditions, and ties the views with the model data. We use Nue's simple [app router](../reference/app-router.html) for the job:
 
 ```
 <script>
@@ -306,14 +306,14 @@ Again, you can edit all the files and hot-reloading keeps working, even with the
 
 
 ## Add styling
-Now it's a good time to add styling for our views. For that, we create a new folder "style" and add a [bunch of CSS files](gh-link) in there. Then we turn it into a global folder so that all the styles are automatically included to our single-page app:
+Now it's a good time to add styling for our views. For that, we create a new folder "style" and add a [bunch of CSS files](gh-link) in there. Then we turn it into a global folder so that all the styles are automatically included in our single-page app:
 
 ``` yaml
 # file: site.yaml
 globals: [style]
 ```
 
-This change is detected by hot-reloader and the app silently turns into a properly designed graphical user interface. Here's what we have now:
+This change is detected by a hot-reloader and the app silently turns into a properly designed graphical user interface. Here's what we have now:
 
 [media]
   small: /img/spa-pages.png
@@ -321,12 +321,12 @@ This change is detected by hot-reloader and the app silently turns into a proper
   class: tall
 
 
-We could also implement alternate designs, like `theme/brutalist` and update the `globals` option accordingly. Just to experience the beauty in semantic HTML.
+We could also implement alternate designs, like `theme/brutalist`, and update the `globals` option accordingly. Just to experience the beauty of semantic HTML.
 
 
 
 ## Build for production
-Lets build a production distributable with minified/bundled JS and CSS:
+Let's build a production distributable with minified/bundled JS and CSS:
 
 [media]
   small: /img/spa-build.png
@@ -338,7 +338,7 @@ Lets build a production distributable with minified/bundled JS and CSS:
 
 
 ## Next steps
-Here is a sligtly more advanced SPA example with 6,968 leads and 985 customers on the backend. There is searching and sorting possibilities and the client state is stored on the URL. The model features lazy-loading and client-side storage so that every operation is instant:
+Here is a slightly more advanced SPA example with 6,968 leads and 985 customers on the backend. There are searching and sorting possibilities and the client state is stored on the URL. The model features lazy-loading and client-side storage so that every operation is instant:
 
 [bunny-video]
   videoId: 7c291fcd-b344-4ff9-bd3f-5c7301707c5d
@@ -347,7 +347,7 @@ Here is a sligtly more advanced SPA example with 6,968 leads and 985 customers o
 
 
 
-The Readme link on the top/right corner takes you away from the SPA to a normal multi-page application, and the app router is seamlessly switched to a [page router](client-side-navigation). Hitting browser's back and forward button toggles between the two routing methods.
+The Readme link on the top/right corner takes you away from the SPA to a normal multi-page application, and the app router is seamlessly switched to a [page router](../concepts/client-side-navigation.html). Hitting the browser's back and forward button toggles between the two routing methods.
 
 Here is the [demo](/@simple-crm) and the [source code](gh-link) for this more advanced example. For inspiration.
 

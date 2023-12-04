@@ -2,7 +2,7 @@
 # Layout components
 Nue comes with a flexible layout system that works as follows:
 
-- Global layout is defined in `layout.html` file on the project root
+- Global layout is defined in the `layout.html` file on the project root
 - Application layout is defined in `<appdir>/layout.html`, which can override the modules on the global layout
 - Layouts are [HTML-based](../reference/template-syntax.html) and they utilize YAML data, which can be defined in root-, application-, and page level.
 
@@ -14,7 +14,7 @@ The simplest form of layout is to define global headers and footers on the root 
 ```
 <!-- global, site-wide header -->
 <header>
-  <!-- logo with link to front page -->
+  <!-- logo with a link to front page -->
   <a href="/"><img :src="logo"></a>
 
   <!-- master navigation -->
@@ -36,7 +36,7 @@ The simplest form of layout is to define global headers and footers on the root 
 </footer>
 ```
 
-In above the template data is defined in root-level `site.yaml` file as follows:
+In the above the template data is defined in the root-level `site.yaml` file as follows:
 
 ```
 areas: [ Features, Docs, Blog, About ]
@@ -47,8 +47,8 @@ gtm_id: GTM-TZNM36
 ```
 
 
-## Main layout
-Main layout is the HTML5 `<main>` element between header and footer that typically varies between applications. You may have a sidebar under the documentation area and a "hero" area on your blog entries. Here's an example main layout for a blog entry:
+## Main Layout
+Main layout is the HTML5 `<main>` element between the header and footer that typically varies between applications. You may have a sidebar under the documentation area and a "hero" area on your blog entries. Here's an example main layout for a blog entry:
 
 ```
 <main>
@@ -70,7 +70,7 @@ Again, you can specify the main element on the root level and override it on eac
 
 
 ## Head element
-By default Nue generates the basic head elements from the data stored on your [data files](../reference/seo-and-metadata.html) plus auto-conifugures all `script`, `link`, and `style` tags based on your configuration and [directory structure](files-and-directories.html). You can extend this system data with a custom head module:
+By default, Nue generates the basic head elements from the data stored on your [data files](../reference/seo-and-metadata.html) plus auto-configures all `script`, `link`, and `style` tags based on your configuration and [directory structure](files-and-directories.html). You can extend this system data with a custom head module:
 
 ```
 <!-- custom head settings -->
@@ -81,7 +81,7 @@ By default Nue generates the basic head elements from the data stored on your [d
 
 
 ## Root layout
-Sometimes you may want to take full control of the layout instead of specifying the individual layout component like the header and footer. Here's an example custom layout:
+Sometimes you may want to take full control of the layout instead of specifying the individual layout components like the header and footer. Here's an example custom layout:
 
 
 ```
@@ -107,7 +107,7 @@ Sometimes you may want to take full control of the layout instead of specifying 
 
 
 ## Single-page applications
-With single page applications you can simply start with the tag name of your main application on your `index.html` file:
+With single-page applications you can simply start with the tag name of the main application on your `index.html` file:
 
 ```
 <crm-dashboard/>
@@ -144,11 +144,6 @@ Or you can take full control of the layout with a root level `html` element. For
   </body>
 </html>
 ```
-
-
-
-
-
 
 
 

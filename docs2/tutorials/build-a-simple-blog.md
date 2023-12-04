@@ -1,7 +1,7 @@
 
 
 # Build a simple blog with Nue
-In this tutorial, you’ll see Nue's key features and benefits by building a fully-functioning blog, from zero to production website.
+In this tutorial, you’ll see Nue's key features and benefits by building a fully functioning blog, from zero to production website.
 
 [media]
   small: /img/simple-blog.png
@@ -22,7 +22,7 @@ node install --global nue
 ```
 
 ## Create your first page
-Next we create a folder for our blog and add a page in there:
+Next, we create a folder for our blog and add a page in there:
 
 ``` sh
 # create a folder for our blog
@@ -35,7 +35,7 @@ cd simple-blog
 echo '# Hello, World!' > index.md
 ```
 
-Congrats! Your first Nue application is ready 🍻🍻. You can start developing it with `nue` command:
+Congrats! Your first Nue application is ready 🍻🍻. You can start developing it with the `nue` command:
 
 ```
 nue
@@ -68,13 +68,13 @@ Let's view the source code of that page at `view-source:http://localhost:8080/`
 </html>
 ```
 
-Nue auto-generates a HTML skeleton, with basic meta tags and the page title, which is automatically parsed from the Markdown content.
+Nue auto-generates an HTML skeleton, with basic meta tags and the page title, which is automatically parsed from the Markdown content.
 
-The nicest thing, however, is the "hotreload.js" module, which is the #1 reason to choose Nue as your web development environment. Lets see how it works.
+The nicest thing, however, is the "hotreload.js" module, which is the #1 reason to choose Nue as your web development environment. Let's see how it works.
 
 
 ## Hot-reloading
-Lets add a new file to our project folder called "blog.css", which will take care of the styling. Nue automatically adds the following line on the HTML without the need to reload your page:
+Let's add a new file to our project folder called "blog.css", which will take care of the styling. Nue automatically adds the following line on the HTML without the need to reload your page:
 
 ```
 <link href="/blog.css" rel="stylesheet">
@@ -84,11 +84,11 @@ Now, as you edit either of your files (blog.css or index.md) on your text editor
 
 ! video: completing the page the first page
 
-Instead making a full reload, Nue uses a technique called **DOM diffing** to only update the parts on the page that have changed. Be it the content, metadata, styling, global headers and footers, page layouts, or a reactive components.
+Instead of making a full reload, Nue uses a technique called **DOM diffing** to only update the parts on the page that have changed. Be it the content, metadata, styling, global headers and footers, page layouts, or reactive components.
 
 
-## Front matter
-Next we add some metadata for the page for SEO and social sharing purposes. We do this by adding a so called "front matter" in the beginning of our Markdown page. This is a YAML- formatted section with human-readable key/value pairs:
+## Frontmatter
+Next, we add some metadata for the page for SEO and social sharing purposes. We do this by adding a so-called "front matter" at the beginning of our Markdown page. This is a YAML-formatted section with human-readable key/value pairs:
 
 ```
  ---
@@ -115,7 +115,7 @@ Then we add a folder called `img` to hold all our images and complete editing th
 
 
 ## Add headers and footers
-Next we stop fooling around and turn our blog to something more serious. We start by adding headers and footers by creating a file called `layout.html` on the project root and edit it as follows:
+Next, we stop fooling around and turn our blog into something more serious. We start by adding headers and footers by creating a file called `layout.html` on the project root and editing it as follows:
 
 ```
 <!-- global header -->
@@ -137,10 +137,10 @@ Next we stop fooling around and turn our blog to something more serious. We star
 
 
 ## Add shared data
-Then we add a data file called "site.yaml" with all the site-wide data to fill our personal information and othe basic data being used on our header and footer:
+Then we add a data file called "site.yaml" with all the site-wide data to fill our personal information and other basic data being used on our header and footer:
 
 ``` yaml
-# shared data for all paegs
+# shared data for all pages
 fullname: Emma Bennet
 slogan: Less is More
 avatar: /img/emma.jpg
@@ -165,7 +165,7 @@ You can see your page headers and footers update on your browser as you edit the
 
 
 ## Add page layout
-Next we add a *main* element to our layout file to render the "hero" area for our blog entries. This will render data from the Markdown pages (front matter area) and if not present, then the data is taken from the `site.yaml` file.
+Next, we add a *main* element to our layout file to render the "hero" area for our blog entries. This will render data from the Markdown pages (front matter area) and if not present, then the data is taken from the `site.yaml` file.
 
 ```
 <!-- in layout.html: -->
@@ -192,7 +192,7 @@ Next we add a *main* element to our layout file to render the "hero" area for ou
 
 
 ## Add all the pages
-Next we add two more pages to the directory. Each one will share the same header, footer, page layout, and styling. Here's what we have at this point:
+Next, we add two more pages to the directory. Each one will share the same header, footer, page layout, and styling. Here's what we have at this point:
 
 [media]
   small: /img/blog-entries.png
@@ -200,14 +200,14 @@ Next we add two more pages to the directory. Each one will share the same header
   class: tall
   width: 650
 
-Pretty good. Of course hot-reloading was there to provide a great content authoring and styling experience for all the pages.
+Pretty good. Of course, hot-reloading was there to provide a great content authoring and styling experience for all the pages.
 
 
 
 ## Create blog index
-Next we move all our pages to "posts" folder to make room to our new front page, which lists all our entries from newest to latest. Nue treats the "posts" directory as a separate *multi-page application* that can be configured with it's own layout and styling.
+Next, we move all our pages to the "posts" folder to make room for our new front page, which lists all our entries from newest to latest. Nue treats the "posts" directory as a separate *multi-page application* that can be configured with its layout and styling.
 
-We also add a new "global" folder to hold all our global components and stylesheets. The root directory has assets for the front page only, and the posts directory has assets for our blog entries only. Here's what our folder structure looks like:
+We also added a new "global" folder to hold all our global components and stylesheets. The root directory has assets for the front page only, and the posts directory has assets for our blog entries only. Here's what our folder structure looks like:
 
 [media]
   small: /img/blog-folders.png
@@ -215,7 +215,7 @@ We also add a new "global" folder to hold all our global components and styleshe
   class: tall
   width: 300
 
-Here's our new front page / index.md:
+Here's our new front page/index.md:
 
 ``` md
  ---
@@ -225,10 +225,10 @@ Here's our new front page / index.md:
  ---
 
  # Minimalist, UX engineer, designer, urban explorer.
- I’m Emma Bennett, a user experience designer and developer from Berlin. Here  are my thoughts on design, UX engineering, and product thinking.
+ I’m Emma Bennett, a user experience designer and developer from Berlin. Here are my thoughts on design, UX engineering, and product thinking.
 ```
 
-The page is configured with a new [content collection](../concepts/content-collections.html) option to hold information of all our pages on the `posts`- folder. We use this information to render the posts on our updated `layout.html` file:
+The page is configured with a new [content collection](../concepts/content-collections.html) option to hold information on all our pages on the `posts`- folder. We use this information to render the posts on our updated `layout.html` file:
 
 ```
 <!-- front page main layout -->
@@ -267,7 +267,7 @@ And here's our resulting blog index page:
 
 
 ## Add a reactive "island"
-Next we add an interactive feedback component that can be opened from a chat icon on the bottom/right corner of the page.
+Next, we add an interactive feedback component that can be opened from a chat icon on the bottom/right corner of the page.
 
 [media]
   small: /img/feedback-component.png
@@ -275,7 +275,7 @@ Next we add an interactive feedback component that can be opened from a chat ico
   class: tall
   width: 650
 
-Interactive components are created with the same kind of HTML- based template language that is used for defining the server-side layouts:
+Interactive components are created with the same kind of HTML-based template language that is used for defining the server-side layouts:
 
 ```
 <!-- file: feedback.nue -->
@@ -336,7 +336,7 @@ Then we add the component to the footer and add a trigger element that opens up 
 </footer>
 ```
 
-Needless to say, that hot-reloading facility is there again to speed up development. The dialog is not only updating live, but the also the potential form values are retained and the dialog remains open while we make changes.
+Needless to say, that hot-reloading facility is there again to speed up development. The dialog is not only updating live, but also the potential form values are retained and the dialog remains open while we make changes.
 
 
 ## Build for production
@@ -354,7 +354,7 @@ We can also preview the production version at `http://localhost:8081`
 nue serve --production
 ```
 
-You can now push the production version at `.dist/prod` to some public server. You currently need to do this manually before the official deployement tool and Nue cloud is available.
+You can now push the production version at `.dist/prod` to some public server. You currently need to do this manually before the official deployment tool and Nue Cloud is available.
 
 
 

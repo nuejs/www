@@ -23,7 +23,7 @@ Options
   -e or --environment   Read extra options to override defaults in site.yaml
 
 File matches
-  Only build files that match the rhe rest of the arguments. For example:
+  Only build files that match the the rest of the arguments. For example:
   "nue build .ts .css" will build all TypeScript and CSS files
 
 Examples
@@ -76,7 +76,7 @@ nue build .js .ts .nue --dry-run
 
 ## Build example
 
-Here's and example output of `nue build`:
+Here's an example output of `nue build`:
 
 [bunny-video]
   videoId: 45b73e3a-3edd-47af-bcd8-49039496b107

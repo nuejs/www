@@ -10,12 +10,12 @@ Nue provides a powerful hot-reloading utility that automatically updates your pa
   videoId: 18714305-d2f3-453d-83a9-0bd017166949
   poster: /img/hot-reload-hero.jpg
 
-Hot-reloading is automatically enabled in development. The client-server communication is based on server-sent events. Instead making a full reload, Nue uses a technique called *DOM diffing* to only update the parts on the page that have changed. Here are the details what gets automatically updated:
+Hot-reloading is automatically enabled in development. The client-server communication is based on server-sent events. Instead of making a full reload, Nue uses a technique called *DOM diffing* to only update the parts on the page that have changed. Here are the details of what gets automatically updated:
 
 ## Content updates
 - Markdown content
 - Front matter (example: document.title updates)
-- Layout files: both root- and app level `layout.html`
+- Layout files: both root- and app-level `layout.html`
 - site.yaml, app.yaml data (example: master navigation updates)
 - Updates to other than the active page routes automatically to the new page
 
@@ -23,7 +23,7 @@ Hot-reloading is automatically enabled in development. The client-server communi
 - CSS file updates
 - Inline styling changes
 - New CSS files & CSS file removals
-- Complete theme change via changes in `globals: []` array in site.yaml
+- Complete theme change via changes in the `globals: []` array in site.yaml
 
 ## Reactive components
 - All component updates
@@ -38,8 +38,8 @@ Hot-reloading is automatically enabled in development. The client-server communi
 ## Single-page apps
 - Changes to the server-side HTML code in `index.html`
 - The main reactive application changes
-- Any dependant component changes
-- The application state is retained trough [application router](../reference/app-router.html)
+- Any dependent component changes
+- The application state is retained through [application router](../reference/app-router.html)
 - site.yaml or app.yaml data passed to the reactive client
 
 
@@ -55,11 +55,11 @@ Hot-reloading is automatically enabled in development. The client-server communi
 
 
 ## Non- goals
-Nue hot-reloading applies to UI components only so updates to JavaScript/TypeScript extensions make no impact. These extensions are best developed and tested on server-side.
+Nue hot-reloading applies to UI components only so updates to JavaScript/TypeScript extensions make no impact. These extensions are best developed and tested on the server side.
 
 
 ## Disable hot-reloading
-You can disable hot-reloading `no_hotreload: true` configuration option. Hot-reloading is automatically disabled from the production build, as it makes no sense there.
+You can disable the hot-reloading `no_hotreload: true` configuration option. Hot-reloading is automatically disabled from the production build, as it makes no sense there.
 
 
 

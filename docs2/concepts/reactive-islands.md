@@ -1,7 +1,7 @@
 
 
 # Reactive islands
-Rreactive island is an interactive UI component on an otherwise static HTML page.
+Reactive Island is an interactive UI component on an otherwise static HTML page.
 
 [bunny-video]
   videoId: 6e00cbdf-e36e-43a2-af0a-f95e0430ddad
@@ -56,9 +56,9 @@ Islands are defined in a file with a `.nue` extension. Nue- files can contain on
 </dialog>
 ```
 
-Your components can either be global or specific to an application. Global components must be defined inside a [global directory](files-and-directories.html#deps) and application specific components are defined inside the app directory.
+Your components can either be global or specific to an application. Global components must be defined inside a [global directory](files-and-directories.html#deps) and application-specific components are defined inside the app directory.
 
-You can also have page specific components by defining them inside a page directory such as `/blog/my-blog-entry/my-entry-component.nue`.
+You can also have page-specific components by defining them inside a page directory such as `/blog/my-blog-entry/my-entry-component.nue`.
 
 
 ## Adding islands to a page
@@ -78,19 +78,19 @@ You can mount islands on your `layout.html` files: in the header, footer, or any
 </footer>
 ```
 
-~Spoiler~: After *Nuemark* is complete you can define islands inside your Markdown with Wordpress- like shortcodes and YAML-based configuration.
+~Spoiler~: After *Nuemark* is complete you can define islands inside your Markdown with WordPress- like shortcodes and YAML-based configuration.
 
 
 ## Auto- mounting
-After the component is defined and placed somewhere on your layout, Nue takes care of the rest: mounting, unmounting, and hot-reloading. Nue even remembers the original state after the component was reloaded: the form values, whether the dialog was opened, and in case of a single-page application the state is completely restored from the URL.
+After the component is defined and placed somewhere on your layout, Nue takes care of the rest: mounting, unmounting, and hot-reloading. Nue even remembers the original state after the component was reloaded: the form values, whether the dialog was opened, and in the case of a single-page application the state is completely restored from the URL.
 
-You can add as many islands as you want and it has minor impact on loading performance because all the islands are lazily mounted after the HTML and CSS is fully loaded and rendered. This is called "progressive enhancement" (or "hydration" in post 2019 terminology).
+You can add as many islands as you want and it has a minor impact on loading performance because all the islands are lazily mounted after the HTML and CSS are fully loaded and rendered. This is called "progressive enhancement" (or "hydration" in post-2019 terminology).
 
 NOTE: the key to [performance optimization](performance-optimization.html) is more about the first stages of page loading (HTML and CSS) and less about JavaScript and reactive islands.
 
 
 ## Single-page applications
-A single-page application is essentially a one, big reactive island. You develop them in [almost the same way](../tutorials/build-a-simple-spa.html) as you'd develop a simpler island. And you can enjoy the development boost of hot-reloading even if you have multiple/nested views and the UI is connected with the backend data over the network:
+A single-page application is essentially one, big reactive island. You develop them in [almost the same way](../tutorials/build-a-simple-spa.html) as you'd develop a simpler island. And you can enjoy the development boost of hot-reloading even if you have multiple/nested views and the UI is connected with the backend data over the network:
 
 [bunny-video]
   videoId: 7c291fcd-b344-4ff9-bd3f-5c7301707c5d

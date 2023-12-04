@@ -14,7 +14,7 @@ inline_css: true
 prefetch_global_css: true
 ```
 
-When you inline your CSS all the necessary to render the page is fetched on the initial request. Everything else can be loaded later. This is the easiest performance with highest returns. ie. "a low hanging fruit".
+When you inline your CSS all the necessary to render the page is fetched on the initial request. Everything else can be loaded later. This is the easiest performance with the highest returns. ie. "a low hanging fruit".
 
 The `prefetch_global_css` is a perfect companion for CSS inlining: it will prefetch all the global CSS files that are needed on the next page load.
 
@@ -27,8 +27,8 @@ Nue offers a `preload_image` configuration option to preload your critical "hero
 preload_image: my-hero.png
 ```
 
-## Lazy load non-hero images
-Every other image, except the hero image on your layout should be given the standard [lazy loading](//developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading) attribute. This makes sure that no images are loaded unless they are visible on the viewport. For example:
+## Lazy load of non-hero images
+Every other image, except the hero image on your layout, should be given the standard [lazy loading](//developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading) attribute. This makes sure that no images are loaded unless they are visible on the viewport. For example:
 
 ```
 <img src="/img/my-image.png" ıloading="lazy"ı>
