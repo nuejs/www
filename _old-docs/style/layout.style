@@ -1,0 +1,136 @@
+
+body > *
+  max-width 1300px
+
+main
+  gap 5em
+  flex
+
+.aside, .todo
+  transition opacity .4s
+  .header-hidden &
+    opacity 0
+
+// back to top
+.to-top
+  opacity 0
+  fixed bottom 2em
+  font 90% 600
+  color $gray-600
+  pr 1em
+
+  &:hover
+    color black
+
+  .header-hidden &
+    transition opacity .5s .5s
+    opacity 1
+
+  .footer-visible &
+    transition opacity .2s
+    opacity 0
+
+  @large-
+    none
+
+
+.sidebar
+
+  .selected
+    color white
+    bg $main
+
+  @large
+    overflow-y auto
+    min-width 13em
+    sticky 1.5em
+    height 40em
+    ml -1em
+    pl 1em
+    flex .5
+    nav
+      mb 2em
+
+
+.todo
+  h4
+    mb .6em
+  p
+    font $gray-400
+    m .4em 0
+
+  .continue
+    inline-block
+    mt 1em
+
+
+aside a
+  display block
+  font $gray 400 nowrap
+  p .1em
+  m .3em 0
+  radius .2em
+  ml -.6em
+  px .6em
+
+
+  &:hover
+    bg $gray-50
+
+aside h4
+  font 1.1em
+  mt .3em
+
+article
+  max-width 42em
+
+.aside
+  a
+    font 95% 1.5
+    max-width 14em
+    overflow hidden
+    text-overflow ellipsis
+  code
+    font 110%
+    relative -.1em
+    bg $gray-50
+    p .1em .3em
+    m 0 -.3em
+
+  @xxlarge-
+    none
+
+
+.level-1
+  none
+
+.level-2
+  font 500 $gray-600
+  mt 1em
+
+.level-3, .level-4
+  ml .2em
+
+
+
+// mobile layout
+@large-
+  main
+    block
+
+  .sidebar
+    border
+    p 1.5em 2em
+    column-width 10em
+    column-gap 3em
+    m -3em 0 3em
+    max-width 100%
+
+  .todo
+    none
+
+  article
+    max-width inherit
+
+
+

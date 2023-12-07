@@ -2,94 +2,89 @@
 body > *
   max-width 1300px
 
+.no-aside .aside
+  hidden
+
 main
-  gap 5em
+  gap 4em
   flex
 
-.aside, .todo
-  transition opacity .4s
-  .header-hidden &
-    opacity 0
-
-// back to top
-.to-top
-  opacity 0
-  fixed bottom 2em
-  font 90% 600
-  color $gray-600
-  pr 1em
-
-  &:hover
-    color black
-
-  .header-hidden &
-    transition opacity .5s .5s
-    opacity 1
-
-  .footer-visible &
-    transition opacity .2s
-    opacity 0
-
-  @large-
-    none
-
-
 .sidebar
-
-  .selected
-    color white
-    bg $main
+  font 90%
 
   @large
-    overflow-y auto
-    min-width 13em
-    sticky 1.5em
-    height 40em
-    ml -1em
-    pl 1em
-    flex .5
-    nav
-      mb 2em
+    max-height 100vh
+    overflow scroll
+    position sticky
+    min-width 18em
+    border-right
+    m -5rem 0 0 -1em
+    p 1em 2em 5em 1em
+    flex .45
+    top 0
 
 
-.todo
-  h4
-    mb .6em
-  p
-    font $gray-400
-    m .4em 0
+  .get-started
+    font 500 #333
 
-  .continue
-    inline-block
-    mt 1em
+  details
+    m 2em 0
 
+  summary
+    font 95% 600
+    pointer
 
-aside a
-  display block
-  font $gray 400 nowrap
-  p .1em
-  m .3em 0
-  radius .2em
-  ml -.6em
-  px .6em
+    &::marker
+      color $gray-300
 
+    &:hover::marker
+      color black
 
-  &:hover
-    bg $gray-50
+  nav
+    ml .6em
 
-aside h4
-  font 1.1em
-  mt .3em
+  a
+    display block
+    font $gray 400 nowrap
+    p .1em
+    m .3em 0
+    radius .2em
+    ml -.6em
+    px .6em
+
+    &:not(.selected):hover
+      bg $gray-50
+
+  .selected
+    text-decoration none
+    font 500 #fff
+    bg #222
+    default
+
 
 article
   max-width 42em
 
 .aside
+  pt .5em
+
+  h4
+    m 1em 0
+    font .95rem 550
+
   a
-    font 95% 1.5
-    max-width 14em
-    overflow hidden
     text-overflow ellipsis
+    font 90% 1.3 400 nowrap $gray-400
+    overflow hidden
+    max-width 14em
+    block
+
+  &:has(.level-3)
+    .level-2
+      font 500 $gray-500
+    h4
+      none
+
   code
     font 110%
     relative -.1em
@@ -101,16 +96,25 @@ article
     none
 
 
-.level-1
-  none
+  .level-1
+    none
 
-.level-2
-  font 500 $gray-600
-  mt 1em
+  .level-2
+    mt 1em
 
-.level-3, .level-4
-  ml .2em
+    + .level-3
+      mt .5em
 
+  .level-3
+    ml .6em
+    mb .3em
+    font 85%
+
+  .level-4
+    none
+
+  .no-aside &
+    hidden
 
 
 // mobile layout
@@ -134,3 +138,16 @@ article
 
 
 
+.cat-upcoming
+  border-top
+  pt 1em
+
+  nav
+    opacity .6
+    blur .5px
+  a
+    default
+
+  a:hover
+    background transparent !important
+    color $gray !important

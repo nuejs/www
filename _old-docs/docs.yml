@@ -1,0 +1,80 @@
+
+class: docs-area
+include: [permlink]
+
+nuejs:
+  - label: Introduction
+    url: /docs/nuejs/
+  - label: Examples
+    url: /docs/nuejs/examples/
+  - Getting started
+  - Component basics
+  - Server components
+  - Reactive components
+  - Isomorphic components
+  - Template syntax
+  - Event handlers
+  - Control flow
+  - Styling components
+
+
+todo:
+  - Nue CSS
+  - Nue UI
+  - Nue MVC
+  - Nuemark
+  - Nuekit
+
+
+users:
+  - title: Alex Martinez
+    desc: Lead frontend developer
+    img: /demo/img/face-3.jpg
+  - title: Sarah Park
+    desc: UI/UX Designer
+    img: /demo/img/face-4.jpg
+  - title: Jamie Huang
+    desc: JS/TS developer
+    img: /demo/img/face-2.jpg
+
+products:
+  - title: Stay hungry
+    desc: Just get rid of the crappy stuff and focus on the good stuff.
+    img: /demo/img/lemons.jpg
+  - title: Stay foolish
+    desc: Deciding what not to do is as important as deciding what to do.
+    img: /demo/img/popcorn.jpg
+
+
+tweets:
+  - title: "@janedesigns"
+    desc: Minimalistic web design is understanding that just because you can add something, doesn't mean you should.
+    img: /demo/img/face-1.jpg
+  - title: "@interactivejoe"
+    desc: Grid systems, flexbox, and CSS animations have transformed what we can design for the web.
+    img: /demo/img/face-3.jpg
+  - title: "@naivethinker"
+    desc: Less is more when it comes to web design. Stripping away all the unnecessary elements results in a clean, intuitive interface.
+    img: /demo/img/face-2.jpg
+  - title: "@theseparator"
+    desc: The key goals of separation of concerns include modularity, flexibility, understandability, and maintainability.
+    img: /demo/img/face-4.jpg
+
+
+gallery:
+  - title: Rhapsody in Blue
+    desc: Oil on canvas • Val Cyan 2020
+    img: /demo/img/art-1.jpg
+  - title: Symphony of Dreams
+    desc: Oil on wood panel  • Muse Bennett 2019
+    img: /demo/img/art-2.jpg
+  - title: Dance of Colors
+    desc: Oil on canvas • Val Cyan 2021
+    img: /demo/img/art-3.jpg
+  - title: Through the Unknown
+    desc: Oil on wood panel • Melody Rivers 2023
+    img: /demo/img/art-4.jpg
+  - title: Raging Storm of Emotion
+    desc: Oil on canvas • Muse Bennett 2017
+    img: /demo/img/art-5.jpg
+

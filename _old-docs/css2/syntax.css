@@ -4,8 +4,8 @@ pre {
   background: var(--gray-800);
   font-family: Fira,Menlo,Monaco,Lucida Console;
   border-radius: 4px;
-  font-size: .9rem;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.3;
   padding: 1.5rem;
   overflow: auto;
   color: #96cbfe;

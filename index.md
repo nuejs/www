@@ -1,10 +1,23 @@
 
 ---
-include: [home]
+include: [home, bunny/video]
 ---
 
 # The closer-to-standards web framework
-Nue is a static website and web application generator. It's a powerful **Next.js** and **Astro** alternative focusing on *minimalism* and *separation of concerns*.
+**Nue** is a newborn **Next.js** and **Astro** alternative with a *massively improved developer experience*. It may change the way you develop for web forever.
+
+[link to="/docs2/" class="button" "Get started"]
+
+[link to="/docs2/why-nue/developer-experience.html" class="button" "Why Nue"]
+
+[bunny-video]
+  videoId: 18714305-d2f3-453d-83a9-0bd017166949
+  caption: "One reason to try Nue: Build entire websites without ever touching your browser. "
+  poster: /img/hot-reload-hero.jpg
+  class: wide
+
+
+## The Big Picture
 
 [media]
   small: /img/roadmap.png
@@ -15,12 +28,12 @@ Nue is a static website and web application generator. It's a powerful **Next.js
 
 [.tools]
   * ### Nue JS
-    Build user interfaces with obvious, HTML-based markup
+    Build user interfaces with obvious, HTML-based markup.
 
-    [A (2.3kb) alternative](/docs/nuejs/) to *React*, *Vue*, and *Svelte*
+    A (2.3kb) alternative to *React*, *Vue*, and *Svelte*
 
   * ### Nuekit
-    Build faster websites and webapps with less time and effort.
+    Build websites and webapps with less time and effort.
 
     Common sense alternative to *Next.js* and *Astro*
 
@@ -30,7 +43,7 @@ Nue is a static website and web application generator. It's a powerful **Next.js
     Rich, human alternative to *Markdown*, *MDX* and *Markdoc*
 
   * ### Nue CSS
-    Bring back the power of modular, cascaded styling.
+    Bring back the power of extrenal, cascaded styling.
 
     Standards-based alternative to *Tailwind* and other *CSS-in-JS* libs
 
@@ -40,7 +53,7 @@ Nue is a static website and web application generator. It's a powerful **Next.js
     Themable alternative to *Tailwind-*, *Next-*, and *Astro* templates
 
   * ### Nue Cloud
-    Cloud hosting for Nue-powered frontends.
+    Easy host for Nue-powered websites and webapps.
 
     Simple alternative to *Vercel*, *Gatsby*, and *Netlify*
 
@@ -49,8 +62,8 @@ Nue is a static website and web application generator. It's a powerful **Next.js
   🎁 **Nuekit is out before Christmas:** you can then create websites and single-page apps and enjoy the power of [universal hot-reloading](/why/#hot-reload).
 
 
-## Nue waitlist
-Receive an email when something major comes out:
+## Receive an email
+When a new milestone is reached:
 [join-list]
 
 

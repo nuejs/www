@@ -1,8 +1,23 @@
+
+.eyebrow
+  font 85% 700 uppercase 1px
+  mt 1em
+
+.h1-narrow h1
+  max-width 12em
+
 article
-  font 1.2em
+  font 1.1em 1.6
 
   > img, figure
     mb 1em
+
+  h1
+    font 2.8em
+    mb .2em
+
+    + p
+      font 1.2em
 
   em
     font-style normal
@@ -13,55 +28,32 @@ article
     font-weight 400
 
   > h2
-    font 1.3em
+    font 1.2em
     mt 3em
 
   > h3
+    font 1.07em
     mt 3em
+
+    a:before
+      color $gray-300
 
   > h4
     m 2em 0 .7em
-    font 105%
+    font 100%
 
   h3 code
     relative -.1em
     font 115% $main-600
 
-h1 + p em:first-child
-  font-style normal
-  font 700
+h2 + ul
+  pl 0
+  mt 1em
+  li
+    mb .5em
 
-
-.small-image
-  max-width 6em
-
-.float-right
-  float right
-  m 0 0 3em 3em
-
-  @medium
-    mb 10em
-
-del
-  text-decoration none
-
-// content
-p del
-  font 600
-  font-style normal
-  bg $yellow
-  p 0 .3em .2em
-  radius 4px
-
-
-h1 del, h2 del
-  box-shadow 0 0 0 .12em $gray-700
-  transform scale(.95)
-  padding 0 .15em
-  inline-block
-  radius .1em
-  ml .1em
-
+.small
+  font 85% $gray
 
 .taller
   m 2em 0
@@ -71,47 +63,32 @@ h1 del, h2 del
   m 3em 0
   block
 
+.bordered img
+  border 1px solid $gray-300
+  padding 2em
+  radius 5px
 
-@large
-  .wide-right
-    mr -4em
-    img
-      max-width calc(100% + 4em)
+.clickable img:hover
+  box-shadow 0 0 0 2px $main
 
 @xlarge
-  .wider
-    m 2em -12em 2em -3.5rem
+  .wide
+    m 2em -7em 0 0
+    block
     img
-      max-width calc(100% + 12em)
-
-    figcaption
-      ml 3.5rem
+      max-width calc(100% + 7em)
 
 @small-
   pre
     font 1.1em
 
-.listbox-demo
-  bg /docs/img/stripes.jpg
-  padding 3.5em 20%
-  bg-size cover
-  height 29em
-  radius 8px
-  mb 1em
+.cols
+  gap 2em
+  > *
+    flex 1
+    mb 2em
+  img
+    mb 1em
 
-  .listbox
-    width 100%
-    input
-      bg white
-
-
-.compare-shot
-  transition transform .1s
-  m 3em 0
-  block
-
-  &:hover
-    filter brightness(110%)
-    transform scale(1.005)
-
-
+  @small
+    display flex

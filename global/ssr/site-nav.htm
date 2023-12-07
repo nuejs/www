@@ -1,15 +1,14 @@
 
-<!-- site top -->
-<section @name="site-top" class="dark site-top" translate="no">
-  <b>Released today <em>(14. Sep)</em></b> •
-  <a href="//github.com/nuejs" class="continue">GitHub</a>
-</section>
-
-
 <!-- master header -->
 <header @name="site-header" role="banner" class="site-header">
   <a href="/"><img :src="logo" class="logo"></a>
   <navi :items="mastnav" class="mastnav" suffix="/" :url="url"/>
+
+  <a class="badge" href="/blog/nuekit-beta/">
+    <b>Nuekit (beta) is out!</b>
+    <span>Learn more</span>
+  </a>
+
   <navi :items="subnav" class="subnav"/>
 </header>
 

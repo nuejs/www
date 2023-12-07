@@ -10,23 +10,15 @@ body
   bg-size 85%
 
 h1
-  mb 1em
-  + p:first-letter
-    font 5em 1 800 $main
-    m -.05em .12em -.2em -.13em
-    font-family georgia, garamond
-    float left
+  max-width 8em
+  font-size 3.7em !important
 
-article
-  > p, > h3
-    font 1.1em
-
-  h3
-    m 1.5em 0
-    a
-      none
+  em
+    font 900 underline
+    text-decoration-color $main
+    text-underline-offset 10px
 
 
 .signature
-  m 1em 0 0 -1.7em
-  width 17em
+  m 0 0 0 -1.7em
+  width 11em
