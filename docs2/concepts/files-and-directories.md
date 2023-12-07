@@ -6,7 +6,7 @@ Nue does not force you to any fixed directory structure so you can freely organi
   small: /img/folder-structures.png
   large: /img/folder-structures-big.png
   class: tall
-  width: 700
+  width: 600
   alt: Nue grows naturally from a simple landing page to a hybrid single/multi-page application.
 
 

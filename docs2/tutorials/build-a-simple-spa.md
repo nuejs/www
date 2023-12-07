@@ -1,12 +1,11 @@
 
-# Build a simple SPA with Nue
+# Build a simple single-page application with Nue
 In this tutorial, you’ll learn Nue's key features and benefits by building a fully-functioning single-page application (SPA), from zero to production.
 
 
 [media]
   small: /img/simple-spa.png
   large: /img/simple-spa-big.png
-  href: /@simple-blog
   caption: The final result of this tutorial
 
 
@@ -15,10 +14,10 @@ First install Nue, if not installed yet:
 
 ``` sh
 # With Bun (recommended)
-bun install --global nue
+bun install --global nuekit
 
 # With Node
-node install --global nue
+node install --global nuekit
 ```
 
 
@@ -204,7 +203,8 @@ Next, we create three reactive views with Nue's [template syntax](../reference/t
   </tr>
 </table>
 ```
-[View source @ GitHub]()
+
+[Users view @ GitHub](//github.com/nuejs/create-nue/blob/master/simple-app/users.nue#L2)
 
 
 #### Feedback View
@@ -218,7 +218,8 @@ Next, we create three reactive views with Nue's [template syntax](../reference/t
   </tr>
 </table>
 ```
-[View source @ GitHub]()
+
+[Feedback view @ GitHub](//github.com/nuejs/create-nue/blob/master/simple-app/users.nue#L10)
 
 
 #### Analytics view
@@ -235,7 +236,8 @@ Next, we create three reactive views with Nue's [template syntax](../reference/t
   <bar-chart :data="users" class="secondary chart"/>
 </section>
 ```
-[View source @ GitHub]()
+
+[Analytics view @ GitHub](//github.com/nuejs/create-nue/blob/master/simple-app/analytics.nue)
 
 
 Just like with the model, the goal here is similar: to keep the view layer as "dummy" as possible, unaware of the backend complexities like networking, authentication, and caching. They are accessible for UX developers who are experts on topics like accessibility, and interaction design.
@@ -306,7 +308,7 @@ Again, you can edit all the files and hot-reloading keeps working, even with the
 
 
 ## Add styling
-Now it's a good time to add styling for our views. For that, we create a new folder "style" and add a [bunch of CSS files](gh-link) in there. Then we turn it into a global folder so that all the styles are automatically included in our single-page app:
+Now it's a good time to add styling for our views. For that, we create a new folder "style" and add a [bunch of CSS files](//github.com/nuejs/create-nue/tree/master/simple-app/style) in there. Then we turn it into a global folder so that all the styles are automatically included in our single-page app:
 
 ``` yaml
 # file: site.yaml
@@ -349,7 +351,7 @@ Here is a slightly more advanced SPA example with 6,968 leads and 985 customers 
 
 The Readme link on the top/right corner takes you away from the SPA to a normal multi-page application, and the app router is seamlessly switched to a [page router](../concepts/client-side-navigation.html). Hitting the browser's back and forward button toggles between the two routing methods.
 
-Here is the [demo](/@simple-crm) and the [source code](gh-link) for this more advanced example. For inspiration.
+Here is the [demo](//nuejs.org/@simple-admin/) and the [source code](//github.com/nuejs/create-nue/tree/master/simple-crm) for this more advanced example. For inspiration.
 
 Enjoy!
 

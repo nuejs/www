@@ -1,22 +1,24 @@
 
-# Greatly Improved Developer Experience
+---
+main_class: h1-narrow
+---
+
+# Massively Improved Developer Experience
 
 ## Universal hot reloading
-Create entire websites without touching your browser
+If you need just one reason to use Nue, it's this one:
 
 [bunny-video]
   videoId: 18714305-d2f3-453d-83a9-0bd017166949
   poster: /img/hot-reload-hero.jpg
   class: wide
 
-
-[.subtle]
-  Make changes to your your content, layout, styling, or interactive islands and Nue magically keeps your browser in sync. [Learn more](../concepts/universal-hot-reloading.html)
+Make changes to your your content, layout, styling, or interactive islands and Nue magically keeps your browser in sync. You can build entire websites without touching your browser. [Learn more](../concepts/universal-hot-reloading.html)
 
 
 
 ## Write less code
-Thanks to Nue's [simple and standards-based](closer-to-standards.html) approach, you need less time and effort to build the same thing:
+Thanks to Nue's [simple, standards-based](closer-to-standards.html) approach, you need less time and effort to build the same thing:
 
 [.cols]
   [image-link src="/img/next-starter.png" class="clickable" width="350"]
@@ -31,12 +33,12 @@ Thanks to Nue's [simple and standards-based](closer-to-standards.html) approach,
 
   #### Nue blog template
 
-  [Live demo](/@nextjs-blog) • [Source Code](gh-link)
+  [Live demo](/@nextjs-blog) • [Source Code](//github.com/nuejs/create-nue/tree/master/nextjs-blog)
 
 [media]
   small: /img/less-to-code.png
   large: /img/less-to-code-big.png
-  caption: "Blog starter template: 5x less coding with Nue"
+  caption: "You need five times less code to build the official Next.js blog starter template. Thanks to Nue's simple syntax and separation of concerns."
 
 
 
@@ -46,7 +48,7 @@ Use the same, simple syntax and hot-reloading boost for both websites and single
 #### Simple Blog
 [Tutorial](../tutorials/build-a-simple-blog.html) /
 [Live demo](/@simple-blog) /
-[Source code](gh-link)
+[Source code](//github.com/nuejs/create-nue/tree/master/simple-blog)
 
 [media]
   small: /img/simple-blog.png
@@ -58,7 +60,7 @@ Use the same, simple syntax and hot-reloading boost for both websites and single
 
 [Tutorial](../tutorials/build-a-simple-spa.html) /
 [Live demo](/@simple-admin) /
-[Source code @ Github](gh-link)
+[Source code](//github.com/nuejs/create-nue/tree/master/simple-app)
 
 [media]
   small: /img/simple-spa.png
@@ -80,6 +82,7 @@ Nue is in order of magnitude faster than its cousins:
 [bunny-video]
   videoId: 0619cc14-56f3-43df-b2b1-ab8d9c23637c
   caption: Building identical blog template with Next.js takes in 12.29s
+  poster: thumbnail_41d30feb.jpg
   width: 650
 
 
@@ -90,7 +93,6 @@ With Nue, there is no fixed folder structure. Start with `index.md` and grow nat
   small: /img/folder-structures.png
   large: /img/folder-structures-big.png
   class: tall
-  width: 650
-
+  width: 600
 
 

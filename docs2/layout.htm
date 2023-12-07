@@ -1,36 +1,15 @@
 
-<script>
-  function capitalize(str) {
-    return str[0].toUpperCase() + str.slice(1).replaceAll('-', ' ')
-  }
-
-  function toUrl(cat, label, slug) {
-    if (cat == 'upcoming') return ''
-    if (!slug) slug = label.toLowerCase().replaceAll(' ', '-')
-    return `/docs2/${cat}/${slug}.html`
-  }
-
-  function createTopics(cat, labels) {
-    return labels.map(el => {
-      const [label, slug] = el.split(' | ')
-      return { url: toUrl(cat, label, slug), label }
-    })
-  }
-</script>
-
-<p @name="page-header" class="eyebrow">
-  { eyebrow }
-</p>
-
-
 <aside @name="area-header" class="sidebar">
 
-  <a href="/docs2/">Getting started</a>
+  <nav>
+    <a href="/docs2/" class="get-started { url == '/docs2/' && 'selected' }">Getting started</a>
+  </nav>
 
-  <details :for="el in items" open>
+  <details :for="el in items" class="cat-{ el.cat }" open>
     <summary>{ el.title }</summary>
     <nav>
-      <a :for="topic in el.topics" :href="topic.url" class="{ selected: topic.url == url }">
+      <a :for="topic in el.topics" :href="topic.url"
+        class="{ selected: topic.url == url }">
         { topic.label }
       </a>
     </nav>
@@ -51,6 +30,13 @@
   </script>
 </aside>
 
+<!-- eyebrow -->
+<p @name="page-header" class="eyebrow">
+  { eyebrow }
+</p>
+
+
+<!-- right sidebar  -->
 <aside @name="area-footer" class="aside">
 
   <nav>
@@ -61,3 +47,23 @@
   </nav>
 
 </aside>
+
+<script>
+  function capitalize(str) {
+    return str[0].toUpperCase() + str.slice(1).replaceAll('-', ' ')
+  }
+
+  function toUrl(cat, label, slug) {
+    if (cat == 'upcoming') return ''
+    if (!slug) slug = label.toLowerCase().replaceAll(' ', '-')
+    return `/docs2/${cat}/${slug}.html`
+  }
+
+  function createTopics(cat, labels) {
+    return labels.map(el => {
+      const [label, slug] = el.split(' | ')
+      return { url: toUrl(cat, label, slug), label }
+    })
+  }
+</script>
+

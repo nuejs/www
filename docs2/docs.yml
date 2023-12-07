@@ -50,18 +50,4 @@ cats:
     - Build a full website
     - Build a full SPA
 
-  nuejs:
-    - Intro
-    - Examples
-    - Getting started
-    - Component basics
-    - Server components
-    - Reactive components
-    - Isomorphic components
-    - Template syntax
-    - Event handlers
-    - Control flow
-    - Styling components
-
-
 

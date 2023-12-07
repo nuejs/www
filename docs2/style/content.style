@@ -3,6 +3,9 @@
   font 85% 700 uppercase 1px
   mt 1em
 
+.h1-narrow h1
+  max-width 12em
+
 article
   font 1.1em 1.6
 
@@ -11,10 +14,10 @@ article
 
   h1
     font 2.8em
-    mb .4em
+    mb .2em
 
     + p
-      font 1.3em
+      font 1.2em
 
   em
     font-style normal
@@ -25,7 +28,7 @@ article
     font-weight 400
 
   > h2
-    font 1.3em
+    font 1.2em
     mt 3em
 
   > h3
@@ -37,7 +40,7 @@ article
 
   > h4
     m 2em 0 .7em
-    font 105%
+    font 100%
 
   h3 code
     relative -.1em

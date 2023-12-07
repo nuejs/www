@@ -15,10 +15,10 @@ First install Nue, if not installed yet:
 
 ``` sh
 # With Bun (recommended)
-bun install --global nue
+bun install --global nuekit
 
 # With Node
-node install --global nue
+node install --global nuekit
 ```
 
 ## Create your first page

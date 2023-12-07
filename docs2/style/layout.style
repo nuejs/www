@@ -2,22 +2,43 @@
 body > *
   max-width 1300px
 
+.no-aside .aside
+  hidden
+
 main
   gap 4em
   flex
 
 .sidebar
-  font 95%
+  font 90%
+
+  @large
+    max-height 100vh
+    overflow scroll
+    position sticky
+    min-width 18em
+    border-right
+    m -5rem 0 0 -1em
+    p 1em 2em 5em 1em
+    flex .45
+    top 0
+
+
+  .get-started
+    font 500 #333
 
   details
     m 2em 0
 
   summary
-    font 600
+    font 95% 600
     pointer
 
+    &::marker
+      color $gray-300
+
     &:hover::marker
-      color $main
+      color black
 
   nav
     ml .6em
@@ -35,20 +56,11 @@ main
       bg $gray-50
 
   .selected
-    color white
-    bg $main
+    text-decoration none
+    font 500 #fff
+    bg #222
     default
 
-  @large
-    max-height 100vh
-    overflow scroll
-    position sticky
-    min-width 16em
-    border-right
-    m -5rem 0 0 -1em
-    p 1em 2em 2em 1em
-    flex .45
-    top 0
 
 article
   max-width 42em
@@ -126,3 +138,16 @@ article
 
 
 
+.cat-upcoming
+  border-top
+  pt 1em
+
+  nav
+    opacity .6
+    blur .5px
+  a
+    default
+
+  a:hover
+    background transparent !important
+    color $gray !important
