@@ -1,5 +1,5 @@
 
-button, [role=button]
+button, .button
   transition outline-width .1s
   font 90% 550 center
   color white
@@ -13,7 +13,7 @@ button, [role=button]
     outline-color $main-200
 
   &:hover
-    bg $main-800
+    bg $main-500
 
   &:active
     outline 3px solid $main-200
@@ -26,8 +26,11 @@ button, [role=button]
   &:active
     outline none
 
+.black
+  bg black
+  &:hover
+    bg #333
 
-/*
 .secondary
   box-shadow 0 0 0 1px $gray-300 inset
   color $gray-700
@@ -46,6 +49,6 @@ button, [role=button]
 button.small
   p .4em 1.2em
   color $gray-600
-*/
+
 
 

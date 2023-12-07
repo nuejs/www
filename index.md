@@ -6,18 +6,21 @@ include: [home, bunny/video]
 # The closer-to-standards web framework
 **Nue** is a newborn **Next.js** and **Astro** alternative with a *massively improved developer experience*. It may change the way you develop for web forever.
 
-[link to="/docs2/" class="button" "Get started"]
+[.cta]
+  [link to="/docs2/" class="button black" "Get started"]
+  [link to="/docs2/why-nue/developer-experience.html" class="button" "Why Nue"]
 
-[link to="/docs2/why-nue/developer-experience.html" class="button" "Why Nue"]
+[.subtle]
+  **One reason to try Nue**: Build entire websites without ever touching your browser.
 
 [bunny-video]
   videoId: 18714305-d2f3-453d-83a9-0bd017166949
-  caption: "One reason to try Nue: Build entire websites without ever touching your browser. "
   poster: /img/hot-reload-hero.jpg
   class: wide
 
 
 ## The Big Picture
+Ultimately, Nue becomes a simpler and more powerful alternative to **Vercel**, **Gatsby**, and **Netlify**.
 
 [media]
   small: /img/roadmap.png
@@ -58,8 +61,8 @@ include: [home, bunny/video]
     Simple alternative to *Vercel*, *Gatsby*, and *Netlify*
 
 [.info]
-  #### Status update (Nov 29, 2023)
-  🎁 **Nuekit is out before Christmas:** you can then create websites and single-page apps and enjoy the power of [universal hot-reloading](/why/#hot-reload).
+  #### Status update (Dec 02, 2023)
+  [Nuekit Beta is out now](/blog/nuekit-beta/) and the goal is to push out a solid, non-buggy release before Christmas. Fingers crossed 🤞
 
 
 ## Receive an email

@@ -6,6 +6,19 @@ body
   bg-pos -8em 3em
 
 
+// roadmap image
+.roadmap
+  m 1em 0 3em
+  block
+
+.subtle
+  m 0 0 .5em .2em
+  font 90% $gray
+  strong
+    color $gray-800
+
+
+
 .tools
   mb 3em
 
@@ -20,8 +33,9 @@ body
     box-shadow 0 1px 2em #0001
     p 1.5em 1.7em 2em
     radius 12px
-    border
+    border 1px
     m 0
+
 
   h3
     font 700 $main-600
@@ -37,6 +51,13 @@ body
   em
     font 600 normal #000
 
+  // completed
+  li:nth-child(-n + 2)
+    border 2px solid black
+
+    h3:before
+      content "✔️"
+      mr .3em
 
 .quotes
   column-width 17em

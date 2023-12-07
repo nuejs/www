@@ -8,7 +8,8 @@ h1
 
   + p
     font 1.5em 1.6
-    max-width 27em
+    max-width 25em
+    mb 1.6em
 
     em
       font 500 normal
@@ -22,13 +23,15 @@ h2
   mt 3em
 
   + p
-    font 1.2em
+    font 1.2em 1.6
+    max-width 24em
 
-// the image
-.roadmap
-  m 5em 0 3em
-  block
+.cta
+  font 140%
+  mb 3em
 
+  .button:first-child
+    mr .5em
 
 main .join
   mb 5em
