@@ -2,13 +2,9 @@
 main
   max-width $page-width
 
-  img:first-child
-    width 4em
-    none
-
   h2
-    mt 3em
-    font 1.8em
+    font 1.6em
+    mt 3.5em
 
 
   blockquote
@@ -20,9 +16,15 @@ main
       text-indent -.4em
       max-width 31em
 
+.tall
+  m 3em 0
+  block
+
 @large
-  .superwide
-    m 3em -8em
+  .wide
+    m 3em -5em
+    block
+
     img
-      max-width calc(100% + 16em)
+      max-width calc(100% + 10em)
       radius 4px

@@ -1,4 +1,5 @@
 
+/*
 body > .site-top
   min-width 100%
   font center
@@ -7,11 +8,27 @@ body > .site-top
 
   em
     font 90% 500 $gray-400 uppercase normal
+*/
+
+.badge
+  font 85% 600 $gray-700
+  radius 3px
+  p .3em 1.2em
+  bg $gray-50
+  border $gray-400
+
+  &:hover
+    bg white
+    border-color $gray-800
+
+  &:active
+    box-shadow 0 0 .2em #666 inset
+    border-color $gray
+    transform translateY(1px)
 
 .site-header
-  justify-content space-between
   max-width 1300px
-  align-items center
+  align-items flex-start
   py 2.4em
   mb 4em
   flex
@@ -40,6 +57,8 @@ nav > a
 .mastnav
   gap 1.5vw
   display flex
+  mr 2vw
+
   a
     p 0 .8em
     font nowrap
@@ -57,14 +76,13 @@ nav > a
   */
 
 .subnav
-  justify-content right
-  align-items center
-  width 120px
   display flex
+  ml auto
 
 // burger / mobile nav
 .burger
   line-height .7
+  ml auto
   none
 
   img

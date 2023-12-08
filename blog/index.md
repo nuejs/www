@@ -1,9 +1,11 @@
 
 ---
 area-header: false
+main_class: index-page
 include: [blog-index]
 ---
 
-# Be closer to standards:
+# Nue Blog
+Develop closer to Web standards
 
 [blog-index]

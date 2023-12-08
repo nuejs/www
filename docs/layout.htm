@@ -2,7 +2,7 @@
 <aside @name="area-header" class="sidebar">
 
   <nav>
-    <a href="/docs2/" class="get-started { url == '/docs2/' && 'selected' }">Getting started</a>
+    <a href="/docs/" class="get-started { url == '/docs/' && 'selected' }">Getting started</a>
   </nav>
 
   <details :for="el in items" class="cat-{ el.cat }" open>
@@ -56,7 +56,7 @@
   function toUrl(cat, label, slug) {
     if (cat == 'upcoming') return ''
     if (!slug) slug = label.toLowerCase().replaceAll(' ', '-')
-    return `/docs2/${cat}/${slug}.html`
+    return `/docs/${cat}/${slug}.html`
   }
 
   function createTopics(cat, labels) {

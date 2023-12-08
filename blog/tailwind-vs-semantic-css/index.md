@@ -2,7 +2,7 @@
 title: Tailwind vs Semantic CSS
 desc: Comparing two identically designed websites, their weight, amount of HTML and CSS, rendering speed, and best practices.
 og: img/og.jpg
-thumb: tw-thumb.jpg
+thumb: tw-thumb2.jpg
 date: 2023-10-23
 update: 2023-12-02
 include: syntax

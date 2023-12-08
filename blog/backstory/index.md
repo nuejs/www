@@ -2,7 +2,7 @@
 ---
 title: Nue Backstory
 desc: Why I'm building a complete frontend ecosystem from scratch
-thumb: backstory.png
+thumb: dx.jpg
 date: 2023-09-18
 ---
 

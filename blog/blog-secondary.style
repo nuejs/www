@@ -39,11 +39,11 @@
     figcaption
       font #000
 
-@xlarge
+@large
   .wider
-    m 2em -12em 2em -3.5rem
+    m 2em -7em 2em
     img
-      max-width calc(100% + 12em)
+      max-width calc(100% + 14em)
 
 @xlarge
   .super-wide
