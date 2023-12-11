@@ -9,7 +9,7 @@ class: no-aside
 ## System Requirements
 
 * [Bun 1.0.10](//bun.sh/) or later (recommended)
-* [Node.js 18.00](//nodejs.org/en)
+* [Node.js 18.00](//nodejs.org/en) or later
 
 
 ## Installation
@@ -24,14 +24,14 @@ You can verify the installation by running `nue --version`. If the output looks 
 
 
 ## Start with a template
-The easiest way to get started is to pick a half-baked template. To choose one, run:
+The easiest way to get started is to pick a template. To choose one, run:
 
 
 ``` sh
 bun create nue@latest
 ```
 
-After running the command you are asked to choose a project name and pick the template:
+After running the command you are asked to name your project directory and pick the template:
 
 
 [bunny-video]
@@ -39,13 +39,13 @@ After running the command you are asked to choose a project name and pick the te
   poster: thumbnail_bba479e9.jpg
   width: 500
 
-The following templates are available in [create-nue](//github.com/nuejs/create-nue) GitHub repository:
+The following templates are available in [create-nue](//github.com/nuejs/create-nue) repository:
 
-- *Skeleton website* —  Barebonoes site with two pages
+- *Skeleton website* —  Barebonoes site with two directories/pages
 - *Skeleton app* —  Primitive single-page application
-- *Hot-reload demo* — As seen on the [intro video](/)
-- *Simple blog* —  The [build a simple blog](tutorials/build-a-simple-blog.html) tutorial app
-- *Simple app* —  The [build a simple SPA](tutorials/build-a-simple-spa.html) tutorial app
+- *Hot-reload demo* — As seen on the front page [intro video](/)
+- *Simple blog* —  The tutorial app for ["Build a simple blog"](tutorials/build-a-simple-blog.html)
+- *Simple app* —  The tutorial app for ["Build a simple SPA"](tutorials/build-a-simple-spa.html)
 - *Simple CRM* —  A more complex single-page application. [View demo](/@simple-admin/)
 - *Empty directory* —  Start from scratch
 
@@ -53,13 +53,19 @@ The following templates are available in [create-nue](//github.com/nuejs/create-
 
 
 ## Running Nue with Node
-Nue has been developed with both Bun and Node. You can install Nue with `bun`, `pnpm`, `npm`, and `yarn` . And the executable runs with both engines. However, the default configuration for the executable is Bun. That is: the command line interface starts with the `#!/usr/bin/env bun` shebang. To run it with Node, you can do following:
+Nue works under both Bun and Node so you can alternatively install Nue with `pnpm`, `npm`, and `yarn`. For example:
+
+``` sh
+bun install nuekit --global
+```
+
+The default engine for Nue is Bun. That is: the command line interface starts with the `#!/usr/bin/env bun` shebang. To override this setting, and run Nue with Node, you can do following:
 
 ``` sh
 node $(which nue)
 ```
 
-The `which` command locates the nue executable, and starts it with node. Running `nue --version` should now output something like "Nue 0.2.0 / Node 21.2.0". You can create a shortcut to this with the `alias` command. For example:
+The `which` command locates the nue executable, and starts it with node. Running `node $(which nue) --version` should output something like "Nue 0.2.0 / Node 21.2.0". You can create a permantent shortcut to this command with `alias`. For example:
 
 ``` sh
 alias node-nue="node $(which nue)"

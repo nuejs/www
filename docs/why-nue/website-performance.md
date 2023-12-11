@@ -9,7 +9,8 @@ Nue takes a simple path to performance: load less stuff. Here are the assets loa
 [media]
   small: /img/less-to-load.png
   large: /img/less-to-load-big.png
-  class: wide
+  class: tall bordered
+  width: 500
 
 
 ## Instant page switches
@@ -67,7 +68,7 @@ Build faster sites with leaner CSS that are easy to inline
   small: /img/less-css.png
   large: /img/less-css-big.png
   caption: Amount of CSS loaded by the official Tailwind Spotlight template
-  class: wide
+  _class: wide
 
 
 

@@ -31,7 +31,7 @@ CSS-in-JS is trending now, but standards are forever. At some point, we'll all e
 [media]
   small: /img/tailwind-vs-semantic.jpg
   large: /img/tailwind-vs-semantic-big.jpg
-  class: wide
+  _class: wide
 
 
 [.cols.tall]

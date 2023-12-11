@@ -17,7 +17,7 @@ thumb: nuekit-thumb.jpg
 
 December 11, 2023 • Tero Piirainen
 # Announcing Nuekit
-Today I’m excited to share Nuekit: a new kind of static site generator and web application builder. It's a very different beast with a developer experience and overall performance unlike ever before.
+Today I’m excited to share Nuekit: a new kind of static site generator and web application builder. It's a very different beast than the other tools you see around. Particularly the developer experience and overall performance are on a whole new level.
 
 *You'll get universal hot-reloading for content, layout, styling, and reactive islands*. Client-side routing for both websites and single-page applications. Extreme overall minimalism and simplicity, next-level build times, and much more. Most importantly: Nuekit brings you closer to web standards so your websites and apps will stand the test of time.
 
@@ -113,12 +113,11 @@ Check out our [Getting Started guide](/docs/) to learn the details
   large: /img/roadmap-big.png
   class: tall
 
+Nue was first announced last September with [this backstory](/blog/backstory/). Only [Nue JS](//github.com/nuejs/nuejs) was available on GitHub, and the bigger picture was just an idea. Now, with today's Nuekit release, you can finally build real-world applications with Nue and see more clearly what the future holds.
+
+
 
 ## Thank you!
 Finally, I’d like to give a huge thanks to the [20+ developers](//github.com/nuejs/nuejs/graphs/contributors) who have participated in the early development of Nue JS. Your feedback has been essential in shaping Nue into the tool it is today. If you’re interested in getting involved please join the [Discussion @ Github](//github.com/nuejs/nuejs/discussions)
-
-
-
-
 
 

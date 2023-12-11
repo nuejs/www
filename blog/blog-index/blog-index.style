@@ -1,4 +1,12 @@
 
+.index-page h1
+  font 1.8em 700
+  letter-spacing -1px
+
+  + p
+    font 4em 900 #000 -.04em 1
+    max-width 8em
+
 .blog-entry
   align-items center
   font 1.2em
@@ -6,16 +14,21 @@
   mt 3em
   flex
 
+  h2
+    font 1.1em
+    mb .4em
+
   > img
     box-shadow 0 0 0 .6em $gray-100
     radius 8px
-    width 10em
+    width 9em
 
   p
-    font 95% 400 $gray 1.6
+    font 90% 400 $gray 1.5
     max-width 20em
     m -.2em 0 .8em
 
+  // author
   figure
     align-items center
     gap .5em
@@ -35,8 +48,16 @@
       &:before
         content "• "
 
+  // hover & active
+  img
+    grayscale
+
+  &:first-child img
+    filter none
+
   &:hover > img
     box-shadow 0 0 0 .5em white, 0 0 0 .6em $main
+    filter none
 
   &:active
     transform scale(.99)
