@@ -211,11 +211,17 @@ Because mastering CSS requires practice. It takes several failed attempts before
 
 The fact is that Tailwind's popularity will eventually fade. CSS-in-JS is trending now, but standards are forever. At some point, we'll all experience a "WTF moment" when looking at the tightly coupled Tailwind code.
 
-- - -
 
-## 🎁 Christmas is coming
-Nue is released before Christmas eve. Receive an email when that happens:
+### What is Nue?
+*Nue* is the umbrella term for all Nue-related projects. It's a rather ambitious project to build a simpler and more powerful alternative to services like *Vercel*, *Gatsby*, and *Nelify*.
 
+
+[media]
+  small: /img/roadmap2.png
+  large: /img/roadmap2-big.png
+  class: tall
+
+If you want, we can send you an email when a new milestone is reached:
 [join-list]
 
 

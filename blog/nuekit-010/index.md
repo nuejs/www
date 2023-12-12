@@ -1,17 +1,18 @@
 
 ---
 date: 2023-12-12
-og: /img/nuekit-hero-big.png
+og: /img/nuekit-hero-big.jpg
 include: [bunny/video, syntax]
-title: Announcing Nuekit 0.1.0
-release: nuekit 0.1.0
+title: Announcing Nuekit 0.1
+desc: A simple, minimalistic alternative to Next.js and Astro with universal hot-reloading and much more.
+release: nuekit 0.1
 thumb: nuekit-thumb.jpg
 ---
 
 
 [media]
-  small: /img/nuekit-hero.png
-  large: /img/nuekit-hero-big.png
+  small: /img/nuekit-hero.jpg
+  large: /img/nuekit-hero-big.jpg
   class: blog-hero
 
 
@@ -81,6 +82,7 @@ Nue is in order of magnitude faster than its cousins. An identical blogging site
 - [Standards-based development model](/docs/why-nue/closer-to-standards.html)
 - [Improved website performance](/docs/why-nue/website-performance.html)
 
+
 ### New, beautiful documentation area
 With lots of explainer images and -videos:
 
@@ -110,15 +112,24 @@ Check out our [Getting Started guide](/docs/) to learn the details
 
 
 [media]
-  small: /img/roadmap.png
-  large: /img/roadmap-big.png
+  small: /img/roadmap2.png
+  large: /img/roadmap2-big.png
   class: tall
 
 Nue was first announced last September with [this backstory](/blog/backstory/). Only [Nue JS](//github.com/nuejs/nue) was available on GitHub, and the bigger picture was just an idea. Now, with today's Nuekit release, you can finally build real-world applications with Nue and see more clearly what the future holds.
 
 
+### Monorepo
+The "nuejs" GitHub repository was renamed to [nue](//github.com/nuejs/nue) and has been converted to a monrepo, now holding both [nuejs](//github.com/nuejs/nue/tree/master/packages/nuejs) and [nuekit](//github.com/nuejs/nue/tree/master/packages/nuekit) packages. This monorepo will hold all the upcoming Nue-related projects like *Nuemark* and *Nue CSS*.
+
+
+If you want, we can send you an email when a new milestone is reached:
+[join-list]
 
 ## Thank you!
 Finally, I’d like to give a huge thanks to the [20+ developers](//github.com/nuejs/nue/graphs/contributors) who have participated in the early development of Nue JS. Your feedback has been essential in shaping Nue into the tool it is today. If you’re interested in getting involved please join the [Discussion @ Github](//github.com/nuejs/nue/discussions)
 
 
+### Discussion @ HN
+
+https://news.ycombinator.com/item?id=38611048

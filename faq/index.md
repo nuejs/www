@@ -12,8 +12,8 @@ include: [longform, permlink]
 
 
 [media]
-  small: /img/roadmap.png
-  large: /img/roadmap-big.png
+  small: /img/roadmap2.png
+  large: /img/roadmap2-big.png
   class: tall
 
 

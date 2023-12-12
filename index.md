@@ -23,8 +23,8 @@ include: [home, bunny/video]
 The goal of Nue is to become a simpler and more powerful alternative to **Vercel**, **Gatsby**, and **Netlify**.
 
 [media]
-  small: /img/roadmap.png
-  large: /img/roadmap-big.png
+  small: /img/roadmap2.png
+  large: /img/roadmap2-big.png
   class: roadmap
   width: 850
 

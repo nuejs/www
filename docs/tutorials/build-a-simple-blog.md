@@ -83,9 +83,9 @@ Let's add a new file to our project folder called "blog.css", which will take ca
 <link href="/blog.css" rel="stylesheet">
 ```
 
-Now, as you edit either of your files (blog.css or index.md) on your text editor you can see the browser magically morphing with your changes:
+Now, as you edit either of your files (blog.css or index.md) on your text editor you can see the browser magically morphing with your changes.
 
-! video: completing the page the first page
+// TODO: video: completing the page the first page
 
 Instead of making a full reload, Nue uses a technique called **DOM diffing** to only update the parts on the page that have changed. Be it the content, metadata, styling, global headers and footers, page layouts, or reactive components.
 

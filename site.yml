@@ -1,9 +1,9 @@
 
 title: "Nue: The closer-to-standards web framework"
-desc: Nue is a simple React, Next.js, Vite, and Astro alternative focusing on minimalism, separation of concerns, and semantic web design.
+desc: Simple Next.js and Astro alternative with universal hot-reloading, hybrid client-side routing, extremely fast build times, and more.
 logo: /global/logo/logo.png
 favicon: /global/logo/stack.svg
-og: /global/img/og.jpg
+og: /img/og.jpg
 baseurl: https://nuejs.org
 theme-color: #00C2FF
 
