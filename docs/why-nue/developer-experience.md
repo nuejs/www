@@ -1,5 +1,6 @@
 
 ---
+title: Why Nue / Improved developer experience
 main_class: h1-narrow
 ---
 

@@ -1,8 +1,7 @@
----
-page_class: hmr-page
----
 
-# Universal hot-reloading
+---
+title: Universal hot-reloading / Nue docs
+---
 
 Nue provides a powerful hot-reloading utility that automatically updates your page on the browser as you edit your content, styling, layout, data files, or reactive components.
 

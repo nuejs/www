@@ -1,5 +1,6 @@
 
 ---
+title: Getting started with Nue / Nue docs
 class: no-aside
 ---
 
@@ -20,7 +21,7 @@ Nue comes with a [command line interface](reference/command-line-interface.html)
 bun install nuekit --global
 ```
 
-You can verify the installation by running `nue --version`. If the output looks something like "Nue 0.2.0 / Bun 1.0.15", you can start building apps with Nue. You can either start from scratch with the help of a [tutorial](tutorials/build-a-simple-blog.html), or you can start with a template:
+You can verify the installation by running `nue --version`. If the output looks something like "Nue 0.1.2 / Bun 1.0.15", you can start building apps with Nue. You can either start from scratch with the help of a [tutorial](tutorials/build-a-simple-blog.html), or you can start with a template:
 
 
 ## Start with a template
@@ -28,11 +29,14 @@ The easiest way to get started is to pick a template. To choose one, run:
 
 
 ``` sh
-bun create nue@latest
+pnpm create nue@latest
 ```
 
-After running the command you are asked to name your project directory and pick the template:
+[.info.small.tall]
+  #### Note
+  We had too many issues with `bun create` so we are currently recommending `pnpm create`
 
+After running the command you are asked to name your project directory and pick the template:
 
 [bunny-video]
   videoId: b8883d69-8c79-4751-9139-6128d37d35ce
@@ -56,7 +60,7 @@ The following templates are available in [create-nue](//github.com/nuejs/create-
 Nue works under both Bun and Node so you can alternatively install Nue with `pnpm`, `npm`, and `yarn`. For example:
 
 ``` sh
-bun install nuekit --global
+pnpm install nuekit --global
 ```
 
 The default engine for Nue is Bun. That is: the command line interface starts with the `#!/usr/bin/env bun` shebang. To override this setting, and run Nue with Node, you can do following:
@@ -65,7 +69,7 @@ The default engine for Nue is Bun. That is: the command line interface starts wi
 node $(which nue)
 ```
 
-The `which` command locates the nue executable, and starts it with node. Running `node $(which nue) --version` should output something like "Nue 0.2.0 / Node 21.2.0". You can create a permantent shortcut to this command with `alias`. For example:
+The `which` command locates the nue executable, and starts it with node. Running `node $(which nue) --version` should output something like "Nue 0.1.2 / Node 21.2.0". You can create a permantent shortcut to this command with `alias`. For example:
 
 ``` sh
 alias node-nue="node $(which nue)"

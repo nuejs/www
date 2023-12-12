@@ -1,4 +1,7 @@
 
+---
+title: Content collections / Nue docs
+---
 
 # Content collections
 A content collection is an array of content files, where each entry holds information about the content such as the title, description, and URL. These collections are used to render content lists such as this one on the [blog example](/@simple-blog)

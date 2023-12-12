@@ -1,4 +1,8 @@
 
+---
+title: Layout components / Nue docs
+---
+
 # Layout components
 Nue comes with a flexible layout system that works as follows:
 

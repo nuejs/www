@@ -1,4 +1,8 @@
 
+---
+title: Files and directories / Nue docs
+---
+
 # Files and directories
 Nue does not force you to any fixed directory structure so you can freely organize your website and its files. You can, for example, start small with just a landing page and grow organically as you need more features:
 

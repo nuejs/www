@@ -1,6 +1,6 @@
 
 ---
-title: Nue template syntax
+title: Nue template syntax / Nue docs
 ---
 
 # Nue template syntax

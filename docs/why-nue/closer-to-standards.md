@@ -1,4 +1,8 @@
 
+---
+title: Why Nue / Work closer to standards
+---
+
 # Standards are forever
 Stand the test of time by working closer to web standards
 

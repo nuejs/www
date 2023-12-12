@@ -1,4 +1,8 @@
 
+---
+title: Tutorial / Build a simple SPA with Nue
+---
+
 # Build a simple single-page application with Nue
 In this tutorial, you’ll learn Nue's key features and benefits by building a fully-functioning single-page application (SPA), from zero to production.
 

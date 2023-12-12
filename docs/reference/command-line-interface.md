@@ -1,4 +1,8 @@
 
+---
+title: Command line interface / Nue docs
+---
+
 # Command line interface
 The command line interface documents itself with a `--help` option:
 

@@ -1,6 +1,7 @@
+
 ---
+title: Configuration options / Nue docs
 page_class: reference
-body_class: no-aside
 ---
 
 # Configuration options

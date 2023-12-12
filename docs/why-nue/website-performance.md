@@ -1,4 +1,8 @@
 
+---
+title: Why Nue / Improved website performance
+---
+
 # Website performance
 Nue is fast by default. It's almost impossible to build a slow website with Nue.
 

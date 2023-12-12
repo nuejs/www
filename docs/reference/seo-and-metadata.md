@@ -1,4 +1,8 @@
 
+---
+title: SEO and metadata / Nue docs
+---
+
 
 # SEO and metadata
 Nue has a simple, hierarchical system for defining metadata to your `<head>` tag for better discoverability for search engines.

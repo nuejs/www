@@ -1,4 +1,8 @@
 
+---
+title: JavaScript and TypeScript Modules / Nue docs
+---
+
 # JavaScript & TypeScript Modules
 
 While the majority of the JavaScript comes in the form of [reactive islands](reactive-islands.html), there are still places where plain JavaScript and TypeScript files are beneficial:

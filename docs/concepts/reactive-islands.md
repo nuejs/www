@@ -1,4 +1,7 @@
 
+---
+title: Reactive islands / Nue docs
+---
 
 # Reactive islands
 Reactive Island is an interactive UI component on an otherwise static HTML page.

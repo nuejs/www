@@ -1,5 +1,6 @@
 
 ---
+title: Application router / Nue docs
 class: reference
 ---
 

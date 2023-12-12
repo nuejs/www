@@ -1,4 +1,8 @@
 
+---
+title: Client-side navigation / Nue docs
+---
+
 # Client-side navigation
 Nue supports near-instant, client-side navigation between two pages. This means that the page transition happens using JavaScript, which is faster than the default navigation done by the browser
 

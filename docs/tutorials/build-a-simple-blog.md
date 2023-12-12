@@ -1,4 +1,7 @@
 
+---
+title: Tutorial / Build a simple blog with Nue
+---
 
 # Build a simple blog with Nue
 In this tutorial, you’ll see Nue's key features and benefits by building a fully functioning blog, from zero to production website.
