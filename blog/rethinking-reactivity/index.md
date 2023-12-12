@@ -335,8 +335,10 @@ Re-rendering _mutates_ the attributes, elements, and text nodes in place. No DOM
 That's Nue reactivity in short.
 
 [csp]: //developer.mozilla.org/en-US/docs/Web/HTTP/CSP
-[for]: //github.com/nuejs/nuejs/blob/master/src/for.js
-[if]:  //github.com/nuejs/nuejs/blob/master/src/if.js
+[for]: //github.com/nuejs/nue/blob/master/packages/nuejs/src/browser/for.js
+[if]:  //github.com/nuejs/nue/blob/master/packages/nuejs/src/browser/if.js
+
+
 
 ## Keeping things small
 The compiled Nue code is very small: only like ~1.2x larger than the HTML-based source code. This makes Nue applications the smallest on the market.

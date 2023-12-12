@@ -26,7 +26,7 @@ The goal of Nue is to become a simpler and more powerful alternative to **Vercel
   small: /img/roadmap.png
   large: /img/roadmap-big.png
   class: roadmap
-  width: 700
+  width: 850
 
 
 [.tools]
@@ -61,7 +61,7 @@ The goal of Nue is to become a simpler and more powerful alternative to **Vercel
     Simple alternative to *Vercel*, *Gatsby*, and *Netlify*
 
 [.info]
-  #### Status update (Dec 11, 2023)
+  #### Status update (Dec 12, 2023)
   [Nuekit is out now](/blog/nuekit-010/) and the goal is to push out a solid, non-buggy release before Christmas. Fingers crossed 🤞
 
 
@@ -111,7 +111,7 @@ When a new milestone is reached:
     from: hn
 
   - user: darkhorse007
-    url: //github.com/nuejs/nuejs/discussions/1#discussioncomment-7042460
+    url: //github.com/nuejs/nue/discussions/1#discussioncomment-7042460
     text: This is surprisingly good news for the frontend. I'm looking forward to the release of Nue's entire ecosystem.
     from: gh
 
@@ -142,7 +142,7 @@ When a new milestone is reached:
 
   - user: edimoldovan
     text: Great job with Nue, you are hitting many of the pain points I had with the frontend tooling.
-    url: //github.com/nuejs/nuejs/discussions/43#discussion-5657161
+    url: //github.com/nuejs/nue/discussions/43#discussion-5657161
     from: gh
 
   - user: OsrsNeedsf2P

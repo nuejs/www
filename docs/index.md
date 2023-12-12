@@ -9,7 +9,7 @@ class: no-aside
 ## System Requirements
 
 * [Bun 1.0.10](//bun.sh/) or later (recommended)
-* [Node.js 18.00](//nodejs.org/en) or later
+* [Node.js 18.00](//nodejs.org/) or later
 
 
 ## Installation
@@ -81,7 +81,7 @@ Here's [Nue VS code extension](https://marketplace.visualstudio.com/items?itemNa
 
 
 ### Proplems?
-Please post an [issue](//github.com/nuejs/nuejs/issues) if Nue does not work on your environment.
+Please post an [issue](//github.com/nuejs/nue/issues) if Nue does not work on your environment.
 
 
 

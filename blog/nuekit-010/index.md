@@ -1,6 +1,6 @@
 
 ---
-date: 2023-12-11
+date: 2023-12-12
 og: /img/nuekit-hero-big.png
 include: [bunny/video, syntax]
 title: Announcing Nuekit 0.1.0
@@ -15,7 +15,8 @@ thumb: nuekit-thumb.jpg
   class: blog-hero
 
 
-December 11, 2023 • Tero Piirainen
+December 12, 2023 • Tero Piirainen
+
 # Announcing Nuekit
 Today I’m excited to share Nuekit: a new kind of static site generator and web application builder. It's a very different beast than the other tools you see around. Particularly the developer experience and overall performance are on a whole new level.
 
@@ -113,11 +114,11 @@ Check out our [Getting Started guide](/docs/) to learn the details
   large: /img/roadmap-big.png
   class: tall
 
-Nue was first announced last September with [this backstory](/blog/backstory/). Only [Nue JS](//github.com/nuejs/nuejs) was available on GitHub, and the bigger picture was just an idea. Now, with today's Nuekit release, you can finally build real-world applications with Nue and see more clearly what the future holds.
+Nue was first announced last September with [this backstory](/blog/backstory/). Only [Nue JS](//github.com/nuejs/nue) was available on GitHub, and the bigger picture was just an idea. Now, with today's Nuekit release, you can finally build real-world applications with Nue and see more clearly what the future holds.
 
 
 
 ## Thank you!
-Finally, I’d like to give a huge thanks to the [20+ developers](//github.com/nuejs/nuejs/graphs/contributors) who have participated in the early development of Nue JS. Your feedback has been essential in shaping Nue into the tool it is today. If you’re interested in getting involved please join the [Discussion @ Github](//github.com/nuejs/nuejs/discussions)
+Finally, I’d like to give a huge thanks to the [20+ developers](//github.com/nuejs/nue/graphs/contributors) who have participated in the early development of Nue JS. Your feedback has been essential in shaping Nue into the tool it is today. If you’re interested in getting involved please join the [Discussion @ Github](//github.com/nuejs/nue/discussions)
 
 

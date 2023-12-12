@@ -22,12 +22,12 @@ footnav:
   - label: Backstory
     url: /blog/backstory/
   - img: /global/icons/github.svg
-    url: https://github.com/nuejs/nuejs
+    url: https://github.com/nuejs/nue
     class: octocat
 
 subnav:
   - img: /global/icons/github.svg
-    url: https://github.com/nuejs/nuejs
+    url: https://github.com/nuejs/nue
     class: octocat
   - img: /global/icons/menu.svg
     hash: mobile-nav
