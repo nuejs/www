@@ -3,6 +3,7 @@
 title: Universal hot-reloading / Nue docs
 ---
 
+# Universal hot-reloading
 Nue provides a powerful hot-reloading utility that automatically updates your page on the browser as you edit your content, styling, layout, data files, or reactive components.
 
 [bunny-video]
