@@ -41,3 +41,12 @@ main .join
 
   button
     font 105%
+
+
+@small-
+  h1
+    font 2.5em
+    + p
+      font 1.3em
+  .cta
+    font 100%
