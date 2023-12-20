@@ -21,7 +21,7 @@ First install Nue, if not installed yet:
 bun install --global nuekit
 
 # With Node
-node install --global nuekit
+pnpm install --global nuekit
 ```
 
 
