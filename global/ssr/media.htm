@@ -1,7 +1,7 @@
 
 <a @name="media" :id="id" class="figure { class } { clickable: href }" :href="href">
 
-  <picture :style="bg">
+  <picture>
     <source :for="el in sources" :srcset="el.src" :media="el.media" :type="el.type">
     <img loading="lazy" :alt="caption" fetchpriority="low" :src="small || large" :width="width">
   </picture>

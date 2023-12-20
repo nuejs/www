@@ -97,7 +97,6 @@ body
 .hero-quote
   font 1.051rem
   background none
-  width 50%
   max-width 35em
   pt .5em
   m 1.5em 0 3em
@@ -112,4 +111,7 @@ body
   a
     color black
     font 1.2em
+
+  @medium
+    width 50%
 

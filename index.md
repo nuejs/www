@@ -23,8 +23,8 @@ include: [home, bunny/video]
 The goal of Nue is to become a simpler and more powerful alternative to **Vercel**, **Gatsby**, and **Netlify**.
 
 [media]
-  small: /img/roadmap2.png
-  large: /img/roadmap2-big.png
+  small: /img/roadmap3.png
+  large: /img/roadmap3-big.png
   class: roadmap
   width: 850
 
@@ -56,17 +56,17 @@ The goal of Nue is to become a simpler and more powerful alternative to **Vercel
     Themable alternative to *Tailwind-*, *Next-*, and *Astro* templates
 
   * ### Nue Cloud
-    Easy host for Nue-powered websites and webapps.
+    Easy hosting for Nue-powered websites and webapps.
 
-    Simple alternative to *Vercel*, *Gatsby*, and *Netlify*
+    Radically simpler alternative to *Vercel*, *Gatsby*, and *Netlify*
 
 [.info]
-  #### Status update (Dec 12, 2023)
-  [Nuekit is out now](/blog/nuekit-010/) and the goal is to push out a solid, non-buggy release before Christmas. Fingers crossed 🤞
+  #### Status update (Dec 17, 2023)
+  [Nuekit is out!](/blog/nuekit-010/) — Aiming to push 0.2 out before Christmas, but the time and focus is now on Nuemark.
 
 
 ## Receive an email
-When a new milestone is reached:
+When the next milestone is reached:
 [join-list]
 
 

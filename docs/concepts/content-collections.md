@@ -27,13 +27,11 @@ Content information is stored in the "front matter" of each Markdown file. For e
 
 In addition to these user-defined properties, Nue provides the following system properties for each content entry:
 
-[table]
-  head: property name | example
-  rows:
-    - url    | /docs/glossary/copyleft.html
-    - dir    | docs/glossary
-    - slug   | copyleft.html
-    - appdir | docs
+[.reference]
+  * *`url`* "/docs/glossary/copyleft.html" (example)
+  * *`dir`* "docs/glossary"
+  * *`slug`* "copyleft.html"
+  * *`appdir`* "docs"
 
 // Note: if you enable [pretty_urls]() configuration variable the URL will be "/docs/glossary/copyleft" and the slug will be "copyleft".
 

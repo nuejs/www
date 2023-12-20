@@ -38,5 +38,19 @@ td:first-child
       color $main
 
 
-.reference .level-3
-  none
+.reference
+  .level-3
+    none
+
+  > ul
+    p 0
+    font 90% $gray
+
+    em
+      inline-block
+      width 6em
+
+  li
+    list-style none
+    border-bottom
+    pb .4em
