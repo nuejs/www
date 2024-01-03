@@ -41,7 +41,7 @@ page_router: true
 
 
 ## Cache- friendly
-Nue defaults to [unbundled distribution](../concepts/js-modules#unbundled) so only the files that have changed are loaded from the server. Others remain in the cache.
+Nue defaults to [unbundled distribution](../concepts/js-modules.html#unbundled) so only the files that have changed are loaded from the server. Others remain in the cache.
 
 [media]
   small: /img/cache-friendly.png
