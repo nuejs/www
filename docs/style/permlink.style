@@ -1,0 +1,19 @@
+// permlinks
+h2[id], h3[id]
+  position relative
+  scroll-margin-top 1.1em
+
+  @medium-
+    ml 1em
+
+  [title]
+    absolute 0 -1em
+    color $main
+
+    &:hover
+      color $main-600
+
+    &:before
+      content "#"
+      top 0
+

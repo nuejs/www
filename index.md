@@ -20,7 +20,7 @@ include: [home, bunny/video]
 
 
 ## The Big Picture
-The goal of Nue is to become a simpler and more powerful alternative to **Vercel**, **Gatsby**, and **Netlify**.
+The ultimate goal of Nue is to build an easier, yet more powerful alternative to **Vercel**, **Gatsby**, and **Netlify**.
 
 [media]
   small: /img/roadmap3.png
@@ -46,9 +46,9 @@ The goal of Nue is to become a simpler and more powerful alternative to **Vercel
     Rich, human alternative to *Markdown*, *MDX* and *Markdoc*
 
   * ### Nue CSS
-    Bring back the power of extrenal, cascaded styling.
+    Harness the raw power of minimal, semantic CSS
 
-    Standards-based alternative to *Tailwind* and other *CSS-in-JS* libs
+    Next-gen alternative for *Tailwind* and *CSS-in-JS*
 
   * ### Nue Templates
     The easiest way to create a modern, themable site.
@@ -61,8 +61,8 @@ The goal of Nue is to become a simpler and more powerful alternative to **Vercel
     Radically simpler alternative to *Vercel*, *Gatsby*, and *Netlify*
 
 [.info]
-  #### Status update (Dec 17, 2023)
-  [Nuekit is out!](/blog/nuekit-010/) — Aiming to push 0.2 out before Christmas, but the time and focus is now on Nuemark.
+  #### Status update (Jan 02, 2024)
+  [Nuekit is out](/blog/nuekit-010/) — Nuekit is released mid- January 2024.
 
 
 ## Receive an email

@@ -1,7 +1,7 @@
 
 ---
 title: Nue FAQ
-include: [longform, permlink]
+include: [permlink]
 # inline_css: true
 ---
 
