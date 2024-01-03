@@ -14,7 +14,7 @@ If you need just one reason to use Nue, it's this one:
   poster: /img/hot-reload-hero.jpg
   class: wide
 
-Make changes to your your content, layout, styling, or interactive islands and Nue magically keeps your browser in sync. You can build entire websites without touching your browser. [Learn more](../concepts/universal-hot-reloading.html)
+Make changes to your content, layout, styling, or interactive islands and Nue magically keeps your browser in sync. You can build entire websites without touching your browser. [Learn more](../concepts/universal-hot-reloading.html)
 
 
 
