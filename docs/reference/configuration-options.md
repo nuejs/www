@@ -28,7 +28,7 @@ Specifies files that should be bundled so that the imported dependencies are *in
 Sets the `<body :class="class">` attribute in the default HTML layout for page-specific CSS rules.
 
 ### dist
-The output directory. The default is .`dist/dev` for the development version and `.dist/prod` for the minified production version.
+The output directory. The default is `.dist/dev` for the development version and `.dist/prod` for the minified production version.
 
 ### content_collection
 This is a directory name for a [content collection](../concepts/content-collections.html). Setting this to "posts" makes all the Markdown pages and their metadata available as a looped array for your template files. Good for making blog/docs indexes.

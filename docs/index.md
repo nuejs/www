@@ -41,7 +41,7 @@ After running the command you are asked to name your project directory and pick 
 
 The following templates are available in [create-nue](//github.com/nuejs/create-nue) repository:
 
-- *Skeleton website* —  Barebonoes site with two directories/pages
+- *Skeleton website* —  Barebones site with two directories/pages
 - *Skeleton app* —  Primitive single-page application
 - *Hot-reload demo* — As seen on the front page [intro video](/)
 - *Simple blog* —  The tutorial app for ["Build a simple blog"](tutorials/build-a-simple-blog.html)
@@ -60,13 +60,13 @@ Nue works under both Bun and Node so you can alternatively install Nue with `pnp
 pnpm install nuekit --global
 ```
 
-The default engine for Nue is Bun. That is: the command line interface starts with the `#!/usr/bin/env bun` shebang. To override this setting, and run Nue with Node, you can do following:
+The default engine for Nue is Bun. That is: the command line interface starts with the `#!/usr/bin/env bun` shebang. To override this setting, and run Nue with Node, you can do the following:
 
 ``` sh
 node $(which nue)
 ```
 
-The `which` command locates the nue executable, and starts it with node. Running `node $(which nue) --version` should output something like "Nue 0.1.5 / Node 21.2.0". You can create a permantent shortcut to this command with `alias`. For example:
+The `which` command locates the nue executable, and starts it with node. Running `node $(which nue) --version` should output something like "Nue 0.1.5 / Node 21.2.0". You can create a permanent shortcut to this command with `alias`. For example:
 
 ``` sh
 alias node-nue="node $(which nue)"
@@ -77,11 +77,11 @@ To make the above command permanent you should store the alias to your `~/.bashr
 
 
 ### VS Code Extension
-Here's [Nue VS code extension](https://marketplace.visualstudio.com/items?itemName=yaoyuanzhang.nue&ssr=false) for Visual Studio Code users (optional)
+Here's [Nue VS code extension](https://marketplace.visualstudio.com/items?itemName=yaoyuanzhang.nue&ssr=false) for Visual Studio Code users (optional).
 
 
 
-### Proplems?
+### Problems?
 Please post an [issue](//github.com/nuejs/nue/issues) if Nue does not work on your environment.
 
 
