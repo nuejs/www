@@ -1,10 +1,7 @@
 
-
-body
-  bg /home/img/grid.svg no-repeat
-  bg-size 80%
-  bg-pos -8em 3em
-
+#vision
+  font 2.5em 800
+  mt 2em
 
 // roadmap image
 .roadmap
@@ -18,6 +15,13 @@ body
     color $gray-800
 
 
+.info
+  a:first-child
+    font 105% 600
+
+  a:last-child
+    text-decoration-color $gray-400
+    color inherit
 
 .tools
   mb 3em
@@ -31,28 +35,37 @@ body
 
   li
     box-shadow 0 1px 2em #0001
+    display flex
+    flex-direction column
     p 1.5em 1.7em 2em
     radius 12px
     border 1px
     m 0
 
+    > :last-child
+      border-top 2px dashed
+      margin-top auto
+      font 85%
+      pt .7em
+
+      a
+        display block
+        mt 1em
+        font 110% 600
 
   h3
     font 700 $main-600
+
   p
     font 400 $gray
-    max-width 16em
+    max-width 14em
 
-  p + p
-    border-top 2px dashed
-    font 85%
-    pt .7em
 
   em
     font 600 normal #000
 
   // completed
-  li:nth-child(-n + 2)
+  li:nth-child(-n + 3)
     border 2px solid black
 
     h3:before

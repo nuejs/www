@@ -4,7 +4,7 @@ button, .button
   font 90% 550 center
   color white
   radius 4px
-  bg $main-600
+  bg $gray-800
   p .8em 1.8em
   border 0
   pointer
@@ -13,7 +13,7 @@ button, .button
     outline-color $main-200
 
   &:hover
-    bg $main-500
+    bg black
 
   &:active
     outline 3px solid $main-200
@@ -26,24 +26,21 @@ button, .button
   &:active
     outline none
 
-.black
-  bg black
-  &:hover
-    bg #333
 
 .secondary
-  box-shadow 0 0 0 1px $gray-300 inset
-  color $gray-700
-  bg white
+  box-shadow 0 0 0 1px $gray inset
+  color $gray-800
+  bg transparent
 
   &:focus-visible
     outline-color $gray-200
 
   &:hover
-    bg $gray-50
+    bg #fff7
+    color black
 
   &:active
-    outline 3px solid $gray-100
+    outline 3px solid $main-100
     bg white
 
 button.small

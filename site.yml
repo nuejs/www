@@ -1,7 +1,7 @@
 
 title: "Nue: The closer-to-standards web framework"
 desc: Simple Next.js and Astro alternative with universal hot-reloading, hybrid client-side routing, extremely fast build times, and more.
-logo: /global/logo/logo.png
+logo: /img/logo.png
 favicon: /global/logo/stack.svg
 og: /img/og.jpg
 baseurl: https://nuejs.org
@@ -12,13 +12,18 @@ icons: /global/icons
 site-top: false
 
 mastnav:
+  - FAQ
   - Docs
   - Blog
 
+banner:
+  label: Nuemark is here!
+  url: /blog/introducing-nuemark/
+
 footnav:
+  - FAQ
   - Docs
   - Blog
-  - FAQ
   - label: Backstory
     url: /blog/backstory/
   - img: /global/icons/github.svg

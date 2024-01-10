@@ -3,8 +3,8 @@
 title: Why Nue / Improved website performance
 ---
 
-# Website performance
-Nue is fast by default. It's almost impossible to build a slow website with Nue.
+# Extreme performance
+It's impossible to build a slow website with Nue
 
 
 ## Load less resources
@@ -27,17 +27,22 @@ Nue provides instant client-side navigation for websites and single-page applica
 
 [View demo](/@simple-blog) • [Learn the details](../concepts/client-side-navigation.html)
 
-## Simple performance optimization
-Nue offers simple configuration options for even faster performance:
 
-``` yaml
-inline_css: true
-prefetch_global_css: true
-preload_images: [ my-hero.webp ]
-page_router: true
-```
 
-[Learn the details](../concepts/performance-optimization.html)
+
+## Significantly faster build times
+Nue is in order of magnitude faster than its cousins:
+
+[bunny-video]
+  videoId: 45b73e3a-3edd-47af-bcd8-49039496b107
+  caption: Building blog template with Nue in 39ms ¯\_(ツ)_/¯
+  width: 650
+
+[bunny-video]
+  videoId: 0619cc14-56f3-43df-b2b1-ab8d9c23637c
+  caption: Building identical blog template with Next.js takes in 12.29s
+  poster: thumbnail_41d30feb.jpg
+  width: 650
 
 
 ## Cache- friendly

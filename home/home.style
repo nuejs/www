@@ -2,14 +2,16 @@
 h1
   max-width 10em
   mb .2em
+  font capitalize
 
   @large
-    font 4.3em
+    font 5em
 
   + p
-    font 1.5em 1.6
-    max-width 25em
-    mb 1.6em
+    font 1.6
+    font-size calc(1.2em + 1vw)
+    max-width 20em
+    mb 1.2em
 
     em
       font 500 normal
@@ -24,14 +26,14 @@ h2
 
   + p
     font 1.2em 1.6
-    max-width 24em
+    max-width 32em
 
 .cta
-  font 140%
+  font 135%
   mb 3em
 
   .button:first-child
-    mr .5em
+    mr .4em
 
 main .join
   mb 5em
@@ -41,12 +43,3 @@ main .join
 
   button
     font 105%
-
-
-@small-
-  h1
-    font 2.5em
-    + p
-      font 1.3em
-  .cta
-    font 100%

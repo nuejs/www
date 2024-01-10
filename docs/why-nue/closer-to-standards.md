@@ -3,10 +3,7 @@
 title: Why Nue / Work closer to standards
 ---
 
-# Standards are forever
-Stand the test of time by working closer to web standards
-
-## Be closer to metal
+# Work closer to standards
 Nue projects are 100× leaner than Next.js projects. Simple means everything. There are fewer abstractions, less to learn, fewer headaches, and less room for errors.
 
 [media]
@@ -20,7 +17,7 @@ Nue projects are 100× leaner than Next.js projects. Simple means everything. Th
 
 
 ## Separation of concerns
-Nue separates HTML and CSS for UX developers, TypeScript for JS developers, and Markdown for content creators. Separation of concerns is the leading principle in Nue
+Nue separates content for content creators, HTML and CSS for UX developers, and TypeScript for JS developers:
 
 [media]
   small: /img/coupling.png

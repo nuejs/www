@@ -13,13 +13,22 @@ body > .site-top
 .badge
   font 85% 600 $gray-700
   radius 3px
-  p .3em 1.2em
-  bg $gray-50
+  p .3em .8em
+  bg white
   border $gray-400
 
+  &:before
+    content ""
+    inline-block
+    margin-right .4em
+    relative .03em
+    radius .2em
+    size .8em
+    bg $red
+
   &:hover
-    bg white
-    border-color $gray-800
+    border-color black
+    color black
 
   &:active
     box-shadow 0 0 .2em #666 inset

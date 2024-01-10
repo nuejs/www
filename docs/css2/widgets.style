@@ -54,3 +54,17 @@ td:first-child
     list-style none
     border-bottom
     pb .4em
+
+.options
+  margin-top 1em
+  p
+    font 95%
+    mb .6em
+
+  code
+    font 95% bold #000
+    bg $main-200
+    mr .5em
+
+h3 + pre
+  margin-top 1em

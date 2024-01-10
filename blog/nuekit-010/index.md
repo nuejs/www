@@ -77,8 +77,8 @@ Nue is in order of magnitude faster than its cousins. An identical blogging site
 - [JS/TypeScript modules](/docs/concepts/js-modules.html)
 - [Content collections](/docs/concepts/content-collections.html)
 - [Reactive islands](/docs/concepts/reactive-islands.html)
-- [Standards-based development model](/docs/why-nue/closer-to-standards.html)
-- [Improved website performance](/docs/why-nue/website-performance.html)
+- [Work closer to metal](/docs/why-nue/closer-to-standards.html)
+- [Extreme performance](/docs/why-nue/extreme-performance.html)
 
 
 ### New, beautiful documentation area
@@ -110,8 +110,8 @@ Check out our [Getting Started guide](/docs/) to learn the details
 
 
 [media]
-  small: /img/roadmap2.png
-  large: /img/roadmap2-big.png
+  small: /img/roadmap4.png
+  large: /img/roadmap4-big.png
   class: tall
 
 Nue was first announced last September with [this backstory](/blog/backstory/). Only [Nue JS](//github.com/nuejs/nue) was available on GitHub, and the bigger picture was just an idea. Now, with today's Nuekit release, you can finally build real-world applications with Nue and see more clearly what the future holds.

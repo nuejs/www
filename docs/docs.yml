@@ -9,8 +9,8 @@ titles:
 
 cats:
   why-nue:
-    - Developer experience
-    - Website performance
+    - Content first
+    - Extreme performance
     - Closer to standards
 
   tutorials:
@@ -18,6 +18,7 @@ cats:
     - Build a simple SPA
 
   concepts:
+    - Creating rich content | nuemark
     - Files and directories
     - Layout components
     - Content collections
@@ -36,11 +37,8 @@ cats:
     - Reactive components
 
   upcoming:
-    - Rich/interactive content
-    - Skinning and theming
-    - Images, and Videos
-    - Scroll transitions
-    - View transitions
+    - Cascading CSS modules
+    - Motion design
     - Site search
     - Internationalization
     - Backend communication

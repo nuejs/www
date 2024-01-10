@@ -1,7 +1,8 @@
 
-// CSS- based animations
+import { $, $$ } from '/@nue/kit/island.js'
 
-import { $$ } from '/@nue/kit/island.js'
+/* CSS- based animations
+
 
 $$('main > section').forEach(root => {
 
@@ -14,4 +15,13 @@ $$('main > section').forEach(root => {
 
 })
 
+*/
 
+$$('.tools li').forEach(li => {
+
+  li.onclick = function() {
+    const a = $('p a', li)
+    if (a) location.href = a.getAttribute('href')
+  }
+
+})

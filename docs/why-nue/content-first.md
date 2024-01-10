@@ -4,22 +4,25 @@ title: Why Nue / Improved developer experience
 main_class: h1-narrow
 ---
 
-# Massively Improved Developer Experience
+# Content first
+ Nue places content at the center of web development. You start developing sites for content creators and make it easy for them to create new pages and update the existing ones.
 
-## Universal hot reloading
-If you need just one reason to use Nue, it's this one:
+
+
+## Universal hot-reloading
+Make changes to your content, layout, styling, or interactive islands and Nue magically keeps your browser in sync. You can build entire websites without touching your browser. [Learn more](../concepts/universal-hot-reloading.html)
 
 [bunny-video]
   videoId: 18714305-d2f3-453d-83a9-0bd017166949
+  caption: If you need just one reason to use Nue, it's this one.
   poster: /img/hot-reload-hero.jpg
   class: wide
 
-Make changes to your content, layout, styling, or interactive islands and Nue magically keeps your browser in sync. You can build entire websites without touching your browser. [Learn more](../concepts/universal-hot-reloading.html)
 
 
 
-## Write less code
-Thanks to Nue's [simple, standards-based](closer-to-standards.html) approach, you need less time and effort to build the same thing:
+## Move faster by writing less code
+Thanks content-first approach, you need less time and effort to build the same thing:
 
 [.cols]
   [image-link src="/img/next-starter.png" class="clickable" width="350"]
@@ -44,7 +47,7 @@ Thanks to Nue's [simple, standards-based](closer-to-standards.html) approach, yo
 
 
 ## Websites and web applications
-Use the same, simple syntax and hot-reloading boost for both websites and single-page applications
+Use the same for both websites and single-page applications and enjoy the boost from universal hot-reloading.
 
 #### Simple Blog
 [Tutorial](../tutorials/build-a-simple-blog.html) /
@@ -68,32 +71,4 @@ Use the same, simple syntax and hot-reloading boost for both websites and single
   large: /img/simple-spa-big.png
   href: /@simple-admin
   width: 650
-
-
-
-
-## Significantly faster build times
-Nue is in order of magnitude faster than its cousins:
-
-[bunny-video]
-  videoId: 45b73e3a-3edd-47af-bcd8-49039496b107
-  caption: Building blog template with Nue in 39ms ¯\_(ツ)_/¯
-  width: 650
-
-[bunny-video]
-  videoId: 0619cc14-56f3-43df-b2b1-ab8d9c23637c
-  caption: Building identical blog template with Next.js takes in 12.29s
-  poster: thumbnail_41d30feb.jpg
-  width: 650
-
-
-## Start small and grow from there
-With Nue, there is no fixed folder structure. Start with `index.md` and grow naturally from there with hot-reloading on your back.
-
-[media]
-  small: /img/folder-structures.png
-  large: /img/folder-structures-big.png
-  class: tall
-  width: 600
-
 

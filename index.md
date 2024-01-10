@@ -3,15 +3,15 @@
 include: [home, bunny/video]
 ---
 
-# The closer-to-standards web framework
-**Nue** is a newborn **Next.js** and **Astro** alternative with a *massively improved developer experience*. It may change the way you develop for web forever.
+# The content first web framework
+**Nue** is a fresh **Next.js** and **Astro** alternative with a content-first development model
 
 [.cta]
-  [link to="/docs/" class="button black" "Get started &rsaquo;"]
-  [link to="/docs/why-nue/developer-experience.html" class="button" "Why Nue &rsaquo;"]
+  [link to="/docs/" class="button" "Get started &rsaquo;"]
+  [link to="/docs/why-nue/developer-experience.html" class="button secondary" "How it works &rsaquo;"]
 
 [.subtle]
-  **One reason to try Nue**: Build entire websites without ever touching your browser.
+  **The Difference:** Assemble rich pages without ever leaving your content
 
 [bunny-video]
   videoId: 18714305-d2f3-453d-83a9-0bd017166949
@@ -19,54 +19,55 @@ include: [home, bunny/video]
   class: wide
 
 
-## The Big Picture
-The ultimate goal of Nue is to build an easier, yet more powerful alternative to **Vercel**, **Gatsby**, and **Netlify**.
+## Vision
+The ultimate goal of Nue is to build a content first alternative to **Vercel** and **Netlify**, which is extremely fast and ridiculously easy to use.
 
 [media]
-  small: /img/roadmap3.png
-  large: /img/roadmap3-big.png
+  small: /img/roadmap4.png
+  large: /img/roadmap4-big.png
   class: roadmap
   width: 850
 
 
 [.tools]
   * ### Nue JS
-    Build user interfaces with obvious, HTML-based markup.
+    HTML markup for static and reactive interfaces
 
-    A (2.3kb) alternative to *React*, *Vue*, and *Svelte*
+    A (2.3kb) alternative to *React*, *Vue*, and *Svelte*. [Read the backstory &raquo;](/blog/backstory/)
 
   * ### Nuekit
-    Build websites and webapps with less time and effort.
+    The content first web framework
 
-    Common sense alternative to *Next.js* and *Astro*
+    Closer-to-metal alternative to *Next.js* and *Astro*. [Read the annoucement &raquo;](/blog/nuekit-010/)
 
   * ### Nuemark
-    Bring back content-first approach to web development.
+    Markdown dialect for rich, interactive content
 
-    Rich, human alternative to *Markdown*, *MDX* and *Markdoc*
+    Content-first alternative to *MDX* and *Markdoc*. [Read the annoucement &raquo;](/blog/introducing-nuemark/)
 
   * ### Nue CSS
-    Harness the raw power of minimal, semantic CSS
+    Content-first design system
 
-    Next-gen alternative for *Tailwind* and *CSS-in-JS*
+    Cascading alternative to *Tailwind* and *CSS-in-JS*
 
   * ### Nue Templates
-    The easiest way to create a modern, themable site.
+    Content-first templates with pixel-perfect design
 
-    Themable alternative to *Tailwind-*, *Next-*, and *Astro* templates
+    Themable alternative to *Tailwind* and *Next* templates
 
   * ### Nue Cloud
-    Easy hosting for Nue-powered websites and webapps.
+    Deploy 10-100x faster
 
-    Radically simpler alternative to *Vercel*, *Gatsby*, and *Netlify*
+    Ridiculously easier alternative to *Vercel* and *Netlify*
 
 [.info]
-  #### Status update (Jan 02, 2024)
-  [Nuekit is out](/blog/nuekit-010/) — Nuekit is released mid- January 2024.
+  #### Status update (Jan 11, 2024)
+  [Nuemark is out!](/blog/introducing-nuemark/) — Now working on [Github issues](//github.com/nuejs/nue/issues)
 
 
 ## Receive an email
-When the next milestone is reached:
+When the next project is pushed out:
+
 [join-list]
 
 

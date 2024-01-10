@@ -1,11 +1,7 @@
 
-.index-page h1
-  font 1.8em 700
-  letter-spacing -1px
-
-  + p
-    font 4em 900 #000 -.04em 1
-    max-width 8em
+h1
+  max-width 8em
+  font capitalize
 
 .blog-entry
   align-items center

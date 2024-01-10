@@ -3,7 +3,7 @@ title: Performance optimization / Nue docs
 ---
 
 # Performance optimization
-Nue is [fast by default](../why-nue/website-performance.html) — ie. it's close to impossible to build a slow website with Nue. Here are some performance optimization tweaks to make things even faster.
+Nue is [fast by default](../why-nue/extreme-performance.html) — ie. it's close to impossible to build a slow website with Nue. Here are some performance optimization tweaks to make things even faster.
 
 
 ## Optimize CSS loading

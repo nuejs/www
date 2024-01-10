@@ -5,7 +5,6 @@ main_class: index-page
 include: [blog-index]
 ---
 
-# Nue Blog
-Develop closer to Web standards
+# Content first development
 
 [blog-index]

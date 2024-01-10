@@ -1,0 +1,10 @@
+body {
+  background-image: linear-gradient(
+    135deg,
+    white 4%,
+    #c0eeff7d 15%,
+    white 20%,
+    #d2d2d219 20%,
+    white 21%
+  )
+}
