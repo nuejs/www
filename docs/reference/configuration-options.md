@@ -21,7 +21,7 @@ The base directory is where all the styles and components are loaded on the fron
 By default, Nue looks for a file named "main.js" and includes it automatically on your page requests. You can change this with this setting. For example, a value such as `['index.js']` would auto-include "index.js". See details of [JS/Typescript modules](../concepts/js-modules.html)
 
 ### bundle
-Specifies files that should be bundled so that the imported dependencies are *inlined into the file itself. For example: ´bundle: [index.js]`. See [to bundle or not to bundle](../concepts/js-modules.html#unbundled).
+Specifies files that should be bundled so that the imported dependencies are *inlined into the file itself. For example: `bundle: [index.js]`. See [to bundle or not to bundle](../concepts/js-modules.html#unbundled).
 
 
 ### class
@@ -34,7 +34,7 @@ The output directory. The default is `.dist/dev` for the development version and
 This is a directory name for a [content collection](../concepts/content-collections.html). Setting this to "posts" makes all the Markdown pages and their metadata available as a looped array for your template files. Good for making blog/docs indexes.
 
 ### collection_name
-The name of the looped variable on the content collection. By default, this is the name of the directory ie. the value of the `content_collection` option.
+The name of the looped variable on the content collection. By default, this is the name of the directory i.e. the value of the `content_collection` option.
 
 ### globals
 A site-wide setting in your `site.yaml` file to define directories that are global to all your applications. The scripts, styles, and components under global directories are automatically included on all your pages. See [files and directories](files-and-directories).
