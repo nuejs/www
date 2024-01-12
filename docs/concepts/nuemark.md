@@ -18,7 +18,7 @@ Nuemark extends standard Markdown with custom and build-in components or "tags".
 [image hello.png width="500"]
 ```
 
-Components are defined on a new line and are wrapped inside square brackets. They start with a tag name (image) followed with one or more arguments. The arguments have a name and value (width="500") and the default argument can be unnamed (hello.png). The default argument is specific to a component.
+Components are defined on a new line and are wrapped inside square brackets. They start with a tag name (image) followed by one or more arguments. The arguments have a name and value (width="500") and the default argument can be unnamed (hello.png). The default argument is specific to a component.
 
 The component syntax is similar to other Markdown elements like images and links. WordPress users might also be delighted because the syntax takes a lot of inspiration from WP shortcodes. It's also similar to block syntax in TOML configuration format.
 
