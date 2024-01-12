@@ -12,7 +12,7 @@ You can enrich your basic Markdown with responsive images, videos, buttons, tabs
 
 
 ## Custom tags
-Nuemark extends standard Markdown with custom and build-in components or "tags". Here's a simplle `[image]` component in action:
+Nuemark extends standard Markdown with custom and built-in components or "tags". Here's a simplle `[image]` component in action:
 
 ``` md
 [image hello.png width="500"]
