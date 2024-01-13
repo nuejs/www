@@ -82,7 +82,7 @@ export function MyAlert(props: { color: string, message: string }) {
 And here's the same with [Nue template syntax](/docs/reference/template-syntax)
 
 ```
-<p @name="my-alert" style="{ color || 'red }">{ message }</p>
+<p @name="my-alert" style="color:{ color || 'red' };">{ message }</p>
 ```
 
 Look for [Nuemark API docs](/docs/reference/nuemark-api.html) for the details.
