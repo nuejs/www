@@ -229,7 +229,7 @@ Nuemark extends standard Markdown syntax as follows:
 Nuemark outputs headers (h1, h2, h3) with a nested anchor tag. For example `## Hello` is rendered as:
 
 ```
-<h2 id="hello"><a href="#hello"></a> Hello</h2>
+<h2 id="hello"><a href="#hello" title="Permalink for 'Hello'"></a> Hello</h2>
 ```
 
 This allows better styling and achoring of headers. Similar to what you can see on this page for example. You can customize the id with `{# custom_id }` suffix. For example:
