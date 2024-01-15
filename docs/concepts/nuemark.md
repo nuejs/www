@@ -180,7 +180,15 @@ The above results to following HTML:
 ```
 
 
+### Horizontal lines
+You can render horizontal lines with `___`, `***` or `- - -`.
 
+Nuemark reserves three hypens (`---`) for sections because it is already used to separate the front matter from the rest of the document. There is less things to learn and remember when using the same notation.
+
+
+
+
+- - -
 
 
 ### Section class names and id
