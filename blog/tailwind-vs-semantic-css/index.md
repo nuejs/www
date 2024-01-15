@@ -8,7 +8,7 @@ update: 2023-12-02
 include: syntax
 ---
 
-# Tailwind _vs._ Semantic CSS
+# Tailwind **vs.** Semantic CSS
 This study compares two websites with identical design: the commercial Spotlight template from developers of Tailwind vs the same site with semantic CSS:
 
 [.cols]
@@ -23,7 +23,7 @@ This study compares two websites with identical design: the commercial Spotlight
     small: img/nue-home.png
 
 [.info]
-  #### In short
+  #### GIST
   **Semantic version is 8 &times; smaller, renders faster, and is easier to work with.**
 
 
@@ -66,7 +66,7 @@ Let's study the difference in CSS coding:
   small: img/css.jpg
   large: img/css-big.jpg
   caption: Full CSS coding on the front page
-  class: bordered super-wide
+  class: bordered wide
 
 Blue is semantic CSS, gray is utility classes, and black-bordered is primary CSS (which makes your pages render faster).
 
@@ -117,7 +117,7 @@ The Preview tab on the Developer console is a great way to debug FCP:
   class: small-bordered
 
 
-## Best practices
+## Separation of concerns
 Tailwind embraces **tight coupling**. That is: the structure and styling are tied together. The semantic approach is the opposite: the structure and styling are loosely coupled**. Here's what that means:
 
 [media]

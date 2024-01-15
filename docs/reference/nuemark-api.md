@@ -102,7 +102,7 @@ An array of [section](../concepts/nuemark.html) objects on the page. Sections ar
 A boolean flag indicating whether the page contains build-in tags that require an additional client-side Web Component to function properly.
 
 
-## The `options` Object [options]
+## Options object [options]
 Properties of the `options` object:
 
 ### data

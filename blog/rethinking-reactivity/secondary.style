@@ -1,4 +1,5 @@
 
+/*
 @import url("/docs/css2/examples.css")
 @import url("/docs/css2/syntax.css")
 
@@ -30,6 +31,8 @@ h1 em:after
   .loaded &
     transform scale(1) rotate(-7deg)
     opacity 1
+*/
+
 
 .dhtml-book
   width 9em

@@ -13,9 +13,9 @@ body > .site-top
 .badge
   font 85% 600 $gray-700
   radius 3px
-  p .3em .8em
+  p .4em 1em
   bg white
-  border $gray-400
+  border $gray-200
 
   &:before
     content ""
@@ -24,16 +24,29 @@ body > .site-top
     relative .03em
     radius .2em
     size .8em
+    animation color-change 9s infinite
     bg $red
 
   &:hover
-    border-color black
+    border-color $gray-400
     color black
 
   &:active
     box-shadow 0 0 .2em #666 inset
     border-color $gray
     transform translateY(1px)
+
+@keyframes color-change
+  0%
+    bg $main
+  33%
+    bg $pink
+  66%
+    bg $green
+  100%
+    bg $blue
+
+
 
 .site-header
   max-width 1300px
@@ -46,6 +59,12 @@ body > .site-top
     max-height 2em
     mr 2em
 
+  .button
+    padding .2em 1em
+    height max-content
+    margin-right .8em
+    text-decoration none
+    relative -1px
 
 // generic nav
 nav > a
@@ -112,4 +131,5 @@ nav > a
 
   .burger
     inline-block
+
 

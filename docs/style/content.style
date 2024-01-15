@@ -13,11 +13,11 @@ article
     mb 1em
 
   h1
-    font 2.8em
+    font-size calc(1.3em + 2vw)
     mb .2em
 
     + p
-      font 1.2em
+      font-size calc(1em + .4vw)
 
   em
     font-style normal
@@ -28,7 +28,7 @@ article
     font-weight 400
 
   > h2
-    font 1.2em
+    font-size calc(1.1em + .5vw)
     mt 3em
 
   > h3

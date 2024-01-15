@@ -5,9 +5,13 @@ main_class: h1-narrow
 ---
 
 # Content first
- Nue places content at the center of web development. You start developing sites for content creators and make it easy for them to create new pages and update the existing ones.
+Nue is a web framework with a content-first development model. In this approach your site is optimized for content editing and creation. You'll move faster because the focus is more directly on the final result:
 
-
+[media]
+  small: /img/nuemark-content.png
+  large: /img/nuemark-content-big.png
+  caption: A content-first approach to web development
+  width: 700
 
 ## Universal hot-reloading
 Make changes to your content, layout, styling, or interactive islands and Nue magically keeps your browser in sync. You can build entire websites without touching your browser. [Learn more](../concepts/universal-hot-reloading.html)

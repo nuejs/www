@@ -29,7 +29,7 @@ p a, li > a
     inline-block
 
 
-a.selected, .docs-area .mastnav a:nth-child(3)
+a.selected, .docs-area .mastnav a:nth-child(2)
   text-decoration-line underline
   text-decoration-thickness 3px
   text-decoration-color $main

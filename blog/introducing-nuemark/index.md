@@ -1,74 +1,116 @@
 
 ---
-date: 2024-01-10
-og: /img/nuemark-hero-big.jpg
+date: 2024-01-12
+og: /img/nuemark-splash.jpg
 include: [bunny/video, syntax]
-title: Introducing Nuemark 0.1
-desc: An intuitive Markdown dialect for rich, interactive content
-release: nuemark 0.1
+title: Introducing Nuemark
+desc: Nuemark is an intuitive Markdown dialect for rich, interactive content. It brings content back to the forefront of web development.
 thumb: nuemark-thumb.jpg
+class: nuemark-page
 ---
 
 
-# *Introducing Nuemark:* Intuitive Markdown dialect for rich, interactive content.
+# *Introducing Nuemark:* Intuitive Markdown dialect for rich, interactive content
 
-Nuemark is a Markdown- based text editing format for creating rich internet content. You can create marketing pages, documentation pages, and blog entries. Even you all-mighty front page with all the bells-and whistles can be expressed with Nuemark.
+Nuemark is a Markdown-based text editing format for rich internet content. It places content at the heart of everything, and brings (back) a content-first approach to web development:
 
-! HERO video & splash
-  Video: hot-reload solid-bg / gradient, title, grid layout, grid content,
-  Splash: Markdown with Megapowers!
+[media]
+  small: /img/nuemark-content.png
+  large: /img/nuemark-content-big.png
+  caption: A content-first approach to web development
+  width: 700
 
-Nuemark is a standalone library that works under Bun, Node, and Deno. You can extend it with vanilla JavaScript or with template languages like JSX or Handlebars. However, Nuemark is best served with Nue's universal hot-reloading support: just edit your content and see the page shaping up in your browser in real-time. A genuine content-first / WYSIWYG experience.
+### What you see is what you get
+Nuemark is a standalone library that works under Bun, Node, and Deno. However, it is best served together with Nue and its s [universal hot-reloading](/docs/concepts/universal-hot-reloading.html) capability. Just edit your content freely and see the page shaping up in your browser in real time.
+
+
+[bunny-video]
+  videoId: 3bf8f658-185a-449c-93b9-9bd5e1ad0d05
+  poster: /img/nuemark-splash.jpg
+  class: wide
+
+[.small]
+  Nue offers a genuine content-first, WYSIWYG experience.
+
+  Image credits: [UI8](//dribbble.com/ui8). Thanks!
+
 
 
 ## Manage content like a hacker
-Nuemark is designed for content creators. It's pure content with no HTML, CSS, or JavaScript. It's a simple, concise syntax that is easy to learn and because there is no logic and styling it's hard to mess things up.
+Nuemark lets you manage content [like a hacker](//tom.preston-werner.com/2008/11/17/blogging-like-a-hacker) without the complexity of large systems like *WordPress* or *Contentful*. Instead, you'll approach content from a software development perspective: the content is stored in Git and you manage it with your preferred editor like *VS Code* or *Sublime Text*.
 
-! Epic syntax box (tailwindcss.com)
+Nuemark is designed for content creation. It's a simple, concise syntax that is easy to learn. It's pure content with no HTML, CSS, or JavaScript so it's hard to break things up.
 
-With Nuemark content comes first. You start with pure content: text, images, and videos and only then move into layout and design. By starting with a content-first mindset, you will ensure that the page design evolves to support what's inside it. Not the other way around.
+``` md
+[.stack]
+  # Content is king
+  Web design is 100% content and 95% typography
 
-Nuemark lets you manage content [like a hacker](//tom.preston-werner.com/2008/11/17/blogging-like-a-hacker) without the complexity of large systems like *WordPress* or *Contentful*. Instead, you'll approach content from a software development perspective: your content is stored in a Git repository and you edit it with your preferred editor like VS Code or Sublime Text.
+  [button "Learn more" href="/docs"]
+  ---
+  [! typography.png ]
+```
+
+
+[media]
+  small: /img/content-hero.png
+  large: /img/content-hero-big.png
+  caption: The content after applying some context-specific styling
+  class: tall
+
+
+With Nuemark, you start with pure content: text, images, and videos and only then move into layout and design. By starting with a content-first mindset, you will ensure that the page design evolves to support what's inside it. Not the other way around.
+
+
 
 
 
 ## Built-in set of headless UI components
-Nuemark comes with a set of built-in components the most common use cases. There are custom tags for buttons, icons, responsive images, videos, tables, tabs, and layout grids. And you can mix tags to form more complex layouts.
+Nuemark comes with a set of built-in components, which aim to tackle the most common content management use cases. There are buttons, icons, responsive images, videos, tables, tabs, and layout grids. And you can mix components to form more complex layouts.
 
-! grid of screenshots:
-
-All these components or "tags" are _headless_ — meaning that there is no inline styling, CSS modules, or utility classes to impact their appearance. There is only one, semantic class name on the root element of the component, which _names_ the component. Otherwise, the components are _classless_ and consist purely of semantic HTML elements.
-
-The semantic approach means that you can customize the look and feel of your components so that they look just right on the given context. For example, a tabbed layout may look completely different on your front page compared to what it looks like on the documentation area:
-
-! tabs: front page vs documentation
-  caption: same component, different design.
-
-This sort of content-first approach brings the legendary [CSS Zen Garden](//www.csszengarden.com/) back to the game. When your components always have the same structure you can re-use your CSS across websites and projects.
+[media]
+  small: /img/rich-content.png
+  large: /img/rich-content-big.png
+  caption: Nuemark content from the installable demo
 
 
+### Decoupled design
+All these components or "tags" are _headless_ — meaning that there are no inline styling, CSS modules, or utility classes to impact their appearance. There is only one, semantic class name on the root element of the component, which _names_ the component. Otherwise, the components are _classless_ and consist purely of semantic HTML elements.
 
-### Isomorphic Web Components
+The semantic approach means that you can customize the look and feel of your components so that they look just right in the given context. For example, a tabbed layout may look completely different on your front page compared to what it looks like on the documentation area:
+
+[media]
+  small: /img/tab-designs.jpg
+  large: /img/tab-designs-big.jpg
+  caption: Same component, different CSS module
+  width: 500
+
+
+This sort of content-first approach brings the legendary [CSS Zen Garden](//www.csszengarden.com/) back to the game. When your components always have the same structure you can re-use your CSS across your pages, apps, websites, and projects.
+
+
+
+## Driven by Web Components
 Some components are _isomorphic_ meaning that the content is rendered on the server side for search engines and the behavior of the component is spiced up with with client-side JavaScript.
 
-Nuemark uses the standard [`is` attribute](//developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/is) to tell the browser that a particular HTML structure should be spiced up with a Web Compoment. For example, the Tabs component is implemented as follows:
+Nuemark uses the standard [`is` attribute](//developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/is) to tell the browser that a particular HTML structure should be spiced up with a Web Component. For example, the `[tabs]` component is implemented as follows:
 
 ```
-// tabs implementation
+// implementation
 class Tabs extends HTMLElement {
   constructor() {
     // Do the thing when the component is mounted
   }
 }
 
-// Register the component for the browser
+// registtration
 customElements.define('nuemark-tabs', Tabs, { extends: 'section' })
 ```
 
-This is a modern/standard way to implement |progressive enhancemnet](//developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement), historically done with libraries like jQuery.
+This is a modern/standard way to implement [progressive enhancement](//developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement), historically done with libraries like jQuery.
 
 
-## Build your own tags
+### Build your own tags
 You can extend Nuemark with custom tags. Any JavaScript object with a `name` property and `render()` method is a legit Nuemark component. Here's a dummy TSX example:
 
 ```
@@ -92,17 +134,15 @@ Look for [Nuemark API docs](/docs/reference/nuemark-api.html) for the details.
 
 
 
-## Start building sites for content creators
+## Develop sites for content creators
 The primary purpose of a website is to present content. You want to raise awareness of your idea, generate sales, or just share information. The bottom line is that your website should be optimized for creating and managing content.
 
 Nuemark is a perfect choice for this purpose. After you have a proper design system in place, editors can create content that looks consistently great and fits your overall design. They can author new pages without ever leaving the content.
 
-! front page vs the content
-
-Nuemark offers the benefits of having all your website assets at hand, without the need for a large content-management system. It's an ideal choice for static site generators and flat-file systems.
+Nuemark is an ideal choice for static site generators and flat-file systems.
 
 
-## Try Nuemark now
+### Try now
 [Bun](//bun.sh) is the recommended engine for Nuemark:
 
 ``` sh<
@@ -120,32 +160,45 @@ Choose "nuemark-demo" on the last step and off you go.
 
 ps: Check out [Getting started docs](/docs/#node) if you prefer Node.
 
+### Learn Nuemark
+
+- [User guide](/docs/concepts/nuemark.html)
+- [Tag reference](/docs/reference/nuemark-tags.html)
+- [API docs](/docs/reference/nuemark-api.html)
+- [Hacker News Discussion](//news.ycombinator.com/item?id=38966085)
+
 - - -
 
-## FAQ
-
-### What is Nue?
-The ultimate goal of Nue is to build an easier, yet more powerful alternative to **Vercel**, **Gatsby**, and **Netlify**.
-
-[media]
-  small: /img/roadmap4.png
-  large: /img/roadmap4-big.png
-  class: roadmap
-  width: 850
-
-We can notify you when the next milestone is reached:
-
-[join-list]
+## Frequently asked questions [faq]
 
 
 ### How is this different from MDX?
 Nuemark differs from prior alternatives like *MDX* and *Markdoc* in the following ways:
 
-1. Nuemark is targeted for content creators. Three are no "scary" JavaScript expressions or import statements that can break the page from rendering. Familiarity with Markdown and YAML front matters is enough for crafting rich, interactive content.
+1. Nuemark is targeted at content creators. There are no "scary" JavaScript expressions or import statements that can break the page from rendering. Familiarity with Markdown and YAML front matters is enough for crafting rich, interactive content.
 
-2. Nuemark comes with a rich set of build-in components that can be used inside standard Markdown or mixed together to form more complex layouts. Any modern web page can be expressed with Nuemark so that your content is neatly separated for editors.
+2. Nuemark comes with a rich set of built-in components that can be used inside standard Markdown or mixed together to form more complex layouts. Any modern web page can be expressed with Nuemark so that your content is neatly separated for editors.
 
 3. When you edit Nuemark within the Nue framework you see your page update on the browser in real-time offering a true WYSIWYG experience for content creators.
 
+Check [General FAQ](/faq/) for more questions about Nue.
+
+
+### Where does the syntax come from?
+Nuemark takes inspiration from WordPress shortcodes, TOML configuration language, YAML front matter, and other Markdown elements like links and images. The goal make it approachable for people already familiar with Markdown and introduce as few new idioms as possible.
+
+
+### What is Nue?
+The ultimate goal of Nue is to build a significantly easier, yet more powerful alternative to *Vercel*, *Gatsby*, and *Netlify*.
+
+[media]
+  small: /img/roadmap4.png
+  large: /img/roadmap4-big.png
+  class: roadmap tall
+  width: 850
+
+We can notify you when the next milestone is reached:
+
+[join-list]
 
 

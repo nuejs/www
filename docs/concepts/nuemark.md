@@ -3,24 +3,45 @@
 title: Rich and interactive web content / Nue docs
 ---
 
-# Content-first development model
-Nuemark is a rich content format for crafting all sorts of web content like marketing pages, documentation, and blog entries. creators. You'll move faster by focusing more time on content and less time on programming:
+# Creating rich, interactive content with Nuemark
+Nue uses a Markdown dialect called "Nuemark" for content editing. It lets you craft all sorts of web content like the front page, other marketing pages, documentation entries, and blog entries. You'll move faster by using your time on content and not on writing HTML or JavaScript:
 
-! video: heroic | nuemark
+[bunny-video]
+  videoId: 3bf8f658-185a-449c-93b9-9bd5e1ad0d05
+  poster: /img/nuemark-splash.jpg
 
-You can enrich your basic Markdown with responsive images, videos, buttons, tabs, grids, and whatnot. With Nuemark your content is more accessible to content creators and other non-technical people. They can craft new pages without ever leaving the content.
+Nuemark syntax takes inspiration from Wordpress shortcodes, TOML configuration language, and other Markdown elements. With Nuemark your content is more accessible to content creators and other non-technical people. They can craft new pages without ever leaving the content.
 
 
 ## Custom tags
-Nuemark extends standard Markdown with custom and built-in components or "tags". Here's a simplle `[image]` component in action:
+Nuemark extends standard Markdown with custom and built-in components or "tags". Here's a simple `[image]` component in action:
+
 
 ``` md
-[image hello.png width="500"]
+// named "src" option
+[image src="hello.png"]
+
+// unnamed option
+[image hello.png]
+
+// YAML options
+[image]
+  caption: Hello, World!
+  src: hello.png
+
+// content option
+[.info]
+  This is a pure content argument, accepting
+  *formatting* and other Nuemark tags
+
+// classes and ID
+[image#hero.epic.bordered hero.webp]
+
+// cute shortcut for image, icon, and video tags
+[! hello.png]
 ```
 
-Components are defined on a new line and are wrapped inside square brackets. They start with a tag name (image) followed by one or more arguments. The arguments have a name and value (width="500") and the default argument can be unnamed (hello.png). The default argument is specific to a component.
-
-The component syntax is similar to other Markdown elements like images and links. WordPress users might also be delighted because the syntax takes a lot of inspiration from WP shortcodes. It's also similar to block syntax in TOML configuration format.
+Components are defined on a new line and are wrapped inside square brackets. They start with a tag name ("image") followed by one or more arguments. The arguments have a name and value (`width="500"`) and the default argument can be unnamed (hello.png). The default argument is specific to a component.
 
 
 ### Class names and id
@@ -106,7 +127,12 @@ The above generates this HTML:
 Use semantic class names like "stack" or "grid" to create layouts with any amount complexity using CSS `flexbox`, `grid`, and the `:nth-child` selector. A selector such as `.cards > div` can give the individual items a desired look.
 
 
-! sample-grid.svg
+
+[media]
+  small: /img/nuemark-grid.jpg
+  large: /img/nuemark-grid-big.jpg
+  caption: Stacks and grids in action
+  class: tall
 
 
 Modern CSS is an undervalued powerhouse for styling semantic elements. Especially with [Lightning CSS](//lightningcss.dev/), which lets you use native CSS nesting and color functions today. Nue starts using Lightning CSS automatically if you run the following inside your project directory:
@@ -296,11 +322,5 @@ Line comments are prefixed with `//`
 // This line is a comment and thus not rendered
 # Hello, World
 ```
-
-
-
-### Always draw sections
-Setting `draw_sections: true` makes Nuemark wrap the page inside `<section>` tag even if there are no sections defined on the page. Setting this globally makea consistent HTML structure for your external CSS.
-
 
 

@@ -9,8 +9,8 @@ class: no-aside
 
 ## System Requirements
 
-* [Bun 1.0.10](//bun.sh/) or later (recommended)
-* [Node.js 18.0.2](//nodejs.org/) or later
+* [Bun 1.0.10](//bun.sh/) or later. Recommended with *MacOS* and *Linux*.
+* [Node.js 18.0.2](//nodejs.org/) or later. Recommended with *Windows* or if you don't want to install Bun
 
 
 ## Installation

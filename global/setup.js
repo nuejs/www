@@ -10,7 +10,7 @@ if (!location.port) ping()
 listen()
 
 
-// favicon circle
+/* favicon circle
 function getNextIcon() {
   const icons = 'stack n u e'.split(' ')
   try {
@@ -30,5 +30,15 @@ function circleFavicon() {
 
 
 circleFavicon()
+*/
+
 
 $('body').classList.add('loaded')
+
+
+const is_external = !document.referrer.includes(location.hostname)
+
+setTimeout(function() {
+  $('.site-header').classList.add('visible')
+
+}, is_external && location.pathname.startsWith('/blog') ? 1800 : 0)

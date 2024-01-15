@@ -2,7 +2,18 @@
 main
   max-width $page-width
 
-.blog-hero
+.site-header
+  transition opacity .4s
+  opacity 0
+
+  &.visible
+    opacity 1
+
+
+.nuemark-page .badge
+  none
+
+.blog-hero.figure
   m -3em -20vw 2em
   block
   img
@@ -13,8 +24,14 @@ main
     mb .8em
 
 // hero
-h1 + p
-  font 1.2em 500
+article h1
+  line-height 1.15
+  em
+    font normal $main 800
+    block
+
+  + p
+    font-weight 500
 
 @large
   h1 + p + figure
@@ -27,7 +44,7 @@ h1 + p
       ml 2.2rem
 
 .blog-header
-  mb 3.5em
+  mb 2em
   + article
     font 1.2em
 

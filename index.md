@@ -8,16 +8,15 @@ include: [home, bunny/video]
 
 [.cta]
   [link to="/docs/" class="button" "Get started &rsaquo;"]
-  [link to="/docs/why-nue/developer-experience.html" class="button secondary" "How it works &rsaquo;"]
+  [link to="/docs/why-nue/content-first.html" class="button secondary" "How it works &rsaquo;"]
 
 [.subtle]
   **The Difference:** Assemble rich pages without ever leaving your content
 
 [bunny-video]
-  videoId: 18714305-d2f3-453d-83a9-0bd017166949
-  poster: /img/hot-reload-hero.jpg
+  videoId: 3bf8f658-185a-449c-93b9-9bd5e1ad0d05
+  poster: /img/nuemark-splash.jpg
   class: wide
-
 
 ## Vision
 The ultimate goal of Nue is to build a content first alternative to **Vercel** and **Netlify**, which is extremely fast and ridiculously easy to use.
@@ -61,8 +60,8 @@ The ultimate goal of Nue is to build a content first alternative to **Vercel** a
     Ridiculously easier alternative to *Vercel* and *Netlify*
 
 [.info]
-  #### Status update (Jan 11, 2024)
-  [Nuemark is out!](/blog/introducing-nuemark/) — Now working on [Github issues](//github.com/nuejs/nue/issues)
+  #### Status update (Jan 12, 2024)
+  [Nuemark is out!](/blog/introducing-nuemark/) — Currently working on [Github issues](//github.com/nuejs/nue/issues). Then focusing on **Nue CSS** — A design system optimized specifically for content-first development.
 
 
 ## Receive an email

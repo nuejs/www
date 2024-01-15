@@ -9,15 +9,15 @@ body
   bg-pos 30% 100px
   bg-size 85%
 
-h1
+article h1
   max-width 8em
-  font-size 3.7em !important
+  font-size calc(2em + 1.6vw)
 
   em
-    font 900 underline
-    text-decoration-color $main
+    font 900 underline capitalize #000
+    text-decoration-color $pink
     text-underline-offset 10px
-
+    inline
 
 .signature
   m 0 0 0 -1.7em

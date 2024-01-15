@@ -8,8 +8,7 @@ h1
     font 5em
 
   + p
-    font 1.6
-    font-size calc(1.2em + 1vw)
+    font-size calc(1.2em + .8vw)
     max-width 20em
     mb 1.2em
 

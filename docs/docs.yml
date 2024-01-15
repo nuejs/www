@@ -18,7 +18,7 @@ cats:
     - Build a simple SPA
 
   concepts:
-    - Creating rich content | nuemark
+    - Rich, editable content | nuemark
     - Files and directories
     - Layout components
     - Content collections
@@ -35,17 +35,21 @@ cats:
     - SEO and metadata
     - Template syntax
     - Reactive components
+    - Nuemark tags
+    - Nuemark API
 
-  upcoming:
-    - Cascading CSS modules
-    - Motion design
-    - Site search
-    - Internationalization
-    - Backend communication
-    - RSS feeds
-    - Deployments
-    - ---
-    - Build a full website
-    - Build a full SPA
+
+
+upcoming:
+  - Cascading CSS modules
+  - Motion design
+  - Site search
+  - Internationalization
+  - Backend communication
+  - RSS feeds
+  - Deployments
+  - ---
+  - Build a full website
+  - Build a full SPA
 
 

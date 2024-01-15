@@ -8,7 +8,7 @@ include: [permlink]
 # FAQ
 
 ## What is Nue?
-The ultimate goal of Nue is to build a __content-first__ alternative to *Vercel* and *Netlify*, which is extremely fast and ridiculously easy to use. Here's its estimated launch sequence:
+The ultimate goal of Nue is to be a __content-first__ alternative to *Vercel* and *Netlify*. It's also extremely fast and ridiculously easy to use. Here's the release schedule:
 
 [media]
   small: /img/roadmap4.png
@@ -21,10 +21,21 @@ The content-first approach places content at the center of web development. The 
 
 Content-first strategy ensures that your design aligns with the content, maximizing the impact of both. Your site is built around [progressive enhancement](//en.wikipedia.org/wiki/Progressive_enhancement) with the content rendering first. That is: HTML and CSS before optional JavaScript.
 
-
 Content-first endorses _semantic HTML_, where the design is completely separated from the structure. It should be easy to alter the design and optimize it for any given context.
 
 Think [CSS Zen Garden](//en.wikipedia.org/wiki/CSS_Zen_Garden) after 20+ years of technological progress.
+
+
+## How is it different?
+While Nue is content-first, the others are literally the opposite. The development starts with JavaScript or TypeScript and pages are assembed with React- components. These components are tightly coupled containers for HTML, JavaScript, CSS, and content.
+
+This kind of "spaghetti" violates the most important software development principle: [separation of concerns](//en.wikipedia.org/wiki/Separation_of_concerns).
+
+CSS-in-JS is a big thing and you can even see SQL-in-JS.
+
+Nue keeps different programming concepts separate and uses [progressive enhancement](//en.wikipedia.org/wiki/Progressive_enhancement) to first load content, then styling, and finally JavaScript — if ever.
+
+This is, again, the polar opposite of what the other tools do. They load JavaScript first and content last. And this keeps happening as long as the single-page-application (SPA) model is trending.
 
 
 
@@ -33,9 +44,9 @@ One of the main goals of Nue is to bring web development closer to standards by 
 
 
 ## Do we really need another framework? [fatique]
-~More than ever!~ We need to radically simplify our stack. There are so many build steps in the current stack that only the more savvy TypeScript engineers can understand how it all works.
+~More than ever!~ We need to radically simplify our stack. There are so many layers and build steps in the current stack that only the most experienced TypeScript engineers   understand how all the pieces work together.
 
-With Nue, your stack is not just simpler, but [order of magnitude smaller](/docs/why-nue/closer-to-standards.html#be-closer-to-metal). There are fewer abstractions, less to learn, fewer headaches, and less room for errors. Please read the [backstory](/blog/backstory/) for a deeper rant.
+With Nue, your stack is not just simpler, but [order of magnitude smaller](/docs/why-nue/closer-to-standards.html). There are fewer abstractions, less to learn, fewer headaches, and less room for errors. Please read the [backstory](/blog/backstory/) for a deeper rant.
 
 
 ## What's up with the word Nue?

@@ -8,7 +8,7 @@ include: [examples.js]
 ---
 
 
-# Re*thinking* reactivity
+# Rethinking Reactivity
 [Nue JS](/docs/nuejs/) is a tiny _(2.1kb min-brotlied)_ library for building user interfaces. It's an alternative to frameworks like *Vue*, *React*, and *Svelte* — and it's the central piece of the ultimate goal: [Nuekit](/tools/) — A small, user-friendly alternative to frameworks like *Next.js*, *Vite*, and *Sveltekit*.
 
 [media]

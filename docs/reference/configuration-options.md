@@ -17,6 +17,10 @@ Name of the application directory a page belongs to. For example, the root level
 ### base
 The base directory is where all the styles and components are loaded on the front end. This is similar to [<base>](//developer.mozilla.org/en-US/docs/Web/HTML/Element/base) tag and allows you to deploy the project under some path such as [/@simple-blog/](/@simple-blog/), instead to a root domain like `simple-blog.nuejs.org`.
 
+
+### draw_sections
+Setting this to `true` makes Nuemark wrap the Nuemark content inside a `<section>` element even if there are no [sections](../concepts/nuemark.html#sections) defined on the page. Setting this globally makea consistent HTML structure for your external CSS.
+
 ### include
 By default, Nue looks for a file named "main.js" and includes it automatically on your page requests. You can change this with this setting. For example, a value such as `['index.js']` would auto-include "index.js". See details of [JS/Typescript modules](../concepts/js-modules.html)
 

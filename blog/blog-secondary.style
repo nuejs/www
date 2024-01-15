@@ -40,10 +40,13 @@
       font #000
 
 @large
-  .wider
+  article .wide
+    m 2em -9em
+
+  article .wider
     m 2em -7em 2em
     img
-      max-width calc(100% + 14em)
+      max-width calc(100% + 5em)
 
 @xlarge
   .super-wide
@@ -86,6 +89,9 @@
   p 3vw
 
 
+.figure
+  margin 1em 0 2em
+  block
 
 table
   border-collapse collapse
@@ -107,3 +113,12 @@ tr:last-child td
 th
   border-bottom $gray
   p .4em
+
+
+hr
+  border 3px dashed $gray-200
+  border-width 3px 0 0
+  mt 4em
+
+h3 + ul
+  mt 1em
