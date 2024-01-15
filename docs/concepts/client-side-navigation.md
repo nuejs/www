@@ -13,13 +13,13 @@ Nue supports near-instant, client-side navigation between two pages. This means 
 
 Nue's implementation is unique for two reasons:
 
-1. A simple configuration option: `page_router: true` is enough to enable near-instant page switching on your multi-page application. All the internal links, including the ones inside your Markdown content, are impacted. There is no need to tag your links individually or add any complex JavaScript code.
+1. A simple configuration option: `router: true` is enough to enable near-instant page switching on your multi-page application. All the internal links, including the ones inside your Markdown content, are impacted. There is no need to tag your links individually or add any complex JavaScript code.
 
 2. Instant routing works across multi-page applications and single-page applications. You can click through your website, onboarding flow, login page, and the single-page app use the browser's back/forward buttons, and experience an overall instant feel of the site.
 
 
 ## Page router
-Page router is enabled with `page_router: true` configuration option. This is a site-wide setting so it should go to the `site.yaml` file on the root of your project directory. This enables client-side navigation to your multi-page applications.
+Page router is enabled with `router: true` configuration option. This is a site-wide setting so it should go to the `site.yaml` file on the root of your project directory. This enables client-side navigation to your multi-page applications.
 
 Your scripts and components can listen to a "route" event which is fired when the user navigates to a new page:
 

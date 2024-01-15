@@ -14,6 +14,9 @@ An alphabetical index of all the configuration options:
 ### appdir
 Name of the application directory a page belongs to. For example, the root level `index.md` could set this to "home" and read the layout, data, scripts, styles, and components from that directory.
 
+### automount
+Setting this to `false` disables automatic mounting of [reactive islands](../concepts/reactive-islands.html). This is enabled (`true`) by default.
+
 ### base
 The base directory is where all the styles and components are loaded on the front end. This is similar to [<base>](//developer.mozilla.org/en-US/docs/Web/HTML/Element/base) tag and allows you to deploy the project under some path such as [/@simple-blog/](/@simple-blog/), instead to a root domain like `simple-blog.nuejs.org`.
 
@@ -43,14 +46,14 @@ The name of the looped variable on the content collection. By default, this is t
 ### globals
 A site-wide setting in your `site.yaml` file to define directories that are global to all your applications. The scripts, styles, and components under global directories are automatically included on all your pages. See [files and directories](files-and-directories).
 
+### hotreload
+Setting this to `false` disables [universal hot-reloading](../concepts/universal-hot-reloading.html). This is enabled (`true`) by default.
+
 ### inline_css
 Setting this to `true` inlines all CSS directly into the page to make it load faster. See [performance optimization](../concepts/performance-optimization.html).
 
 ### prefetch_global_css
 Setting this to `true` pre-fetches all global stylesheets to make the successive page load faster. This can only be enabled when `inline_css` is set to true. See [performance optimization](../concepts/performance-optimization.html).
-
-### page_router
-Settling this to `true` enables [client-side-navigation] to make the successive page loads feel instant.
 
 ### preload_image
 This setting tells the browser about critical resources that you want to load as soon as possible before they are discovered in HTML. For example: `preload_image: my-hero.png`
@@ -58,11 +61,8 @@ This setting tells the browser about critical resources that you want to load as
 ### port
 The port number of the development server. Default is 8080
 
-### no_hotreload
-Disables [universal hot-reloading](../concepts/universal-hot-reloading.html). This is enabled by default.
-
-### no_automount
-Disables automatic mounting of [reactive islands](../concepts/reactive-islands.html). This is enabled by default.
+### router
+Settling this to `true` enables [client-side-navigation] to make the successive page loads feel instant.
 
 
 

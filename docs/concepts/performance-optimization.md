@@ -42,7 +42,7 @@ Every other image, except the hero image on your layout, should be given the sta
 Use the following configuration on your `site.yaml` file to enable near-instant page switching:
 
 ```
-page_router: true
+router: true
 ```
 
 This setting enables [client-side navigation](client-side-navigation.html).
