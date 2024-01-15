@@ -98,8 +98,7 @@ Here are all the supported properties that impact the contents of your HEAD:
   The value of the `<title>` tag — the most important meta tag for SEO. By default this is the value of the Markdown `# Level one title` if not explicitly defined.
 
   ### title_template
-  Allows formatting the value of the `<title>` tag in the way you like. A value such as `'%s | Acme Inc.'` prints "My page | Acme Inc" where the `%s` token with the page title.
-
+  Allows formatting the value of the `<title>` tag in the way you like. A value such as `'%s | Acme Inc.'` prints "My page | Acme Inc." where the `%s` token is the page title.
 
   ### viewport
   The [viewport](//developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) value. The default is: "width=device-width,initial-scale=1"
