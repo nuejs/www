@@ -43,7 +43,7 @@
   article .wide
     m 2em -9em
 
-  article .wider
+  article .wider, .super-wide
     m 2em -7em 2em
     img
       max-width calc(100% + 5em)

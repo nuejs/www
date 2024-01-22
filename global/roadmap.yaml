@@ -1,0 +1,107 @@
+
+roadmap:
+  - name: Core
+    desc: The basis for the content-first development model
+    key: core
+
+    projects:
+      - name: Nue JS
+        desc: Server-side templating engine and a lightweight client-side UI library for building reactive components.
+        est: Sep 2023
+        url: /blog/backstory/
+        label: Backstory
+
+      - name: Nuekit
+        desc: The website and web app generator with a content-first development model and universal hot-reloading.
+        est: Dec 2023
+        url: /blog/nuekit-010/
+
+      - name: Nuemark
+        desc: An intuitive Markdown dialect for rich, interactive content.
+        est: Jan 2024
+        url: /blog/introducing-nuemark/
+
+      - name: Nue Color
+        desc: Syntax highlighting and Nuemark code blocks for all common languages.
+        est: Feb 2024
+
+  - name: Design System
+    desc: Generic design system for websites and single-page applications
+    key: cascade
+
+    projects:
+      - name: Universal site layout
+        desc: Generic, classless layout system for multi-page applications. Think CSS Zen Garden 2.0
+        est: Mar 2024
+
+      - name: CSS design system
+        desc: Scaleable CSS architecture for the content-first development model
+        est: Mar 2024
+
+      - name: Motion design
+        desc: Design system extension for CSS transitions and animations
+        est: Q2 2024
+
+      - name: Single-page apps
+        desc: Generic layout system for single-page applications
+        est: Q3 2024
+
+  - name: Template
+    desc: Universal template for hybrid multi/single-page applications
+    key: template
+
+    projects:
+      - name: Base template
+        desc: Generic template with universal site layout and content-first development model
+        est: April 2024
+
+      - name: Startup template
+        desc: Generic startup template with Minimalistic, Functional, and Heroic themes
+        est: Q2 2024
+
+      - name: E-commerce template
+        desc: Generic startup template with product management, charging, and billing
+        est: Q3 2024
+
+      - name: Specialized themes
+        desc: Extend the universal template with more specialized themes like Luxurious, Memphis, Hippie, Typographic, and Retro
+        est: Q3 2024
+
+  - name: Cloud
+    desc: Specialized cloud for content-first development
+    key: cloud
+
+    projects:
+      - name: Hosting
+        desc: Custom domains and global delivery for multi- and single-page apps
+        est: Q3 2024
+
+      - name: Hot deployment
+        desc: 10-100x faster deployments
+        est: Q3 2024
+
+      - name: Cold deployment
+        desc: Git-based versioned shipping, rollbacks, and staging environments
+        est: Q4 2024
+
+
+  - name: Services
+    desc: Pluggable backend for the universal template
+    key: services
+    est: 2025
+
+    projects:
+      - name: Analytics
+        desc: Privacy-friendly analytics for traffic, engagement, conversions, and web vitals.
+        est: Q1 2025
+
+      - name: People
+        desc: Relationship management for leads, members, users, and customers
+        est: Q1 2025
+
+      - name: E-commerce
+        desc: Product management, charges, billing, and revenue.
+        est: Q1 2025
+
+
+

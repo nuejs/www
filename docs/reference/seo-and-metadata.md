@@ -88,6 +88,9 @@ Here are all the supported properties that impact the contents of your HEAD:
   ### origin
   This is your domain name prefixed with the protocol as returned by `location.origin`. For example: `"https://emmabennet.co"`. Nue uses this value to prefix your og_image and the value is also used on the generated `sitemap.xml` file later on.
 
+  ### pubDate
+  The publication date of the article. The content collections are sorted by this column. The most recent one coming first.
+
   ### robots
   Value for "robots" meta property. Use "noindex" to exclude the site/app/page from search engines.
 

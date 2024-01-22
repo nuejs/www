@@ -3,7 +3,7 @@ title: "Nue: The content-first web framework"
 desc: Nue is a fresh Next.js and Astro alternative with a content-first development model, universal hot-reloading, and extreme performance.
 logo: /img/logo.png
 favicon: /img/favicon.svg
-og: /img/og.jpg
+og: /img/perfect-framework.png
 baseurl: https://nuejs.org
 theme-color: #00C2FF
 
@@ -17,8 +17,8 @@ mastnav:
   - Blog
 
 banner:
-  label: Nuemark is here!
-  url: /blog/introducing-nuemark/
+  label: A perfect framework
+  url: /blog/perfect-web-framework/
 
 footnav:
   - FAQ

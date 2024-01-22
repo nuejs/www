@@ -7,8 +7,9 @@
 
   <form @submit.prevent="submit" :else>
     <h4>Nue mailing list</h4>
+    <p :if="desc">{ desc }</p>
     <input type="email" name="email" placeholder="Your email" required>
-    <textarea name="comment" placeholder="Your thoughts (optional)"></textarea>
+    <textarea name="comment" placeholder="Your thoughts (are welcome!)"></textarea>
     <button class="secondary">Notify me</button>
   </form>
 

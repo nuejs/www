@@ -1,0 +1,60 @@
+
+h1
+  max-width 10em
+  a
+    font 300 $gray-300
+    transition .2s
+    inline-block
+    pointer
+
+    &:hover
+      color $main
+
+
+.super-wide.is-dark
+  radius .4em
+  p calc(1em + 4vw)
+  mb .3em
+  + p
+    font 75% $gray
+    mb 2em
+  @small-
+    mx -1.5em
+
+
+.terms
+  font 90%
+  p
+    mb .3em
+  code
+    font 600
+
+h2 code
+  bg $main-200
+  font 1.1rem $main-600 1
+  font-family courier new
+  text-shadow 1px 1px 1px white
+  padding .3em .6em
+  radius .3em
+  float right
+  m .1em .3em 0 .2em
+
+.problem
+  font 95% $gray
+  border-left 5px solid $red
+  pl 1em
+  em
+    color $gray-800
+
+.author
+  img
+    width 2.4em
+    relative .2em
+  h4
+    none
+
+
+#design, #speed, #ux
+  code
+    bg #cdffdf
+    color #28ac6c

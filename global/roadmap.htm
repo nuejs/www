@@ -1,0 +1,26 @@
+
+<ul @name="roadmap" class="roadmap">
+
+  <li :for="el in roadmap">
+    <h3 :id="el.key">{ el.name } <a href="#{el.key}" :title="el.name"></a></h3>
+    <p>{ el.desc }</p>
+
+
+    <table>
+      <tr :for="p in el.projects" class="{ done: p.url }">
+        <td class="name">{ p.name }</td>
+        <td class="desc">
+          <p>{ p.desc }</p>
+          <p :if="p.url"><a :href="p.url">{ p.label || 'Release notes'} &raquo;</a></p>
+        </td>
+        <td class="est">{ p.est }</td>
+      </tr>
+    </table>
+  </li>
+
+  <script>
+    constructor({ roadmap }) {
+      this.roadmap = roadmap
+    }
+  </script>
+</ul>
