@@ -171,9 +171,9 @@ Here's another example where the data/options are explicitly defined with YAML:
 ### Options
 
 [.options]
-  `head` table header items separated with comma, semicolon, or pipe ("|") character
+  `head` table header items separated with semicolon or pipe ("|") character
 
-  `items` table body items where rows start with "-" (a YAML list item) and columns are separated with a comma, semicolon, or pipe ("|") character. The items can also be given directly on the body (see the first example above).
+  `items` table body items where rows start with "-" (a YAML list item) and columns are separated with a semicolon or pipe ("|") character. The items can also be given directly on the body (see the first example above).
 
 
 ## [layout]
@@ -425,7 +425,7 @@ The standard [`is` attribute](//developer.mozilla.org/en-US/docs/Web/HTML/Global
 ### Options
 
 [.options]
-  `tabs` tab labels are separated with a comma, semicolon, or pipe ("|") character. Can also be given with the unnamed attribute like in the above example.
+  `tabs` tab labels are separated with a semicolon or pipe ("|") character. Can also be given with the unnamed attribute like in the above example.
 
   `key` specifies the key used on the link href elements and the id elements. The default is "tab".
 
