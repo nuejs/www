@@ -100,6 +100,39 @@ ES6 classes make your code look amazingly compact and clean. Check out the reaso
 
 [es6]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 
+## Client-side script- tags
+Any attribute on the script tag such as `type` or `src` is passed to the client directly without parsing/rendering:
+
+```
+<!-- passed to the client directly -->
+<script async
+  src="https://www.googletagmanager.com/gtag/js?id=TAG_ID"></script>
+
+<!-- same here -->
+<script type="text/javascript">
+  const test = { msg: 'brackets have no special meaning here' }
+  console.info('hello client')
+</script>
+```
+
+If you don't like the extra `type` attribute you can give a `client`- attribute to tell Nue that the script is should not be touched. The client attribute is removed from the final output keeping the HTML clean:
+
+```
+<script client>
+  // ...
+</script>
+```
+
+Is rendered as
+
+```
+<script>
+  // ...
+</script>
+```
+
+The `client` attribute work on any tag, not just scripts.
+
 
 ### Slots
 Slots are a way to extend components with custom functionality. They offer a way for the parent component to inherit functionality from a child. They help you define highly reusable, multi-purpose components.
