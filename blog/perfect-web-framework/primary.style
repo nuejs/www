@@ -1,14 +1,14 @@
 
 h1
-  max-width 10em
+  max-width 12em
   a
-    font 300 $gray-300
-    transition .2s
-    inline-block
-    pointer
+    color black
+    text-decoration underline
+    text-decoration-style wavy
+    text-decoration-color red
 
-    &:hover
-      color $main
+.badge
+  none
 
 
 .super-wide.is-dark

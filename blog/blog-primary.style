@@ -9,10 +9,6 @@ main
   &.visible
     opacity 1
 
-
-.nuemark-page .badge
-  none
-
 .blog-hero.figure
   m -3em -20vw 2em
   block

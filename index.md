@@ -8,10 +8,10 @@ include: [home, bunny/video]
 
 [.cta]
   [link to="/docs/" class="button" "Get started &rsaquo;"]
-  [link to="/docs/why-nue/content-first.html" class="button secondary" "How it works &rsaquo;"]
+  [link to="/blog/perfect-web-framework/" class="button secondary" "The goal for Nue &rsaquo;"]
 
 [.subtle]
-  **The Difference:** Assemble rich pages without ever leaving your content
+  **One reason to try:** Assemble rich pages without ever leaving your content
 
 [bunny-video]
   videoId: 3bf8f658-185a-449c-93b9-9bd5e1ad0d05
@@ -44,24 +44,24 @@ The ultimate goal of Nue is to build a content first alternative to **Vercel** a
 
     Content-first alternative to *MDX* and *Markdoc*. [Read the annoucement &raquo;](/blog/introducing-nuemark/)
 
-  * ### Nue CSS
-    Content-first design system
+  * ### Design system
+    A CSS design system to focus on theming
 
-    Cascading alternative to *Tailwind* and *CSS-in-JS*
+    Semantic alternative to *Tailwind* and *CSS-in-JS*
 
-  * ### Nue Templates
+  * ### Templates
     Content-first templates with pixel-perfect design
 
     Themable alternative to *Tailwind* and *Next* templates
 
-  * ### Nue Cloud
-    Deploy 10-100x faster
+  * ### Cloud
+    With 10-100x faster deployement times
 
     Ridiculously easier alternative to *Vercel* and *Netlify*
 
 [.info]
-  #### Status update (Jan 12, 2024)
-  [Nuemark is out!](/blog/introducing-nuemark/) — Currently working on [Github issues](//github.com/nuejs/nue/issues). Then focusing on **Nue CSS** — A design system optimized specifically for content-first development.
+  #### Status update / Jan 23, 2024
+  [A new blog post](/blog/perfect-web-framework/) about the ultimate goal of Nue along with a more detailed product roadmap
 
 
 ## Receive an email
@@ -85,6 +85,10 @@ When the next project is pushed out:
 
 
 [quotes]
+  - user: snowcode
+    text: I'm totally loving Nue — I like where this is going; it looks like you're creating an extensible "better version" of HTML built for content producers! Re-imagining what html could have been. txs for all the work! ❤️
+    id: 1747705814679167186
+
   - user: retiagod
     text: What a great contribution to the world!
     id: 1706347206285082799

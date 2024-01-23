@@ -8,11 +8,11 @@ include: [permlink]
 # FAQ
 
 ## What is Nue?
-The ultimate goal of Nue is to be a __content-first__ alternative to *Vercel* and *Netlify*. It's also extremely fast and ridiculously easy to use. Here's the release schedule:
+The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web-framework/). A content-first alternative to *Vercel* and *Netlify*, which is extremely fast and ridiculously easy to use.
 
-[media]
-  small: /img/roadmap4.png
-  large: /img/roadmap4-big.png
+[image-link]
+  src: /img/roadmap4-big.png
+  href: /blog/perfect-web-framework/
   class: tall
 
 

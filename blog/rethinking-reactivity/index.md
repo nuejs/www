@@ -4,7 +4,7 @@ desc: How Nue JS works? How is it different from Svelte? Here's how
 og: /blog/img/meme-big.jpg
 thumb: rethinking.png
 date: 2023-10-02
-include: [examples.js]
+include: [examples.js, syntax]
 ---
 
 

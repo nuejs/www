@@ -6,7 +6,7 @@ h1
 .blog-entry
   align-items center
   font 1.2em
-  gap 2em
+  gap 3em
   mt 3em
   flex
 
@@ -63,3 +63,17 @@ h1
   radius 3px
   p 0 .5em
   bg $red
+
+
+@small-
+  h1
+    m 0 auto
+
+  .blog-entry
+    flex-direction column
+    gap 1.4em
+    mb 5em
+
+    > img
+      ml -10em
+      width 7em

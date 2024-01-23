@@ -2,14 +2,15 @@
 ---
 date: 2024-01-23
 title: The perfect web framework
-desc: The pillars of a perfect web framework and a strategy on how to build one.
+desc: Nue's ultimate goal and the development steps to get there
 thumb: perfect-thumb.png
+og: /img/perfect-banner-big.jpg
 include: [ideal, roadmap]
 ---
 
 
-# Pillars of a perfect [*](#the-ideal) Web framework
-In June 2023 I had my final frontend rage quit 🤬 moment. The anger was so intense that I decided to change the direction of my career from a startup founder to a full-time OSS developer. I would devote all my time to fixing everything that is wrong with the current frontend ecosystem.
+# Striving for a ["perfect"](#the-ideal) Web framework
+In June 2023 I had my final frontend rage quit moment. The anger was so intense that I decided to change the direction of my career from a startup founder to a full-time OSS developer. I would devote all my time to fixing everything that is wrong with the current frontend ecosystem.
 
 I soon created a [project on GitHub](https://github.com/nuejs/nue) and called it *Nue*. It would be to be the web framework of my dreams. I wanted it to be "perfect" in the most literal sense of the word. In this article, I'll define the word __perfect__ and explain the steps on how to make the dream become reality:
 
@@ -41,7 +42,7 @@ Note that single-page applications are no different: the content just comes from
 
 
 ## World-class design `UX` [design]
-Wwrld-class means the highest caliber design in the world. The top 1% of websites. The future *Stripes*, *Amies*, and *Linears*.
+World-class means the highest caliber design in the world. The top 1% of websites. The future *Stripes*, *Amies*, and *Linears*.
 
 Everything is pixel-perfect down to the tiniest detail. From design tokens to motion design. The underlying design system makes sure that all areas of your site have the same, consistent look and feel. Be it minimalistic, heroic, or playful.
 

@@ -24,8 +24,7 @@ body > .site-top
     relative .03em
     radius .2em
     size .8em
-    animation color-change 9s infinite
-    bg $red
+    animation color-change 6s infinite
 
   &:hover
     border-color $gray-400
@@ -36,15 +35,16 @@ body > .site-top
     border-color $gray
     transform translateY(1px)
 
+  @small-
+    none
+
 @keyframes color-change
   0%
+    bg white
+  50%
     bg $main
-  33%
-    bg $pink
-  66%
-    bg $green
   100%
-    bg $blue
+    bg white
 
 
 
