@@ -1,8 +1,8 @@
 
 h1
   max-width 10em
-  mb .2em
   font capitalize
+  mb .2em
 
   @large
     font 5em
@@ -33,6 +33,9 @@ h2
 
   .button:first-child
     mr .4em
+
+  @small-
+    font 110%
 
 main .join
   mb 5em

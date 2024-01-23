@@ -22,11 +22,10 @@ h1, h2, h3, h4
 
 
 h1
-  font 4rem 1.05 900 -.1rem
+  font 1.05 900 -.1rem
+  font-size calc(2.2em + 2vw)
   mb .4rem
 
-  @medium-
-    font 3.5em
 
 
 blockquote, figure, p, ul, ol
