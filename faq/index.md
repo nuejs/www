@@ -17,7 +17,7 @@ The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web
 
 
 ## What exactly is "content first"?
-The content-first approach places content at the center of web development. The goal is to develop websites primarly for content teams.
+The content-first approach places content at the center of web development. The goal is to develop websites primarily for content teams.
 
 Content-first strategy ensures that your design aligns with the content, maximizing the impact of both. Your site is built around [progressive enhancement](//en.wikipedia.org/wiki/Progressive_enhancement) with the content rendering first. That is: HTML and CSS before optional JavaScript.
 
@@ -27,7 +27,7 @@ Think [CSS Zen Garden](//en.wikipedia.org/wiki/CSS_Zen_Garden) after 20+ years o
 
 
 ## How is it different?
-While Nue is content-first, the others are pretty much the opposite. The development starts with JavaScript or TypeScript and pages are assembed with React- components. These components are tightly coupled containers for HTML, JavaScript, CSS, and content violating the [separation of concerns](//en.wikipedia.org/wiki/Separation_of_concerns) principle.
+While Nue is content-first, the others are pretty much the opposite. The development starts with JavaScript or TypeScript and pages are assembled with React- components. These components are tightly coupled containers for HTML, JavaScript, CSS, and content violating the [separation of concerns](//en.wikipedia.org/wiki/Separation_of_concerns) principle.
 
 Another popular trend is to load JavaScript first violating the _progressive enhancement_ pattern.
 
@@ -39,7 +39,7 @@ The layout, styling, and logic are separated, CSS is used as intended, and JavaS
 
 
 ## Do we really need another framework? [fatique]
-~More than ever!~ We need to radically simplify our stack. There are so many layers and build steps in the current stack that only the most experienced TypeScript engineers   understand how all the pieces work together.
+~More than ever!~ We need to radically simplify our stack. There are so many layers and build steps in the current stack that only the most experienced TypeScript engineers understand how all the pieces work together.
 
 With Nue, your stack is not just simpler, but [order of magnitude smaller](/docs/why-nue/closer-to-standards.html). There are fewer abstractions, less to learn, fewer headaches, and less room for errors. Please read the [backstory](/blog/backstory/) for a deeper rant.
 
@@ -60,7 +60,7 @@ I'm [Tero Piirainen](//twitter.com/tipiirai), a frontend developer from *Helsink
 
 
 ## Why all the effort? [why]
-It's hard to look from aside how web development is slipping away from standards to something more complex, heavy, and corporate owned. I do this for pain, not fun. I cannot rest until I'm done.
+It's hard to look from aside how web development is slipping away from standards to something more complex, heavy and corporate-owned. I do this for pain, not fun. I cannot rest until I'm done.
 
 
 ## Can I help? [contribute]
@@ -79,9 +79,13 @@ Other people that inspired Nue are:
 
 > "I look at the web today. Not as a programmer, but as a user of broken sites that are unable to obey the most basic rules of navigation and usability, terribly slow despite the hardware progress. And I can only think that modern frontend development has failed."
 
-*Steve Jobs* for the phrase:
+*Steve Jobs* for the phrases:
 
 > "You’ve got to start with the customer experience and work backward for the technology"
+
+and
+
+> "Just get rid of the crappy stuff and focus on the good stuff."
 
 *Mies van der Rohe* for stating the obvious:
 
