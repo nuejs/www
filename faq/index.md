@@ -8,7 +8,7 @@ include: [permlink]
 # FAQ
 
 ## What is Nue?
-The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web-framework/). A content-first alternative to *Vercel* and *Netlify*, which is extremely fast and ridiculously easy to use.
+The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web-framework/). A content-first alternative to *Next.js*, *Vercel* and *Netlify*, which is extremely fast and ridiculously easy to use.
 
 [image-link]
   src: /img/roadmap4-big.png
@@ -17,30 +17,25 @@ The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web
 
 
 ## What exactly is "content first"?
-The content-first approach places content at the center of web development. The goal is to develop websites not just for developers, but particularly for content creators.
+The content-first approach places content at the center of web development. The goal is to develop websites primarly for content teams.
 
 Content-first strategy ensures that your design aligns with the content, maximizing the impact of both. Your site is built around [progressive enhancement](//en.wikipedia.org/wiki/Progressive_enhancement) with the content rendering first. That is: HTML and CSS before optional JavaScript.
 
-Content-first endorses _semantic HTML_, where the design is completely separated from the structure. It should be easy to alter the design and optimize it for any given context.
+Content-first endorses _semantic HTML_ and the _separation of concerns_ principle. The content, design, and reactivity are separate entities that can be developed in isolation. For example, the design can be altered without touching the content and make it fit for any given context.
 
 Think [CSS Zen Garden](//en.wikipedia.org/wiki/CSS_Zen_Garden) after 20+ years of technological progress.
 
 
 ## How is it different?
-While Nue is content-first, the others are literally the opposite. The development starts with JavaScript or TypeScript and pages are assembed with React- components. These components are tightly coupled containers for HTML, JavaScript, CSS, and content.
+While Nue is content-first, the others are pretty much the opposite. The development starts with JavaScript or TypeScript and pages are assembed with React- components. These components are tightly coupled containers for HTML, JavaScript, CSS, and content violating the [separation of concerns](//en.wikipedia.org/wiki/Separation_of_concerns) principle.
 
-This kind of "spaghetti" violates the most important software development principle: [separation of concerns](//en.wikipedia.org/wiki/Separation_of_concerns).
-
-CSS-in-JS is a big thing and you can even see SQL-in-JS.
-
-Nue keeps different programming concepts separate and uses [progressive enhancement](//en.wikipedia.org/wiki/Progressive_enhancement) to first load content, then styling, and finally JavaScript — if ever.
-
-This is, again, the polar opposite of what the other tools do. They load JavaScript first and content last. And this keeps happening as long as the single-page-application (SPA) model is trending.
-
+Another popular trend is to load JavaScript first violating the _progressive enhancement_ pattern.
 
 
 ## How is Nue "closer to standards"? [metal]
-One of the main goals of Nue is to bring web development closer to standards by focusing on *minimalism*, *separation of concerns*, and *semantic web design*. That is: there are as few abstractions as possible. The layout, styling, and logic are separated, CSS is used as intended, and JavaScript is optional.
+One of the main goals of Nue is to bring web development closer to standards by focusing on *minimalism*, *separation of concerns*, and *semantic web design*. That is: there are as few abstractions as possible.
+
+The layout, styling, and logic are separated, CSS is used as intended, and JavaScript is optional.
 
 
 ## Do we really need another framework? [fatique]
@@ -65,7 +60,7 @@ I'm [Tero Piirainen](//twitter.com/tipiirai), a frontend developer from *Helsink
 
 
 ## Why all the effort? [why]
-It's hard to look from aside how web development is slipping away from standards to something more complex, heavy, and proprietary. I do this for pain, not fun. I cannot rest until I'm done.
+It's hard to look from aside how web development is slipping away from standards to something more complex, heavy, and corporate owned. I do this for pain, not fun. I cannot rest until I'm done.
 
 
 ## Can I help? [contribute]
@@ -80,7 +75,7 @@ While Bun makes JavaScript faster, Nue makes front-end development faster. Nue +
 
 Other people that inspired Nue are:
 
-*Salvatore Sanfilippo* for this action-provoking [tweet][antirez]:
+*Salvatore Sanfilippo* for awesome programming attitude and this action-provoking [tweet][antirez]:
 
 > "I look at the web today. Not as a programmer, but as a user of broken sites that are unable to obey the most basic rules of navigation and usability, terribly slow despite the hardware progress. And I can only think that modern frontend development has failed."
 
@@ -88,9 +83,9 @@ Other people that inspired Nue are:
 
 > "You’ve got to start with the customer experience and work backward for the technology"
 
-*Dieter Rams* for stating the obvious:
+*Mies van der Rohe* for stating the obvious:
 
-> "Less, but better"
+> "Less is more"
 
 [antirez]: //twitter.com/antirez/status/1378272801522597888
 

@@ -32,8 +32,8 @@ The simplest form of layout is to define global headers and footers on the root 
   <p>© { name } • { new Date().getFullYear() }</p>
   <q>{ slogan }</q>
 
-  <!-- Google Tag Manager :) -->
-  <script>
+  <!-- Google Tag Manager (type attribute needed ) -->
+  <script type="text/javascript">
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start' ...
     })(window, document,'script','dataLayer','{ gtm_id }')
   </script>
