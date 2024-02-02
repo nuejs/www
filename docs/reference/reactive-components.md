@@ -358,7 +358,7 @@ Here's an example library that defines both a shopping cart and a button compone
 ```
 <!-- shared code -->
 <script>
-!  import { shopping_cart, addToCart } from './cart.js'
+|  import { shopping_cart, addToCart } from './cart.js'
 </script>
 
 <!-- shopping bag component -->
