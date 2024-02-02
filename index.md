@@ -3,15 +3,15 @@
 include: [home, bunny/video]
 ---
 
-# The content first web framework
-**Nue** is a fresh **Next.js** and **Astro** alternative with a content-first development model
+# A content-first Web framework
+**Nue** is a closer-to-metal framework embracing minimalism and web standards. It's structurally clean and stupidly fast.
 
 [.cta]
-  [link to="/docs/" class="button" "Get started &rsaquo;"]
-  [link to="/blog/perfect-web-framework/" class="button secondary" "The goal for Nue &rsaquo;"]
+  [link to="/docs/" class="button" "Get started"]
+  [link to="/blog/perfect-web-framework/" class="button secondary" "Product roadmap"]
 
 [.subtle]
-  **One reason to try:** Assemble rich pages without ever leaving your content
+  **Content-first:** Build entire sites without ever leaving your content
 
 [bunny-video]
   videoId: 3bf8f658-185a-449c-93b9-9bd5e1ad0d05
@@ -19,7 +19,7 @@ include: [home, bunny/video]
   class: wide
 
 ## Vision
-The ultimate goal of Nue is to build a content first alternative to **Vercel** and **Netlify**, which is extremely fast and ridiculously easy to use.
+The ultimate goal of Nue is to build [perfect web framework](/blog/perfect-web-framework/), which is ridiculously fast and easy to use.
 
 [media]
   small: /img/roadmap4.png
@@ -30,38 +30,38 @@ The ultimate goal of Nue is to build a content first alternative to **Vercel** a
 
 [.tools]
   * ### Nue JS
-    HTML markup for static and reactive interfaces
+    Server-side templating and reactive components
 
-    A (2.3kb) alternative to *React*, *Vue*, and *Svelte*. [Read the backstory &raquo;](/blog/backstory/)
+    An HTML-first alternative to *React*. [Read the backstory &raquo;](/blog/backstory/)
 
   * ### Nuekit
-    The content first web framework
+    The content-first web framework
 
-    Closer-to-metal alternative to *Next.js* and *Astro*. [Read the annoucement &raquo;](/blog/nuekit-010/)
+    Closer-to-metal alternative to *Next.js*. [Read the annoucement &raquo;](/blog/nuekit-010/)
 
   * ### Nuemark
     Markdown dialect for rich, interactive content
 
-    Content-first alternative to *MDX* and *Markdoc*. [Read the annoucement &raquo;](/blog/introducing-nuemark/)
+    Content-first alternative to *MDX*. [Read the announcement &raquo;](/blog/introducing-nuemark/)
 
   * ### Design system
-    A CSS design system to focus on theming
+    A framework-agnostic CSS design system
 
-    Semantic alternative to *Tailwind* and *CSS-in-JS*
+    Casdading companion to *CSS-in-JS* and *Tailwind*
 
   * ### Templates
     Content-first templates with pixel-perfect design
 
-    Themable alternative to *Tailwind* and *Next* templates
+    Themable alternative to Tailwind templates
 
   * ### Cloud
-    With 10-100x faster deployement times
+    Stupidly fast and simple hosting for Nue projects
 
-    Ridiculously easier alternative to *Vercel* and *Netlify*
+    Ridiculously easier alternative to *Vercel*
 
 [.info]
-  #### Status update / Jan 23, 2024
-  [A new blog post](/blog/perfect-web-framework/) about the ultimate goal of Nue along with a more detailed product roadmap
+  #### Sat 27, 2024
+  Working on [#168](https://github.com/nuejs/nue/issues/168) — syntax highlighter
 
 
 ## Receive an email
@@ -76,7 +76,7 @@ When the next project is pushed out:
 [.hero-quote]
   ![Elliot profile image]( /home/img/elliot-jay-stocks.jpg)
 
-  > At some point in the last decade, popular frameworks and platforms have eschewed semantic markup and, as a result, the web has become way more bloated than it ever needed to be. Stripping away presentational markup and unreadable CSS is something all web developers once believed in.
+  > At some point in the last decade, popular frameworks and platforms have eschewed semantic markup, and, as a result, the web has become way more bloated than it ever needed to be. Stripping away presentational markup and unreadable CSS is something all web developers once believed in.
 
   > **I'm glad Nue is bringing back that power.**
 

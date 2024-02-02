@@ -61,6 +61,7 @@ pre {
   counter-increment: line-counter 1
 }
 
+/* line numbering */
 .hl-wrap:before {
   border-right: 1px dotted rgba(255, 255, 255, .3);
   color: rgba(255, 255, 255, .3);

@@ -19,7 +19,7 @@ figcaption
 
 // inline code
 p, li
-  code
+  > code
     border 1px solid $gray-200
     font-family courier
     color $gray-600

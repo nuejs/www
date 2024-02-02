@@ -1,10 +1,19 @@
 body {
+  --angle: 220deg;
   background-image: linear-gradient(
-    135deg,
-    white 4%,
-    #c0eeff7d 15%,
-    white 20%,
-    #d2d2d219 20%,
-    white 21%
-  )
+    var(--angle),
+    white 0%,
+    #c0eeff7d 13%,
+    white 15%,
+    #00ffdc36 17%,
+    white 20%
+  );
 }
+
+@media (max-width: 700px) {
+  body {
+    --angle: 255deg;
+    background-position: 0 -500px;
+  }
+}
+

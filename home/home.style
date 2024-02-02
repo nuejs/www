@@ -1,15 +1,10 @@
 
 h1
-  max-width 10em
-  font capitalize
-  mb .2em
-
-  @large
-    font 5em
+  max-width 8em
 
   + p
-    font-size calc(1.2em + .8vw)
-    max-width 20em
+    font-size calc(1em + .7vw)
+    max-width 26em
     mb 1.2em
 
     em
@@ -28,11 +23,15 @@ h2
     max-width 32em
 
 .cta
-  font 135%
+  font 125%
   mb 3em
 
-  .button:first-child
-    mr .4em
+  .button:last-child
+    bg /img/long-arrow-right.svg no-repeat
+    bg-pos 92% 58%
+    bg-size 1.4em
+    ml .4em
+    pr 2.7em
 
   @small-
     font 110%

@@ -2,6 +2,8 @@
 #vision
   font 2.5em 800
   mt 2em
+  + p
+    max-width 24em
 
 // roadmap image
 .roadmap
@@ -58,7 +60,7 @@
 
   p
     font 400 $gray
-    max-width 14em
+    max-width 19em
 
 
   em
@@ -66,11 +68,17 @@
 
   // completed
   li:nth-child(-n + 3)
-    border 2px solid black
+    box-shadow 0 1px 2em #0001, 0 0 0 1px $main
+    bg /img/check.svg no-repeat
+    bg-pos 95% 1.4em
+    transition .1s
+    bg-size 1.5em
+    pointer
 
-    h3:before
-      content "✔️"
-      mr .3em
+    &:hover
+      box-shadow 0 1px 2em #0001, 0 0 1px 3px $main
+      transform scale(1.005)
+
 
 .quotes
   column-width 17em

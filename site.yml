@@ -12,12 +12,12 @@ icons: /global/icons
 site-top: false
 
 mastnav:
-  - FAQ
   - Docs
   - Blog
+  - FAQ
 
 banner:
-  label: The Goal
+  label: "A perfect framework"
   url: /blog/perfect-web-framework/
 
 footnav:
@@ -33,11 +33,10 @@ footnav:
 subnav:
   - label: Get started
     url: /docs/
-    class: button secondary
-
-  - img: /global/icons/github.svg
+    class: get-started
+  - label: 5.1k+
     url: https://github.com/nuejs/nue
-    class: octocat
+    class: github-button
   - img: /global/icons/menu.svg
     hash: mobile-nav
     class: burger

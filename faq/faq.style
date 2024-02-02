@@ -1,4 +1,7 @@
 
+h1
+  letter-spacing .1em
+
 main
   max-width $page-width
 

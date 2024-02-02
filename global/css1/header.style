@@ -11,29 +11,28 @@ body > .site-top
 */
 
 .badge
-  font 85% 600 $gray-700
-  radius 3px
-  p .4em 1em
-  bg white
+  bg no-repeat
+  background-image url(/img/cube.svg), url(/img/chevron-right.svg)
+  font 80% 600 $gray-600
+  bg-pos .6em 60%, 96% 55%
+  bg-size 1.5em, 1em
   border $gray-200
+  radius 3em
+  p .4em 2em .4em 2.5em
+  mt -.15em
 
   &:before
-    content ""
-    inline-block
-    margin-right .4em
-    relative .03em
-    radius .2em
-    size .8em
-    animation color-change 6s infinite
+    content "Nue • "
+    font bold #000
 
   &:hover
     border-color $gray-400
     color black
 
   &:active
-    box-shadow 0 0 .2em #666 inset
+    box-shadow 0 0 .2em #6661 inset
     border-color $gray
-    transform translateY(1px)
+    transform scale(.99)
 
   @small-
     none
@@ -56,8 +55,8 @@ body > .site-top
   flex
 
   .logo
-    max-height 2em
-    mr 2em
+    width 3.7em
+    mr 1.9em
 
   .button
     padding .2em 1em
@@ -68,13 +67,46 @@ body > .site-top
 
 // generic nav
 nav > a
-  font 1.8 $gray-600 600
+  font 1.8 $gray-800 600
+  pointer
 
   &:hover
-    color $gray-900
+    color black
 
-.octocat img
-  width 1.8em
+.get-started
+  bg /img/chevron-right.svg no-repeat
+  bg-pos 85% 45%
+  bg-size .8em
+  border-right $gray-300
+  font 90%
+  mr 1.4em
+  pr 2em
+
+
+
+.github-button
+  bg #F6F8FA /global/icons/github.svg no-repeat
+  bg-pos .7em 50%
+  bg-size 1.1em
+  font 90%
+  p .5em 1em .6em 2.2em
+  border $gray-300
+  radius 5px
+  line-height 1
+  relative -1px
+
+  &:hover
+    bg #f6f6f6
+
+  span
+    bg #E5E8E9
+    p .3em .8em
+    radius 1em
+    font 80%
+
+  &:hover
+    border $gray-400
+
 
 .logo:hover
   transform scale(1.01)
@@ -85,11 +117,12 @@ nav > a
 .mastnav
   gap 1.5vw
   display flex
+  align-items center
   mr 2vw
 
   a
     p 0 .8em
-    font nowrap
+    font 90% nowrap
 
   /* red dot
   [href="/blog/"]

@@ -91,16 +91,16 @@ roadmap:
     est: 2025
 
     projects:
-      - name: Analytics
-        desc: Privacy-friendly analytics for traffic, engagement, conversions, and web vitals.
+      - name: People
+        desc: Registration, authentication, and CRM
         est: Q1 2025
 
-      - name: People
-        desc: Relationship management for leads, members, users, and customers
+      - name: Analytics
+        desc: Traffic, engagement, conversions, and web vitals
         est: Q1 2025
 
       - name: E-commerce
-        desc: Product management, charges, billing, and revenue.
+        desc: Products, customers, charges, and billing
         est: Q1 2025
 
 

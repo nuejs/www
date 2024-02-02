@@ -16,6 +16,8 @@
 
   .octocat
     mt 2.5em
+    mx auto
+    width 3.8em
     block
 
 .footnav

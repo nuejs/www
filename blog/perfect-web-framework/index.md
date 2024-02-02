@@ -9,10 +9,10 @@ include: [ideal, roadmap]
 ---
 
 
-# Striving for a ["perfect"](#the-ideal) Web framework
+# A perfect web framework
 In June 2023 I had my final frontend rage quit moment. The anger was so intense that I decided to change the direction of my career from a startup founder to a full-time OSS developer. I would devote all my time to fixing everything that is wrong with the current frontend ecosystem.
 
-I soon created a [project on GitHub](https://github.com/nuejs/nue) and called it *Nue*. It would be to be the web framework of my dreams. I wanted it to be "perfect" in the most literal sense of the word. In this article, I'll define the word __perfect__ and explain the steps on how to make the dream become reality:
+I soon created a [project on GitHub](https://github.com/nuejs/nue) and called it *Nue*. It would be to be the "web framework of my dreams". I wanted it to be "perfect" in the most literal sense of the word. In this article, I'll define the word __perfect__ and explain the steps on how to make the dream become reality:
 
 
 [#the-ideal.is-dark.super-wide]
@@ -28,7 +28,7 @@ Hover/click items for more details
 
 
 ## Content-first core `DX` [content]
-The purpose of a website is to present content. To spread your thoughts or generate sales. For this obvious reason, your website should be optimized for content creation.
+The purpose of a website is to present content. To spread your thoughts or generate sales. For this obvious reason, your website should be optimized for content producers.
 
 Ideally, content people should be able to create new content and update the information architecture without seeking assistance from designers or developers. Several authors could proceed in isolation and break nothing but their local language or grammar.
 
@@ -46,7 +46,7 @@ World-class means the highest caliber design in the world. The top 1% of website
 
 Everything is pixel-perfect down to the tiniest detail. From design tokens to motion design. The underlying design system makes sure that all areas of your site have the same, consistent look and feel. Be it minimalistic, heroic, or playful.
 
-When a content-first design system is in place, content creators can ship great-looking content, without disturbing designers or developers.
+When a content-first design system is in place, content teams can ship great-looking content, without disturbing designers or developers.
 
 [.problem]
   Current frameworks like *Bootstrap* and Tailwind lack a global, content-first design system that spans the entire website. UX/CSS professionals have a hard time contributing because CSS is tightly coupled inside the JavaScript code.
@@ -78,20 +78,20 @@ The same "motherf**king" performance levels and the same pixel-perfect look and 
 ## Instant development loop `DX` [devloop]
 A perfect framework should show a live preview of your change after you save a file. Be it content, styling, layout, server component, or client-side reactive component — you should see the change immediately. And if you make a mistake, the framework will tell you exactly what went wrong.
 
-This kind of _universal hot-reloading_ offers a true WYSIWYG experience for content creators, designers, and developers. Instant development loop gives a significant boost to your daily productivity.
+This kind of _universal hot-reloading_ offers a true WYSIWYG experience for content producers, designers, and developers. Instant development loop gives a significant boost to your daily productivity.
 
 
 [.problem]
-  *Vite* and Next.js projects can have hundreds, even thousands of NPM modules. As the number of modules increases, your Hot Module Replacement (HMR) operations become heavier and slower. A styling change on your JS file can take seconds before it reaches the browser. And because HMR is limited to JavaScript and TypeScript files, both content creators and UX/HTML/CSS developers are missing the benefits of hot-reloading.
+  *Vite* and Next.js projects can have hundreds, even thousands of NPM modules. As the number of modules increases, your Hot Module Replacement (HMR) operations become heavier and slower. A styling change on your JS file can take seconds before it reaches the browser. And because HMR is limited to JavaScript and TypeScript files, both content teams and UX/HTML/CSS developers are missing the benefits of hot-reloading.
 
 
 ## Easy to scale `DX` [scale]
-An ideal framework lets people with different backgrounds take part in scaling the system. Content creators scale the content, UX engineers focus on design and user experience, and JS developers work on the business model, networking, and infrastructure.
+An ideal framework lets people with different backgrounds take part in scaling the system. Content teams scale the content, UX engineers focus on design and user experience, and JS developers work on the business model, networking, and infrastructure.
 
 They use the same system for content-focused apps and single-page apps and enjoy the productivity boost from universal hot-reloading. They share components and design elements so they can move faster and keep things consistent.
 
 [.problem]
-  Vite and *React* place all the burden on the JavaScript developer. They develop React components where content, styling, and logic are all mixed. Scaling becomes hard when content creators and UX developers cannot participate. And if you use different systems for blogging, documentation, and single-page apps – extra developer time is spent on keeping the external services together.
+  Vite and *React* place all the burden on the JavaScript developer. They develop React components where content, styling, and logic are all mixed. Scaling becomes hard when content teams and UX developers cannot participate. And if you use different systems for blogging, documentation, and single-page apps – extra developer time is spent on keeping the external services together.
 
 
 

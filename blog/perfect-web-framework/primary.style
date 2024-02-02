@@ -1,15 +1,6 @@
 
-h1
-  max-width 12em
-  a
-    color black
-    text-decoration underline
-    text-decoration-style wavy
-    text-decoration-color red
-
 .badge
   none
-
 
 .super-wide.is-dark
   radius .4em

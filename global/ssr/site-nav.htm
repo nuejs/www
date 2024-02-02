@@ -3,7 +3,7 @@
 <header @name="site-header" role="banner" class="site-header">
   <a href="/"><img :src="logo" class="logo"></a>
   <navi :items="mastnav" class="mastnav" suffix="/" :url="url"/>
-  <a class="badge" :if="banner" :href="banner.url">{ banner.label } &raquo;</a>
+  <a class="badge" :if="banner" :href="banner.url">{ banner.label }</a>
   <navi :items="subnav" class="subnav"/>
 </header>
 
