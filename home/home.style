@@ -35,6 +35,8 @@ h2
 
   @small-
     font 110%
+    display grid
+    gap 0.5em
 
 main .join
   mb 5em
