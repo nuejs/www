@@ -1,6 +1,6 @@
 
 <header @name="area-header" class="blog-header">
-  <author :date="date" :update="update" :if="!release"/>
+  <pretty-date :date/>
 </header>
 
 
@@ -25,7 +25,7 @@
       return diff < 4 * 24 * 3600 * 1000
     }
     constructor({ pages }) {
-      this.entries = pages.filter(el => el.date)
+      this.entries = pages.filter(el => el.date && !el.draft)
       this.entries.sort((a, b) => b.date - a.date)
     }
   </script>
@@ -36,7 +36,6 @@
   <figcaption>
     <h4>Tero Piirainen</h4>
     <p><a href="//twitter.com/tipiirai">@tipiirai</a></p>
-    <pretty-date :date="date"/>
   </figcaption>
 </figure>
 
@@ -45,6 +44,7 @@
 
   <script>
     constructor({ date }) {
+      console.info('here', date)
       const ts = new Date(date)
       this.iso = ts.toISOString()
       this.pretty = ts.toLocaleDateString('en-US', {

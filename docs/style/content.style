@@ -13,22 +13,22 @@ article
     mb 1em
 
   h1
-    font-size calc(1.3em + 2vw)
+    font-size calc(1.2em + 1.8vw)
     mb .2em
 
+    em
+      font-style normal
+      font-weight 800
     + p
       font-size calc(1em + .4vw)
 
-  em
-    font-style normal
-    font 550
 
   > p strong, > li strong
     font-style italic
     font-weight 400
 
   > h2
-    font-size calc(1.1em + .5vw)
+    font-size calc(1em + .4vw)
     mt 3em
 
   > h3

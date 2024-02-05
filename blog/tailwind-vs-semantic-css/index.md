@@ -9,6 +9,8 @@ include: syntax
 ---
 
 # Tailwind **vs.** Semantic CSS
+[author]
+
 This study compares two websites with identical design: the commercial Spotlight template from developers of Tailwind vs the same site with semantic CSS:
 
 [.cols]
@@ -24,7 +26,7 @@ This study compares two websites with identical design: the commercial Spotlight
 
 [.info]
   #### GIST
-  **Semantic version is 8 &times; smaller, renders faster, and is easier to work with.**
+  **Semantic version is 8 &times; smaller, renders faster, and requires no JavaScript bundlers / tooling**
 
 
 ## Front page HTML

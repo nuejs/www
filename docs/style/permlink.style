@@ -8,10 +8,10 @@ h2[id], h3[id]
 
   [title]
     absolute 0 -1em
-    color $main
+    color $gray-300
 
     &:hover
-      color $main-600
+      color $main
 
     &:before
       content "#"

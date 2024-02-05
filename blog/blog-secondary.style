@@ -1,8 +1,6 @@
 
 // secondary CSS
-@import url("/why/permlink.css")
-
-
+@import url("/docs/style/permlink.css")
 
 /* blockquote
 .quote

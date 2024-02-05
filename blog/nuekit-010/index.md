@@ -2,7 +2,7 @@
 ---
 date: 2023-12-14
 og: /img/nuekit-hero-big.jpg
-include: [bunny/video, syntax]
+include: [bunny/video, glow]
 title: Announcing Nuekit 0.1
 desc: A simple, minimalistic alternative to Next.js and Astro with universal hot-reloading and much more.
 release: nuekit 0.1
@@ -16,9 +16,12 @@ thumb: nuekit-thumb.jpg
   class: blog-hero
 
 
-December 14, 2023 • Tero Piirainen
+December 14, 2023
 
 # Announcing Nuekit
+
+[author]
+
 Today I’m excited to share Nuekit: a new kind of static site generator and web application builder. It's a very different beast than the other tools you see around. Particularly the developer experience is something new and special.
 
 *You'll get universal hot-reloading for content, layout, styling, and reactive islands*. Client-side routing for both websites and single-page applications. Extreme overall minimalism and simplicity, next-level build times, and much more. Most importantly: Nuekit brings you closer to web standards so your websites and apps will stand the test of time.

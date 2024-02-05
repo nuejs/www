@@ -20,11 +20,13 @@ main
     mb .8em
 
 // hero
-article h1
-  line-height 1.15
-  em
-    font normal $main 800
-    block
+article
+  > h1
+    font 2em 1.15 -1px
+
+    em
+      font normal $main 800
+      block
 
   + p
     font-weight 500
@@ -40,33 +42,33 @@ article h1
       ml 2.2rem
 
 .blog-header
-  mb 2em
+  mb 1em
+  time
+    font 90% $gray
+
   + article
-    font 1.2em
+    font 1.1em
 
 // author
 .author
-  align-items center
-  gap 1em
+  gap .8em
+  m 1em 0 2em
   flex
 
+  figcaption
+    font .82rem
+
   h4
-    font 1em $gray-800
-    mb .1em
+    color $gray-800
+    mb .0
 
   img
     filter grayscale(1)
     transition .1s
-    width 3.4em
+    width 1.8em
+    opacity .8
 
     &:hover
-      transform rotate(-1deg) scale(1.02)
+      transform scale(1.02)
       filter none
-  p
-    mb 0
-
-  time
-    font 85%
-
-
-
+      opacity 1

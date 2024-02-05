@@ -1,6 +1,6 @@
 
 class: docs-area
-include: [permlink, bunny/video]
+include: [permlink, bunny/video, glow]
 
 titles:
   concepts: Core concepts

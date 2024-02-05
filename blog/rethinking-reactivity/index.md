@@ -4,11 +4,13 @@ desc: How Nue JS works? How is it different from Svelte? Here's how
 og: /blog/img/meme-big.jpg
 thumb: rethinking.png
 date: 2023-10-02
-include: [examples.js, syntax]
+include: [examples.js, glow]
 ---
 
 
 # Rethinking Reactivity
+[author]
+
 [Nue JS](/docs/nuejs/) is a tiny _(2.1kb min-brotlied)_ library for building user interfaces. It's an alternative to frameworks like *Vue*, *React*, and *Svelte* — and it's the central piece of the ultimate goal: [Nuekit](/tools/) — A small, user-friendly alternative to frameworks like *Next.js*, *Vite*, and *Sveltekit*.
 
 [media]
@@ -31,7 +33,7 @@ If React is "Just JavaScript", then Nue is "Just HTML". Here's how the differenc
 
 #### React
 
-```
+``` jsx
 /**
  * React counter: "It's Just JavaScript"
  */

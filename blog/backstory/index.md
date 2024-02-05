@@ -7,6 +7,7 @@ date: 2023-09-18
 ---
 
 # Because web development used to be *fun!*
+[author]
 
 I still remember the exact moment when I discovered jQuery. It was a revelation: can I suddenly add logic to my pages in the same way I add styling? Oh yeah — This is going to be huge!
 
