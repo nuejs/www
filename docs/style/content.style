@@ -80,7 +80,7 @@ h2 + ul
 
 @small-
   pre
-    font 1.1em
+    overflow-x scroll
 
 .cols
   gap 2em
