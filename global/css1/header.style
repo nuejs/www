@@ -94,6 +94,7 @@ nav > a
   radius 5px
   line-height 1
   relative -1px
+  height fit-content
 
   &:hover
     bg #f6f6f6
