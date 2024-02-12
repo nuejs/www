@@ -23,6 +23,10 @@ article
       font-size calc(1em + .4vw)
 
 
+  > p em, > li em
+    font-style normal
+    font 550
+
   > p strong, > li strong
     font-style italic
     font-weight 400

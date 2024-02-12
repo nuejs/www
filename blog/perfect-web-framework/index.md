@@ -10,6 +10,8 @@ include: [ideal, roadmap]
 
 
 # A perfect web framework
+[author]
+
 In June 2023 I had my final frontend rage quit moment. The anger was so intense that I decided to change the direction of my career from a startup founder to a full-time OSS developer. I would devote all my time to fixing everything that is wrong with the current frontend ecosystem.
 
 I soon created a [project on GitHub](https://github.com/nuejs/nue) and called it *Nue*. It would be to be the "web framework of my dreams". I wanted it to be "perfect" in the most literal sense of the word. In this article, I'll define the word __perfect__ and explain the steps on how to make the dream become reality:

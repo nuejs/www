@@ -44,7 +44,6 @@
 
   <script>
     constructor({ date }) {
-      console.info('here', date)
       const ts = new Date(date)
       this.iso = ts.toISOString()
       this.pretty = ts.toLocaleDateString('en-US', {

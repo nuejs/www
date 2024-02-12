@@ -37,14 +37,6 @@ h2 code
   em
     color $gray-800
 
-.author
-  img
-    width 2.4em
-    relative .2em
-  h4
-    none
-
-
 #design, #speed, #ux
   code
     bg #cdffdf
