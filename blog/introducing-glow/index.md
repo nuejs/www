@@ -37,7 +37,7 @@ Today we're launching *Glow* — a new take on syntax highlighting:
 
 
 ## Coloring voodoo
-Be it *Haskell*, *TypScript*, or *Zig*. *React*, *Vue* or *Svelte*. Whatever Turing-free *Markdown* artifact is mixed with another tightly coupled language-of-the-year oddity. And they will all glow:
+Be it *Haskell*, *TypeScript*, or *Zig*. *React*, *Vue* or *Svelte*. Whatever Turing-free *Markdown* artifact is mixed with another tightly coupled language-of-the-year oddity. And they will all glow:
 
 [media]
   small: /img/glow-light.png
