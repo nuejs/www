@@ -52,6 +52,14 @@
       content: "Dave";
     }
   }
+
+  @media (max-width: 500px) {
+    overflow-x: auto;
+    padding: .5em;
+    [glow] { border-radius: .5em; }
+  }
+
+
 }
 
 
@@ -66,7 +74,7 @@
   > * {
     background-color: var(--glow-bg-color);
     border-radius: .5em;
-    overflow: hidden;
+    overflow-x: auto;
     margin: 0;
     flex: 1;
   }
@@ -99,6 +107,10 @@
   @media (max-width: 850px) {
     flex-direction: column;
     margin: 2em 0;
+  }
+
+  @media (max-width: 500px) {
+    padding: 1em;
   }
 }
 

@@ -22,8 +22,8 @@ include: [home, bunny/video]
 The ultimate goal of Nue is to build [perfect web framework](/blog/perfect-web-framework/), which is ridiculously fast and easy to use.
 
 [media]
-  small: /img/roadmap4.png
-  large: /img/roadmap4-big.png
+  small: /img/roadmap5.png
+  large: /img/roadmap5-big.png
   class: roadmap
   width: 850
 
@@ -60,8 +60,8 @@ The ultimate goal of Nue is to build [perfect web framework](/blog/perfect-web-f
     Ridiculously easier alternative to *Vercel*
 
 [.info]
-  #### Sat 27, 2024
-  Working on [#168](https://github.com/nuejs/nue/issues/168) — syntax highlighter
+  #### Feb 13, 2024
+  Finished [Glow](/blog/introducing-glow/) — Beautiful, pixel-perfect Markdown code blocks
 
 
 ## Receive an email

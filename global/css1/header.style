@@ -125,7 +125,7 @@ nav > a
     p 0 .8em
     font 90% nowrap
 
-  /* red dot
+  /* red dot */
   [href="/blog/"]
     relative
     &:after
@@ -135,7 +135,6 @@ nav > a
       content ""
       bg red
       block
-  */
 
 .subnav
   display flex
