@@ -146,7 +146,7 @@ Nuemark is an ideal choice for static site generators and flat-file systems.
 ### Try now
 [Bun](//bun.sh) is the recommended engine for Nuemark:
 
-``` sh<
+``` sh
 # Install Bun (if not done yet)
 curl -fsSL https://bun.sh/install | bash
 

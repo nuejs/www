@@ -19,6 +19,7 @@ cats:
 
   concepts:
     - Rich, editable content | nuemark
+    - Syntax highlighting
     - Files and directories
     - Layout components
     - Content collections
@@ -29,13 +30,13 @@ cats:
     - Performance optimization
 
   reference:
+    - Nuemark tag reference | nuemark-tags
     - Configuration options
     - Command line interface
     - Application router | app-router
     - SEO and metadata
     - Template syntax
     - Reactive components
-    - Nuemark tags
     - Nuemark API
 
 

@@ -1,4 +1,9 @@
 
+---
+title: Nuemark tag reference • Nue
+class: minitoc
+---
+
 # Nuemark tag reference
 
 Nuemark is a content authoring format that extends standard Markdown vocabulary with small code snippets called "tags". These tags help you build rich, interactive pages without ever leaving the Markdown. A simple, concise syntax lets you create complex layouts with ease:
@@ -21,7 +26,7 @@ Nuemark is a content authoring format that extends standard Markdown vocabulary 
 
 
 
-## Common features for all tags
+## Tag syntax
 Tag options can be supplied in different ways
 
 ```
@@ -376,14 +381,14 @@ Renders an HTML5 video element
 
 
 ## [tabs]
-Displays a commonly used tabbed layout where the content is displayed based on what "tab" the user clicks. Here the "Second block" is displayed when the "Second" tab is clicked:
+Displays a tabbed layout where the content is displayed based on what "tab" the user clicks. Here the "Second block" is displayed when the "Second" tab is clicked:
 
 
 ```
-[tabs "First, Second, Third"]
+[tabs "First | Second | Third"]
 
   ## First content block
-  Full Nuemark support on blocks
+  Tab panels can Can contain Nuemark
   ---
   ## Second block
   [! hello.png]
@@ -395,26 +400,29 @@ Displays a commonly used tabbed layout where the content is displayed based on w
 ### HTML output
 
 ```
-<section class="tabs" ıis="nuemark-tabs"ı>
-  <nav>
-    <a href="#tab-1">First</a>
-    <a href="#tab-2">Second</a>
-    <a href="#tab-3">Third</a>
+<section tabs is="aria-tabs" class="tabs">
+
+  <div role="tablist">
+    <a role="tab" aria-selected>First</a>
+    <a role="tab">Second</a>
+    <a role="tab">Third</a>
   </nav>
+
   <ul>
-    <li id="tab-1">
+    <li role="tabpanel">
       <h2>First content block</h2>
       <p>Full Nuemark support on blocks</p>
     </li>
-    <li id="tab-2">
+    <li role="tabpanel" hidden="hidden">
       <h2>Second block</h2>
       <img src="hello.png" loading="lazy">
     </li>
-    <li id="tab-2">
+    <li role="tabpanel" hidden="hidden">
       <h2>Second block</h2>
       <img src="hello.png" loading="lazy">
     </li>
   </ul>
+
 </section>
 ```
 
@@ -427,6 +435,187 @@ The standard [`is` attribute](//developer.mozilla.org/en-US/docs/Web/HTML/Global
 [.options]
   `tabs` tab labels are separated with a semicolon (";") or pipe ("|") character. Can also be given with the unnamed attribute like in the above example.
 
-  `key` specifies the key used on the link href elements and the id elements. The default is "tab".
+  `key` optional key for "aria-controls" and "aria-labeled" attributes as specified on the [MDN documentation][mdn]
+
+  `wrapper` creates a new parent element with a class name specifeid on this property
+
+  [mdn]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-controls#example
+
+
+### HTML layout with key and wrapper attributes
+
+```
+<div class="hero-gradient">
+
+  <section tabs is="aria-tabs">
+    <div role="tablist">
+      <a role="tab" aria-selected id="tab-tab-1"
+        aria-controls="tab-panel-1">Tab 1</a>
+
+      <a role="tab" id="tab-tab-2"
+        aria-controls="tab-panel-2">Tab 2</a>
+    </div>
+
+    <ul>
+      <li role="tabpanel" id="tab-panel-1"
+        aria-labelledby="tab-tab-1">
+        <p>Content 1</p>
+      </li>
+
+      <li role="tabpanel" id="tab-panel-2"
+        aria-labelledby="tab-tab-2" hidden="hidden">
+        <p>Content 2</p>
+      </li>
+    </ul>
+  </section>
+
+</div>
+```
+
+
+## [code]
+Displays a [syntax highligted](//docs/concepts/syntax-highlighting.html) code block offering more configuration options than markdown fenced code blocks and there is no need for triple backtick characters.
+
+```
+[code caption="index.js" wrapper="shiny" numbered="true"]
+
+  function something() {
+    // do the thing
+  }
+```
+
+### HTML output
+
+```
+<div class="shiny">
+  <figure>
+    <figcaption>
+      <h3>index.js</h3>
+    </figcaption>
+    <pre glow><code language="html"> ... </code></pre>
+  </figure>
+</div>
+```
+
+### Options
+
+[.options]
+  `caption` a caption for the codeblock
+
+  `wrapper` creates a new parent element with a class name specifeid on this property
+
+  `language` the language of the nested code
+
+  `numbered` draws line numbers when enebled
+
+
+
+
+## [codeblocks]
+Renders multiple [syntax highligted](//docs/concepts/syntax-highlighting.html) codeblocks inside a wrapping element designed to be displayed as flex- or grid layout on the resulting HTML page:
+
+```
+[codeblocks.epic captions="index.html; module.js" classes="dark; light"]
+  <!-- HTML code -->
+  <p>Hello, world</p>
+
+  ---
+  // JS code
+  function hello() {
+    return 'world'
+  }
+```
+
+### HTML output
+
+```
+<section class="epic">
+
+  <figure class="dark">
+    <figcaption>
+      <h3>index.html</h3>
+    </figcaption>
+    <pre glow><code language="html"> ... </code></pre>
+  </figure>
+
+  <figure class="light">
+    <figcaption>
+      <h3>module.js</h3>
+    </figcaption>
+    <pre glow><code language="*"> ... </code></pre>
+  </figure>
+
+</section>
+```
+
+### Options
+
+[.options]
+  `captions` list of captions for the codeblocks separated with ";" or "|"
+
+  `languages` list of languages for the codeblocks separated with ";" or "|"
+
+  `classes` list of languages for the codeblocks separated with ";" or "|"
+
+  `numbered` draws line numbers when enebled
+
+
+
+## [codetabs]
+Displays a tabbed layout where the [syntax highligted](//docs/concepts/syntax-highlighting.html) codeblocks are displayed based on what "tab" the user clicks. Here the "Second codeblock" is displayed when the "Second" tab is clicked:
+
+
+```
+[codetabs "First | Second | Third" languages="js | html | css"]
+
+  // first code block
+  const foo = 'bar'
+  ---
+
+  <!-- Second block -->
+  <p>Hello, World</p>
+
+  ---
+  /* Third block */
+  p {
+    background-color: yellow
+  }
+```
+
+### HTML output
+
+```
+<section tabs is="aria-tabs">
+  <div role="tablist">
+    <a role="tab" aria-selected>First</a>
+    <a role="tab">Second</a></div>
+    <a role="tab">Third</a>
+  </div>
+  <ul>
+    <li role="tabpanel">
+      <pre glow><code language="js"> ... </code></pre>
+    </li>
+    <li role="tabpanel" hidden="hidden">
+      <pre glow><code language="html"> ... </code></pre>
+    </li>
+    <li role="tabpanel" hidden="hidden">
+      <pre glow><code language="css"> ... </code></pre>
+    </li>
+  </ul>
+</section>
+```
+
+### Options
+
+[.options]
+  `captions` list of captions for the codeblocks separated with ";" or "|"
+
+  `languages` list of languages for the codeblocks separated with ";" or "|"
+
+  `numbered` draws line numbers when enebled
+
+  `wrapper` creates a new parent element with a class name specifeid on this property
+
+
 
 

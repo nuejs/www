@@ -8,7 +8,7 @@
   [glow] {
     --glow-line-opacity: 0.2;
     --glow-padding: 1.5em;
-    padding: 0 var(--glow-padding);
+    padding: .3em var(--glow-padding) 2.5em;
   }
 
   h2 {

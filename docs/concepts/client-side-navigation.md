@@ -25,7 +25,7 @@ Your scripts and components can listen to a "route" event which is fired when th
 
 ```
 addEventListener('route', path => {
-  //Do your thing on the new path
+  // Do your thing on the new path
 })
 ```
 

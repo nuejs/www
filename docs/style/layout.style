@@ -116,6 +116,11 @@ article
   .no-aside &
     hidden
 
+  .minitoc &
+    .level-3
+      none
+
+
 
 // mobile layout
 @large-
