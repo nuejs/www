@@ -230,7 +230,7 @@ With the release of Glow, the core pieces of the [Perfect Web Framework](/blog/p
 
 
 [media]
-  small: /img/roadmap5.png
+  small: /img/roadmap5-big.png
   href: /blog/perfect-web-framework/
   caption: Click for Nue's vision
   class: wider roadmap
@@ -247,7 +247,7 @@ Install [nue-glow](//github.com/nuejs/nue/tree/master/packages/glow) with npm, p
 npm i nue-glow
 ```
 
-And follow the [Glow documentation](/concepts/syntax-highlighting.html)
+And follow the [Glow documentation](/docs//concepts/syntax-highlighting.html)
 
 #### With Nue
 

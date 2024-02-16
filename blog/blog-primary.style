@@ -72,3 +72,10 @@ article
       transform scale(1.02)
       filter none
       opacity 1
+
+
+blockquote
+  font #000 500
+  border-left 3px solid black
+  m 1.5em 0 2em
+  px 1em
