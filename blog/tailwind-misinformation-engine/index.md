@@ -1,6 +1,6 @@
 ---
 date: 2024-02-16
-og: /img/tw-marketing-og.png
+og: /img/dont-make-it-cleaner.png
 include: [ext/glow]
 title: Tailwind marketing and misinformation engine
 desc: The origins and technological validity of utility classes and  Catalyst UI library in contrast to semantic HTML and CSS
@@ -21,7 +21,7 @@ Tailwind CSS was born out of this sentence:
   caption: "Adam's [keynote speech](//www.youtube.com/watch?v=CLkxRnRQtDE) in Tailwind Connect 2023"
 
 
-The sentence is from *Nicolas Gallagher*'s article about [HTML semantics and front-end architecture][nicolas]. It was a turning point for *Adam Wathan*, the creator of Tailwind CSS. After reading the article he was "fully convinced that optimizing for reusable CSS was going to be the right choice for the sorts of projects".
+The sentence is from *Nicolas Gallagher*'s article about [HTML semantics and front-end architecture][nicolas]. It was a turning point for *Adam Wathan*, the creator and frontman of Tailwind CSS. After reading the article he was "fully convinced that optimizing for reusable CSS was going to be the right choice for the sorts of projects".
 
 
 [nicolas]: //nicolasgallagher.com/about-html-semantics-front-end-architecture/
@@ -34,8 +34,8 @@ The sentence is from *Nicolas Gallagher*'s article about [HTML semantics and fro
 Nicholas points out in the article that scalable HTML/CSS must "rely on classes within the HTML to allow for the creation of reusable components". So instead of using a content-dependent class name like "news", one should use a content-independent name like "uilist" or "uilist-item":
 
 ```
-<nav class="uilist">
-  <span class="uilist-item">
+<nav class="•uilist•">
+  <span class="•uilist-item•">
     ...
   </span>
 </nav>
@@ -47,31 +47,33 @@ The more generic the name, the more reusable it is. He used the famous [media ob
 [media]: //www.stubbornella.org/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
 
 
-Adam, however, interpreted the article quite differently. Instead of moving towards more generic semantic names, he went in the opposite direction and created a whole new styling language to be stuffed inside the class attribute:
+Adam, however, interpreted content-independent class names quite differently. Instead of moving towards more generic semantic names, he decided to create a full-blown language to inline styling rules directly to HTML:
 
 [code]
   <!-- "uilist" -->
   <div class="
-    sticky top-0 z-40 w-full backdrop-blur flex-none
-    transition-colors duration-500 lg:z-50 lg:border-b
-    bg-white/95 supports-backdrop-blur:bg-white/60
-    dark:bg-transparent">
+  > sticky top-0 z-40 w-full backdrop-blur flex-none
+  > transition-colors duration-500 lg:z-50 lg:border-b
+  > bg-white/95 supports-backdrop-blur:bg-white/60
+  > dark:bg-transparent">
 
     <!-- "uilist-item" -->
     <span class="
-      py-4 border-b border-slate-900/10 lg:px-8
-      lg:border-0 dark:border-slate-300/10 px-4">
+  >   py-4 border-b border-slate-900/10 lg:px-8
+  >   lg:border-0 dark:border-slate-300/10 px-4">
       ...
     </span>
   </div>
 
-This kind of syntax was never heard of. Nicholas never suggested adding visual information directly to the element, let alone building a styling language like this. On the contrary: inline/atomic styling is the polar opposite of re-usable CSS.
+Nobody saw that coming! Especially from __that__ article. Nicholas never suggested coupling visual information to elements, let alone building an entire styling language like this. On the contrary: inline/atomic styling is the polar opposite of re-usable CSS.
 
-But Adam used the article to amplify his agenda. He made us believe that the language he created was a prime example of Nicholas' thinking. And because Nicolas is working at Twitter, "you know a huge site", his take on CSS works for everyone, right? ¯\\_(ツ)_/¯
+*But Adam used the article as a marketing vehicle to prove that his idea was based on some legit technological theorem*.
+
+But it wasn't. Instead, he made us believe that the language he created was a prime example of Nicholas' thinking. And because Nicolas is working at Twitter, "you know a huge site", his take on CSS works for everyone, right? ¯\\_(ツ)_/¯
 
 That was out of the ordinary in the open-source community where people tend to respect others' work.
 
-Adam started looking for more proof and validity to his straw-man argument. He wrote an article called [CSS utility classes and "Separation of Concerns"][adam] to demonstrate how this new obscure syntax leads to more maintainable CSS.
+Because the sentence from Nicolas was all he had, Adam needed to fabricate more proof and validity to his straw-man argument. He decided to rewrite the rules of styling himself. This article carries a title [CSS utility classes and "Separation of Concerns"][adam]. It demonstrates, with cleverly chosen examples, how the new obscure syntax leads to more maintainable CSS.
 
 [adam]: //adamwathan.me/css-utility-classes-and-separation-of-concerns/
 
@@ -80,7 +82,7 @@ But there was a challenge: to make such an absurdly misleading statement, he nee
 [image.tall "/img/tailwind-practises.png" width="570"]
   caption: Tailwind brand messaging pillars
 
-One by one, everything old was bad, and Tailwind stuff was good.
+One by one, the standard ways were bad, and Tailwind stuff was good.
 
 And now, with all the new terms and practices in front of everybody, it is time to announce __The New Truth__, which will cancel all the prior work and study about CSS:
 
@@ -93,7 +95,7 @@ The villain is painted with harsh words ranging from "unmaintainable" to "fuckin
 [image.tall "/img/villain-and-hero.png" width="570"]
   caption: Brand voice examples
 
-This marketing scheme worked like a charm. Developers took the new rules and terms for granted and started tweeting and blogging the new truth. It was a gold mine for Tailwind. Every converted user resulted in more users, preachers, and license sales.
+This marketing and disinformation scheme worked like a charm. Developers took the new rules and terms for granted and started tweeting and blogging the new truth. It was a gold mine for Tailwind. Every converted user resulted in more users, preachers, and license sales.
 
 But no amount of money is enough for a businessman so it was time for another truth.
 
