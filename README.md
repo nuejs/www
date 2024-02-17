@@ -7,4 +7,4 @@ The site is generated with **Nuekit**, which is part of the upcoming [toolset](/
 
 All content is written with **Nuemark**, which is a Markdown dialect with Nue JS component support. Also developed privately ATM.
 
-Improvements to content are highly welcome.
+Improvements to the content are highly welcome.
