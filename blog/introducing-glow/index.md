@@ -279,7 +279,7 @@ ps: Check out [Getting started docs](/docs/#node) if you prefer Node.
 
 
 ## Hear about the next milestone
-We can send you an email when the next milestone is reached on the roadmap.
+We can send you an email when the next milestone on the roadmap is reached.
 
 [join-list]
 
