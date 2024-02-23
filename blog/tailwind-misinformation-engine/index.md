@@ -90,7 +90,7 @@ In his keynote speech, Adam uses [harsh words](https://youtu.be/CLkxRnRQtDE?si=s
 
 Old best practices like "semantic", "separation of concerns", or "clean" are usually quoted, which is a common way to question the validity of the word.
 
-Unfair or not, this marketing scheme worked. Developers took the new terms and practices for granted and started tweeting and blogging about them. It was a gold mine for Talwind's commercial business model.
+Unfair or not, this marketing scheme worked. Developers took the new terms and practices for granted and started tweeting and blogging about them. It was a gold mine for Tailwind's commercial business model.
 
 
 
@@ -294,7 +294,7 @@ I recommend everyone to take a closer look to what has happened to CSS there in 
 ### First things first: Learn CSS
 The first step is to learn CSS. It's the ultimate design language for the web. A safe bet for years to come.
 
-1. Start from the [Nicholas's post][nicolas] and learn the benefits of semantic naming. Understand how Adam cherry-picked one sentence and misused it to validate the contrasting practises of Tailwind.
+1. Start from the [Nicholas' post][nicolas] and learn the benefits of semantic naming. Understand how Adam cherry-picked one sentence and misused it to validate the contrasting practises of Tailwind.
 
 2. Study MDN documentation on web standards. There's a lot, so start with the most important aspects of CSS: [the cascade][cascade] and [specificity][specificity].
 
