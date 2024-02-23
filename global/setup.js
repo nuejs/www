@@ -35,8 +35,8 @@ circleFavicon()
 
 $('body').classList.add('loaded')
 
-
-const is_external = !document.referrer.includes(location.hostname)
+const ref = document.referrer
+const is_external = ref && !ref.includes(location.hostname)
 
 setTimeout(function() {
   $('.site-header').classList.add('visible')

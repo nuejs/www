@@ -19,7 +19,7 @@ include: [home, bunny/video]
   class: wide
 
 ## Vision
-The ultimate goal of Nue is to build [perfect web framework](/blog/perfect-web-framework/), which is ridiculously fast and easy to use.
+The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web-framework/), which is ridiculously fast and easy to use.
 
 [media]
   small: /img/roadmap5.png

@@ -6,16 +6,11 @@
 
 <nav @name="blog-index">
   <a :for="el in entries" :href="el.url" class="blog-entry">
-    <img src="/blog/img/{el.thumb}">
+    <pretty-date :date="el.update || el.date"/>
     <aside>
+      <span class="tag alarm" :if="isNew(el.date)">New</span>
       <h2>{ el.title }</h2>
       <p>{ el.desc }</p>
-      <figure>
-        <img src="/global/img/tero.png">
-        <figcaption>Tero Piirainen</figcaption>
-        <pretty-date :date="el.update || el.date"/>
-        <span class="tag alarm" :if="isNew(el.date)">New</span>
-      </figure>
     </aside>
   </a>
 

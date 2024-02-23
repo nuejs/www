@@ -5,6 +5,6 @@ main_class: index-page
 include: [blog-index]
 ---
 
-# Content first developer blog
+# Announcements
 
 [blog-index]

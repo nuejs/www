@@ -79,3 +79,11 @@ blockquote
   border-left 3px solid black
   m 1.5em 0 2em
   px 1em
+
+figcaption a
+  font 500 $main
+  text-decoration underline
+  text-decoration-color $gray-300
+
+  &:hover
+    text-decoration-color $gray-400

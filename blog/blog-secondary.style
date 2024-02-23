@@ -120,3 +120,8 @@ hr
 
 h3 + ul
   mt 1em
+
+
+.footnote
+  margin-top 7em
+  font-size 95%

@@ -16,6 +16,7 @@ p a, li > a
     text-decoration-thickness 2px
     text-decoration-color $main-400
 
+
 .continue
   font $main 600
 

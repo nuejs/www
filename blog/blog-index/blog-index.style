@@ -1,62 +1,41 @@
 
 h1
   max-width 8em
-  font capitalize
+  font 2.5em bold
+  mb 2em
 
 .blog-entry
-  align-items center
-  font 1.2em
-  gap 3em
-  mt 3em
+  font 1.1em
+  transition transform .15s
+  gap 4em
+  mt 2em
   flex
 
-  h2
-    font 1.1em
-    mb .4em
+  time
+    font 85% $gray 400 nowrap
+    flex .25
 
-  > img
-    box-shadow 0 0 0 .6em $gray-100
-    radius 8px
-    width 9em
+  aside
+    flex 1
+
+  h2
+    font 1.05em
+    mb .4em
 
   p
     font 90% 400 $gray 1.5
-    max-width 20em
     m -.2em 0 .8em
 
-  // author
-  figure
-    align-items center
-    gap .5em
-    flex
+  @small-
+    flex-direction column
+    gap 0.3em
+    mb 3em
 
-    img
-      size 1.2em 1.5em
-      grayscale
-
-    figcaption
-      font 1rem 500 #000
-      m 0
-
-    time
-      font 80% 400 $gray
-      ml -.2em
-      &:before
-        content "• "
-
-  // hover & active
-  img
-    grayscale
-
-  &:first-child img
-    filter none
-
-  &:hover > img
-    box-shadow 0 0 0 .5em white, 0 0 0 .6em $main
-    filter none
+  &:hover
+    transform scale(1.01)
 
   &:active
-    transform scale(.99)
+    transform scale(0.995)
 
 .tag
   font .8rem uppercase 600 .05em #fff
@@ -64,16 +43,3 @@ h1
   p 0 .5em
   bg $red
 
-
-@small-
-  h1
-    m 0 auto
-
-  .blog-entry
-    flex-direction column
-    gap 1.4em
-    mb 5em
-
-    > img
-      ml -10em
-      width 7em

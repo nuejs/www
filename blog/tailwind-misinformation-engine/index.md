@@ -1,11 +1,10 @@
 ---
-date: 2024-02-16
-og: /img/dont-make-it-cleaner.png
+date: 2024-02-18
+og: /img/tailwind-messaging-pillars.jpg
 include: [ext/glow]
 title: Tailwind marketing and misinformation engine
-desc: The origins and technological validity of utility classes and  Catalyst UI library in contrast to semantic HTML and CSS
+desc: The origins of Tailwind and how it is framed against semantic CSS
 thumb: glow-thumb.jpg
-draft: true
 ---
 
 
@@ -18,20 +17,18 @@ Tailwind CSS was born out of this sentence:
 
 
 [image.tall "/img/adam-keynote.jpg"]
-  caption: "Adam's [keynote speech](//www.youtube.com/watch?v=CLkxRnRQtDE) in Tailwind Connect 2023"
+  caption: "Adam's [keynote speech](//youtu.be/CLkxRnRQtDE?t=109) in Tailwind Connect 2023"
+  alt: The most reusable components are those with class names that are independent of the content.
 
 
-The sentence is from *Nicolas Gallagher*'s article about [HTML semantics and front-end architecture][nicolas]. It was a turning point for *Adam Wathan*, the creator and frontman of Tailwind CSS. After reading the article he was "fully convinced that optimizing for reusable CSS was going to be the right choice for the sorts of projects".
-
-
-[nicolas]: //nicolasgallagher.com/about-html-semantics-front-end-architecture/
-[keynote]: //www.youtube.com/watch?v=CLkxRnRQtDE
+The [sentence](//youtu.be/CLkxRnRQtDE?t=109) is from *Nicolas Gallagher*'s article about [HTML semantics and front-end architecture](//nicolasgallagher.com/about-html-semantics-front-end-architecture/). It was a turning point for *Adam Wathan*, the creator and frontman of Tailwind. After reading the article he was ["fully convinced that optimizing for reusable CSS was going to be the right choice"](https://adamwathan.me/css-utility-classes-and-separation-of-concerns/)
 
 
 
-## Phase 1: The origin of utility classes
 
-Nicholas points out in the article that scalable HTML/CSS must "rely on classes within the HTML to allow for the creation of reusable components". So instead of using a content-dependent class name like "news", one should use a content-independent name like "uilist" or "uilist-item":
+## Phase 1: The Origins of Tailwind [origins]
+
+Nicholas points out in the article that scalable HTML/CSS must ["rely on classes within the HTML to allow for the creation of reusable components"](//nicolasgallagher.com/about-html-semantics-front-end-architecture/). So instead of using a content-dependent class name like "news", one should use a __content-independent__ name like "uilist" or "uilist-item":
 
 ```
 <nav class="•uilist•">
@@ -41,13 +38,13 @@ Nicholas points out in the article that scalable HTML/CSS must "rely on classes 
 </nav>
 ```
 
-The more generic the name, the more reusable it is. He used the famous [media object][media] as a prime example of re-usable CSS.
+The more generic the name, the more reusable it is. He used the famous [media object][media] as a prime example of reusable CSS.
 
 
 [media]: //www.stubbornella.org/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
 
 
-Adam, however, interpreted content-independent class names quite differently. Instead of moving towards more generic semantic names, he decided to create a full-blown language to inline styling rules directly to HTML:
+But that's not how Adam understood the sentence. Instead of moving towards more reusable class names, he introduced a custom grammar to inline styling rules directly to HTML:
 
 [code]
   <!-- "uilist" -->
@@ -65,45 +62,40 @@ Adam, however, interpreted content-independent class names quite differently. In
     </span>
   </div>
 
-Nobody saw that coming! Especially from __that__ article. Nicholas never suggested coupling visual information to elements, let alone building an entire styling language like this. On the contrary: inline/atomic styling is the polar opposite of re-usable CSS.
+This was quite a big step away from what Nicolas was saying, who resisted the idea of coupling visual information to elements, like everyone else in the industry back then.
 
-*But Adam used the article as a marketing vehicle to prove that his idea was based on some legit technological theorem*.
+However, in his keynote speech, Adam [makes us believe](//youtu.be/CLkxRnRQtDE?si=mOLOiY8cKLJVb6XZ&t=172) that the language he created was a prime example of Nicholas' thinking. And because Nicolas was [working at Twitter](//youtu.be/CLkxRnRQtDE?si=af_srSIFIqgmp0mc&t=186), Adam's take on CSS should work for sites small and large.
 
-But it wasn't. Instead, he made us believe that the language he created was a prime example of Nicholas' thinking. And because Nicolas is working at Twitter, "you know a huge site", his take on CSS works for everyone, right? ¯\\_(ツ)_/¯
-
-That was out of the ordinary in the open-source community where people tend to respect others' work.
-
-Because the sentence from Nicolas was all he had, Adam needed to fabricate more proof and validity to his straw-man argument. He decided to rewrite the rules of styling himself. This article carries a title [CSS utility classes and "Separation of Concerns"][adam]. It demonstrates, with cleverly chosen examples, how the new obscure syntax leads to more maintainable CSS.
+On August 7, 2017, Adam wrote an article about [CSS utility classes and "Separation of Concerns"][adam]. It demonstrates with cleverly chosen examples, how his new creation leads to more maintainable CSS architecture.
 
 [adam]: //adamwathan.me/css-utility-classes-and-separation-of-concerns/
 
-But there was a challenge: to make such an absurdly misleading statement, he needed to debunk all the current CSS best practices and invent new terminology to support his reasoning. This new playbook was called:
+But there was a challenge: to make such a statement, he needed to reshape the established CSS best practices. So he introduced [new terms](//adamwathan.me/css-utility-classes-and-separation-of-concerns/) to back his contradictory idea:
 
 [image.tall "/img/tailwind-practises.png" width="570"]
-  caption: Tailwind brand messaging pillars
+  caption: The new terms and phrases Tailwind developers are familiar with
 
-One by one, the standard ways were bad, and Tailwind stuff was good.
 
-And now, with all the new terms and practices in front of everybody, it is time to announce __The New Truth__, which will cancel all the prior work and study about CSS:
+The new approach can be summarized as follows:
 
-> "Semantic class names” are the reason CSS is hard to maintain
+> ["Semantic class names” are the reason CSS is hard to maintain](//tailwindcss.com/)
 
-To strengthen the message, Adam emphasized the contrast between the old and the new by introducing a villain (semantic CSS), and a hero (Tailwind).
+This was a hefty statement as it contradicts with all the prior work and studies about CSS.
 
-The villain is painted with harsh words ranging from "unmaintainable" to "fucking bullshit" in his keynote speech. And the word "semantic" is always quoted to make it look like useless, academic jargon. Tailwind is obviously described in the most positive light possible:
+
+In his keynote speech, Adam uses [harsh words](https://youtu.be/CLkxRnRQtDE?si=s5bmoLnGsmbYDzMA) to describe the traditional way of structuring CSS, as opposed to how Tailwind is described:
 
 [image.tall "/img/villain-and-hero.png" width="570"]
-  caption: Brand voice examples
+  caption: Words used on the keynote speech and Tailwind website
 
-This marketing and disinformation scheme worked like a charm. Developers took the new rules and terms for granted and started tweeting and blogging the new truth. It was a gold mine for Tailwind. Every converted user resulted in more users, preachers, and license sales.
+Old best practices like "semantic", "separation of concerns", or "clean" are usually quoted, which is a common way to question the validity of the word.
 
-But no amount of money is enough for a businessman so it was time for another truth.
-
-
+Unfair or not, this marketing scheme worked. Developers took the new terms and practices for granted and started tweeting and blogging about them. It was a gold mine for Talwind's commercial business model.
 
 
-## Phase 2: Utility-first workflow
-Once people started pouring in, Adam wanted to make sure they were properly onboarded and locked inside the system. This locking scheme is called ["utility-first workflow"](https://tailwindcss.com/docs/reusing-styles)
+
+## Phase 2: Utility-first workflow [phase2]
+Once they started cashing, Tailwind wanted to make sure the users were properly onboarded and locked in to the system. They introduced ["utility-first workflow"](https://tailwindcss.com/docs/reusing-styles)
 
 > Tailwind encourages a utility-first workflow, where designs are implemented using only low-level utility classes. This is a powerful way to avoid premature abstraction and the pain points that come with it.
 
@@ -111,47 +103,45 @@ Here's how the flow works:
 
 
 ### Step 1: Onboarding
-In the utility-first approach, the idea is to build everything out of utilities, and later extract repeating patterns as they emerge. Adam persuades you to the scheme with this compelling proposition:
+In the utility-first approach, the idea is to "build everything out of utilities, and later extract repeating patterns as they emerge". You are encouraged to try the system. Adam says:
 
-> If you give it a chance, I really think you’ll wonder how you ever worked with CSS any other way.
+> [If you give it a chance, I really think you’ll wonder how you ever worked with CSS any other way.](//tailwindcss.com/)
 
-Sounds great, so let's do this:
+Sounds good, so let's try it.
 
-Once installed, you quickly start to see what the fuzz is all about. The joy of writing everything in the same place, without switching between HTML and CSS, and never thinking about naming things. It's like crack cocaine: you feel immensely productive with all the handy shortcuts together with hot-module replacement.
+Once installed, you quickly start to see why people enjoy Tailwind. You can write your styling in the same place as your markup and never think about semantic class names. You feel productive with all the handy shortcuts together with hot-module replacement.
 
 
 ### Step 2: "Premature abstraction"
-After the initial rush, the euphoria starts to fade out: the code you've spitted out doesn't look very pretty. You start wondering what comes next after the utility-first step. How to clean up the mess?
+At some point, hundreds of utilities later, the code you've written doesn't look pretty. You start wondering what comes next after the utility-first step. How to clean things up?
 
-Turns out there is no next step. Or it kind of exists, but it's called "premature abstraction". The [exit plan](//tailwindcss.com/docs/reusing-styles) focuses solely on keeping you inside the system and never to leave. If I want to clean up my code with `@apply`, the [documentation says](https://tailwindcss.com/docs/reusing-styles#avoiding-premature-abstraction):
+Turns out there is no next step. Or it kind of exists, but it's called "premature abstraction". You can start extracting classes with @apply, but the documentation for [reusing styles](//tailwindcss.com/docs/reusing-styles) describes it as a bad practice.
 
-> Whatever you do, don’t use @apply just to make things look “cleaner”
+> [Whatever you do, don’t use @apply just to make things look “cleaner”](//tailwindcss.com/docs/reusing-styles#avoiding-premature-abstraction)
 
-Of course. A semantic class name like "primary" is the reason CSS is hard to maintain. Literally their business model. Then what should I use @apply for? The documentation does not say, because they want to lock me in. The documentation focuses solely on convincing me why @apply is a bad practice and comes with multiple pain points.
+But what should I use @apply for if not for cleaning up? The documentation does not say. It only tells me why it should __not__ be used.
 
 
 ### Step 3: Vendor lock-in
-Once you take the first step, there is no way out. The only meaningful exit is a semantic class name, but that will spiral you down the rabbit hole. This is the prime idea of the utility-first workflow:
+So I keep coming back to the first step resulting in more and more utility classes. I'm locked inside a loop:
 
 [image.tall "/img/utility-first-loop.png"]
   caption: Utility-first workflow
 
-
-So I keep coming back to the first step resulting in more and more utility classes. Because I need to avoid the pain points.
-
-This utility-first loop, with no escape to semantic CSS — is a clever way to increase loyalty and bring more users, evangelists, and money to Tailwind.
+I find this a rather clever way to lock people using Tailwind, resulting in more retention, loyalty, and money.
 
 
 
-
-## Phase 3: Catalyst UI kit
-In December 2023, Tailwind introduced their utility-first masterpiece: *Catalyst*. It's the ultimate showcase of maintainable and scaleable CSS.
+## Phase 3: Catalyst UI kit [catalyst]
+In December 2023, Tailwind introduced *Catalyst* with a richer set of language expressions and a React-based UI library.
 
 
 ### Domain-specific language (DSL)
-To keep users in the loop Tailwind attempts to jam as many CSS features as it is possible inside the space-separated class attribute. So Tailwind has grown from a simple set of classes to a full-blown vendor-specific language with nested expressions, operators, and method calls. Let's look at the source code of the first button on Catalyst [demo page](//catalyst.tailwindui.com/):
+To keep up with the ever-evolving CSS standard Tailwind introduced another set of language literals. Over the years Tailwind has grown from a simple set of atoms to a vendor-specific language with expressions, operators, and method calls.
 
-[image.tall "/img/tailwind-button.png" width="500"]
+Let's look at the source code of the first button on [Catalyst demo page](//catalyst.tailwindui.com/):
+
+[image "/img/tailwind-button.png" width="500"]
 
 [.small]
   The black button source code. The expressions are sorted alphabetically:
@@ -222,17 +212,17 @@ To keep users in the loop Tailwind attempts to jam as many CSS features as it is
     text-white"> Button </button>
 
 
-The obvious question, one shall not ask: How is this wall of code more maintainable than a single semantic class name like "primary"?
+I have many questions about this:
 
-Do I need another wall of code for the white button? YES. This one I knew myself, because a semantic class name like "secondary" is hard to maintain.
+Most importantly: how is this wall of text more maintainable than a class name like "primary"?
 
-Also: is there a limit to this? When can I use @apply to clean that up? After 100 statements? Is 1000 statements per element still legit?
+Do I need another wall for the white button?
 
-Anyone?
+Also: are there any limits to the utility-first workflow? When can I use @apply to clean things up? After 50 expressions? 100 expressions? 1000?
 
 
 ### "Modeled after HTML"
-To blur the line between semantic HTML and the utility-first workflow, Catalyst introduced a new markup language that separates ("dependency directs") the class soup behind React components. Here's an example:
+Another major feature in Catalyst was a new markup language that separates all the language literals behind React components. Here's a dialog example using [Catalyst components](//catalyst.tailwindui.com/docs):
 
 [code numbered="1"]
   <Dialog>
@@ -249,23 +239,25 @@ To blur the line between semantic HTML and the utility-first workflow, Catalyst 
     </DialogBody>
 
     <DialogActions>
-  -   <button class="plain">Cancel</button>
-  +   <Button plain>Cancel</Button>
+      <Button plain>Cancel</Button>
       <Button>Join</Button>
     </DialogActions>
   </Dialog>
 
 
-Never confuse this to semantic HTML! That will spiral you down the rabbit hole again. Instead, you must use the correct phrase called "Modeled after HTML", which is a whole different game:
+The markup feels surprisingly similar to semantic HTML:
 
-[image.tall "/img/catalyst-markup.png"]
-  caption: From semantic to more semantic
+[image.tall "/img/catalyst-markup.png" width="570"]
+  caption: Web standards vs vendor-specific markup
 
-So the standard HTML `<dialog>` is bad, but `<Dialog>` is good, because semantic naming makes CSS hard to maintain?
+This raises more questions:
 
-And the semantic class name "plain" is hard to maintain, but "plain" as an attribute name is easy to maintain?
+Most importantly: How is `<button class="plain">` different from `<Button plain>`? Isn't this "semantic" — the root of all bad in CSS?
 
-Obviously `<p>` is bad, but adding more semantic information about the content is the best practice of Catalyst?
+And standard HTML `<dialog>` is bad, but `<Dialog>` with uppercase is legit?
+
+
+Why introduce so many different versions of the `<p>` tag?
 
 ```
 <!-- Catalyst <p> tags -->
@@ -276,55 +268,71 @@ Obviously `<p>` is bad, but adding more semantic information about the content i
 ...
 ```
 
+Why is content-aware naming okay in element names but bad in class names?
 
-Is separation of concerns suddenly okay with Catalyst but we should never use it with vanilla HTML and CSS? Or am I confusing this to "dependency direction"?
+Is separation of concerns suddenly okay with Catalyst, but bad with vanilla HTML and CSS?
 
-I'm completely lost. We need a new set of truths and quick. Otherwise, we might forget which one is bullshit and which one is legit.
+I'm confused, to say the least.
 
-Tailwind or the web standards?
-
-
-
-
-## Phase 4: Web standards
-Here's the missing escape path for utility-first developers who want to switch to standard CSS, and stay relevant for years to come.
+- - -
 
 
-### Learn CSS
-The first step is to learn CSS.
+## I love ❤️ CSS
+I started web development at the age of a `<blink>` tag and CSS has always been my favorite part of the web development stack. I'm particularly fascinated about the crossing between design and [front-of-the frontend](https://bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/).
 
-1. Start from the [Nicholas's post][nicolas] and learn the benefits of semantic naming. See how Adam used the article to validate the contradictory ideas of Tailwind.
+When Microsoft released [Internet Explorer 4.0](https://en.wikipedia.org/wiki/Internet_Explorer_4) with solid support for both external stylesheets and DHTML, It nailed me to the separation of concerns pattern. I see it as the most important component for software scalability and it's particularly important with HTML and CSS. The way of organizing design has been around for centuries: there are element types and contexts. The nuanced relationship between [form and function](//en.wikipedia.org/wiki/Form_follows_function). CSS is the missing tool to bring foundational design-thinking to frontend development.
 
-2. Study MDN documentation on web standards. There's a lot, so start with the basics of CSS: [the cascade][cascade], [nesting][nesting], and [specifity][specifity]. Learn to build scaleable CSS architectures, and see how atomic class names fit into the bigger picture.
+Fast forward to this date, and the solid foundation has almost disappeared. Styling is inlined and CSS is written with JavaScript. There are no element types, nor contexts. Styling is flat and not cascading. Global is feared instead of used.
 
-3. Take inspiration. CSS is a powerful language that far surpasses Tailwind. Learn how the best developers in the game like [Ryan Mulligan](//ryanmulligan.dev/blog/), [Ahmad Shadeed](//ishadeed.com/), and [Josh Comeau](//www.joshwcomeau.com/) use CSS in more stylish, and creative ways.
+We're using maybe 30% of the full potential.
+
+I'm not a fan of any of that.
+
+I recommend everyone to take a closer look to what has happened to CSS there in the past 10 years. Regardless of your current stance. It's a powerful language that far surpasses the capabilities of Tailwind. Learn to build scaleable architectures, and see how atomic class names and inline styling fit into the bigger picture.
+
+
+### First things first: Learn CSS
+The first step is to learn CSS. It's the ultimate design language for the web. A safe bet for years to come.
+
+1. Start from the [Nicholas's post][nicolas] and learn the benefits of semantic naming. Understand how Adam cherry-picked one sentence and misused it to validate the contrasting practises of Tailwind.
+
+2. Study MDN documentation on web standards. There's a lot, so start with the most important aspects of CSS: [the cascade][cascade] and [specificity][specificity].
+
+3. Take inspiration. Learn how the best developers in the game like [Ryan Mulligan](//ryanmulligan.dev/blog/), [Ahmad Shadeed](//ishadeed.com/), and [Josh Comeau](//www.joshwcomeau.com/) use CSS in more stylish, and creative ways.
 
 [nicolas]: //nicolasgallagher.com/about-html-semantics-front-end-architecture/
 [cascade]: //developer.mozilla.org/en-US/docs/Web/CSS/Cascade
-[nesting]: //developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting
-[specifity]: //developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Nesting_and_specificity
+[specificity]: //developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Nesting_and_specificity
 
 
 
-### Standards first
-Here's a new workflow. I'm calling it "standards-first". It outdrives everyone stuck in the utility-first loop. It follows Nicholas's best practices for writing maintainable CSS:
+### Content first
+Here's a better workflow. It has many names: "standards first", "content first", or "progressive enhancement".
 
-[image.tall "/img/standards-first.png" width="600"]
+[image.tall "/img/standards-first.png" width="650"]
   caption: Standards first model
 
 
-You start with a pure, semantic layout and figure out all the reusable pieces of CSS. At times, especially when building new components, you might want to prototype quickly with inline styling. But that's part of the system, and there is a way out. It is highly recommended to use a semantic class name to make things look cleaner. There are no pain points, only benefits. Here's a new best practice:
+You start with a pure, semantic layout and figure out all the reusable pieces of CSS. At times, especially when building new components, you might want to prototype quickly with inline styling. But that's okay and part of the system. You can clean things up later.
 
 > Clean code is easier to maintain
 
-This is the loop you want to go with.
+There are no "pain points" in clean code, only benefits. This is the system I want to teach to my kids. I want them to understand how web standards work, and where all the trends come from.
 
+Because trends are temporary, but standards are forever.
 
 
 ### Stay relevant
-It's only a matter of time before Tailwind collapses. The obscure domain-specific language fueled with disinformation and dirty marketing tactics cannot hold water very long. All the utility-first code we produce today will eventually turn into technical dept.
+My guess: It's only a matter of time before Tailwind collapses. The vendor-specific language and the misleading communication cannot hold water very long. The utility soup produced today will eventually turn into a technical debt. The next generation looks back and asks: "You actually wrote __that__?"
 
 Learn to write clean HTML and CSS and stay relevant for years to come.
 
 [image.tall "/img/tw-switch.png" width="600"]
+
+
+
+[.footnote]
+  Thanks to **Alan Hemmings, Janne Lehtinen, Anssi Piirainen, Anni Myllykangas, Courtney Couch, Lari Hotari, Joona Piirainen, Jukka Kujansivu, Lauri Heiskanen**, and **David Henzel** for reading drafts of this. And very special thanks to the friends (with no name) who use Tailwind daily. Your feedback was especially important.
+
+
 
