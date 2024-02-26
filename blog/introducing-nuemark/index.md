@@ -2,7 +2,7 @@
 ---
 date: 2024-01-12
 og: /img/nuemark-splash.jpg
-include: [bunny/video, glow]
+include: [bunny/video, ext/glow]
 title: Introducing Nuemark
 desc: Nuemark is an intuitive Markdown dialect for rich, interactive content. It brings content back to the forefront of web development.
 thumb: nuemark-thumb.jpg

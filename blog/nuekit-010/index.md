@@ -2,7 +2,7 @@
 ---
 date: 2023-12-14
 og: /img/nuekit-hero-big.jpg
-include: [bunny/video, glow]
+include: [bunny/video, ext/glow]
 title: Announcing Nuekit 0.1
 desc: A simple, minimalistic alternative to Next.js and Astro with universal hot-reloading and much more.
 release: nuekit 0.1
