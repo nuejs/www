@@ -390,7 +390,7 @@ Here's an example library that defines both a shopping cart and a button compone
 Nue components are usually auto-mounted by the framework, but you can also create applications manually on a [JavaScript or TypeScript module](../concepts/js-modules.html) as follows:
 
 ```
-import createApp from '/@nue/js/nue.js'
+import createApp from '/@nue/nue.js'
 import { default as MyApp, lib } from './myapp.js'
 
 // create app
@@ -416,7 +416,7 @@ You can import any number of components and pass them all as dependencies for th
 
 ```
 // import createApp method
-import createApp from '/@nue/js/nue.js'
+import createApp from '/@nue/nue.js'
 
 // import compiled Nue library files
 import { lib as lib1 } from './lib1.js'
