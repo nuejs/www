@@ -130,6 +130,9 @@ So I keep coming back to the first step resulting in more and more utility class
 
 I find this a rather clever way to lock people using Tailwind, resulting in more retention, loyalty, and money.
 
+The only escape from the mess is a JavaScript component, but we're talking about a CSS framework here. I could hide any kind of inline styling mechanism behind React.
+
+Which is our next topic.
 
 
 ## Phase 3: Catalyst UI kit [catalyst]

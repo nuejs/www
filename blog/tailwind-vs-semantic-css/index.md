@@ -11,7 +11,7 @@ include: syntax
 # Tailwind **vs.** Semantic CSS
 [author]
 
-This study compares two websites with identical design: the commercial Spotlight template from developers of Tailwind vs the same site with semantic CSS:
+This study compares two websites with similar design: the commercial Spotlight template from developers of Tailwind vs the same site with semantic CSS:
 
 [.cols]
   [media]
@@ -26,7 +26,9 @@ This study compares two websites with identical design: the commercial Spotlight
 
 [.info]
   #### GIST
-  **Semantic version is 8 &times; smaller, renders faster, and requires no JavaScript bundlers / tooling**
+  **Semantic version is several times smaller, renders faster, and requires no extra CSS tooling**
+
+
 
 
 ## Front page HTML
@@ -74,7 +76,7 @@ Blue is semantic CSS, gray is utility classes, and black-bordered is primary CSS
 
 Some key takes:
 
-1. Tailwind CSS is seven times larger: 33K vs 4.6K. Overall you need eight times more HTML/CSS code with Tailwind to render the page (108K vs 12.6K). The most surprising thing is that Tailwind uses more global/semantic CSS than the semantic approach itself `¯\_(ツ)_/¯`
+1. Tailwind CSS is seven times larger: 33K vs 4.6K. Overall you need eight times more HTML/CSS code with Tailwind to render the page (108K vs 12.6K). While the design is not identical, but it's easy to see the ballpark figure in there. Tailwind- generated sites are multiple times larger.
 
 2. Most of the semantic CSS is re-usable on other pages and only a fraction of the CSS is specific to the front page. It's easy to create new pages when the groundwork is already done.
 
