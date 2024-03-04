@@ -37,14 +37,6 @@ body > .site-top
   @small-
     none
 
-@keyframes color-change
-  0%
-    bg white
-  50%
-    bg $main
-  100%
-    bg white
-
 
 
 .site-header
@@ -125,7 +117,7 @@ nav > a
     p 0 .8em
     font 90% nowrap
 
-  /* red dot */
+  /* red dot
   [href="/blog/"]
     relative
     &:after
@@ -135,6 +127,7 @@ nav > a
       content ""
       bg red
       block
+  */
 
 .subnav
   display flex
@@ -142,12 +135,11 @@ nav > a
 
 // burger / mobile nav
 .burger
-  line-height .7
-  ml auto
+  m .2em 0 0 1em
   none
 
   img
-    max-width 1.4em
+    max-width 1.3em
 
   &:hover
     transform scale(1.1)
@@ -159,10 +151,14 @@ nav > a
       display none
 
 @medium-
-  .mastnav, .octocat
+  .mastnav, .octocat, .subnav .get-started
     none
 
   .burger
     inline-block
 
 
+
+.menu
+  .octocat
+    width 2em

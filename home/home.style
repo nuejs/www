@@ -34,7 +34,7 @@ h2
     pr 2.7em
 
   @small-
-    font 110%
+    font 105%
     display grid
     gap 0.5em
 
