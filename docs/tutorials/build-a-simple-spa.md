@@ -57,7 +57,6 @@ You should now see an empty page at [localhost:8080](http://localhost:8080/)
 Let's view the results at `view-source:http://localhost:8080/`
 
 
-
 ```
 <!DOCTYPE html>
 
@@ -69,12 +68,12 @@ Let's view the results at `view-source:http://localhost:8080/`
   </head>
 
   <body>
-    <nue-island island="app"></nue-island>
+    <div is="app"></div>
   </body>
 </html>
 ```
 
-Nue generates a basic HTML skeleton, sets up hot-reloading, and inserts a placeholder element in our reactive single-page app, called simply the "app".
+Nue generates a basic HTML skeleton, sets up hot-reloading, and inserts a Web Components compatible placeholder element in our reactive single-page app, called simply the "app".
 
 
 

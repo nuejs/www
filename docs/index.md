@@ -21,7 +21,7 @@ Nue comes with a [command line interface](reference/command-line-interface.html)
 bun install nuekit --global
 ```
 
-You can verify the installation by running `nue --version`. If the output looks something like "Nue 0.1.5 / Bun 1.0.18", you can start building apps with Nue. You can either start from scratch with the help of a [tutorial](tutorials/build-a-simple-blog.html), or you can start with a template:
+You can verify the installation by running `nue --version`. If the output looks something like "Nue 0.5.0 • Bun 1.0.30", you can start building apps with Nue. You can either start from scratch with the help of a [tutorial](tutorials/build-a-simple-blog.html), or you can start with a template:
 
 
 ## Start with a template
@@ -66,7 +66,7 @@ The default engine for Nue is Bun. That is: the command line interface starts wi
 node $(which nue)
 ```
 
-The `which` command locates the nue executable, and starts it with node. Running `node $(which nue) --version` should output something like "Nue 0.1.5 / Node 21.2.0". You can create a permanent shortcut to this command with `alias`. For example:
+The `which` command locates the nue executable, and starts it with node. Running `node $(which nue) --version` should output something like "Nue 0.5.0 / Node 21.6.2". You can create a permanent shortcut to this command with `alias`. For example:
 
 ``` sh
 alias node-nue="node $(which nue)"

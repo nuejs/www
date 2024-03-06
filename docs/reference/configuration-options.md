@@ -24,8 +24,8 @@ The base directory is where all the styles and components are loaded on the fron
 ### draw_sections
 Setting this to `true` makes Nuemark wrap the Nuemark content inside a `<section>` element even if there are no [sections](../concepts/nuemark.html#sections) defined on the page. Setting this globally makea consistent HTML structure for your external CSS.
 
-### include
-By default, Nue looks for a file named "main.js" and includes it automatically on your page requests. You can change this with this setting. For example, a value such as `['index.js']` would auto-include "index.js". See details of [JS/Typescript modules](../concepts/js-modules.html)
+### main
+By default, Nue looks for a file named "main.js" and includes it automatically on your page requests. You can change this with this setting. For example, a value such as `['index.js']` would auto-include "index.js". See details of [JS/TS modules](../concepts/js-modules.html)
 
 ### bundle
 Specifies files that should be bundled so that the imported dependencies are *inlined into the file itself. For example: `bundle: [index.js]`. See [to bundle or not to bundle](../concepts/js-modules.html#unbundled).
@@ -33,6 +33,7 @@ Specifies files that should be bundled so that the imported dependencies are *in
 
 ### class
 Sets the `<body :class="class">` attribute in the default HTML layout for page-specific CSS rules.
+
 
 ### dist
 The output directory. The default is `.dist/dev` for the development version and `.dist/prod` for the minified production version.
@@ -43,17 +44,28 @@ This is a directory name for a [content collection](../concepts/content-collecti
 ### collection_name
 The name of the looped variable on the content collection. By default, this is the name of the directory i.e. the value of the `content_collection` option.
 
+### exclude
+An array of CSS path matches to exclude from the page.
+
+
 ### globals
 A site-wide setting in your `site.yaml` file to define directories that are global to all your applications. The scripts, styles, and components under global directories are automatically included on all your pages. See [files and directories](files-and-directories).
+
+### include
+An array of matches to be included from the directories specified by the [libs](#libs) property. For example: `include: [highlight, motion]`. A partial match is enough.
+
+### libs
+A site-wide setting in your `site.yaml` for CSS library directories to be used by the [include](#include) statement.
+
+### lightning_css
+Setting this to `false` disables the default processing with [Lightning CSS](//lightningcss.dev/)
+
 
 ### hotreload
 Setting this to `false` disables [universal hot-reloading](../concepts/universal-hot-reloading.html). This is enabled (`true`) by default.
 
 ### inline_css
 Setting this to `true` inlines all CSS directly into the page to make it load faster. See [performance optimization](../concepts/performance-optimization.html).
-
-### prefetch_global_css
-Setting this to `true` pre-fetches all global stylesheets to make the successive page load faster. This can only be enabled when `inline_css` is set to true. See [performance optimization](../concepts/performance-optimization.html).
 
 ### preload_image
 This setting tells the browser about critical resources that you want to load as soon as possible before they are discovered in HTML. For example: `preload_image: my-hero.png`

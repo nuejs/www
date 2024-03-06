@@ -12,14 +12,9 @@ Here is the most important performance tweak for your most common landing pages,
 ``` yaml
 # load all necessary in the first HTTP request
 inline_css: true
-
-# prefetch all global CSS files for the successive page load
-prefetch_global_css: true
 ```
 
 When you inline your CSS all the necessary to render the page is fetched on the initial request. Everything else can be loaded later. This is the easiest performance with the highest returns. ie. "a low hanging fruit".
-
-The `prefetch_global_css` is a perfect companion for CSS inlining: it will prefetch all the global CSS files that are needed on the next page load.
 
 
 ## Preload your hero image
