@@ -219,6 +219,13 @@ Draws a generic layout block that is used as a container for Nuemark content. Th
 </section>
 ```
 
+### Options
+
+[.options]
+  `item` class name for the nested blocks
+
+  `items` list of class names for the nested blocks separated with a semicolon (";") or pipe ("|") character. For example `items="card; card boosted"` sets "card" class name for the first nested block, and "card boosted" for the second block.
+
 
 ## [image]
 Image is a multi-purpose tag for displaying images. It supports captions, responsive images, links, and [art direction](//web.dev/articles/codelab-art-direction):
