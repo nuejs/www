@@ -47,7 +47,7 @@ The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web
   * ### Design system
     A framework-agnostic CSS design system
 
-    Casdading companion to *CSS-in-JS* and *Tailwind*
+    Cascading companion to *CSS-in-JS* and *Tailwind*
 
   * ### Templates
     Content-first templates with pixel-perfect design
