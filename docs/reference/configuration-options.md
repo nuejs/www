@@ -74,7 +74,7 @@ This setting tells the browser about critical resources that you want to load as
 The port number of the development server. Default is 8080
 
 ### router
-Settling this to `true` enables [client-side-navigation] to make the successive page loads feel instant.
+Setting this to `true` enables [client-side-navigation] to make the successive page loads feel instant.
 
 
 
