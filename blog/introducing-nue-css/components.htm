@@ -1,0 +1,318 @@
+
+<script>
+  /*
+  ### Aimee app
+  [Full source] • [Site-wide design](#)
+
+  [! href="//aimee-app.nuejs.org"]
+    small: /img/aimee-app.png
+    large: /img/aimee-app-big.png
+  */
+  // const GH = '//github.com/nuejs/nue/tree/master/packages/templates'
+
+  // nue stats .css
+  function getGlobals(exclude=[]) {
+    const globals = {
+      'header-and-footer': 483,
+      'burger-menu': 479,
+      'button': 384,
+      'global': 164,
+      'stack': 150,
+    }
+    exclude.forEach(key => delete globals[key])
+    return globals
+  }
+
+  function getTotal(obj) {
+    let total = 0
+    for (const key in obj) total += obj[key]
+    return total
+  }
+
+  function getSites() {
+    return [
+      {
+        key: 'sofa-company',
+        name: 'The Sofa Company',
+        totals: { design: 1220, legacy: 5390 },
+        exclude: ['stack'],
+
+        pages: {
+          home: 386,
+          'about/about': 270,
+          'buy/buy': 428,
+          'sofas/sofas': 982,
+          'sofas/stack': 150,
+        }
+      },
+      {
+        key: 'aimee-app',
+        name: 'Aimee App',
+        totals: { design: 864, legacy: 4368 },
+
+        pages: {
+          home: 141,
+          'about/about': 260,
+          'changelog/changelog': 149,
+          'pricing/pricing': 276,
+          'start/form': 164,
+          'start/start': 459,
+        }
+      },
+      {
+        key: 'mona-editor',
+        name: 'Mona Editor',
+        totals: { design: 727, legacy: 3917 },
+        exclude: ['burger-menu'],
+
+        pages: {
+          home: 579,
+          'join/form': 304,
+          'join/join': 58,
+        }
+      },
+    ].map(setTotals)
+  }
+
+  function getSite(key) {
+    if (key == 'all') return getSiteCombo()
+
+    const site = getSites().find(el => el.key == key)
+    const { totals } = site
+    return {
+      name: site.name + ' website',
+      total: totals.all,
+      cells: [
+        { name: 'Globals', value: totals.globals },
+        { name: 'Design', value: totals.design },
+        { name: 'Pages', value: totals.pages },
+      ]
+    }
+  }
+
+  function getSiteCombo() {
+    const globals = getTotal(getGlobals())
+    let design = 0
+    let pages = 0
+
+    getSites().forEach(site => {
+      design += site.totals.design
+      pages += getTotal(site.pages)
+    })
+
+    return {
+      name: 'All Nue sites combined',
+      total: globals + design + pages,
+
+      cells: [
+        { name: 'Globals', value: globals },
+        { name: 'All designs', value: design },
+        { name: 'All pages', value: pages },
+      ]
+    }
+  }
+
+
+  // { globals, design, front page, pages, all }
+  function setTotals(site) {
+    const { totals, pages } = site
+    site.globals = getGlobals(site.exclude)
+
+    totals.globals = getTotal(site.globals)
+    const design = totals.globals + totals.design
+
+    totals.home = design + pages.home
+    totals.pages = getTotal(pages)
+    totals.all = design + totals.pages
+
+    // "grid", "stack" & "random" classnames (random for safety)
+    totals.all += 15
+
+    return site
+  }
+
+
+  function getTailwinds() {
+    return [
+      {
+        key: 'catalyst',
+        code: 'rD3Cg6LJmN',
+        name: 'Catalyst button',
+        totals: { css: 5276, dsl: 1821 }
+      },
+      {
+        key: 'dialog',
+        code: '556eyTllIB',
+        name: 'Catalyst dialog',
+        totals: { css: 10911, dsl: 5687 }
+      },
+      {
+        key: 'sha',
+        code: 'dJjQy5vBxO',
+        name: 'Shadcn/UI button',
+        totals: { css: 1306, dsl: 306 }
+      },
+    ].map(el => {
+      const { totals } = el
+      totals.base = 3265
+      totals.all = getTotal(totals)
+      return el
+    })
+  }
+
+  function getTailwind(key) {
+    const tw = getTailwinds().find(el => el.key == key)
+    const { totals } = tw
+    return {
+      name: tw.name,
+      total: totals.all,
+      cells: [
+        { name: 'Base', value: totals.base },
+        { name: 'CSS', value: totals.css },
+        { name: 'DSL', value: totals.dsl },
+      ]
+    }
+  }
+
+
+  function format(size) {
+    return !size ? '-' : Math.round(size / 100) / 10 + 'k'
+  }
+</script>
+
+<section @name="site-list" class="gallery">
+
+  <div :for="s, i in sites">
+    <header>
+      <h4>Example {i + 1}: "{ s.name }"</h4>
+      <a href="//{ s.key }.nuejs.org">Website</a> •
+      <a href="#">Design</a> •
+      <a href="#">Full source</a>
+    </header>
+    <figure>
+      <a href="//{ s.key }.nuejs.org">
+        <img src="/img/{s.key}.png" loading="lazy" width="500" height="575">
+      </a>
+    </figure>
+  </div>
+
+
+  <script>
+    constructor() {
+      this.sites = getSites()
+    }
+  </script>
+
+</section>
+
+<ul @name="stacked-bars" class="bar-chart">
+
+  <li :for="row, i in rows">
+    <h4>{ row.name }</h4>
+    <p>
+      <span :for="cell in row.cells">{ cell.name } <strong>{ fmt(cell.value) }</strong></span>
+      <span>Total <strong>{ fmt(row.total) }</strong></span>
+    </p>
+
+    <div class="bar-cells">
+      <b :for="cell in row.cells" :style="width: { ratio(cell.value) }%"/>
+    </div>
+    <small :if="i > 0">({ diff() }% smaller)</small>
+  </li>
+
+  <script>
+    diff() {
+      const [a, b] = this.rows
+      return Math.round((a.total - b.total)/a.total * 100)
+    }
+
+    ratio(val) {
+      var max = Math.max(...this.rows.map(el => el.total))
+      return Math.round(val / max * 1000) / 10
+    }
+
+    fmt(am) {
+      return format(am)
+    }
+  </script>
+</ul>
+
+<section @name="size-compare">
+  <stacked-bars :rows/>
+
+  <script>
+    constructor({ a, b }) {
+      this.rows = [ getTailwind(a), getSite(b) ]
+    }
+  </script>
+
+</section>
+
+
+<table @name="size-table" class="small">
+  <tr>
+    <th :for="label in head">{ label }</th>
+  </tr>
+  <tr :for="site in sites">
+    <td>{ site.name }</td>
+    <td>{ fmt(site.totals.globals) }</td>
+    <td>{ fmt(site.totals.design) }</td>
+    <td>{ fmt(site.totals.pages) }</td>
+    <td>{ fmt(site.totals.all) }</td>
+  </tr>
+
+  <script>
+    head = ' | Shared | Design | Pages | Total'.split(' | ')
+    sites = getSites()
+
+    fmt(am) {
+      return format(am)
+    }
+  </script>
+</table>
+
+<ul @name="nue-roadmap" class="roadmap">
+
+  <li :for="el in items" class="{ is-next: el.next }">
+    <time>{ el.date || 'This year' }</time>
+    <div>
+      <h3>{ el.name } <b class="tag" :if="el.next">Up next</b></h3>
+      <p>{ el.desc }</p>
+      <a :href="el.url" :if="el.url">{ el.link || 'Read the announcement' }</a>
+    </div>
+  </li>
+
+  <script>
+    items = [
+      { date: 'Sep 2023', name: 'Nue 0.1', url: '/blog/backstory/',
+        desc: 'Server- and client-side components', link: 'Read the backstory' },
+
+      { date: 'Dec 2023', name: 'Nuekit', url: '/blog/nuekit-010',
+        desc: 'Nue framework core' },
+
+      { date: 'Jan 2024', name: 'Nuemark', url: '/blog/introducing-nuemark',
+        desc: 'Markdown flavor for rich content' },
+
+      { date: 'Feb 2024', name: 'Glow', url: '/blog/introducing-glow/',
+        desc: 'Colored Markdown code blocks' },
+
+      { date: 'Mar 2024', name: 'Nue CSS', url: '/blog/introducing-nue-css/',
+        desc: 'Scaleable CSS architecture' },
+
+      { date: 'Apr 2024', name: 'Universal Design System', next: true,
+        desc: 'Modern day CSS Zen Garden' },
+
+      { name: 'Templates',
+        desc: 'Starter templates for your next idea' },
+
+      { name: 'Cloud',
+        desc: 'Stupidly simple web hosting' },
+
+      { name: 'Single-page apps',
+        desc: 'SPA starter template' },
+
+      { name: 'Services', url: '/', link: 'See the ultimate goal',
+        desc: 'To complete the dream' },
+    ]
+  </script>
+</ul>

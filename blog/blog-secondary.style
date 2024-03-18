@@ -104,12 +104,14 @@ td
 
   &:first-child
     color black
+    pr 1.5em
 
 tr:last-child td
   border-bottom-width 0
 
 th
   border-bottom $gray
+  color black
   p .4em
 
 
@@ -125,3 +127,13 @@ h3 + ul
 .footnote
   margin-top 7em
   font-size 95%
+
+
+@large
+  .scaled
+    transform scale(1.2)
+    margin 3em 0
+
+  .big-scaled
+    transform scale(1.4)
+    margin 7em 0
