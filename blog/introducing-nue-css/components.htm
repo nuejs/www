@@ -1,4 +1,6 @@
 
+<!-- the code here is a mess. should be cleaned up -->
+
 <script>
   /*
   ### Aimee app
@@ -46,6 +48,18 @@
         }
       },
       {
+        key: 'mona-editor',
+        name: 'Mona Editor',
+        totals: { design: 727, legacy: 3917 },
+        exclude: ['burger-menu'],
+
+        pages: {
+          home: 579,
+          'join/form': 304,
+          'join/join': 58,
+        }
+      },
+      {
         key: 'aimee-app',
         name: 'Aimee App',
         totals: { design: 864, legacy: 4368 },
@@ -57,18 +71,6 @@
           'pricing/pricing': 276,
           'start/form': 164,
           'start/start': 459,
-        }
-      },
-      {
-        key: 'mona-editor',
-        name: 'Mona Editor',
-        totals: { design: 727, legacy: 3917 },
-        exclude: ['burger-menu'],
-
-        pages: {
-          home: 579,
-          'join/form': 304,
-          'join/join': 58,
         }
       },
     ].map(setTotals)
@@ -135,6 +137,12 @@
   function getTailwinds() {
     return [
       {
+        key: 'sha',
+        code: 'FsJa6leQsP',
+        name: 'Shadcn/UI button',
+        totals: { css: 1306, dsl: 306 }
+      },
+      {
         key: 'catalyst',
         code: 'rD3Cg6LJmN',
         name: 'Catalyst button',
@@ -145,12 +153,6 @@
         code: '556eyTllIB',
         name: 'Catalyst dialog',
         totals: { css: 10911, dsl: 5687 }
-      },
-      {
-        key: 'sha',
-        code: 'dJjQy5vBxO',
-        name: 'Shadcn/UI button',
-        totals: { css: 1306, dsl: 306 }
       },
     ].map(el => {
       const { totals } = el
@@ -180,14 +182,51 @@
   }
 </script>
 
+
+<ul @name="file-list">
+  <li :for="[path, size] of Object.entries(items)">
+    <a href="//github.com/nuejs/nue/create-nue/{base}/{ path }.css">{ path }</a>
+    <b>{ fmt(size) }</b>
+  </li>
+
+  <script>
+    fmt(am) {
+      return format(am)
+    }
+  </script>
+</ul>
+
+<section @name="css-files" class="file-list">
+
+  <div>
+    <h4>Shared files</h4>
+    <file-list :items="globs" base="base"/>
+  </div>
+
+  <div :for="el in sites">
+    <h4>{ el.name }</h4>
+    <file-list :items="el.assets" :base="el.key"/>
+  </div>
+
+  <script>
+    globs = getGlobals()
+    sites = getSites().map(el => {
+      el.assets = { [`globals/${el.key}-design`]: el.totals.design, ...el.pages }
+      return el
+    })
+  </script>
+
+</section>
+
+
 <section @name="site-list" class="gallery">
 
   <div :for="s, i in sites">
     <header>
-      <h4>Example {i + 1}: "{ s.name }"</h4>
-      <a href="//{ s.key }.nuejs.org">Website</a> •
-      <a href="#">Design</a> •
-      <a href="#">Full source</a>
+      <h3><em>Example {i + 1}:</em> { s.name }</h3>
+      <a href="#">Design (CSS)</a> •
+      <a href="#">Full source</a> •
+      <a href="//{ s.key }.nuejs.org">Site</a>
     </header>
     <figure>
       <a href="//{ s.key }.nuejs.org">
@@ -238,7 +277,10 @@
 </ul>
 
 <section @name="size-compare">
-  <stacked-bars :rows/>
+  <a href="size-measurement.html">
+    <stacked-bars :rows/>
+    <figcaption>Click for measurement details</figcaption>
+  </a>
 
   <script>
     constructor({ a, b }) {
@@ -249,21 +291,44 @@
 </section>
 
 
+<table @name="tailwind-table" class="small">
+  <tr>
+    <th :for="label in head">{ label }</th>
+  </tr>
+  <tr :for="el in items">
+    <td><a href="//play.tailwindcss.com/{ el.code }">{ el.name }</a></td>
+    <td>{ fmt(el.totals.base) }</td>
+    <td>{ fmt(el.totals.css) }</td>
+    <td>{ fmt(el.totals.dsl) }</td>
+    <td>{ fmt(el.totals.all) }</td>
+  </tr>
+
+  <script>
+    head = 'Component | Base | Utiliities | DSL | Total'.split(' | ')
+    items = getTailwinds()
+
+    fmt(am) {
+      return format(am)
+    }
+  </script>
+</table>
+
+
 <table @name="size-table" class="small">
   <tr>
     <th :for="label in head">{ label }</th>
   </tr>
-  <tr :for="site in sites">
-    <td>{ site.name }</td>
-    <td>{ fmt(site.totals.globals) }</td>
-    <td>{ fmt(site.totals.design) }</td>
-    <td>{ fmt(site.totals.pages) }</td>
-    <td>{ fmt(site.totals.all) }</td>
+  <tr :for="el in items">
+    <td><a href="//{ el.key }.nuejs.org">{ el.name }</a></td>
+    <td>{ fmt(el.totals.globals) }</td>
+    <td>{ fmt(el.totals.design) }</td>
+    <td>{ fmt(el.totals.pages) }</td>
+    <td>{ fmt(el.totals.all) }</td>
   </tr>
 
   <script>
-    head = ' | Shared | Design | Pages | Total'.split(' | ')
-    sites = getSites()
+    head = 'Website | Shared | Design | Pages | Total'.split(' | ')
+    items = getSites()
 
     fmt(am) {
       return format(am)
@@ -299,7 +364,7 @@
       { date: 'Mar 2024', name: 'Nue CSS', url: '/blog/introducing-nue-css/',
         desc: 'Scaleable CSS architecture' },
 
-      { date: 'Apr 2024', name: 'Universal Design System', next: true,
+      { date: 'Apr 2024', name: 'Nue Design System', next: true,
         desc: 'Modern day CSS Zen Garden' },
 
       { name: 'Templates',

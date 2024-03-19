@@ -99,11 +99,12 @@ table
 
 td
   border-bottom
-  font 500 $gray
+  font $gray
   p .4em
 
   &:first-child
     color black
+    font 500
     pr 1.5em
 
 tr:last-child td
@@ -112,6 +113,7 @@ tr:last-child td
 th
   border-bottom $gray
   color black
+  font 500
   p .4em
 
 
@@ -133,6 +135,10 @@ h3 + ul
   .scaled
     transform scale(1.2)
     margin 3em 0
+    figcaption
+      font 70%
+    + .hero-quote
+      mt -2em
 
   .big-scaled
     transform scale(1.4)

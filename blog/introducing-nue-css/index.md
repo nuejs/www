@@ -1,72 +1,74 @@
 
 ---
-date: 2024-03-18
+date: 2024-03-22
 og: /img/nue-css-og.png
 include: [ext/glow]
 title: Introducing Nue CSS
-desc: A native successor to Tailwind, BEM, and CSS-in-JS
+desc: A scaleable alternative to Tailwind, BEM, and CSS-in-JS
 thumb: glow-thumb.jpg
+draft: true
 ---
 
-# *Introducing __Nue CSS__* A native successor to Tailwind, BEM, and CSS-in-JS
+# *Introducing __Nue CSS__* A scaleable alternative to Tailwind, BEM, and CSS-in-JS [headline]
 
 [author]
 
-Today we're launching a new CSS framework that is quite literally "out of this world". So absurd that it is possible to build an entire website with the same amount of CSS that goes into a single Tailwind button. Or even crazier: Three websites with a single Catalyst button. Yes: three (3!) world-class sites with one (1) __button__.
+Today we're launching a new CSS framework that is quite literally "out of this world". So absurd that it is possible to build an entire website with the same amount of CSS that goes into a single *Tailwind* button. Or even crazier: three websites with a single *Tailwind Catalyst* button. Yes: three world-class sites with one freaking __button__:
 
 [image.big-scaled]
-  small: /img/nue-css-hero.png
-  large: /img/nue-css-hero-big.png
+  small: /img/nue-css-hero.webp
+  large: /img/nue-css-hero-big.webp
+  size: 720 × 451
+
+To understand what's happening here, we need to step back and look closer at what has happened to CSS in the past few years:
 
 
-To understand what's happening in here, we need to step back and look closer to the recent milestones of CSS.
+
+### *BEM:* Finding order to chaos
+CSS is notoriously hard to manage. It takes years to get a hold of it. Between 2008 and 2014 there were several attempts to bring order: *OOCSS*, *BEM*, and *SMACSS* in particular.
+
+However, these systems failed due to their size and verbosity. Developers lost interest in naming patterns like `block-name__elem-name_mod-name_mod-val` or the 600 different class names introduced by Bootstrap.
+
+[image.scaled "/img/css-history.png" size="720 × 83"]
+
+### *CSS-in-JS:* Clean global namespace
+In 2014, *Christopher Chedeau* from *Facebook* gave birth to the CSS-in-JS movement. The main idea was to get rid of global namespace pollution. He showcased Bootstrap as the key example of a bad design. Soon after we saw a flood of new CSS frameworks like [Vanilla Extract](//vanilla-extract.style/), [Styled JSX](//github.com/vercel/styled-jsx), and [Emotion](//emotion.sh)
 
 
+### *Tailwind:* Inline styling
+In 2017, *Adam Wathan* introduced [Tailwind](//tailwindcss.com/) — a new kind of CSS framework with a special styling language. The idea was to inline all styling inside a class attribute so that everything could be expressed with HTML only.
 
-### *BEM*: Finding order to chaos
-CSS is notoriously hard to manage. It takes years to get a hold of it. Between 2008-2014 there were several attempts to bring order: *OOCSS*, *BEM*, and *SMACSS* in particular.
-
-However, these systems failed due to their size and verbosity. Developers did not like naming patterns like `block-name__elem-name_mod-name_mod-val` or the 600 different class names introduced by Bootstrap.
-
-[image.scaled "/img/css-history.png"]
-
-### CSS-in-JS: Clean global namespace
-In 2014, *Christopher Chedeau* from *Facebook* gave birth to the CSS-in-JS movement. The primary goal was to get rid of global namespace pollution. He showcased Bootstrap as the key example of a bad design. Soon after we saw a flood of new CSS frameworks like [Vanilla Extract](//vanilla-extract.style/), [Styled JSX](//github.com/vercel/styled-jsx), and [Emotion](//emotion.sh)
-
-
-### Tailwind: Utility classes
-In 2017, *Adam Wathan* introduced [Tailwind](//tailwindcss.com/) — a whole new way to style things on the Internet. The idea was to inline all styling inside a class attribute so that everything could be expressed with HTML only.
-
-Developers loved it: it was an easy way to build good-looking user interfaces with a copy/paste mentality. Backend developers and junior frontend developers were able to build things without much knowledge of CSS.
-
+Developers loved it: it was an easy way to build good-looking user interfaces with a copy/paste mentality. Backend developers and junior frontend developers were able to build things without understanding how CSS cascade or specificity works.
 
 
 ## The tradeoffs
-For the most part, CSS-in-JS and Tailwind worked nicely and the developers were happy. But it's far from roses.
+For the most part, CSS-in-JS and Tailwind worked nicely and frontend engineers were pleased. But it was far from roses.
 
 
-### Large codebases
-We're not talking about "slightly more", or "only double the size". We're talking about a situation where a single button has more CSS than a complete, professionally designed website.
+### Massive codebases
+We're not talking about "slightly more", or "just double the size". We're talking about a situation where a single button has more CSS than a complete, professionally designed website. And the codebases just keep on growing due to [the false beliefs](/blog/tailwind-misinformation-engine/) on how CSS works.
 
-Large codebases drawn you down. There is too much to handle. And it's slow: a single styling change can trigger a large compilation chain, potentially involving hundreds of JavaScript files and NPM modules before the browser is hot-reloaded. What ought to take milliseconds, is suddenly taking seconds.
+Large codebases can draw you down: small styling changes trigger large compilation chains, potentially involving hundreds of JavaScript files and NPM modules before the browser is hot-reloaded. What should take milliseconds, is suddenly taking seconds.
 
 
 ### Technical debt
-Things work well if you can just copy/paste components and tweak settings, but it gets wild pretty easily. You often end up with a codebase that only specialists can understand:
+Things work well if you can just copy/paste components and tweak settings, but it gets wild pretty easily. You end up with a codebase that only specialists can understand:
 
 [image "/img/inline-styling.png" width="450"]
-  caption: This sort of code is quaranteed technical debt.
+  caption: This sort of code is guaranteed technical debt.
+  size: 450 × 460
+
 
 
 
 ### Single point of responsibility [blocker]
-Today, JavaScript developers are responsible for everything. The components are modern-day "kitchen sinks" where content, layout, styling, and business logic are stuffed together.
+Today, JavaScript/React developers are responsible for everything. The components are modern-day "kitchen sinks" where content, layout, styling, and business logic are stuffed together.
 
 Things that used to be separate, are now under the responsibility of a JavaScript developer. It's hard or impossible for content creators, designers, and CSS developers to participate.
 
-The talent is inefficiently spread when React developers work on issues outside of their scope. You know, engineers are not necessarily the best designers. And many of them hate CSS to the bone.
+The talent is inefficiently spread when React developers work on issues outside of their interests. Engineers are not necessarily the best designers and many of them *hate* CSS.
 
-Your team is using a fraction of it's potential.
+Your team could do so much better.
 
 
 
@@ -74,7 +76,7 @@ Your team is using a fraction of it's potential.
 ## What if...
 What if we could break away from all these tradeoffs?
 
-Start building websites that are look perfect inside out. Where your codebase is ten times smaller and is made out of simple components.
+Start building websites that look perfect inside out. Where your codebase is ten times smaller and is made out of clean, simple components.
 
 What if we get all the benefits of CSS-in-JS, but none of the problems? No trouble of naming things, nor worrying about cluttering the global namespace.
 
@@ -85,10 +87,10 @@ What would _that_ look like?
 
 
 ## Introducing Nue CSS
-Today we're launching Nue CSS. A more maintainable and scaleable alternative to Tailwind, BEM, and CSS-in-JS. It's a whole new way to build design websites.
+Today we're launching Nue CSS. A more maintainable and scaleable alternative to Tailwind, BEM, and CSS-in-JS. It takes a *design approach* to user/customer experience:
 
-[image.scaled "/img/design-approach.png"]
-  caption: Nue approaches UX from designers' point of view
+[image.scaled "/img/design-approach.png" size="720 × 147"]
+
 
 
 [.hero-quote]
@@ -99,13 +101,14 @@ Today we're launching Nue CSS. A more maintainable and scaleable alternative to 
 
 
 ## Start with a design system
-Every Nue CSS project starts with a design system. It's your "single source of truth" to ensure design consistency:
+Every Nue CSS project starts with a design system. It's your "single source of truth":
 
 [image.tall]
   small: /img/abstract-design-system.png
   large: /img/abstract-design-system-big.png
+  size: 600 × 410
 
-Design system is a simple concept: you define the master look and feel in one, central location and let all your pages inherit from that. Ideally your design system is just a single self-documenting CSS file that even your mom can understand:
+Design system is a simple concept: you define the master look and feel in a central location and let all your pages inherit from that. Ideally, your design is just a single self-documenting CSS file that even your mom can understand:
 
 [site-list]
 
@@ -116,11 +119,13 @@ The purpose of Nue CSS is to ensure that your design system is effectively and c
 [image.tall]
   small: /img/css-architecture.png
   large: /img/css-architecture-big.png
+  size: 720 × 556
 
 
-With Nue your design is fully controlled by designers. There is no way an engineers or content person can break the design with ad-hoc ideas and inline styles.
 
-The content of your pages is isolated from styling an logic. This way, non-technical people can create content without breaking things up. And because of the isolated styling: the generated content automatically adapts to your design system. That is: all your current and future pages will automatically inherit the correct design without extra effort.
+With Nue, your design is fully controlled by designers. There is no way an engineer or content person can break the design with ad-hoc ideas and inline styles.
+
+The content of your pages is isolated from styling and logic. This way, non-technical people can create content without breaking things up. And because of the isolated styling: the generated content automatically adapts to your design system. That is: all your current and future pages will automatically inherit the correct design without extra effort.
 
 
 ## Do more with less
@@ -131,10 +136,10 @@ The simpler you design the system, the better. The fewer colors, font weights, e
 
   — **Dieter Rams** • The grandfather to Apple's design
 
-Simple menans lean and well-organized CSS. No global namespace issues, no local breaking points, and no consistency issues. There's less room for errors.
+Simple means lean and well-organized CSS. No global namespace issues, no local breaking points, and no consistency issues. There's less room for errors.
 
 ```
-<!-- Form follows function -->
+<!-- component name is all naming you need -->
 <div class="gallery">
   <figure>
   <figure>
@@ -143,22 +148,15 @@ Simple menans lean and well-organized CSS. No global namespace issues, no local 
 </div>
 ```
 
-Naming things and minimalism goes hand-in-hand. The more names you have, the more complex your system. A name like "bordered" or "rounded" brings more options and rules to the table. Should I use the non-bordered version here?
-
-In most cases component name is all the naming you'll ever need. Modern CSS is capable to give it the design you want. That is:
-
-[.hero-quote]
-  > “Form Follows Function”
-
-  — **Louis Sullivan**
+Naming things and minimalism go hand-in-hand. The more names you have, the more complex your design system API. In most cases, the component name is all the naming you need.
 
 
 ## Ditch useless layers
-When everything is based on a single source of truth, it's trivial to ditch the redundant CSS-in-JS/Tailwind layer and take the step towards simplicity:
+When everything is based on a single source of truth, it's trivial to ditch the redundant CSS-in-JS/Tailwind layer in front of your design system and take the step towards simplicity and design consistency:
 
 
 [table.small "| CSS-in-JS | Tailwind | Nue"]
-  - - Styling language
+  - - Styling files
     - JavaScript
     - JavaScript
     - CSS
@@ -166,90 +164,79 @@ When everything is based on a single source of truth, it's trivial to ditch the 
   - - Key idea
     - Local scoping
     - Utility classes
-    - Design System
+    - Design system
 
   - - Conflict resolution
     - Class name obfuscation
-    - Standardized language tokens
+    - Domain-specific language
     - Single source of truth
 
 
   - - Optimization
-    - Tree-shaking. Bundling
+    - Tree-shaking + Bundling
     - One large CSS bundle
-    - Minimalism + code splitting + inlining
+    - Minimalism + Code splitting + Page inlining
 
 
-Done. Now lets see the benefits:
+Done. Now let's see the benefits:
 
 
-## Reach new levels of simplicity [simple]
-Sites made with Nue have extremely little CSS:
-
-[size-table]
-
-Here is some comparison data to give you a better idea of just how small these numbers are:
-
-
-### Nue is on a whole new level
-A single shadcn/ui button is larger than an entire Nue-powered website:
+## Reach new levels of simplicity [size-graphs]
+Sites made with Nue have extremely little CSS. For example, a basic Tailwind button has more styling than a complete Nue-powered website:
 
 [size-compare a="sha" b="aimee-app"]
 
-That may be crazy, but this one is absurd:
 
-### Its ridiculously easy to maintain
-The combined amount of CSS in three Nue websites, their design systems, and _all_ their pages, equals the size of a single Tailwind Catalyst button!
+### It's ridiculously easy to maintain
+The combined amount of CSS in three Nue websites equals the size of a single Tailwind Catalyst button:
 
 [size-compare a="catalyst" b="all"]
 
-Just imagine the amount of maintainable code you need to worry about. It's like two orders of magnitude less moving parts. This crazy difference comes from [the false beliefs](/misinformation) on CSS best practises. Here's a best practise for maintainable CSS that works:
+Just imagine the maintenance difference in three complete Tailwind-powered websites. This leads to our best practice for writing maintainable CSS:
 
 [.hero-quote]
-  > One line of CSS is easier to maintain than hundred lines.
+  > One line of CSS is easier to maintain than a hundred lines.
 
   — **Nue Best Practise**
 
 
 ### It does not get out of your hands
-Design-system-powered websites remains constantly small as the site grows.
+Design-system-powered websites stay lean as the site grows
 
 [size-compare a="dialog" b="mona-editor"]
-
 
 Talk about maintainable CSS!
 
 
 
-## Be motherfu!!ng fast
-[motherfuckingwebsite.com](//motherfuckingwebsite.com/) is a developer meme from *Barry Smith* to demonstrate the power of minimalism. It's a text-only website that does not use CSS at all. Needless to say: it's top-tier fast:
+## Create motherfu!!ng fast websites
+[motherfuckingwebsite.com](//motherfuckingwebsite.com/) is a developer meme from *Barry Smith* to demonstrate the power of minimalism. It's a text-only website that does not use CSS at all. Needless to say: it's motherfucking fast:
 
 [image.tall]
   small: /img/mf-perf.png
   large: /img/mf-perf-big.png
   href: //pagespeed.web.dev/analysis/https-motherfuckingwebsite-com/jjbk58sczm
   caption: Click for details
-  width: 600
+  width: 650
 
-A lesser known fact is that minimal, inlined CSS gets you to the same performance levels with _zero compromises on design_:
+A surprising fact is that minimal, inlined CSS gets you to the same performance levels with _zero compromises on design_:
 
-[View analysis][sofa-perf]
 
 [image.tall]
-  small: /img/sofa-perf.png
-  large: /img/sofa-perf-big.png
-  href: //pagespeed.web.dev/analysis/https-sofa-company-nuejs-org/tvwg65pvkd
+  small: /img/nue-css-perf.png
+  large: /img/nue-css-perf-big.png
+  href: //pagespeed.web.dev/analysis/https-aimee-app-nuejs-org/qllf5ab934
   caption: Click for details
-  width: 600
+  width: 650
 
-No matter what sort of Turbo-Infuced-Rust-Bundler &trade; you have to optimize the irrelevant, nothing beats a tiny TCP packet that has everything to render the landing page.
+No matter what sort of Turbo-Infuced-Rust-Bundler &trade; you use to optimize the irrelevant, nothing beats a tiny TCP packet that has everything to render the landing page.
 
 Talk about performance!
 
 
 
 ## Scale like the best
-Nue breaks you out from the [single point of responsibility](#blocker) and separates the burden for the more talented:
+Nue breaks you out from the [single point of responsibility](#blocker) and offloads the burden from the JavaScript/React engineer for the more talented:
 
 [image.tall "/img/without-js-bottleneck.svg"]
   width: 600
@@ -262,39 +249,40 @@ Talk about scalability!
 
 
 ## Stand the test of time
-CSS is the styling language of The Web. A standards-based language is forever.
+CSS is the styling language of The Web
 
 [image "/img/standard-styling.png" width="500"]
 
-Any developer with a background in CSS can maintain the codebase. And when you come back later, even years later, the codebase is clear and soun. The CSS you write today is valid forever.
+Any developer with a background in CSS can maintain the codebase. And when you come back later, even years later, the codebase is clear and sound. The CSS you write today is valid forever.
 
 Talk about timeless design!
 
 
 
 ## We're building the web framework of the future
-Nue is a for the future generations, who demand more from their development stack. Nue CSS was an important step towards the [ultimate goal](/blog/the-perfect-framework):
+Nue is a framework for future generations, who demand more from their development stack. Nue CSS was an important step towards our ultimate goal [the perfect web framework](/blog/the-perfect-framework):
 
 
 [nue-roadmap]
 
 
-### Up next: Universal Design System
-Our next release is an actual design system:  The kind of stuff that is currently employed in large, design-focused companies only, but we'll make it work for everyone. Both globally and locally. I'm hoping to start a conversation with *Brad Frost* and somehow get involved into the development of a [global design system](https://bradfrost.com/blog/post/whats-next-for-a-global-design-system). It's important. Likely the big thing in CSS development:
+### *Up next:* Nue Design System
+Our next release is an actual design system: the kind of stuff that is currently employed in large, design-focused companies only, but we'll make it available for everyone. I'm hoping to get a chance to talk with *Brad Frost* and somehow get involved in the development of a [global design system](//bradfrost.com/blog/post/a-global-design-system/). It's important. It's the next big thing in CSS development:
 
-[image.tall "/img/css-future.png" width="600"]
-
-This makes a solid foundation for website templates.
+[image "/img/css-future.png" width="650"]
 
 
-### Then: Templates
-Think copy/pasteable components ala Shacdn and Tailwind, with a ten times smaller codebase and seamless integration to your design system. And complete website templates with marketing, documentation, registration, e-commerce, and blogging areas.
 
-You can become the next *Stripe*, *Linear*, or *Apple* — with the speed levels of a mothereffing website.
+### *Then:* Templates
+Think copy/pasteable components ala Shadcn and Tailwind, with a ten times smaller codebase and seamless integration to your design system. And complete website templates with marketing, documentation, registration, e-commerce, and blogging areas.
 
-These perfected templates will likely have a one-shot price tag because we want to secure the development of Nue for years to come without the need for 3rd party agenda and demands.
+Become the next *Stripe*, *Linear*, or *Apple* — with the speed levels of a mother-effing website.
 
-So stay tuned! Please join the list and give me your thoughts. I read them all with care.
+These perfected templates will likely have a one-shot price tag because we want to secure the development of Nue for years to come without depending on 3rd party demands.
+
+So stay tuned! Please join the list and receive an email when the next milestone is ready. And give us your thoughts! We read them all with care.
+
+<br>
 
 [join-list]
 
