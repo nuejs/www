@@ -179,7 +179,7 @@
 
 <ul @name="file-list">
   <li :for="[path, size] of Object.entries(items)">
-    <a href="//github.com/nuejs/create-nue/blob/dev/{base}/{ path }.css">{ path }</a>
+    <a href="//github.com/nuejs/create-nue/blob/master/{base}/{ path }.css">{ path }</a>
     <b>{ fmt(size) }</b>
   </li>
 
@@ -218,9 +218,9 @@
   <div :for="s, i in sites">
     <header>
       <h3><em>Example {i + 1}:</em> { s.name }</h3>
-      <a href="//github.com/nuejs/create-nue/blob/dev/{s.key}/{s.dsystem}.css">
+      <a href="//github.com/nuejs/create-nue/blob/master/{s.key}/{s.dsystem}.css">
         Design (CSS)</a> •
-      <a href="//github.com/nuejs/create-nue/blob/dev/{s.key}/">Full source</a> •
+      <a href="//github.com/nuejs/create-nue/blob/master/{s.key}/">Full source</a> •
       <a href="//{ s.key }.nuejs.org">Website</a>
     </header>
     <figure>

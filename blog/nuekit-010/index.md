@@ -113,8 +113,8 @@ Check out our [Getting Started guide](/docs/) to learn the details
 
 
 [media]
-  small: /img/roadmap5.png
-  large: /img/roadmap5-big.png
+  small: /img/roadmap6.png
+  large: /img/roadmap6-big.png
   class: tall
 
 Nue was first announced last September with [this backstory](/blog/backstory/). Only [Nue JS](//github.com/nuejs/nue) was available on GitHub, and the bigger picture was just an idea. Now, with today's Nuekit release, you can finally build real-world applications with Nue and see more clearly what the future holds.

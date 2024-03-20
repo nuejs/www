@@ -230,7 +230,7 @@ With the release of Glow, the core pieces of the [Perfect Web Framework](/blog/p
 
 
 [media]
-  small: /img/roadmap5-big.png
+  small: /img/roadmap6-big.png
   href: /blog/perfect-web-framework/
   caption: Click for Nue's vision
   class: wider roadmap

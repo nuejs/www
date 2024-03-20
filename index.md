@@ -22,8 +22,8 @@ include: [home, bunny/video]
 The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web-framework/), which is ridiculously fast and easy to use.
 
 [media]
-  small: /img/roadmap5.png
-  large: /img/roadmap5-big.png
+  small: /img/roadmap6.png
+  large: /img/roadmap6-big.png
   class: roadmap
   width: 850
 
@@ -44,10 +44,10 @@ The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web
 
     Content-first alternative to *MDX*. [Read the announcement &raquo;](/blog/introducing-nuemark/)
 
-  * ### Design system
-    A framework-agnostic CSS design system
+  * ### Nue CSS
+    Write maintainable and design-system compatible CSS
 
-    Cascading companion to *CSS-in-JS* and *Tailwind*
+    Scaleable alternative to *CSS-in-JS* and *Tailwind* [Read the announcement &raquo;](/blog/introducing-nue-css/)
 
   * ### Templates
     Content-first templates with pixel-perfect design
@@ -60,8 +60,9 @@ The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web
     Ridiculously easier alternative to *Vercel*
 
 [.info]
-  #### Feb 13, 2024
-  Finished [Glow](/blog/introducing-glow/) — Beautiful, pixel-perfect Markdown code blocks
+  #### Mar 20, 2024
+  Finished [Nue CSS](/blog/introducing-nue-css/)
+  [Glow](/blog/introducing-glow/) — Beautiful, pixel-perfect Markdown code blocks
 
 
 ## Receive an email

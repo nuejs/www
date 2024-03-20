@@ -193,8 +193,8 @@ Nuemark takes inspiration from WordPress shortcodes, TOML configuration language
 The ultimate goal of Nue is to build a significantly easier, yet more powerful alternative to *Vercel*, *Gatsby*, and *Netlify*.
 
 [media]
-  small: /img/roadmap5.png
-  large: /img/roadmap5-big.png
+  small: /img/roadmap6.png
+  large: /img/roadmap6-big.png
   class: roadmap tall
   width: 850
 

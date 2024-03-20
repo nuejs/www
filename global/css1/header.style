@@ -13,7 +13,7 @@ body > .site-top
 .badge
   bg no-repeat
   background-image url(/img/cube.svg), url(/img/chevron-right.svg)
-  font 80% 600 $gray-600
+  font 80% 600 $gray-800
   bg-pos .6em 60%, 96% 55%
   bg-size 1.5em, 1em
   border $gray-200
@@ -21,9 +21,9 @@ body > .site-top
   p .4em 2em .4em 2.5em
   mt -.15em
 
-  &:before
-    content "Nue • "
-    font bold #000
+  // &:before
+  //   content "Nue • "
+  //   font bold #000
 
   &:hover
     border-color $gray-400
