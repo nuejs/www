@@ -2,6 +2,9 @@
 main
   max-width $page-width
 
+img
+  height auto
+
 .site-header
   transition opacity .4s
   opacity 0

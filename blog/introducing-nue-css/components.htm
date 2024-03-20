@@ -1,17 +1,7 @@
 
-<!-- the code here is a mess. should be cleaned up -->
+<!-- TODO: clean up the mess -->
 
 <script>
-  /*
-  ### Aimee app
-  [Full source] • [Site-wide design](#)
-
-  [! href="//aimee-app.nuejs.org"]
-    small: /img/aimee-app.png
-    large: /img/aimee-app-big.png
-  */
-  // const GH = '//github.com/nuejs/nue/tree/master/packages/templates'
-
   // nue stats .css
   function getGlobals(exclude=[]) {
     const globals = {
@@ -36,7 +26,8 @@
       {
         key: 'sofa-company',
         name: 'The Sofa Company',
-        totals: { design: 1220, legacy: 5390 },
+        dsystem: 'global/sofa-company-design',
+        totals: { design: 1220, legacy: 5390, classes: 245 },
         exclude: ['stack'],
 
         pages: {
@@ -50,7 +41,8 @@
       {
         key: 'mona-editor',
         name: 'Mona Editor',
-        totals: { design: 727, legacy: 3917 },
+        dsystem: 'global/mona-design',
+        totals: { design: 727, legacy: 3917, classes: 18 },
         exclude: ['burger-menu'],
 
         pages: {
@@ -62,7 +54,8 @@
       {
         key: 'aimee-app',
         name: 'Aimee App',
-        totals: { design: 864, legacy: 4368 },
+        dsystem: 'global/aimee-design',
+        totals: { design: 864, legacy: 4368, classes: 128 },
 
         pages: {
           home: 141,
@@ -88,6 +81,7 @@
         { name: 'Globals', value: totals.globals },
         { name: 'Design', value: totals.design },
         { name: 'Pages', value: totals.pages },
+        { name: 'Classes', value: totals.classes },
       ]
     }
   }
@@ -96,20 +90,24 @@
     const globals = getTotal(getGlobals())
     let design = 0
     let pages = 0
+    let classes = 0
 
     getSites().forEach(site => {
       design += site.totals.design
+      classes += site.totals.classes
       pages += getTotal(site.pages)
+
     })
 
     return {
-      name: 'All Nue sites combined',
+      name: 'Three Nue sites combined',
       total: globals + design + pages,
 
       cells: [
         { name: 'Globals', value: globals },
         { name: 'All designs', value: design },
         { name: 'All pages', value: pages },
+        { name: 'All classes', value: classes },
       ]
     }
   }
@@ -125,10 +123,7 @@
 
     totals.home = design + pages.home
     totals.pages = getTotal(pages)
-    totals.all = design + totals.pages
-
-    // "grid", "stack" & "random" classnames (random for safety)
-    totals.all += 15
+    totals.all = design + totals.pages + totals.classes
 
     return site
   }
@@ -144,13 +139,13 @@
       },
       {
         key: 'catalyst',
-        code: 'rD3Cg6LJmN',
+        code: 'ZwvBhogvo4',
         name: 'Catalyst button',
         totals: { css: 5276, dsl: 1821 }
       },
       {
         key: 'dialog',
-        code: '556eyTllIB',
+        code: 'fB60Uou5n1',
         name: 'Catalyst dialog',
         totals: { css: 10911, dsl: 5687 }
       },
@@ -178,14 +173,13 @@
 
 
   function format(size) {
-    return !size ? '-' : Math.round(size / 100) / 10 + 'k'
+    return !size ? '-' : size < 50 ? '0.0' + size + 'k': Math.round(size / 100) / 10 + 'k'
   }
 </script>
 
-
 <ul @name="file-list">
   <li :for="[path, size] of Object.entries(items)">
-    <a href="//github.com/nuejs/nue/create-nue/{base}/{ path }.css">{ path }</a>
+    <a href="//github.com/nuejs/create-nue/blob/dev/{base}/{ path }.css">{ path }</a>
     <b>{ fmt(size) }</b>
   </li>
 
@@ -200,7 +194,7 @@
 
   <div>
     <h4>Shared files</h4>
-    <file-list :items="globs" base="base"/>
+    <file-list :items="globs" base="@base"/>
   </div>
 
   <div :for="el in sites">
@@ -211,7 +205,7 @@
   <script>
     globs = getGlobals()
     sites = getSites().map(el => {
-      el.assets = { [`globals/${el.key}-design`]: el.totals.design, ...el.pages }
+      el.assets = { [el.dsystem]: el.totals.design, ...el.pages }
       return el
     })
   </script>
@@ -224,9 +218,10 @@
   <div :for="s, i in sites">
     <header>
       <h3><em>Example {i + 1}:</em> { s.name }</h3>
-      <a href="#">Design (CSS)</a> •
-      <a href="#">Full source</a> •
-      <a href="//{ s.key }.nuejs.org">Site</a>
+      <a href="//github.com/nuejs/create-nue/blob/dev/{s.key}/{s.dsystem}.css">
+        Design (CSS)</a> •
+      <a href="//github.com/nuejs/create-nue/blob/dev/{s.key}/">Full source</a> •
+      <a href="//{ s.key }.nuejs.org">Website</a>
     </header>
     <figure>
       <a href="//{ s.key }.nuejs.org">
@@ -323,11 +318,12 @@
     <td>{ fmt(el.totals.globals) }</td>
     <td>{ fmt(el.totals.design) }</td>
     <td>{ fmt(el.totals.pages) }</td>
+    <td>{ fmt(el.totals.classes) }</td>
     <td>{ fmt(el.totals.all) }</td>
   </tr>
 
   <script>
-    head = 'Website | Shared | Design | Pages | Total'.split(' | ')
+    head = 'Website | Shared | Design | Pages | Classes | Total'.split(' | ')
     items = getSites()
 
     fmt(am) {

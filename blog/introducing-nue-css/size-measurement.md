@@ -32,6 +32,13 @@ CSS size details for the [comparison graphs](.#size-graphs)
 
 [css-files]
 
+You can see the size details by running `nue --production stats .css` on your project directory:
+
+[image]
+  small: /img/nue-stats.png
+  large: /img/nue-stats-big.png
+  width: 400
+
 All files are minified with Lightning CSS
 
 

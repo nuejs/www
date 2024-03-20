@@ -111,14 +111,6 @@ table td:first-child {
   p {
     margin-bottom: .3em;
   }
-  a {
-    color: var(--main-500);
-    font-weight: 500;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 
   .is-next {
     border-top: 1px dashed var(--gray-300);
@@ -166,21 +158,32 @@ h3 {
 
 /* measurement page */
 .file-list {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   display: grid;
   font-size: 85%;
   margin: 2em 0;
   ul { list-style: none; }
   ul, li {padding: 0; margin: 0}
-  gap: 2em;
+  gap: 2em 5em;
   a {
     text-decoration: none;
     font-weight: 400;
-    color: var(--gray);
     font-size: 95%;
   }
   b {
-    margin-left: .5em;
+    float: right;
     font-size: 90%;
+  }
+}
+
+table, .file-list, .roadmap {
+  a {
+    color: var(--main-500);
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+      color: var(--main-800);
+    }
   }
 }
