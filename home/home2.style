@@ -67,8 +67,8 @@
     font 600 normal #000
 
   // completed
-  li:nth-child(-n + 3)
-    box-shadow 0 1px 2em #0001, 0 0 0 1px $main
+  li:nth-child(-n + 4)
+    box-shadow 0 1px 2em #0001, 0 0 0 2px $main
     bg /img/check.svg no-repeat
     bg-pos 95% 1.4em
     transition .1s

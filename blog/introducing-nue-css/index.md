@@ -99,8 +99,11 @@ Today we're launching Nue CSS. A more maintainable and scaleable alternative to 
   — **Steve Jobs**
 
 
+There are three key differences that define what Nue CSS is:
 
-## Start with a design system
+
+
+## 1. Your design is based on a design system [architecture]
 Every Nue project starts with a design system. It's your "single source of truth":
 
 [image.tall]
@@ -108,13 +111,13 @@ Every Nue project starts with a design system. It's your "single source of truth
   large: /img/abstract-design-system-big.png
   size: 600 × 410
 
-Design system is a simple concept: you define the master look and feel in a central location and let all your pages inherit from that. Ideally, your design is just a single self-documenting CSS file that even your mom can understand. Here are three examples, which all are significantly smaller than a single Catalyst button:
+Design system is really a simple concept: you define the master look and feel in a central location and let all your pages inherit from that. Ideally, your design is just a single self-documenting CSS file that even your mom can understand. Here are three examples, which all are significantly smaller than a single Catalyst button:
 
 
 [site-list]
 
 
-## Make it consistent
+### Nue spreads the design to your pages
 Nue makes sure your design is consistently applied across all the pages and components on your website:
 
 [image.tall]
@@ -130,10 +133,12 @@ The design system is controlled by designers and UX developers, and the design i
 This way, non-technical people can create content so that the pages automatically inherit the correct design. And there is no way they can break the design system with local or inline styling.
 
 
-## Do more with less
+## 2. A new, minimalistic way to write vanilla CSS [minimalism]
 The simpler you design the system, the better. The fewer colors, font weights, elements, components, and variants you have, the better.
 
 Simple means lean and well-organized CSS that is easy to maintain and scale. There's less room for errors: no global namespace issues, no local breaking points, and no consistency issues.
+
+The key idea to leave out all class names that relate to styling and let external CSS take care of the element and/or component look and feel.
 
 Naming things and minimalism go hand-in-hand. The more names you have, the more complex your design system API. In most cases, the component name is all the naming you need:
 
@@ -153,7 +158,7 @@ Naming things and minimalism go hand-in-hand. The more names you have, the more 
   — **Dieter Rams** • The grandfather to Apple's design
 
 
-## Ditch useless layers
+## 3. No CSS-in-JS layer needed
 When everything is based on a single source of truth, it's trivial to ditch the redundant CSS-in-JS layer in front of your design system, be it Tailwind, *CSS Modules*, or Vanilla Extract. This makes a simpler stack:
 
 [table.small "| CSS-in-JS | Tailwind | Nue"]
@@ -187,7 +192,7 @@ Sites made with Nue have extremely little CSS. For example, a basic Tailwind but
 [size-compare a="sha" b="aimee-app"]
 
 
-### It's ridiculously easy to maintain
+### It's easy to maintain
 The combined amount of CSS in three Nue websites equals the size of a single Tailwind Catalyst button:
 
 [size-compare a="catalyst" b="all"]
@@ -203,7 +208,7 @@ Design-system-powered websites stay lean as the site grows:
 [.hero-quote]
   > One line of CSS is easier to maintain than a hundred lines.
 
-  — **Nue Best Practise**
+  — **Nue Best Practice**
 
 Talk about maintainable CSS!
 
@@ -260,7 +265,7 @@ Talk about timeless web design!
 
 
 ## We're building the web framework of the future
-Nue is a framework for future generations, who demand more from their development stack. Nue CSS was an important step towards our ultimate goal [the perfect web framework](/blog/the-perfect-framework):
+Nue is a framework for future generations, who demand more from their development stack. Nue CSS was an important step towards our ultimate goal [the perfect web framework](/blog/perfect-web-framework/):
 
 
 [nue-roadmap]

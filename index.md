@@ -52,7 +52,7 @@ The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web
   * ### Templates
     Content-first templates with pixel-perfect design
 
-    Themable alternative to Tailwind templates
+    For design-focused projects and organizations
 
   * ### Cloud
     Stupidly fast and simple hosting for Nue projects
@@ -61,8 +61,8 @@ The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web
 
 [.info]
   #### Mar 20, 2024
-  Finished [Nue CSS](/blog/introducing-nue-css/)
-  [Glow](/blog/introducing-glow/) — Beautiful, pixel-perfect Markdown code blocks
+  Finished [Nue CSS](/blog/introducing-nue-css/). Up next: basework for Nue Design system.
+
 
 
 ## Receive an email
