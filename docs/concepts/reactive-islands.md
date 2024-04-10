@@ -15,7 +15,7 @@ Nue makes a perfect environment to author, create, update, and manage reactive i
 
 
 ## Defining islands
-Islands are defined in a file with a `.nue` extension. Nue- files can contain one or multiple components. You author them with the same [HTML- based syntax](../reference/template-syntax.html), as you create your [layout components](../concepts/layout-components.html). For example, here is the source code for the feedback component in the intro- video of this page:
+Islands are defined in a file with a `.nue` extension. Nue-files can contain one or multiple components. You author them with the same [HTML-based syntax](../reference/template-syntax.html), as you create your [layout components](../concepts/layout-components.html). For example, here is the source code for the feedback component in the intro-video of this page:
 
 
 ```
