@@ -15,7 +15,7 @@ Nue makes a perfect environment to author, create, update, and manage reactive i
 
 
 ## Defining islands
-Islands are defined in a file with a `.nue` extension. Nue- files can contain one or multiple components. You author them with the same [HTML- based syntax](../reference/template-syntax.html), as you create your [layout components](../concepts/layout-components.html). For example, here is the source code for the feedback component in the intro- video of this page:
+Islands are defined in a file with a `.nue` extension. Nue-files can contain one or multiple components. You author them with the same [HTML-based syntax](../reference/template-syntax.html), as you create your [layout components](../concepts/layout-components.html). For example, here is the source code for the feedback component in the intro-video of this page:
 
 
 ```
@@ -81,10 +81,7 @@ You can mount islands on your `layout.html` files: in the header, footer, or any
 </footer>
 ```
 
-~Spoiler~: After *Nuemark* is complete you can define islands inside your Markdown with WordPress- like shortcodes and YAML-based configuration.
-
-
-## Auto- mounting
+## Auto-mounting
 After the component is defined and placed somewhere on your layout, Nue takes care of the rest: mounting, unmounting, and hot-reloading. Nue even remembers the original state after the component was reloaded: the form values, whether the dialog was opened, and in the case of a single-page application the state is completely restored from the URL.
 
 You can add as many islands as you want and it has a minor impact on loading performance because all the islands are lazily mounted after the HTML and CSS are fully loaded and rendered. This is called "progressive enhancement" (or "hydration" in post-2019 terminology).
