@@ -17,7 +17,7 @@ mastnav:
   - FAQ
 
 banner:
-  label: "Introducing Nue CSS"
+  label: "Nue CSS preview"
   url: /blog/introducing-nue-css/
 
 footnav:
@@ -31,10 +31,10 @@ footnav:
     class: octocat
 
 subnav:
-  - label: Get started
+  - label: Try beta
     url: /docs/
     class: get-started
-  - label: 5.6k+
+  - label: 5.7k+
     url: https://github.com/nuejs/nue
     class: github-button
   - img: /global/icons/menu.svg

@@ -21,30 +21,30 @@ roadmap:
         est: Jan 2024
         url: /blog/introducing-nuemark/
 
-      - name: Nue Color
+      - name: Glow syntax highlighter
         desc: Syntax highlighting and Nuemark code blocks for all common languages.
         est: Feb 2024
+        url: /blog/introducing-glow/
 
   - name: Design System
     desc: Generic design system for websites and single-page applications
     key: cascade
 
     projects:
-      - name: Universal site layout
-        desc: Generic, classless layout system for multi-page applications. Think CSS Zen Garden 2.0
+      - name: Nue CSS (preview)
+        desc: Best practises for writing maintainable CSS
         est: Mar 2024
+        url: /blog/introducing-nue-css/
 
-      - name: CSS design system
-        desc: Scaleable CSS architecture for the content-first development model
-        est: Mar 2024
+      - name: Universal HTML layout
+        desc: A modern day CSS Zen Garden + CSS best practises
 
       - name: Motion design
         desc: Design system extension for CSS transitions and animations
-        est: Q2 2024
 
       - name: Single-page apps
         desc: Generic layout system for single-page applications
-        est: Q3 2024
+
 
   - name: Template
     desc: Universal template for hybrid multi/single-page applications
@@ -53,19 +53,19 @@ roadmap:
     projects:
       - name: Base template
         desc: Generic template with universal site layout and content-first development model
-        est: April 2024
+
 
       - name: Startup template
         desc: Generic startup template with Minimalistic, Functional, and Heroic themes
-        est: Q2 2024
+
 
       - name: E-commerce template
         desc: Generic startup template with product management, charging, and billing
-        est: Q3 2024
+
 
       - name: Specialized themes
         desc: Extend the universal template with more specialized themes like Luxurious, Memphis, Hippie, Typographic, and Retro
-        est: Q3 2024
+
 
   - name: Cloud
     desc: Specialized cloud for content-first development
@@ -74,15 +74,12 @@ roadmap:
     projects:
       - name: Hosting
         desc: Custom domains and global delivery for multi- and single-page apps
-        est: Q3 2024
 
       - name: Hot deployment
         desc: 10-100x faster deployments
-        est: Q3 2024
 
       - name: Cold deployment
         desc: Git-based versioned shipping, rollbacks, and staging environments
-        est: Q4 2024
 
 
   - name: Services
@@ -93,15 +90,12 @@ roadmap:
     projects:
       - name: People
         desc: Registration, authentication, and CRM
-        est: Q1 2025
 
       - name: Analytics
         desc: Traffic, engagement, conversions, and web vitals
-        est: Q1 2025
 
       - name: E-commerce
         desc: Products, customers, charges, and billing
-        est: Q1 2025
 
 
 

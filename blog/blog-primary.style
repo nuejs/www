@@ -26,6 +26,7 @@ img
 article
   > h1
     font 2em 1.15 -1px
+    text-wrap balance
 
     em
       font normal $main 800

@@ -7,8 +7,8 @@ include: [home, bunny/video]
 **Nue** is a closer-to-metal framework embracing minimalism and web standards. It's structurally clean and stupidly fast.
 
 [.cta]
-  [link to="/docs/" class="button" "Get started"]
-  [link to="/blog/perfect-web-framework/" class="button secondary" "Product roadmap"]
+  [link to="/blog/perfect-web-framework/" class="button" "Our ultimate goal"]
+  [link to="/docs/" class="button secondary" "Try beta"]
 
 [.subtle]
   **Content-first:** Build entire sites without ever leaving your content
@@ -19,7 +19,7 @@ include: [home, bunny/video]
   class: wide
 
 ## Vision
-The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web-framework/), which is ridiculously fast and easy to use.
+The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web-framework/) for UX developers, which is ridiculously fast and easy to use.
 
 [media]
   small: /img/roadmap6.png
@@ -44,10 +44,10 @@ The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web
 
     Content-first alternative to *MDX*. [Read the announcement &raquo;](/blog/introducing-nuemark/)
 
-  * ### Nue CSS
-    Write maintainable and design-system compatible CSS
+  * ### Nue CSS preview
+    Sneak peek of the best practises for writing maintainable CSS
 
-    Scaleable alternative to *CSS-in-JS* and *Tailwind* [Read the announcement &raquo;](/blog/introducing-nue-css/)
+    Scaleable alternative to *CSS-in-JS* and *Tailwind* [Read the article &raquo;](/blog/introducing-nue-css/)
 
   * ### Templates
     Content-first templates with pixel-perfect design
@@ -61,12 +61,15 @@ The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web
 
 [.info]
   #### Mar 20, 2024
-  Finished [Nue CSS](/blog/introducing-nue-css/). Up next: basework for Nue Design system.
+  Check out [Nue CSS preview](/blog/introducing-nue-css/).
+
+  **Summer is coming ☀️**
+  The website and docs will be rewritten, but with ~25% speed during the summer.
 
 
 
 ## Receive an email
-When the next project is pushed out:
+When the next milestone is reached:
 
 [join-list]
 

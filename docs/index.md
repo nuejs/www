@@ -4,7 +4,15 @@ title: Getting started with Nue / Nue docs
 class: no-aside
 ---
 
-# Getting started with Nue
+# Getting started
+
+## Disclaimer
+Nue is still in Beta and comes with the following issues and limitations
+
+* **Single-page applications** There is a tutorial on [building a simple SPA](//localhost:8082/docs/tutorials/build-a-simple-spa.html), but the support for full-blown reactive applications is very much in progress. All issues regarding Nue JS are marked as [low priority](https://github.com/nuejs/nue/labels/low%20priority) because the focus is currently on content-heavy multi-page applications.
+
+* **Windows support** Nue does not work under Windows but we're [working on it](https://github.com/nuejs/nue/issues/249)
+
 
 
 ## System Requirements
@@ -14,7 +22,7 @@ class: no-aside
 
 
 ## Installation
-Nue comes with a [command line interface](reference/command-line-interface.html) (CLI), which can be reused accross multiple websites and/or single-page applications. Install it globally as follows:
+Nue comes with a [command line interface](reference/command-line-interface.html) (CLI), which can be reused across multiple websites and/or single-page applications. Install it globally as follows:
 
 
 ``` sh
