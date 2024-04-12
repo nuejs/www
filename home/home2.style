@@ -3,7 +3,7 @@
   font 2.5em 800
   mt 2em
   + p
-    max-width 24em
+    text-wrap balance
 
 // roadmap image
 .roadmap
@@ -60,7 +60,7 @@
 
   p
     font 400 $gray
-    max-width 19em
+    text-wrap balance
 
 
   em

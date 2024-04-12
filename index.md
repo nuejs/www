@@ -7,8 +7,8 @@ include: [home, bunny/video]
 **Nue** is a closer-to-metal framework embracing minimalism and web standards. It's structurally clean and stupidly fast.
 
 [.cta]
-  [link to="/blog/perfect-web-framework/" class="button" "Our ultimate goal"]
-  [link to="/docs/" class="button secondary" "Try beta"]
+  [link to="/docs/" class="button" "Try Beta"]
+  [link to="/blog/perfect-web-framework/" class="button secondary" "Project vision"]
 
 [.subtle]
   **Content-first:** Build entire sites without ever leaving your content
@@ -18,8 +18,9 @@ include: [home, bunny/video]
   poster: /img/nuemark-splash.jpg
   class: wide
 
-## Vision
-The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web-framework/) for UX developers, which is ridiculously fast and easy to use.
+
+## Status
+The goal of Nue is to build a [perfect web framework](/blog/perfect-web-framework/) for UX developers, which is ridiculously fast and easy to use.
 
 [media]
   small: /img/roadmap6.png
@@ -60,11 +61,8 @@ The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web
     Ridiculously easier alternative to *Vercel*
 
 [.info]
-  #### Mar 20, 2024
-  Check out [Nue CSS preview](/blog/introducing-nue-css/).
-
-  **Summer is coming ☀️**
-  The website and docs will be rewritten, but with ~25% speed during the summer.
+  #### Summer is coming ☀️
+  The website and docs will be rewritten, but the development goes into summer mode. That is: we go zoning to the forrest.
 
 
 

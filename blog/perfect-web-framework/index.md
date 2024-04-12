@@ -9,12 +9,12 @@ include: [ideal, roadmap]
 ---
 
 
-# The perfect framework for UX developers
+# The perfect framework For UX developers
 [author]
 
 In June 2023 I had my final frontend rage quit moment. The anger was so intense that I decided to change the direction of my career from a startup founder to a full-time OSS developer. I would devote all my time to fixing everything that is wrong with the current front-end ecosystem.
 
-I soon created a [project on GitHub](https://github.com/nuejs/nue) and called it *Nue*. I wanted it to be perfect for for [UX developers](//css-tricks.com/the-great-divide/) and design-led organizations. This article explains the key goals and the steps to get there:
+I created a [project on GitHub](https://github.com/nuejs/nue) and called it *"Nue"*. I wanted it to be the best web framework for for [UX developers](//css-tricks.com/the-great-divide/) and design-led organizations. Here's what that means:
 
 
 [#the-ideal.is-dark.super-wide]
@@ -41,6 +41,10 @@ Note that single-page applications are no different: the content just comes from
 
 [.problem]
   Popular frameworks like *Next.js* or *Astro* are optimized for JavaScript developers with a deep understanding of *React*, *TypeScript*, *CSS-in-JS*, *Tailwind*, and whatnot. For example, you need hundreds of lines of code spanning 10-20 files to create a rich/interactive web page.
+
+
+[image.tall src="/img/designers-vs-engineers.webp"]
+  caption:  "[The Great Divide](https://css-tricks.com/the-great-divide/): UX developers are design oriented and JS engineers are technology oriented"
 
 
 ## World-class design `UX` [design]

@@ -4,7 +4,7 @@ h1
 
   + p
     font-size calc(1em + .7vw)
-    max-width 26em
+    text-wrap balance
     mb 1.2em
 
     em
@@ -28,10 +28,10 @@ h2
 
   .button:last-child
     bg /img/long-arrow-right.svg no-repeat
-    bg-pos 92% 58%
+    bg-pos 87% 58%
     bg-size 1.4em
     ml .4em
-    pr 2.7em
+    pr 3.2em
 
   @small-
     font 105%

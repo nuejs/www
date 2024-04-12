@@ -13,6 +13,7 @@ li
 
 figcaption
   font .95rem $gray
+  text-wrap balance
   max-width 48em
   mt .5em
 
@@ -61,7 +62,8 @@ a.subtle
 
   p
     font 105% 1.7 $gray-600
-    max-width 27em
+    text-wrap balance
+    max-width 35em
 
   h4
     bg /nueui/img/info.svg no-repeat

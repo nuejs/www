@@ -6,12 +6,15 @@ class: no-aside
 
 # Getting started
 
-## Disclaimer
-Nue is still in Beta and comes with the following issues and limitations
+## Status: Beta
+You can use Nue to build production-ready websites, but with following limitations:
 
-* **Single-page applications** There is a tutorial on [building a simple SPA](//localhost:8082/docs/tutorials/build-a-simple-spa.html), but the support for full-blown reactive applications is very much in progress. All issues regarding Nue JS are marked as [low priority](https://github.com/nuejs/nue/labels/low%20priority) because the focus is currently on content-heavy multi-page applications.
+* **No CSS documentation.**
 
-* **Windows support** Nue does not work under Windows but we're [working on it](https://github.com/nuejs/nue/issues/249)
+* **Sketchy Windows support.** Nue does not work under Windows but we're [working on it](https://github.com/nuejs/nue/issues/249)
+
+* **Limited support for single-page applications.** There is a tutorial on [building a simple SPA](//localhost:8082/docs/tutorials/build-a-simple-spa.html), but the support for full-blown reactive applications is very much in progress. All issues regarding Nue JS are marked as [low priority](https://github.com/nuejs/nue/labels/low%20priority) because the focus is currently on content-heavy multi-page applications.
+
 
 
 
