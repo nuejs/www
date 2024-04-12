@@ -37,7 +37,7 @@ This article showcases the power of CSS and the web standards model by comparing
 
 
 
-#### February 18, 2024 [Tailwind marketing and misinformation engine](/blog/tailwind-misinformation-engine/)a
+#### February 18, 2024 [Tailwind marketing and misinformation engine](/blog/tailwind-misinformation-engine/)
 How Tailwind positions vanilla CSS as the problem and the "utility first" approach as the hero. Well-known framing for CSS experts, but strongly [denied](//www.youtube.com/watch?v=yGBjXsrwK4M&t=1s) by the Tailwind community.
 
 #### March 20, 2024 [Nue CSS preview](/blog/introducing-nue-css/)
