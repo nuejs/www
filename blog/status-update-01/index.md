@@ -1,10 +1,10 @@
 
 ---
-date: 2024-04-13
-og: /img/nue-css-og.png
+date: 2024-04-12
+og: /img/designers-vs-engineers.png
 include: [ext/glow]
-title: Introducing Nue CSS
-desc: A scaleable alternative to Tailwind, BEM, and CSS-in-JS
+title: ☀️ Summer 2024 status update
+desc: The past, present, and the future of the Nue framework
 thumb: glow-thumb.jpg
 ---
 
@@ -13,24 +13,10 @@ thumb: glow-thumb.jpg
 
 The goal of Nue is to be the [perfect web framework](/blog/perfect-web-framework/) for UX developers and design-led organizations. We're not there yet, but here's how we keep the dream alive
 
-[image.hero src="/img/designers-vs-engineers.webp"]
-  caption:  "[The Great Divide](https://css-tricks.com/the-great-divide/): UX developers are design oriented and JS engineers are technology oriented"
-
-
-## Key milestones
-
-
-#### September 18, 2023 ["Frontend troublesolver"](/blog/backstory/)
-The idea of Nue was posted to Hacker News. Here's the [backstory](/blog/backstory/) and why I decided to dedicate my career to this project.
-
-#### December 14, 2023 [Content-first framework core](/blog/nuekit-010/)
-[Nuekit 0.1](/blog/nuekit-010/) turned the idea into reality. This closer-to-metal framework is an order of magnitude smaller and faster than the alternatives and gives a near-instant feedback loop through universal hot-reloading.
-
-#### January 12, 2024 [Markdown variant for rich content](/blog/introducing-nuemark/)
-[Nuemark 0.1](/blog/introducing-nuemark/) is the cornerstone for the content-first development model, where content-heavy websites are primarily maintained by copywriters and technical writers. This project showcases the importance of the separation of concerns pattern.
-
-#### February 13, 2024 [Markdown syntax highlighter](/blog/introducing-glow/)
-[Glow 0.1](/blog/introducing-glow/) A Markdown code block syntax highlighter to meet the aesthetics and extreme minimalistic demands of Nue.
+[image.hero]
+  small: /img/designers-vs-engineers.png
+  large: /img/designers-vs-engineers-big.png
+  caption:  "[The Great Divide](https://css-tricks.com/the-great-divide/): UX developers are design-oriented and JS engineers are technology-oriented"
 
 
 ## For the love ❤️ of web standards
@@ -51,7 +37,7 @@ This article showcases the power of CSS and the web standards model by comparing
 
 
 
-#### February 18, 2024 [Tailwind marketing and misinformation engine](/blog/tailwind-misinformation-engine/)
+#### February 18, 2024 [Tailwind marketing and misinformation engine](/blog/tailwind-misinformation-engine/)a
 How Tailwind positions vanilla CSS as the problem and the "utility first" approach as the hero. Well-known framing for CSS experts, but strongly [denied](//www.youtube.com/watch?v=yGBjXsrwK4M&t=1s) by the Tailwind community.
 
 #### March 20, 2024 [Nue CSS preview](/blog/introducing-nue-css/)
@@ -59,10 +45,21 @@ Sneak preview of the upcoming design system approach and the best practices of w
 
 
 
+## Project milestones
 
-[.info]
-  #### Want to help and contribute?
-  Please [contact us](//github.com/nuejs/nue/discussions) if you are interested in building a React alternative for UX developer needs.
+
+#### September 18, 2023 ["Frontend troublesolver"](/blog/backstory/)
+The idea of Nue was posted to Hacker News. Here's the [backstory](/blog/backstory/) and why I decided to dedicate my career to this project.
+
+#### December 14, 2023 [Content-first framework core](/blog/nuekit-010/)
+[Nuekit 0.1](/blog/nuekit-010/) turned the idea into reality. This closer-to-metal framework is an order of magnitude smaller and faster than the alternatives and gives a near-instant feedback loop through universal hot-reloading.
+
+#### January 12, 2024 [Markdown variant for rich content](/blog/introducing-nuemark/)
+[Nuemark 0.1](/blog/introducing-nuemark/) is the cornerstone for the content-first development model, where content-heavy websites are primarily maintained by copywriters and technical writers. This project showcases the importance of the separation of concerns pattern.
+
+#### February 13, 2024 [Markdown syntax highlighter](/blog/introducing-glow/)
+[Glow 0.1](/blog/introducing-glow/) A Markdown code block syntax highlighter to meet the aesthetics and extreme minimalistic demands of Nue.
+
 
 
 ## Current status: Beta
@@ -73,8 +70,11 @@ You can use Nue to build production-ready websites but with the following limita
 1. Nue JS's reactive parts are buggy and the issues are marked low priority.
 
 
-[button.button href="/docs/" "Try beta now"]
+[.info.tall]
+  #### Dig Nue? Help appreciated!
+  Please [contact us](//github.com/nuejs/nue/discussions) if you are interested in building a React alternative for UX developer needs. The reactive lib is our current development bottleneck.
 
+[button.button href="/docs/" "Try beta now"]
 
 ## Up next: ☀️ Summertime
 During the summer the focus will be on the following, but with a 33% pace:
@@ -84,17 +84,17 @@ During the summer the focus will be on the following, but with a 33% pace:
 ### Design system
 Finalize and document the CSS design system including:
 
-- CSS architecture
-- Information Architecture
-- CSS best practices
-- Design template
+1. CSS architecture
+1. Information Architecture
+1. CSS best practices
+1. Design template
 
 ### Website rewrite
 Rewrite the website narrative and the documentation so that the content-first approach is crystal clear and why Nue is the best framework for UX developers and design-led organizations:
 
-- Content-first fundamentals
-- Why is it important
-- Pillars, values, principles
+1. Content-first fundamentals
+1. Why is it important
+1. Pillars, values, principles
 
 
 ## The Dream 💭
@@ -106,12 +106,24 @@ Ultimately Nue will be the the best web framework for UX developers:
 
 We want everyone to have the ability to take the quality levels of *Stripe*, *Linear*, or *Apple* — with the speed levels of a text-only website. Here are the missing pieces, before a solid 1.0 release:
 
-* Templates
-* Single-page apps
-* Cloud deployer
+1. Templates
+1. Single-page apps
+1. Cloud deployer
+
 
 
 ## 📮 Follow the progress
 Join Nue mailing list and get notified when we reach the next milestone
 
 [join-list]
+
+
+
+## Huge thanks to:
+* [Nobkd](//github.com/nobkd) and [Fritz Lin](//github.com/fritx) for the very many updates and fixes. Thank you!
+
+* [Mauricio Wolff](//www.linkedin.com/in/mauriciowolff/?originalSubdomain=au) (Lead Product Designer @ Atlassian) for the extremely important, high-level feedback.
+
+* [Alan Hemmings](//github.com/goblinfactory) for the developer feedback and the mental support. Much needed!
+
+* Thanks to all [25+ controbutors](//github.com/nuejs/nue/graphs/contributors) for improving Nue codebase.

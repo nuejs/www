@@ -11,7 +11,7 @@ include: [permlink]
 The ultimate goal of Nue is to build [a perfect web framework](/blog/perfect-web-framework/) for UX developers and design engineers. A content-first alternative to *Next.js*, *Vercel* and *Netlify*, which is extremely fast and ridiculously easy to use.
 
 [image-link]
-  src: /img/roadmap6-big.png
+  src: /img/roadmap-summer-big.png
   href: /blog/perfect-web-framework/
   class: tall
 

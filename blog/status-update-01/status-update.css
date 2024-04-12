@@ -16,7 +16,7 @@
   }
 }
 
-article > h4 {
+article > h4:has(a) {
   font-weight: 400;
   font-size: 85%;
   margin-top: 3em;
@@ -35,4 +35,8 @@ article > h4 {
     text-underline-offset: 3px;
     text-decoration-color: var(--gray-300);
   }
+}
+
+article ol li {
+  margin: .3em 0;
 }

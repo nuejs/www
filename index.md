@@ -23,10 +23,10 @@ include: [home, bunny/video]
 The goal of Nue is to build a [perfect web framework](/blog/perfect-web-framework/) for UX developers, which is ridiculously fast and easy to use.
 
 [media]
-  small: /img/roadmap6.png
-  large: /img/roadmap6-big.png
+  small: /img/roadmap-summer.png
+  large: /img/roadmap-summer-big.png
   class: roadmap
-  width: 850
+  width: 800
 
 
 [.tools]
