@@ -14,7 +14,7 @@ body > .site-top
   bg no-repeat
   background-image url(/img/cube.svg), url(/img/chevron-right.svg)
   font 80% 600 $gray-800
-  bg-pos .6em 60%, 96% 55%
+  bg-pos .6em 60%, 93% 51%
   bg-size 1.5em, 1em
   border $gray-200
   radius 3em

@@ -1,7 +1,4 @@
 
-.badge
-  none
-
 .super-wide.is-dark
   radius .4em
   p calc(1em + 4vw)

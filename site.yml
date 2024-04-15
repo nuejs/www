@@ -34,7 +34,7 @@ subnav:
   - label: Try beta
     url: /docs/
     class: get-started
-  - label: 5.7k+
+  - label: 5.8k+
     url: https://github.com/nuejs/nue
     class: github-button
   - img: /global/icons/menu.svg

@@ -51,9 +51,9 @@ The goal of Nue is to build a [perfect web framework](/blog/perfect-web-framewor
     Scaleable alternative to *CSS-in-JS* and *Tailwind* [Read the article &raquo;](/blog/introducing-nue-css/)
 
   * ### Templates
-    Content-first templates with pixel-perfect design
+    The best website templates ever existed in terms of design, maintainability, and performance
 
-    For design-focused projects and organizations
+    Otimized for UX developers and design-led organizations
 
   * ### Cloud
     Stupidly fast and simple hosting for Nue projects
@@ -62,7 +62,7 @@ The goal of Nue is to build a [perfect web framework](/blog/perfect-web-framewor
 
 [.info]
   #### Summer is coming ☀️
-  The website and docs will be rewritten, but the development goes into summer mode. That is: we go zoning to the forrest.
+  [This site is rewritten](/blog/status-update-01/), but we skyward ourselves to a summer mode. That is: we put on the folio-hat and go zoning to the dark Finnish forrest.
 
 
 

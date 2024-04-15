@@ -81,38 +81,41 @@ During the summer the focus will be on the following, but with a 33% pace:
 
 [image.floating src="/img/sunflower.svg"]
 
-### Design system
-Finalize and document the CSS design system including:
+### Nue design system
+Finalize the Nue design system with complete documentation including:
 
-1. CSS architecture
 1. Information Architecture
+1. Global Design System
+1. CSS architecture
 1. CSS best practices
 1. Design template
 
-### Website rewrite
-Rewrite the website narrative and the documentation so that the content-first approach is crystal clear and why Nue is the best framework for UX developers and design-led organizations:
 
-1. Content-first fundamentals
+### Website rewrite
+Rewrite the website narrative and the documentation so that the content-first approach becomes crystal clear and why Nue is an obvious choice for UX developers and design-led organizations:
+
+1. What is a content-first framework
 1. Why is it important
 1. Pillars, values, principles
 
 
-## The Dream 💭
-Ultimately Nue will be the the best web framework for UX developers:
+## 🦄 The Dream
+Eventually Nue gives you the following:
 
 1. World-class design for everyone
-2. Easy to maintain and scale
+2. Ridiculously easy to maintain and scale
 3. New levels of performance
 
 We want everyone to have the ability to take the quality levels of *Stripe*, *Linear*, or *Apple* — with the speed levels of a text-only website. Here are the missing pieces, before a solid 1.0 release:
 
-1. Templates
-1. Single-page apps
-1. Cloud deployer
+[media]
+  small: /img/roadmap-summer.png
+  large: /img/roadmap-summer-big.png
+  class: roadmap
+  width: 800
 
 
-
-## 📮 Follow the progress
+### Follow the progress
 Join Nue mailing list and get notified when we reach the next milestone
 
 [join-list]
@@ -122,7 +125,7 @@ Join Nue mailing list and get notified when we reach the next milestone
 ## Huge thanks to:
 * [Nobkd](//github.com/nobkd) and [Fritz Lin](//github.com/fritx) for the very many updates and fixes. Thank you!
 
-* [Mauricio Wolff](//www.linkedin.com/in/mauriciowolff/?originalSubdomain=au) (Lead Product Designer @ Atlassian) for the extremely important, high-level feedback.
+* [Mauricio Wolff](//www.linkedin.com/in/mauriciowolff/?originalSubdomain=au) (Lead Product Designer @ Atlassian) for the extremely important, high-level design feedback.
 
 * [Alan Hemmings](//github.com/goblinfactory) for the developer feedback and the mental support. Much needed!
 
