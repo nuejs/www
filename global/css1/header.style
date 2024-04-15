@@ -67,7 +67,7 @@ nav > a
 
 .get-started
   bg /img/chevron-right.svg no-repeat
-  bg-pos 85% 45%
+  bg-pos 85% 50%
   bg-size .8em
   border-right $gray-300
   font 90%
@@ -132,6 +132,7 @@ nav > a
 .subnav
   display flex
   ml auto
+  align-items center
 
 // burger / mobile nav
 .burger
