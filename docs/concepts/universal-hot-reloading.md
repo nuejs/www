@@ -16,14 +16,14 @@ Hot-reloading is automatically enabled in development. The client-server communi
 - Markdown content
 - Front matter (example: document.title updates)
 - Layout files: both root- and app-level `layout.html`
-- site.yaml, app.yaml data (example: master navigation updates)
+- `site.yaml`, `app.yaml` data (example: master navigation updates)
 - Updates to other than the active page routes automatically to the new page
 
 ## Styling updates
 - CSS file updates
 - Inline styling changes
 - New CSS files & CSS file removals
-- Complete theme change via changes in the `globals: []` array in site.yaml
+- Complete theme change via changes in the `globals: []` array in `site.yaml`
 
 ## Reactive components
 - All component updates
@@ -40,7 +40,7 @@ Hot-reloading is automatically enabled in development. The client-server communi
 - The main reactive application changes
 - Any dependent component changes
 - The application state is retained through [application router](../reference/app-router.html)
-- site.yaml or app.yaml data passed to the reactive client
+- `site.yaml` or `app.yaml` data passed to the reactive client
 
 
 ## Compiler errors
@@ -54,12 +54,12 @@ Hot-reloading is automatically enabled in development. The client-server communi
   ![Layout error](/img/nue-error.png)
 
 
-## Non- goals
-Nue hot-reloading applies to UI components only so updates to JavaScript/TypeScript extensions make no impact. These extensions are best developed and tested on the server side.
+## Non-goals
+Nue hot-reloading applies to UI components only so updates to JavaScript/TypeScript extensions have no impact. These extensions are best developed and tested on the server side.
 
 
 ## Disable hot-reloading
-You can disable the hot-reloading `no_hotreload: true` configuration option. Hot-reloading is automatically disabled from the production build, as it makes no sense there.
+You can disable hot-reloading with the `hotreload: false` configuration option. Hot-reloading is automatically disabled for the production build, as it makes no sense there.
 
 
 
