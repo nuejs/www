@@ -3,8 +3,8 @@
 date: 2024-03-20
 og: /img/nue-css-og.png
 include: [ext/glow]
-title: Introducing Nue CSS
-desc: A scaleable alternative to Tailwind, BEM, and CSS-in-JS
+title: Nue CSS (preview)
+desc: Nue brings a scaleable alternative to Tailwind, BEM, and CSS-in-JS
 thumb: glow-thumb.jpg
 ---
 
@@ -12,7 +12,7 @@ thumb: glow-thumb.jpg
 
 [author]
 
-Here's a preview of Nue CSS. The key ingredients are *minimalism*, and *re-usability*. The difference is wild: it is possible to build an entire website with the same amount of CSS that goes into a single *Tailwind* button. Or even crazier: three websites with a single *Tailwind Catalyst* button.
+Here's a preview of Nue's approach to styling things on the web. The key difference to existing systems are *minimalism*, and extreme *re-usability*. The difference can be huge: you can build an entire website with the same amount of CSS that goes into a single *Tailwind* button. Or even crazier: three websites with a single *Tailwind Catalyst* button.
 
 [image.big-scaled]
   small: /img/nue-css-hero.webp
@@ -86,11 +86,11 @@ What would _that_ look like?
 
 
 
-## Nue CSS
-Nue CSS is a more maintainable and scaleable alternative to Tailwind, BEM, and CSS-in-JS. It's new a way to *write and structure your CSS*. Here are the key differences:
+## 1. Cascading CSS architecture
+Nue offers a more maintainable and scaleable alternative to Tailwind, BEM, and CSS-in-JS. It's a new way to *write and structure your CSS*. Here are the key differences:
 
 
-### 1. Your design is based on a design system [architecture]
+### Your design is based on a design system [architecture]
 Every Nue project starts with a design system. It's your "single source of truth":
 
 [image.tall]
@@ -98,7 +98,7 @@ Every Nue project starts with a design system. It's your "single source of truth
   large: /img/abstract-design-system-big.png
   size: 600 × 410
 
-Design system is really a simple concept: you define the master look and feel in a central location and let all your pages inherit from that. Ideally, your design is just a single self-documenting CSS file that even non-technical people can understand. Here are three examples, which all are significantly smaller than a single Tailwind Catalyst button:
+Design system is really a simple concept: you define the master look and feel in a central location and let all your pages inherit from that. Ideally, your design is just a single self-documenting CSS file that even non-technical people can understand. Here are three examples:
 
 
 [site-list]

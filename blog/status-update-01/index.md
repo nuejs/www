@@ -129,4 +129,4 @@ Join Nue mailing list and get notified when we reach the next milestone
 
 * [Alan Hemmings](//github.com/goblinfactory) for the developer feedback and the mental support. Much needed!
 
-* Thanks to all [25+ controbutors](//github.com/nuejs/nue/graphs/contributors) for improving Nue codebase.
+* Thanks to all [25+ contributors](//github.com/nuejs/nue/graphs/contributors) for improving Nue codebase.

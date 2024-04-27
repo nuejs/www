@@ -14,11 +14,13 @@ include: [ideal, roadmap]
 
 In June 2023 I had my final frontend rage quit moment. The anger was so intense that I decided to change the direction of my career from a startup founder to a full-time OSS developer. I would devote all my time to fixing everything that is wrong with the current front-end ecosystem.
 
-I created a [project on GitHub](https://github.com/nuejs/nue) and called it *"Nue"*. I wanted it to be the best web framework for for [UX developers](//css-tricks.com/the-great-divide/) and design-led organizations. Here's what that means:
+I created a [project on GitHub](https://github.com/nuejs/nue) and called it *"Nue"*. I wanted it to be the best web framework for for [UX developers](//css-tricks.com/the-great-divide/) and design-led organizations. It'll consist of following:
+
+[image]
+  small: /img/perfect-banner.jpg
+  large: /img/perfect-banner-big.jpg
 
 
-[#the-ideal.is-dark.super-wide]
-  [the-ideal]
 
 Hover/click items for more details
 
@@ -43,7 +45,7 @@ Note that single-page applications are no different: the content just comes from
   Popular frameworks like *Next.js* or *Astro* are optimized for JavaScript developers with a deep understanding of *React*, *TypeScript*, *CSS-in-JS*, *Tailwind*, and whatnot. For example, you need hundreds of lines of code spanning 10-20 files to create a rich/interactive web page.
 
 
-[image.tall src="/img/designers-vs-engineers.webp"]
+[image.tall src="/img/designers-vs-engineers.png"]
   caption:  "[The Great Divide](https://css-tricks.com/the-great-divide/): UX developers are design oriented and JS engineers are technology oriented"
 
 
@@ -137,7 +139,7 @@ We're looking at the fastest way to start a new, fully functional business.
 
 ## Product roadmap
 
-[.wide]
+[#the-ideal.is-dark.super-wide]
   [the-ideal]
 
 [roadmap]
