@@ -234,7 +234,7 @@ Interactive components work out of the box with Nue framework. Check [Nuemark AP
 
 
 ## Custom components
-You can define custom components on the [layout.html](../concepts/layout-components.html) file on root level or app level. For example:
+You can define custom components on the [layout.html](layout-components.html) file on root level or app level. For example:
 
 
 ```
