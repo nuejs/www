@@ -217,7 +217,7 @@ The fact is that Tailwind's popularity will eventually fade. CSS-in-JS is trendi
 
 
 ### What is Nue?
-*Nue* is the umbrella term for all Nue-related projects. It's a rather ambitious project to build a simpler and more powerful alternative to services like *Vercel*, *Gatsby*, and *Nelify*.
+*Nue* is the umbrella term for all Nue-related projects. It's a rather ambitious project to build a simpler and more powerful alternative to services like *Vercel*, *Gatsby*, and *Netlify*.
 
 
 [media]
