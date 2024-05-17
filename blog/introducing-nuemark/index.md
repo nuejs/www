@@ -122,7 +122,7 @@ export function MyAlert(props: { color: string, message: string }) {
 }
 ```
 
-And here's the same with [Nue template syntax](/docs/reference/template-syntax)
+And here's the same with [Nue template syntax](/docs/reference/template-syntax.html)
 
 ```
 <p @name="my-alert" style="color:{ color || 'red' };">{ message }</p>
