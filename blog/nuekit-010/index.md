@@ -109,7 +109,7 @@ Check out our [Getting Started guide](/docs/) to learn the details
 
 
 ## What is Nue?
-*Nue* is the umbrella term for all Nue-related projects. It's a rather ambitious project to build a simpler and more powerful alternative to services like *Vercel*, *Gatsby*, and *Nelify*. Today, with the announcement of Nuekit we are significantly closer to the goal:
+*Nue* is the umbrella term for all Nue-related projects. It's a rather ambitious project to build a simpler and more powerful alternative to services like *Vercel*, *Gatsby*, and *Netlify*. Today, with the announcement of Nuekit we are significantly closer to the goal:
 
 
 [media]
