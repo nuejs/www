@@ -46,14 +46,14 @@ The goal of Nue is to build a [perfect web framework](/blog/perfect-web-framewor
     Content-first alternative to *MDX*. [Read the announcement &raquo;](/blog/introducing-nuemark/)
 
   * ### Nue CSS preview
-    Sneak peek of the best practises for writing maintainable CSS
+    Sneak peek of the best practices for writing maintainable CSS
 
     Scaleable alternative to *CSS-in-JS* and *Tailwind* [Read the article &raquo;](/blog/introducing-nue-css/)
 
   * ### Templates
     The best website templates ever existed in terms of design, maintainability, and performance
 
-    Otimized for UX developers and design-led organizations
+    Optimized for UX developers and design-led organizations
 
   * ### Cloud
     Stupidly fast and simple hosting for Nue projects
