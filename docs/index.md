@@ -13,7 +13,7 @@ You can use Nue to build production-ready websites, but with following limitatio
 
 * **Sketchy Windows support.** Nue does not work under Windows but we're [working on it](https://github.com/nuejs/nue/issues/249)
 
-* **Limited support for single-page applications.** There is a tutorial on [building a simple SPA](//localhost:8082/docs/tutorials/build-a-simple-spa.html), but the support for full-blown reactive applications is very much in progress. All issues regarding Nue JS are marked as [low priority](https://github.com/nuejs/nue/labels/low%20priority) because the focus is currently on content-heavy multi-page applications.
+* **Limited support for single-page applications.** There is a tutorial on [building a simple SPA](/tutorials/build-a-simple-spa.html), but the support for full-blown reactive applications is very much in progress. All issues regarding Nue JS are marked as [low priority](https://github.com/nuejs/nue/labels/low%20priority) because the focus is currently on content-heavy multi-page applications.
 
 
 
