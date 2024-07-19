@@ -221,8 +221,8 @@ The fact is that Tailwind's popularity will eventually fade. CSS-in-JS is trendi
 
 
 [media]
-  small: /img/roadmap-summer.png
-  large: /img/roadmap-summer-big.png
+  small: /img/roadmap-autumn.png
+  large: /img/roadmap-autumn-big.png
   class: tall
 
 If you want, we can send you an email when a new milestone is reached:

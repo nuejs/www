@@ -49,7 +49,7 @@ Tag options can be supplied in different ways
 // classes and ID
 [image#hero.epic.bordered hero.webp]
 
-// cute shortcut for image, icon, and video tags
+// cute shortcut for image and video tags
 [! hello.png]
 ```
 
@@ -71,7 +71,6 @@ Displays a button that points to a location specified in the `href` attribute:
 // button class + nested body
 [button.secondary href="/docs/"]
   Learn more
-  [icon angle-right]
 ```
 
 ### HTML output
@@ -93,30 +92,6 @@ Button supports nested Nuemark content and the following options:
 
   `label` the button label. Can also be given with the unnamed attribute.
 
-
-## [icon]
-Displays an SVG image from a configured directory.
-
-```
-// simple icon
-[icon heart]
-
-// shortcut syntax
-[! heart]
-```
-
-### HTML output
-
-```
-<img src="/img/heart.svg" alt="Heart icon">
-```
-
-### Options
-
-[.options]
-  `icon_base` specifies the base directory where the icons are located. The default value is "/img"
-
-  `alt` specifies an alternate text for an image, if the user for some reason cannot view it. By default, this is "<Icon_name> icon"
 
 
 ## [table]

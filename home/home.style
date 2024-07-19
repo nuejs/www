@@ -1,4 +1,10 @@
 
+
+.info
+  relative -2em
+
+
+
 h1
   max-width 8em
 

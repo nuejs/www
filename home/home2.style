@@ -17,14 +17,6 @@
     color $gray-800
 
 
-.info
-  a:first-child
-    font 105% 600
-
-  a:last-child
-    text-decoration-color $gray-400
-    color inherit
-
 .tools
   mb 3em
 

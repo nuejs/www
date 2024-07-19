@@ -3,6 +3,12 @@
 include: [home, bunny/video]
 ---
 
+
+[.info]
+  ### 📦 Monster update coming on August!
+  A huge update with almost [400 files changed](https://github.com/nuejs/nue/compare/master...dev) is coming on Aug. It's going to be amazing.
+
+
 # A content-first Web framework
 **Nue** is a closer-to-metal framework embracing minimalism and web standards. It's structurally clean and stupidly fast.
 
@@ -23,8 +29,8 @@ include: [home, bunny/video]
 The goal of Nue is to build a [perfect web framework](/blog/perfect-web-framework/) for UX developers, which is ridiculously fast and easy to use.
 
 [media]
-  small: /img/roadmap-summer.png
-  large: /img/roadmap-summer-big.png
+  small: /img/roadmap-autumn.png
+  large: /img/roadmap-autumn-big.png
   class: roadmap
   width: 800
 
@@ -60,9 +66,6 @@ The goal of Nue is to build a [perfect web framework](/blog/perfect-web-framewor
 
     Ridiculously easier alternative to *Vercel*
 
-[.info]
-  #### Summer is coming ☀️
-  [This site is rewritten](/blog/status-update-01/), but we skyward ourselves to a summer mode. That is: we put on the folio-hat and go zoning to the dark Finnish forrest.
 
 
 

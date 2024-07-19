@@ -109,8 +109,8 @@ Eventually Nue gives you the following:
 We want everyone to have the ability to take the quality levels of *Stripe*, *Linear*, or *Apple* — with the speed levels of a text-only website. Here are the missing pieces, before a solid 1.0 release:
 
 [media]
-  small: /img/roadmap-summer.png
-  large: /img/roadmap-summer-big.png
+  small: /img/roadmap-autumn.png
+  large: /img/roadmap-autumn-big.png
   class: roadmap
   width: 800
 
